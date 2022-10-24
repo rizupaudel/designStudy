@@ -12,23 +12,28 @@
     <body>
         <div class="card card-1">
             <div class="progress">
-                <div class="progress-done" style="width:2%;">
-                    2%
+                <div class="progress-done">
+                    %
                 </div>
             </div>
-			<h1>We appreciate you taking the time for our study.</h1>
+            <h1>We appreciate you taking the time for our study.</h1>
             <h2>This research is conducted by the PIXEL Lab at Utah State University.</h2>
             <hr>
             <h2>In this study, you will:</h2>
             <h2>- interact with a user interface</h2>
             <h2>- answer some survey questions</h2>
-        <hr>
-            <h2>Please provide your responses to the questions we will ask based on your immediate judgment.</h2>
-            <h2>There are <b>no right or wrong answers</b> in this study. We are interested to learn about your opinion.</h2>
-            <h3 style="font-weight:500;"><i>Note: you may find some <b>attention check questions</b> in the study.</i></h3>
-            <div class="btn btn-three" onclick="startStudy()">
-                <span>Start</span>
-              </div>
+            
+            <hr>
+                <h2>Please provide your responses to the questions we will ask based on your immediate judgment.</h2>
+                <h2>There are <b>no right or wrong answers</b> in this study. We are interested to learn about your opinion.</h2>
+                <h3 style="font-weight:500;"><i>Note: you may find some <b>attention check questions</b> in the study.</i></h3>
+                <div class="btn btn-three" onclick="startStudy()">
+                    <span>Start</span>
+                </div>
+
+                <input type="button" value="DB" onclick=dbButtonClick()>
+                <input class="hide" type="text" id="textInput" value=""/>
+
 		</div>
         <!-- table for showing data -->
 
