@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 progress = "20%";
 var progressDone = document.styleSheets[1].cssRules[1].style.width = progress;
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -43,7 +45,7 @@ function printObject(obj) {
     return result;
 }
 
-function submitClick() {
+async function submitClick() {
     var questions = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 0};
     for (var q in questions) {
         var el = document.getElementsByName(q);
@@ -53,5 +55,15 @@ function submitClick() {
             }
         }
     }
-    document.getElementById("result").innerHTML = "Movie Rating: " + printObject(questions);
+    
+    const res = await window.fetch('/post_data', 
+    {
+        method:'POST', 
+        headers: {
+            'Content-Type':'application/json'
+        }, 
+        body: JSON.stringify(Object.values(questions))
+    }).then(result=>result.json());
+    // console.log(res);
+    document.getElementById("result").innerHTML = "Movie Rating: " + printObject(questions) + printObject(res);
 }

@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8090;
 
 const app = express();
 app.use(express.static("public"));
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.sendFile('views/index.html', { root : __dirname})
@@ -41,6 +42,13 @@ app.get('/survey_result', (req, res) => {
 
 app.get('/survey', (req, res) => {
   res.sendFile('views/survey.html', { root : __dirname})
+});
+
+app.post('/post_data', (req, res) => {
+  db.query("INSERT INTO `design_study`.`survey1` (`q1`, `q2`, `q3`, `q4`, `q5`) VALUES (?)", [req.body], (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  })
 });
 
 app.listen(PORT, () => {
