@@ -16,11 +16,27 @@
                     25%
                 </div>
             </div>
-			<h1>This is Page 1.</h1>
-        <hr>
+			<h3>Imagine that you are creating a password for “an account you care a lot about, such as their primary social media account or primary email account.” 
+                You will be asked to enter the password again at the end of the study to recall the password. Please take the steps you would normally take to create and remember your important passwords, 
+                and protect this password as you normally would protect your important passwords.”                
+            </h3>
+            <label for="psw"><b>Password</b></label>
+            <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+
+            <label for="psw"><b>Re-enter Password</b></label>
+            <input id="repass" type="password" placeholder="Confirm Password" name="repsw" required>
+            <br>
+            <input type="checkbox" onclick="showPassword()">Show Password
+            <br>
+            
+            <label id="passmatch" class="passwarnlabel">Password did not match!</label>
+
             <div class="btn btn-three" onclick="gotoPage2()">
-                <span>Page2</span>
-              </div>
+                <span>Next</span>
+            </div>
+
+
+
 		</div>
         <!-- table for showing data -->
 
