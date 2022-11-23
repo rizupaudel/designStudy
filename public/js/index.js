@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 async function startStudy() {
     sessionStorage.setItem("page_id", 1);
     window.location = "page1";
+    console.log(document.cookie);
 }
 
 async function getData() {

@@ -1,25 +1,31 @@
 async function gotoPage2() {
-    if (comparePassword()) {
+    var res = comparePasswords()
+    if (1 in res) {
         sessionStorage.setItem("page_id", 2);
+        sessionStorage.setItem("password", res[1]);
         window.location = "page2";
     } else {
         var p = document.getElementById("passmatch");
-        p.style.display="block";
-
+        p.innerHTML = res[0]
+        p.style.display = "block";
     }
 }
 
-function comparePassword() {
+function comparePasswords() {
     var x = document.getElementById("pass");
     var y = document.getElementById("repass");
+    
     if (x.value === y.value) {
-        return 1;
+        if (x.value === "" || y.value === "") {
+            return {0: "⚠ Password is required!"}
+        }
+        return {1: x.value};
     } else {
-        return 0;
+        return {0: "⚠ Passwords did not match!"}
     }
 }
 
-function showPassword() {
+function showPasswords() {
     var x = document.getElementById("pass");
     var y = document.getElementById("repass");
     if (x.type === "password" || y.type==="password") {

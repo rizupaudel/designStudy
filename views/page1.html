@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="css/indexmain.css" />
+        <link rel="stylesheet" href="css/page1.css" />
         <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
         <script src="js/page1.js"></script>
         <meta charset="UTF-8" />
@@ -16,29 +16,32 @@
                     25%
                 </div>
             </div>
-			<h3>Imagine that you are creating a password for “an account you care a lot about, such as their primary social media account or primary email account.” 
-                You will be asked to enter the password again at the end of the study to recall the password. Please take the steps you would normally take to create and remember your important passwords, 
-                and protect this password as you normally would protect your important passwords.”                
-            </h3>
-            <label for="psw"><b>Password</b></label>
-            <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
 
-            <label for="psw"><b>Re-enter Password</b></label>
-            <input id="repass" type="password" placeholder="Confirm Password" name="repsw" required>
-            <br>
-            <input type="checkbox" onclick="showPassword()">Show Password
-            <br>
-            
-            <label id="passmatch" class="passwarnlabel">Password did not match!</label>
+			<h3>Imagine that you are creating a password for “an account you care a lot about, such as your social media account or primary email account.”</h3>
+            <h3>Please take the steps you would normally take to create and remember your important passwords, and protect this password as you normally would protect your important passwords.”</h3>
+            <h4>NOTE: You will be asked to enter the password again at the end of the study to recall the password.</h4>
+
+            <div class="container">
+                <div class="inputContainer">
+                    <input id="pass" type="password" class="input" placeholder="">
+                    <label for="" class="label">Password</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input id="repass" type="password" class="input" placeholder="">
+                    <label for="" class="label">Confirm Password</label>
+                </div>
+                <div class="showcheck">
+                    <input type="checkbox" onclick="showPasswords()"> Show Password
+                </div>
+
+                <label id="passmatch" class="passwarnlabel"></label>
+                
+            </div>
 
             <div class="btn btn-three" onclick="gotoPage2()">
                 <span>Next</span>
             </div>
-
-
-
 		</div>
-        <!-- table for showing data -->
-
     </body>
 </html>

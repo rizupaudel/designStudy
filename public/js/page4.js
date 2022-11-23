@@ -1,5 +1,5 @@
 async function gotoRoot() {
-    sessionStorage.setItem("page_id", 4);
+    sessionStorage.setItem("page_id", 5);
     window.location = "/";
 }
 
