@@ -2,6 +2,7 @@
 
 const express = require("express");
 const db = require("./database");
+const { getProgressPercent } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
 
@@ -35,6 +36,11 @@ app.get('/get_data', (req, res) => {
     res.send(rows);
   });
 });
+
+app.get('/get_progress/:a', (req, res) => {
+  var progress = getProgressPercent(req.params["a"]);
+  res.send({"progress": progress});
+})
 
 app.get('/survey_result', (req, res) => {
   res.sendFile('views/survey_result.html', { root : __dirname})

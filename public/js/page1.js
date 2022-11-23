@@ -1,3 +1,7 @@
+import {setProgress} from "./utility.js";
+window.setProgress = setProgress;
+setProgress(2);
+
 async function gotoPage2() {
     var res = comparePasswords()
     if (1 in res) {
@@ -10,6 +14,7 @@ async function gotoPage2() {
         p.style.display = "block";
     }
 }
+window.gotoPage2 = gotoPage2;
 
 function comparePasswords() {
     var x = document.getElementById("pass");
@@ -35,4 +40,5 @@ function showPasswords() {
       x.type = "password";
       y.type = "password";
     }
-  }
+}
+window.showPasswords = showPasswords;
