@@ -30,6 +30,10 @@ app.get('/page4', (req, res) => {
   res.sendFile('views/page4.html', { root : __dirname})
 });
 
+app.get('/page5', (req, res) => {
+  res.sendFile('views/page5.html', { root : __dirname})
+});
+
 app.get('/get_data', (req, res) => {
   db.query("select * from survey1", (err, rows, fields) => {
     if (err) throw err

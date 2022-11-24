@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<link rel="stylesheet" href="css/survey.css" />
+		<link rel="stylesheet" href="css/page5.css" />
         <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
-        <script src="js/survey.js"></script>
+        <link rel="shortcut icon" href="#">
+        <script src="js/page5.js" type="module"></script>
         <meta charset="UTF-8" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0" />
         <title>PIXEL Lab Study: Survey</title>
     </head>
     <body>
-        <div class="card card-1">
+        <div>
+            <div class="split left">
+                <div class="leftdesign">
+                    <h2>Design Infographics</h2>
+                    <p>I love this design.</p>
+                    <img id="myImg" class="designimg" src="designs/Infographics.png" alt="Design of password persuasion">
+                </div>
+            </div>
+            
+            <div class="split right">
+                <div class="rightsurvey">
+                    <h2>  Rate this infographics.</h2>
+
+                    <div id = "quest" class="questionaire">
+                    </div>
+
+                    <div>
+                        <input class="submitbtn" type="button" value="Submit" onclick=submitClick()>
+                    </div>
+                    
+                    <!-- <div id="result"></div> -->
+                </div>
+            </div>
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+        </div>
+
+        <!-- <div class="card card-1">
             <div class="progress">
-                <div class="progress-done"> % </div>
+                <div class="progress-done">.</div>
             </div>
             <h2>Rate Movie</h2>
             <ul class="likert">
@@ -74,6 +106,6 @@
             
             <div id="result"></div>
 
-		</div>
+		</div> -->
     </body>
 </html>
