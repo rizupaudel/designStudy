@@ -117,14 +117,40 @@ body {font-family: Arial, Helvetica, sans-serif;}
   right: 0;
   background-color: #eee;
 }
-/* .rightsurvey {
-  
-} */
+
+.rightsurvey {
+  text-align: justify;
+  position: relative;
+}
+
+.questionaire h2 {
+  font-family: 'Nunito', sans-serif;
+}
 
 .likert li {
   display: inline-block;
   list-style-type: none;
+  font-family: 'Nunito', sans-serif;
 }
+
+
+.box {
+  width: 60px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+
+
+/* RadioButton */
+
+.box input {
+  height: 20px;
+  width: 20px
+}
+
+
+/* ***** END ***** */
 
 .submitbtn {
   display: block;
@@ -142,6 +168,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   line-height: 1;
   min-height: 3rem;
   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding-bottom: 20px;
 }
 
 .submitbtn:hover,

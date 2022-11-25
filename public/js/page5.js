@@ -2,40 +2,7 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(5);
 
-var questions = [
-    {
-        quest: "How are you feeling?",
-        qid: "q1",
-        likerts: [
-            {
-                lowScale: "Not Good",
-                highScale: "Very Good",
-                nScale: 5,
-                lqid: "q11",
-            }
-        ]
-    },
-    {
-        quest: "What do you think about this movie?",
-        qid: "q2",
-        likerts: [
-            {
-                lowScale: "Mediocre",
-                highScale: "Exceptional",
-                nScale: 5,
-                lqid: "q21",
-                text: "Direction",
-            },
-            {
-                lowScale: "Bad",
-                highScale: "Good",
-                nScale: 5,
-                lqid: "q22",
-                text: "Cinematography",
-            }
-        ]
-    },
-];
+
 
 function generateLikert(lobj) {
     var val = '<ul class="likert">';
@@ -44,7 +11,7 @@ function generateLikert(lobj) {
     }
     val += "<li>" + lobj.lowScale + "</li>";
     for (let i = 0; i < lobj.nScale; i++) {
-        val += '<li><input type="radio" name="' + lobj.lqid +'" value="' + i +'" /></li>';
+        val += '<div class="box"> <li><input type="radio" name="' + lobj.lqid +'" value="' + i +'" /></li></div>';
     }
     val += "<li>" + lobj.highScale + "</li>";
     val += "</ul>";
@@ -52,7 +19,7 @@ function generateLikert(lobj) {
 }
 
 function generateQuestion(qobj) {
-    var val = "<h3>" + qobj.quest + "</h3>"
+    var val = "";
     for (let i in qobj.likerts) {
         val += generateLikert(qobj.likerts[i])
     }
@@ -63,13 +30,19 @@ function generateQuestions(qs) {
     var quest = document.getElementById("quest");
     var val = "";
     for (let i in qs) {
-        console.log("F" + qs[i]);
+        val += "<h2> [Q" + i + "] "+ qs[i].quest + "</h2>"
         val += generateQuestion(qs[i]);
     }
     quest.innerHTML = val;
 }
 
-generateQuestions(questions)
+async function getQuestions() {
+    const response = await window.fetch('/get_quests');
+    var qData = await response.json();
+    return qData.questions;
+}
+
+generateQuestions(await getQuestions());
 
 // function printObject(obj) {
 //     result = "";

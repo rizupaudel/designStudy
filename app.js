@@ -2,7 +2,7 @@
 
 const express = require("express");
 const db = require("./database");
-const { getProgressPercent } = require("./utility");
+const { getProgressPercent, getQuestionaires } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
 
@@ -39,6 +39,11 @@ app.get('/get_data', (req, res) => {
     if (err) throw err
     res.send(rows);
   });
+});
+
+app.get('/get_quests', (req, res) => {
+  var quests = getQuestionaires();
+  res.send({"questions": quests});
 });
 
 app.get('/get_progress/:a', (req, res) => {
