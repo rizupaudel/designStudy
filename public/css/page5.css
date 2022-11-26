@@ -3,7 +3,7 @@
 
 .split {
   height: 100%;
-  width: 50%;
+  width: 60%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -13,6 +13,7 @@
 
 .left {
   left: 0;
+  width: 40%;
   background-color: #fff;
 }
 
@@ -119,23 +120,74 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .rightsurvey {
+  margin: 3%;
   text-align: justify;
   position: relative;
+  /* background-color: #eee; */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.questionaire h2 {
+.rightsurvey:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.questionaire h3 {
   font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+.likert {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 35px;
+  display: block;
+  /* border-bottom: 2px solid #ffffff; */
+}
+
+.likert:last-of-type {border-bottom:0;}
+.likert:before {
+  content: '';
+  position: relative;
+  top: 14px;
+  left: 20%;
+  display: block;
+  background-color:#999;
+  height: 1px;
+  width: 40%;
 }
 
 .likert li {
   display: inline-block;
-  list-style-type: none;
+  width: 15%;
+  background-color: #eee;
+  text-align: center;
+  vertical-align: top;
   font-family: 'Nunito', sans-serif;
+  font-weight: 550;
+}
+
+.likert .l-scale {
+  font-weight: 400;
+  /* width: 10%; */
+  text-align: right;
 }
 
 
+.likert .h-scale {
+  font-weight: 400;
+  text-align: left;
+}
+
+.likert li input[type=radio] {
+  display: block;
+  position: relative;
+  top: 0;
+}
+
 .box {
-  width: 60px;
+  width: 10%;
   vertical-align: top;
   display: inline-block;
   text-align: center;
@@ -143,12 +195,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 /* RadioButton */
-
 .box input {
-  height: 20px;
-  width: 20px
+  height: 22px;
+  width: 22px;
 }
-
 
 /* ***** END ***** */
 

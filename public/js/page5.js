@@ -3,17 +3,16 @@ window.setProgress = setProgress;
 setProgress(5);
 
 
-
 function generateLikert(lobj) {
     var val = '<ul class="likert">';
-    if ("text" in lobj) {
-        val += "<li>" + lobj.text + "--" + "</li>";
-    }
-    val += "<li>" + lobj.lowScale + "</li>";
+    val += "<li class=l-scale>" + lobj.lowScale + "</li>";
     for (let i = 0; i < lobj.nScale; i++) {
         val += '<div class="box"> <li><input type="radio" name="' + lobj.lqid +'" value="' + i +'" /></li></div>';
     }
-    val += "<li>" + lobj.highScale + "</li>";
+    val += "<li class=h-scale>" + lobj.highScale + "</li>";
+    if ("text" in lobj) {
+        val += "<li>(" + lobj.text + ")" + "</li>";
+    }
     val += "</ul>";
     return val
 }
@@ -30,7 +29,7 @@ function generateQuestions(qs) {
     var quest = document.getElementById("quest");
     var val = "";
     for (let i in qs) {
-        val += "<h2> [Q" + i + "] "+ qs[i].quest + "</h2>"
+        val += "<h3> (" + i + ") "+ qs[i].quest + "</h3>"
         val += generateQuestion(qs[i]);
     }
     quest.innerHTML = val;
@@ -41,8 +40,8 @@ async function getQuestions() {
     var qData = await response.json();
     return qData.questions;
 }
-
-generateQuestions(await getQuestions());
+var questions = await getQuestions()
+generateQuestions(questions);
 
 // function printObject(obj) {
 //     result = "";
@@ -51,29 +50,6 @@ generateQuestions(await getQuestions());
 //     }
 //     return result;
 // }
-
-async function submitClick() {
-    var questions = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 0};
-    for (var q in questions) {
-        var el = document.getElementsByName(q);
-        for (i = 0; i < el.length; i++) {
-            if (el[i].checked) {
-                questions[q] = el[i].value;
-            }
-        }
-    }
-    
-    const res = await window.fetch('/post_data', 
-    {
-        method:'POST', 
-        headers: {
-            'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(Object.values(questions))
-    }).then(result=>result.json());
-    // console.log(res);
-    document.getElementById("result").innerHTML = "Movie Rating: " + printObject(questions) + printObject(res);
-}
 
 
 // ***** For image zoom open *****
@@ -100,3 +76,41 @@ span.onclick = function() {
 }
 // ***** END *****
 
+
+async function submitClick() {
+    console.log('CLICKED');
+    var ret_val = {};
+    for (let qn in questions) {
+        for (let ln in questions[qn].likerts) {
+            var lid = questions[qn].likerts[ln].lqid;
+            var el = document.getElementsByName(lid);
+            for (let i = 0; i < el.length; i++) {
+                if (el[i].checked) {
+                    ret_val[lid] = el[i].value;
+                }
+            }
+        }
+    }
+    console.log(ret_val);
+    // var questions = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 0};
+    // for (var q in questions) {
+    //     var el = document.getElementsByName(q);
+    //     for (i = 0; i < el.length; i++) {
+    //         if (el[i].checked) {
+    //             questions[q] = el[i].value;
+    //         }
+    //     }
+    // }
+    
+    // const res = await window.fetch('/post_data', 
+    // {
+    //     method:'POST', 
+    //     headers: {
+    //         'Content-Type':'application/json'
+    //     }, 
+    //     body: JSON.stringify(Object.values(questions))
+    // }).then(result=>result.json());
+    // // console.log(res);
+    // document.getElementById("result").innerHTML = "Movie Rating: " + printObject(questions) + printObject(res);
+}
+window.submitClick = submitClick;

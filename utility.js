@@ -134,7 +134,7 @@ function getQuestionaires() {
             ]
         },
         {
-            quest: "How are you feeling?",
+            quest: "Answer these questions based on how you feel towards the design.",
             qid: "q9",
             likerts: [
                 {
@@ -142,6 +142,18 @@ function getQuestionaires() {
                     highScale: "Very Good",
                     nScale: 5,
                     lqid: "q91",
+                },
+                {
+                    lowScale: "Intimidating",
+                    highScale: "Easy to follow",
+                    nScale: 5,
+                    lqid: "q92",
+                },
+                {
+                    lowScale: "Boring",
+                    highScale: "Exciting",
+                    nScale: 5,
+                    lqid: "q93",
                 }
             ]
         },
