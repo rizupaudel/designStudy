@@ -4,8 +4,7 @@ setProgress(5);
 
 async function gotoRoot() {
     sessionStorage.setItem("page_id", 5);
-    sessionStorage.clear();
-    window.location = "/";
+    window.location = "page5";
 }
 window.gotoRoot = gotoRoot;
 

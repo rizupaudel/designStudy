@@ -2,9 +2,8 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(5);
 
-
 function generateLikert(lobj) {
-    var val = '<ul class="likert">';
+    var val = '<ul class="likert" ' + "id=" + lobj.lqid + '>';
     val += "<li class=l-scale>" + lobj.lowScale + "</li>";
     for (let i = 0; i < lobj.nScale; i++) {
         val += '<div class="box"> <li><input type="radio" name="' + lobj.lqid +'" value="' + i +'" /></li></div>';
@@ -14,7 +13,7 @@ function generateLikert(lobj) {
         val += "<li>(" + lobj.text + ")" + "</li>";
     }
     val += "</ul>";
-    return val
+    return val;
 }
 
 function generateQuestion(qobj) {
@@ -29,7 +28,8 @@ function generateQuestions(qs) {
     var quest = document.getElementById("quest");
     var val = "";
     for (let i in qs) {
-        val += "<h3> (" + i + ") "+ qs[i].quest + "</h3>"
+        var qn = parseInt(i) + 1;
+        val += "<h3> (" + qn + ") "+ qs[i].quest + "</h3>"
         val += generateQuestion(qs[i]);
     }
     quest.innerHTML = val;
@@ -76,22 +76,44 @@ span.onclick = function() {
 }
 // ***** END *****
 
-
 async function submitClick() {
-    console.log('CLICKED');
     var ret_val = {};
+    var next_flag = true;
     for (let qn in questions) {
         for (let ln in questions[qn].likerts) {
+            var checked_flag = false;
             var lid = questions[qn].likerts[ln].lqid;
             var el = document.getElementsByName(lid);
             for (let i = 0; i < el.length; i++) {
                 if (el[i].checked) {
                     ret_val[lid] = el[i].value;
+                    checked_flag = true;
                 }
+            }
+            var lel = document.getElementById(lid).getElementsByClassName("l-scale")[0];
+            var hel = document.getElementById(lid).getElementsByClassName("h-scale")[0];
+            if (!checked_flag) {
+                lel.style.color = "red";
+                hel.style.color = "red";
+                next_flag = false;
+            } else {
+                lel.style.color = "black";
+                hel.style.color = "black";
             }
         }
     }
     console.log(ret_val);
+
+    var p = document.getElementById("reqfields");
+    p.style.display = "block";
+
+    console.log(next_flag);
+    if (next_flag) {
+        sessionStorage.setItem("page_id", 6);
+        sessionStorage.clear();
+        window.location = "page6";
+    }
+
     // var questions = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 0};
     // for (var q in questions) {
     //     var el = document.getElementsByName(q);

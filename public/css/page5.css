@@ -202,6 +202,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* ***** END ***** */
 
+.reqfields {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+
 .submitbtn {
   display: block;
   margin: 0 auto;

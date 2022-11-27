@@ -13,7 +13,7 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q11",
+                    lqid: "q1-1",
                 }
             ]
         },
@@ -25,14 +25,14 @@ function getQuestionaires() {
                     lowScale: "Mediocre",
                     highScale: "Exceptional",
                     nScale: 5,
-                    lqid: "q21",
+                    lqid: "q2-1",
                     text: "Direction",
                 },
                 {
                     lowScale: "Bad",
                     highScale: "Good",
                     nScale: 5,
-                    lqid: "q22",
+                    lqid: "q2-2",
                     text: "Cinematography",
                 }
             ]
@@ -45,7 +45,7 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q31",
+                    lqid: "q3-1",
                 }
             ]
         },
@@ -57,14 +57,14 @@ function getQuestionaires() {
                     lowScale: "Mediocre",
                     highScale: "Exceptional",
                     nScale: 5,
-                    lqid: "q41",
+                    lqid: "q4-1",
                     text: "Direction",
                 },
                 {
                     lowScale: "Bad",
                     highScale: "Good",
                     nScale: 5,
-                    lqid: "q42",
+                    lqid: "q4-2",
                     text: "Cinematography",
                 }
             ]
@@ -77,7 +77,7 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q51",
+                    lqid: "q5-1",
                 }
             ]
         },
@@ -89,14 +89,14 @@ function getQuestionaires() {
                     lowScale: "Mediocre",
                     highScale: "Exceptional",
                     nScale: 5,
-                    lqid: "q61",
+                    lqid: "q6-1",
                     text: "Direction",
                 },
                 {
                     lowScale: "Bad",
                     highScale: "Good",
                     nScale: 5,
-                    lqid: "q62",
+                    lqid: "q6-2",
                     text: "Cinematography",
                 }
             ]
@@ -109,7 +109,7 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q71",
+                    lqid: "q7-1",
                 }
             ]
         },
@@ -121,14 +121,14 @@ function getQuestionaires() {
                     lowScale: "Mediocre",
                     highScale: "Exceptional",
                     nScale: 5,
-                    lqid: "q81",
+                    lqid: "q8-1",
                     text: "Direction",
                 },
                 {
                     lowScale: "Bad",
                     highScale: "Good",
                     nScale: 5,
-                    lqid: "q82",
+                    lqid: "q8-2",
                     text: "Cinematography",
                 }
             ]
@@ -141,19 +141,19 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q91",
+                    lqid: "q9-1",
                 },
                 {
                     lowScale: "Intimidating",
                     highScale: "Easy to follow",
                     nScale: 5,
-                    lqid: "q92",
+                    lqid: "q9-2",
                 },
                 {
                     lowScale: "Boring",
                     highScale: "Exciting",
                     nScale: 5,
-                    lqid: "q93",
+                    lqid: "q9-3",
                 }
             ]
         },
@@ -165,14 +165,14 @@ function getQuestionaires() {
                     lowScale: "Mediocre",
                     highScale: "Exceptional",
                     nScale: 5,
-                    lqid: "q101",
+                    lqid: "q10-1",
                     text: "Direction",
                 },
                 {
                     lowScale: "Bad",
                     highScale: "Good",
                     nScale: 5,
-                    lqid: "q102",
+                    lqid: "q10-2",
                     text: "Cinematography",
                 }
             ]
@@ -185,7 +185,7 @@ function getQuestionaires() {
                     lowScale: "Not Good",
                     highScale: "Very Good",
                     nScale: 5,
-                    lqid: "q111",
+                    lqid: "q11-1",
                 }
             ]
         },
@@ -197,25 +197,25 @@ function getQuestionaires() {
                     lowScale: "Inferior",
                     highScale: "Valuable",
                     nScale: 5,
-                    lqid: "q121",
+                    lqid: "q12-1",
                 },
                 {
                     lowScale: "Boring",
                     highScale: "Exciting",
                     nScale: 5,
-                    lqid: "q122",
+                    lqid: "q12-2",
                 },
                 {
                     lowScale: "Not Interesting",
                     highScale: "Interesting",
                     nScale: 5,
-                    lqid: "q123",
+                    lqid: "q12-3",
                 },
                 {
                     lowScale: "Demotivating",
                     highScale: "Motivating",
                     nScale: 5,
-                    lqid: "q124",
+                    lqid: "q12-4",
                 }
             ]
         },
