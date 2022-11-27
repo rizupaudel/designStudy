@@ -22,11 +22,11 @@ function comparePasswords() {
     
     if (x.value === y.value) {
         if (x.value === "" || y.value === "") {
-            return {0: "⚠ Password is required!"}
+            return {0: "⚠️ Password is required!"}
         }
         return {1: x.value};
     } else {
-        return {0: "⚠ Passwords did not match!"}
+        return {0: "⚠️ Passwords did not match!"}
     }
 }
 

@@ -22,7 +22,7 @@
   height: 100%;
   width: 100%;
   max-width: 90%;
-  border: 1px solid #DADCE0;
+  border: 1px solid #0039a6;
   border-radius: 7px;
   font-size: 16px;
   padding: 0 20px;
@@ -37,11 +37,11 @@
   z-index: 10;
   font-size: 14px;
   font-weight: 600;
-  color: purple;
+  color: #0039a6;
 }
 
 .input:focus {
-  border: 2px solid purple;
+  border: 2px solid #0039a6;
 }
 
 .input:not(:placeholder-shown)+ .label {
@@ -61,7 +61,7 @@
   top: 15px;
   left: 15px;
   padding: 0 4px;
-  color: #BACCD0;
+  color: #0066b2;
   background-color: #eee;
   font-size: 16px;
   transition: 0.5s;
