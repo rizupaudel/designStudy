@@ -1,7 +1,8 @@
 // server/index.js
 
 const express = require("express");
-const db = require("./database");
+// const db = require("./database");
+const { runQuery } = require("./database");
 const { getProgressPercent, getQuestionaires } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
@@ -45,9 +46,33 @@ app.get('/get_data', (req, res) => {
   });
 });
 
-app.get('/get_quests', (req, res) => {
-  var quests = getQuestionaires();
-  res.send({"questions": quests});
+
+async function getQuestions(a) {
+    let questions = [];
+    let qrows = await runQuery("SELECT d.qid, d.cid, q.text FROM designmap as d inner join questions as q on d.qid=q.qid where d.did=" + a + ";");
+
+    // console.log(qrows);
+
+    for (i in qrows) {
+        let question = {};
+        question["quest"] = qrows[i].text;
+        question["qid"] = qrows[i].qid;
+        let lrows = await runQuery('SELECT l.lid, l.text, highscale, lowscale, nscale, c.rank from likerts as l inner join catmap as c on c.lid=l.lid where cid=' + qrows[i].cid + ";")
+        for (j in lrows) {
+            lrows[j].lid = qrows[i].qid + "-" + lrows[j].lid;
+        }
+        question["likerts"] = lrows;
+        questions.push(question);
+    }
+    return questions;
+}
+
+app.get('/get_quests/:a', (req, res) => {
+    getQuestions(req.params["a"]).then(function (result) {
+        res.send({"questions": result});
+    });
+    // var quests = getQuestionaires();
+    // res.send({"questions": quests});
 });
 
 app.get('/get_progress/:a', (req, res) => {

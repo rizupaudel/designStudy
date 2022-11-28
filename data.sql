@@ -25,10 +25,8 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `cid` int NOT NULL AUTO_INCREMENT,
   `text` varchar(100) NOT NULL,
-  `lid` int NOT NULL,
-  `rank` int DEFAULT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +35,34 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Motivation'),(2,'Stimulation'),(3,'Attractiveness');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catmap`
+--
+
+DROP TABLE IF EXISTS `catmap`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `catmap` (
+  `catmapid` int NOT NULL AUTO_INCREMENT,
+  `cid` int DEFAULT NULL,
+  `lid` int DEFAULT NULL,
+  `rank` int DEFAULT NULL,
+  PRIMARY KEY (`catmapid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `catmap`
+--
+
+LOCK TABLES `catmap` WRITE;
+/*!40000 ALTER TABLE `catmap` DISABLE KEYS */;
+INSERT INTO `catmap` VALUES (1,1,1,1),(2,2,2,1),(3,3,3,1),(4,3,4,2),(5,3,5,3);
+/*!40000 ALTER TABLE `catmap` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -48,9 +73,11 @@ DROP TABLE IF EXISTS `designmap`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `designmap` (
+  `mapid` int NOT NULL AUTO_INCREMENT,
   `did` int DEFAULT NULL,
   `qid` int DEFAULT NULL,
-  `cid` int DEFAULT NULL
+  `cid` int DEFAULT NULL,
+  PRIMARY KEY (`mapid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,7 +129,7 @@ CREATE TABLE `likerts` (
   `low_scale` varchar(45) NOT NULL,
   `nscale` int NOT NULL,
   PRIMARY KEY (`lid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +138,7 @@ CREATE TABLE `likerts` (
 
 LOCK TABLES `likerts` WRITE;
 /*!40000 ALTER TABLE `likerts` DISABLE KEYS */;
+INSERT INTO `likerts` VALUES (1,'Motivation','Motivating','Not motivating',5),(2,'','Good','Bad',5),(3,NULL,'Interesting','Not Interesting',5),(4,NULL,'Exciting','Boring',5),(5,NULL,'Valuable','Inferior',5);
 /*!40000 ALTER TABLE `likerts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +208,7 @@ CREATE TABLE `questions` (
   `qid` int NOT NULL AUTO_INCREMENT,
   `text` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`qid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,6 +217,7 @@ CREATE TABLE `questions` (
 
 LOCK TABLES `questions` WRITE;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
+INSERT INTO `questions` VALUES (1,'Please rank these designs based on how you feel about it.'),(2,'How motivated do you feel to create a strong password after going through this design?'),(3,'The consequences shown on the design are:');
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,4 +278,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-27 17:11:44
+-- Dump completed on 2022-11-27 23:29:33

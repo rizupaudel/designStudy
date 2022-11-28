@@ -7,13 +7,13 @@ if (sessionStorage.getItem("page_id") != 5) {
 }
 
 function generateLikert(lobj) {
-    var val = '<ul class="likert" ' + "id=" + lobj.lqid + '>';
-    val += "<li class=l-scale>" + lobj.lowScale + "</li>";
-    for (let i = 0; i < lobj.nScale; i++) {
-        val += '<div class="box"> <li><input type="radio" name="' + lobj.lqid +'" value="' + i +'" /></li></div>';
+    var val = '<ul class="likert" ' + "id=" + lobj.lid + '>';
+    val += "<li class=l-scale>" + lobj.lowscale + "</li>";
+    for (let i = 0; i < lobj.nscale; i++) {
+        val += '<div class="box"> <li><input type="radio" name="' + lobj.lid +'" value="' + i +'" /></li></div>';
     }
-    val += "<li class=h-scale>" + lobj.highScale + "</li>";
-    if ("text" in lobj) {
+    val += "<li class=h-scale>" + lobj.highscale + "</li>";
+    if ("text" in lobj && lobj.text) {
         val += "<li>(" + lobj.text + ")" + "</li>";
     }
     val += "</ul>";
@@ -39,12 +39,13 @@ function generateQuestions(qs) {
     quest.innerHTML = val;
 }
 
-async function getQuestions() {
-    const response = await window.fetch('/get_quests');
+async function getQuestions(a) {
+    const response = await window.fetch('/get_quests' + "/" + a);
     var qData = await response.json();
     return qData.questions;
 }
-var questions = await getQuestions()
+
+var questions = await getQuestions(1);
 generateQuestions(questions);
 
 // function printObject(obj) {
@@ -86,7 +87,7 @@ async function submitClick() {
     for (let qn in questions) {
         for (let ln in questions[qn].likerts) {
             var checked_flag = false;
-            var lid = questions[qn].likerts[ln].lqid;
+            var lid = questions[qn].likerts[ln].lid;
             var el = document.getElementsByName(lid);
             for (let i = 0; i < el.length; i++) {
                 if (el[i].checked) {
@@ -114,7 +115,7 @@ async function submitClick() {
     console.log(next_flag);
     if (next_flag) {
         sessionStorage.setItem("page_id", 6);
-        sessionStorage.clear();
+        // sessionStorage.clear();
         window.location = "page6";
     }
 

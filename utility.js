@@ -6,130 +6,22 @@ function getProgressPercent(val) {
 function getQuestionaires() {
     var questions = [
         {
-            quest: "How are you feeling?",
-            qid: "q1",
-            likerts: [
-                {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q1-1",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this movie?",
-            qid: "q2",
-            likerts: [
-                {
-                    lowScale: "Mediocre",
-                    highScale: "Exceptional",
-                    nScale: 5,
-                    lqid: "q2-1",
-                    text: "Direction",
-                },
-                {
-                    lowScale: "Bad",
-                    highScale: "Good",
-                    nScale: 5,
-                    lqid: "q2-2",
-                    text: "Cinematography",
-                }
-            ]
-        },
-        {
-            quest: "How are you feeling?",
-            qid: "q3",
-            likerts: [
-                {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q3-1",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this movie?",
-            qid: "q4",
-            likerts: [
-                {
-                    lowScale: "Mediocre",
-                    highScale: "Exceptional",
-                    nScale: 5,
-                    lqid: "q4-1",
-                    text: "Direction",
-                },
-                {
-                    lowScale: "Bad",
-                    highScale: "Good",
-                    nScale: 5,
-                    lqid: "q4-2",
-                    text: "Cinematography",
-                }
-            ]
-        },
-        {
-            quest: "How are you feeling?",
-            qid: "q5",
-            likerts: [
-                {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q5-1",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this movie?",
-            qid: "q6",
-            likerts: [
-                {
-                    lowScale: "Mediocre",
-                    highScale: "Exceptional",
-                    nScale: 5,
-                    lqid: "q6-1",
-                    text: "Direction",
-                },
-                {
-                    lowScale: "Bad",
-                    highScale: "Good",
-                    nScale: 5,
-                    lqid: "q6-2",
-                    text: "Cinematography",
-                }
-            ]
-        },
-        {
-            quest: "How are you feeling?",
-            qid: "q7",
-            likerts: [
-                {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q7-1",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this movie?",
+            quest: "What do you think about this design?",
             qid: "q8",
             likerts: [
                 {
-                    lowScale: "Mediocre",
-                    highScale: "Exceptional",
-                    nScale: 5,
-                    lqid: "q8-1",
-                    text: "Direction",
+                    lowscale: "Mediocre",
+                    highscale: "Exceptional",
+                    nscale: 5,
+                    lid: "q8-1",
+                    text: "Attractiveness",
                 },
                 {
-                    lowScale: "Bad",
-                    highScale: "Good",
-                    nScale: 5,
-                    lqid: "q8-2",
-                    text: "Cinematography",
+                    lowscale: "Bad",
+                    highscale: "Good",
+                    nscale: 5,
+                    lid: "q8-2",
+                    text: "Stimulation",
                 }
             ]
         },
@@ -138,42 +30,22 @@ function getQuestionaires() {
             qid: "q9",
             likerts: [
                 {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q9-1",
+                    lowscale: "Not Good",
+                    highscale: "Very Good",
+                    nscale: 5,
+                    lid: "q9-1",
                 },
                 {
-                    lowScale: "Intimidating",
-                    highScale: "Easy to follow",
-                    nScale: 5,
-                    lqid: "q9-2",
+                    lowscale: "Intimidating",
+                    highscale: "Easy to follow",
+                    nscale: 5,
+                    lid: "q9-2",
                 },
                 {
-                    lowScale: "Boring",
-                    highScale: "Exciting",
-                    nScale: 5,
-                    lqid: "q9-3",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this movie?",
-            qid: "q10",
-            likerts: [
-                {
-                    lowScale: "Mediocre",
-                    highScale: "Exceptional",
-                    nScale: 5,
-                    lqid: "q10-1",
-                    text: "Direction",
-                },
-                {
-                    lowScale: "Bad",
-                    highScale: "Good",
-                    nScale: 5,
-                    lqid: "q10-2",
-                    text: "Cinematography",
+                    lowscale: "Boring",
+                    highscale: "Exciting",
+                    nscale: 5,
+                    lid: "q9-3",
                 }
             ]
         },
@@ -182,40 +54,40 @@ function getQuestionaires() {
             qid: "q11",
             likerts: [
                 {
-                    lowScale: "Not Good",
-                    highScale: "Very Good",
-                    nScale: 5,
-                    lqid: "q11-1",
+                    lowscale: "Not Good",
+                    highscale: "Very Good",
+                    nscale: 5,
+                    lid: "q11-1",
                 }
             ]
         },
         {
-            quest: "What do you think about this movie based on stimulation?",
+            quest: "What do you think about this design based on stimulation?",
             qid: "q12",
             likerts: [
                 {
-                    lowScale: "Inferior",
-                    highScale: "Valuable",
-                    nScale: 5,
-                    lqid: "q12-1",
+                    lowscale: "Inferior",
+                    highscale: "Valuable",
+                    nscale: 5,
+                    lid: "q12-1",
                 },
                 {
-                    lowScale: "Boring",
-                    highScale: "Exciting",
-                    nScale: 5,
-                    lqid: "q12-2",
+                    lowscale: "Boring",
+                    highscale: "Exciting",
+                    nscale: 5,
+                    lid: "q12-2",
                 },
                 {
-                    lowScale: "Not Interesting",
-                    highScale: "Interesting",
-                    nScale: 5,
-                    lqid: "q12-3",
+                    lowscale: "Not Interesting",
+                    highscale: "Interesting",
+                    nscale: 5,
+                    lid: "q12-3",
                 },
                 {
-                    lowScale: "Demotivating",
-                    highScale: "Motivating",
-                    nScale: 5,
-                    lqid: "q12-4",
+                    lowscale: "Demotivating",
+                    highscale: "Motivating",
+                    nscale: 5,
+                    lid: "q12-4",
                 }
             ]
         },
