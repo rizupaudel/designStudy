@@ -78,7 +78,7 @@ CREATE TABLE `designmap` (
   `qid` int DEFAULT NULL,
   `cid` int DEFAULT NULL,
   PRIMARY KEY (`mapid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +87,7 @@ CREATE TABLE `designmap` (
 
 LOCK TABLES `designmap` WRITE;
 /*!40000 ALTER TABLE `designmap` DISABLE KEYS */;
+INSERT INTO `designmap` VALUES (1,1,1,1),(2,1,2,3),(3,1,3,2),(4,2,1,1);
 /*!40000 ALTER TABLE `designmap` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,8 +126,8 @@ DROP TABLE IF EXISTS `likerts`;
 CREATE TABLE `likerts` (
   `lid` int NOT NULL AUTO_INCREMENT,
   `text` varchar(45) DEFAULT NULL,
-  `high_scale` varchar(45) NOT NULL,
-  `low_scale` varchar(45) NOT NULL,
+  `highscale` varchar(45) NOT NULL,
+  `lowscale` varchar(45) NOT NULL,
   `nscale` int NOT NULL,
   PRIMARY KEY (`lid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -278,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-27 23:29:33
+-- Dump completed on 2022-11-28  3:04:29
