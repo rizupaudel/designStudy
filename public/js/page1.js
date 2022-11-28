@@ -2,6 +2,10 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(2);
 
+if (sessionStorage.getItem("page_id") != 1) {
+    window.location = "/";
+}
+
 async function gotoPage2() {
     var res = comparePasswords()
     if (1 in res) {

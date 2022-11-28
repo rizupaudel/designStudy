@@ -1,7 +1,8 @@
 import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
-
 setProgress(1);
+
+sessionStorage.clear();
 
 async function startStudy() {
     sessionStorage.setItem("page_id", 1);

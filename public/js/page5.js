@@ -2,6 +2,10 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(5);
 
+if (sessionStorage.getItem("page_id") != 5) {
+    window.location = "/";
+}
+
 function generateLikert(lobj) {
     var val = '<ul class="likert" ' + "id=" + lobj.lqid + '>';
     val += "<li class=l-scale>" + lobj.lowScale + "</li>";

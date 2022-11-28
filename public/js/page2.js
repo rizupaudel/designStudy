@@ -2,6 +2,10 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(3);
 
+if (sessionStorage.getItem("page_id") != 2) {
+    window.location = "/";
+}
+
 async function gotoPage3() {
     sessionStorage.setItem("page_id", 3);
     window.location = "page3";
