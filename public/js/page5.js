@@ -2,9 +2,9 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(5);
 
-if (sessionStorage.getItem("page_id") != 5) {
-    window.location = "/";
-}
+// if (sessionStorage.getItem("page_id") != 5) {
+//     window.location = "/";
+// }
 
 function generateLikert(lobj) {
     var val = '<ul class="likert" ' + "id=" + lobj.lid + '>';
@@ -44,8 +44,9 @@ async function getQuestions(a) {
     var qData = await response.json();
     return qData.questions;
 }
-
-var questions = await getQuestions(1);
+let did = 1;
+sessionStorage.setItem("did", did)
+var questions = await getQuestions(did);
 generateQuestions(questions);
 
 // function printObject(obj) {
@@ -65,7 +66,7 @@ var modal = document.getElementById("myModal");
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-img.onclick = function(){
+img.onclick = function() {
   modal.style.display = "block";
   modalImg.src = this.src;
   modalImg.alt = this.alt;
@@ -80,6 +81,18 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 // ***** END *****
+
+async function saveUserResponse() {
+    const res = await window.fetch('/post_survey_response', 
+    {
+        method:'POST',
+        headers: {
+            'Content-Type':'application/json'
+        }, 
+        body: JSON.stringify(sessionStorage)
+    }).then(result => result.json());
+    return res;
+};
 
 async function submitClick() {
     var ret_val = {};
@@ -107,37 +120,20 @@ async function submitClick() {
             }
         }
     }
-    console.log(ret_val);
-
     var p = document.getElementById("reqfields");
-    p.style.display = "block";
-
-    console.log(next_flag);
     if (next_flag) {
-        sessionStorage.setItem("page_id", 6);
-        // sessionStorage.clear();
-        window.location = "page6";
+        p.style.display = "none";
+        sessionStorage.setItem("surveyresponse", JSON.stringify(ret_val));
+        sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
+        var res = await saveUserResponse(sessionStorage);
+        if (res.success) {
+            sessionStorage.clear();
+            sessionStorage.setItem("page_id", 6);
+            window.location = "page6";
+        }
+        
+    } else {
+        p.style.display = "block";
     }
-
-    // var questions = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 0};
-    // for (var q in questions) {
-    //     var el = document.getElementsByName(q);
-    //     for (i = 0; i < el.length; i++) {
-    //         if (el[i].checked) {
-    //             questions[q] = el[i].value;
-    //         }
-    //     }
-    // }
-    
-    // const res = await window.fetch('/post_data', 
-    // {
-    //     method:'POST', 
-    //     headers: {
-    //         'Content-Type':'application/json'
-    //     }, 
-    //     body: JSON.stringify(Object.values(questions))
-    // }).then(result=>result.json());
-    // // console.log(res);
-    // document.getElementById("result").innerHTML = "Movie Rating: " + printObject(questions) + printObject(res);
 }
 window.submitClick = submitClick;

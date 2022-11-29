@@ -1,98 +1,72 @@
+const { runQuery } = require("./database");
 
 function getProgressPercent(val) {
     return val/5*100;
 }
 
-function getQuestionaires() {
-    var questions = [
-        {
-            quest: "What do you think about this design?",
-            qid: "q8",
-            likerts: [
-                {
-                    lowscale: "Mediocre",
-                    highscale: "Exceptional",
-                    nscale: 5,
-                    lid: "q8-1",
-                    text: "Attractiveness",
-                },
-                {
-                    lowscale: "Bad",
-                    highscale: "Good",
-                    nscale: 5,
-                    lid: "q8-2",
-                    text: "Stimulation",
-                }
-            ]
-        },
-        {
-            quest: "Answer these questions based on how you feel towards the design.",
-            qid: "q9",
-            likerts: [
-                {
-                    lowscale: "Not Good",
-                    highscale: "Very Good",
-                    nscale: 5,
-                    lid: "q9-1",
-                },
-                {
-                    lowscale: "Intimidating",
-                    highscale: "Easy to follow",
-                    nscale: 5,
-                    lid: "q9-2",
-                },
-                {
-                    lowscale: "Boring",
-                    highscale: "Exciting",
-                    nscale: 5,
-                    lid: "q9-3",
-                }
-            ]
-        },
-        {
-            quest: "How are you feeling?",
-            qid: "q11",
-            likerts: [
-                {
-                    lowscale: "Not Good",
-                    highscale: "Very Good",
-                    nscale: 5,
-                    lid: "q11-1",
-                }
-            ]
-        },
-        {
-            quest: "What do you think about this design based on stimulation?",
-            qid: "q12",
-            likerts: [
-                {
-                    lowscale: "Inferior",
-                    highscale: "Valuable",
-                    nscale: 5,
-                    lid: "q12-1",
-                },
-                {
-                    lowscale: "Boring",
-                    highscale: "Exciting",
-                    nscale: 5,
-                    lid: "q12-2",
-                },
-                {
-                    lowscale: "Not Interesting",
-                    highscale: "Interesting",
-                    nscale: 5,
-                    lid: "q12-3",
-                },
-                {
-                    lowscale: "Demotivating",
-                    highscale: "Motivating",
-                    nscale: 5,
-                    lid: "q12-4",
-                }
-            ]
-        },
-    ];
+async function getQuestions(a) {
+    let questions = [];
+    let qrows = await runQuery("SELECT d.qid, d.cid, q.text FROM designmap as d inner join questions as q on d.qid=q.qid where d.did=" + a + ";");
+    qrows = qrows.rows;
+    for (i in qrows) {
+        let question = {};
+        question["quest"] = qrows[i].text;
+        question["qid"] = qrows[i].qid;
+        let lrows = await runQuery('SELECT l.lid, l.text, highscale, lowscale, nscale, c.rank from likerts as l inner join catmap as c on c.lid=l.lid where cid=' + qrows[i].cid + ";")
+        lrows = lrows.rows;
+        for (j in lrows) {
+            lrows[j].lid = qrows[i].qid + "-" + lrows[j].lid;
+        }
+        question["likerts"] = lrows;
+        questions.push(question);
+    }
     return questions;
 }
 
-module.exports = {getProgressPercent, getQuestionaires}
+function getQuery(table, o) {
+    var fields = "";
+    var values = "";
+    for (field in o) {
+        fields += `${field}, `;
+        values += `'${o[field]}', `;
+    }
+    fields.slice(0, -2);
+    values.slice(0, -2);
+    var insertQuery =  `INSERT INTO ${table} (${fields.slice(0, -2)}) VALUES (${values.slice(0, -2)});`;
+    return insertQuery;
+}
+
+async function saveResponse(data) {
+    let passwords = JSON.parse(data.passwords);
+    var q1 = getQuery("password", passwords);
+    let resp = await runQuery(q1);
+    console.log(console.log("DB Insert: (passwords)" + resp));
+    let pid = resp.rows.insertId;
+    var surveyresponse = JSON.parse(data.surveyresponse);
+    console.log(surveyresponse);
+    for (let lqid in surveyresponse) {
+        var insertO = {}
+        var [qid, lid] = lqid.split("-");
+        insertO["qid"] = qid;
+        insertO["lid"] = lid;
+        insertO["pid"] = pid;
+        insertO["lid_value"] = surveyresponse[lqid];
+        var q = getQuery("response", insertO);
+        console.log(q);
+        let resp = await runQuery(q);
+        console.log("DB Insert: (response)" + resp);
+    }
+    // var q2 = getQuery("response", surveyresponse);
+    // console.log(q2)
+    // var resp = await runQuery(q2);
+    // console.log(resp);
+}
+
+// app.post('/post_data', (req, res) => {
+//   db.query("INSERT INTO `design_study`.`survey1` (`q1`, `q2`, `q3`, `q4`, `q5`) VALUES (?)", [req.body], (err, result) => {
+//     if (err) throw err;
+//     res.json(result);
+//   })
+// });
+
+module.exports = {getProgressPercent, getQuestions, saveResponse}

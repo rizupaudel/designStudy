@@ -21,7 +21,7 @@ var connection_object = {
 async function runQuery(query) {
     const connection = await mysql.createConnection(connection_object);
     const [rows, fields] = await connection.execute(query);
-    return rows;
+    return {"rows": rows, "fields": fields};
 }
 
 module.exports = { runQuery };
