@@ -39,6 +39,10 @@ app.get('/page6', (req, res) => {
   res.sendFile('views/page6.html', { root : __dirname})
 });
 
+app.get('/firstpass', (req, res) => {
+  res.sendFile('views/firstpass.html', { root : __dirname})
+});
+
 app.get('/get_quests/:a', (req, res) => {
     getQuestions(req.params["a"]).then(function (result) {
         res.send({"questions": result});

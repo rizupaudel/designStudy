@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<link rel="stylesheet" href="css/firstpass.css" />
+        <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
+        <link rel="shortcut icon" href="#">
+        <script src="js/firstpass.js" type="module"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+        <title>PIXEL Lab Study: Survey</title>
+    </head>
+    <body>
+        <div class="card card-1">
+            <br>
+            <div class="progress">
+                <div class="progress-done">.</div>
+            </div>
+            <center><h2>In this section, we ask how you feel about particular design.</h2></center>
+            <center><h3>Note: All of the fields are required.</h3></center>
+            
+            <fieldset>
+                <legend>User Study Survey</legend>
+                <br>
+                <div id = "quest" class="questionaire"></div>
+                <label id="reqfields" class="reqfields"> * missing required fields</label>
+                <hr>
+                <div><input class="submitbtn" type="button" value="Submit" onclick=submitClick()></div>
+            </fieldset>
+        </div>
+            <!-- <input type="button" value="Submit" onclick=submitClick()>
+            
+            <div id="result"></div> -->
+    </body>
+</html>
