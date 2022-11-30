@@ -128,7 +128,7 @@ async function submitClick() {
         var res = await saveUserResponse(sessionStorage);
         if (res.success) {
             sessionStorage.clear();
-            sessionStorage.setItem("page_id", 6);
+            sessionStorage.setItem("page_id", 7);
             window.location = "page6";
         }
         

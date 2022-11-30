@@ -19,6 +19,10 @@ app.get('/page1', (req, res) => {
   res.sendFile('views/page1.html', { root : __dirname})
 });
 
+app.get('/fpass_survey', (req, res) => {
+  res.sendFile('views/fpass_survey.html', { root : __dirname})
+});
+
 app.get('/page2', (req, res) => {
   res.sendFile('views/page2.html', { root : __dirname})
 });
@@ -37,10 +41,6 @@ app.get('/page5', (req, res) => {
 
 app.get('/page6', (req, res) => {
   res.sendFile('views/page6.html', { root : __dirname})
-});
-
-app.get('/firstpass', (req, res) => {
-  res.sendFile('views/firstpass.html', { root : __dirname})
 });
 
 app.get('/get_quests/:a', (req, res) => {

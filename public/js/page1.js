@@ -2,16 +2,16 @@ import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
 setProgress(2);
 
-if (sessionStorage.getItem("page_id") != 1) {
-    window.location = "/";
-}
+// if (sessionStorage.getItem("page_id") != 1) {
+//     window.location = "/";
+// }
 
 async function gotoPage2() {
     var res = comparePasswords()
     if (1 in res) {
         sessionStorage.setItem("page_id", 2);
         sessionStorage.setItem("password", res[1]);
-        window.location = "page2";
+        window.location = "fpass_survey";
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]

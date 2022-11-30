@@ -121,26 +121,50 @@ var questions = [
         ],
         
     },
-]
+];
 
-function generateLikert(lobj) {
-    var val = '<ul class="likert" ' + "id=" + lobj.lid + '>';
-    val += "<li class=l-scale>" + lobj.lowscale + "</li>";
-    for (let i = 0; i < lobj.nscale; i++) {
-        val += '<div class="box"> <li><input type="radio" name="' + lobj.lid +'" value="' + i +'" /></li></div>';
+function generateLikert(qsid, lO) {
+    var val = `<ul class="likert" id="${qsid}">`;
+    val += `<li class="low"> ${lO.low} </li>`;
+    for (let i = 1; i <= 5; i++) {
+        val += `<div class="box"> <li><input type="radio" name="${qsid}" value="${i}" /></li></div>`;
     }
-    val += "<li class=h-scale>" + lobj.highscale + "</li>";
-    if ("text" in lobj && lobj.text) {
-        val += "<li>(" + lobj.text + ")" + "</li>";
-    }
+    val += `<li class="high"> ${lO.high} </li>`;
     val += "</ul>";
     return val;
 }
 
-function generateQuestion(qobj) {
+function generateCheckbox(qsid, cI) {
+    var val = '<div class="checkbox">';
+    for (let i in cI) {
+        let name = qsid + "-" + i;
+        val += `<input type="checkbox" class="checkbox" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
+    }
+    val += "</div>";
+    return val;
+}
+
+function generateSubQuestion(subQ) {
     var val = "";
-    for (let i in qobj.likerts) {
-        val += generateLikert(qobj.likerts[i])
+    if (subQ.title) {
+        val += "<h4> - " + subQ.title + "</h4>";
+    }
+    
+    if (subQ.type === "likert") {
+        val += generateLikert(subQ.qsid, subQ.elements);
+    } else if (subQ.type === "checkbox") {
+        val += generateCheckbox(subQ.qsid, subQ.elements)
+    }
+    return val;
+}
+
+function generateQuestion(quesO) {
+    var val = "";
+    val += "<h3> (" + quesO.qn + ") "+ quesO.text + "</h3>"
+    for (let i in quesO.subquestions) {
+        let qsid = quesO.qid + "-" + quesO.subquestions[i].sid;
+        quesO.subquestions[i]["qsid"] = qsid;
+        val += generateSubQuestion(quesO.subquestions[i]);
     }
     return val;
 }
@@ -150,7 +174,7 @@ function generateQuestions(qs) {
     var val = "";
     for (let i in qs) {
         var qn = parseInt(i) + 1;
-        val += "<h3> (" + qn + ") "+ qs[i].quest + "</h3>"
+        qs[i]["qn"] = qn;
         val += generateQuestion(qs[i]);
     }
     quest.innerHTML = val;
@@ -160,43 +184,11 @@ async function getQuestions(a) {
     return questions;
 }
 
-let did = 1;
-sessionStorage.setItem("did", did)
-var questions = await getQuestions(did);
+// let did = 1;
+// sessionStorage.setItem("did", did)
+// var questions = await getQuestions(did);
 generateQuestions(questions);
 
-// function printObject(obj) {
-//     result = "";
-//     for (k in obj) {
-//         result += "<h2>" + k + ": " + obj[k] + "</h2>";
-//     }
-//     return result;
-// }
-
-
-// ***** For image zoom open *****
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function() {
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  modalImg.alt = this.alt;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-// ***** END *****
 
 async function saveUserResponse() {
     const res = await window.fetch('/post_survey_response', 
@@ -211,45 +203,61 @@ async function saveUserResponse() {
 };
 
 async function submitClick() {
-    var ret_val = {};
+    var response = {};
     var next_flag = true;
     for (let qn in questions) {
-        for (let ln in questions[qn].likerts) {
+        var subquestions = questions[qn].subquestions;
+        for (let sqn in subquestions) {
             var checked_flag = false;
-            var lid = questions[qn].likerts[ln].lid;
-            var el = document.getElementsByName(lid);
-            for (let i = 0; i < el.length; i++) {
-                if (el[i].checked) {
-                    ret_val[lid] = el[i].value;
-                    checked_flag = true;
+            // var lid = questions[qn].likerts[ln].lid;
+            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+
+            if (subquestions[sqn].type === "likert") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        console.log(el[i].value);
+                        checked_flag = true;
+                    }
                 }
-            }
-            var lel = document.getElementById(lid).getElementsByClassName("l-scale")[0];
-            var hel = document.getElementById(lid).getElementsByClassName("h-scale")[0];
-            if (!checked_flag) {
-                lel.style.color = "red";
-                hel.style.color = "red";
-                next_flag = false;
-            } else {
-                lel.style.color = "black";
-                hel.style.color = "black";
+                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+                if (!checked_flag) {
+                    lel.style.color = "red";
+                    hel.style.color = "red";
+                    next_flag = false;
+                } else {
+                    lel.style.color = "black";
+                    hel.style.color = "black";
+                }
+            } else if (subquestions[sqn].type === "checkbox") {
+                var el = document.getElementsByClassName("checkbox");
+                response[qsid] = [];
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid].push(el[i].value);
+                        checked_flag = true;
+                    }
+                }
             }
         }
     }
-    var p = document.getElementById("reqfields");
-    if (next_flag) {
-        p.style.display = "none";
-        sessionStorage.setItem("surveyresponse", JSON.stringify(ret_val));
-        sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
-        var res = await saveUserResponse(sessionStorage);
-        if (res.success) {
-            sessionStorage.clear();
-            sessionStorage.setItem("page_id", 6);
-            window.location = "page6";
-        }
-        
+    var reqError = document.getElementById("reqfields");
+    if (!next_flag) {
+        reqError.style.display = "block";
     } else {
-        p.style.display = "block";
+        p.style.display = "none";
+        sessionStorage.setItem("response", JSON.stringify(response));
+        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
+        // var res = await saveUserResponse(sessionStorage);
+        // if (res.success) {
+        //     sessionStorage.clear();
+        //     sessionStorage.setItem("page_id", 6);
+        //     window.location = "page6";
+        // }
+        sessionStorage.setItem("page_id", 3);
+        window.location = "page2";
     }
 }
 window.submitClick = submitClick;
