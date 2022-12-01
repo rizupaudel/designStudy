@@ -16,35 +16,50 @@
   padding-right: 10%;
   background-color: black;
 }
-  
+
 .container .nextbtn {
+  background-color: rgb(63, 134, 220);
   position: absolute;
   top: 50%;
-  left: 95%;
+  left: 94%;
+  height: 80px;
+  width: 80px;
   transform: translate(-50%, -50%);
-  background: rgb(0, 0, 0);
+  border: none;
   color: white;
-  font-size: 50px;
-  cursor: pointer;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
 }
   
 .container .nextbtn:hover {
-  background-color: black;
-}
-
-.container .prevbtn {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translate(-50%, -50%);
-  background: rgb(0, 0, 0);
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  text-align: center;
+  background-color: skyblue;
 }
   
+.container .prevbtn {
+  background-color: rgb(63, 134, 220);
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  height: 80px;
+  width: 80px;
+  transform: translate(-50%, -50%);
+  border: none;
+  color: white;
+  /* padding: 5px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .container .prevbtn:hover {
-  background-color: black;
+  background-color: skyblue;
 }

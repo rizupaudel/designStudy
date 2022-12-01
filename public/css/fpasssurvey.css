@@ -116,6 +116,9 @@ text-align: left;
 }
 
 .submitbtn {
+  height: fit-content;
+	text-align: center;
+	width: 160px;
   display: block;
   margin: 0 auto;
   background-clip: padding-box;

@@ -45,10 +45,10 @@ body {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.btn {
+/* .btn {
 	height: fit-content;
 	text-align: center;
-	width: 250px;
+	width: 150px;
 	cursor: pointer;
   left: 50%;
   transform: translateX(-50%);
@@ -97,6 +97,45 @@ body {
 .btn-three:hover::after {
 	opacity: 1;
 	transform: scale(1,1);
+} */
+
+
+.btn {
+  height: fit-content;
+	text-align: center;
+	width: 160px;
+  display: block;
+  margin: 0 auto;
+  background-clip: padding-box;
+  background-color: #9df;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 300;
+  justify-content: center;
+  line-height: 1;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding-bottom: 20px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #9cf;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  background-color: #9cf;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
 }
 
 .flex-container {
