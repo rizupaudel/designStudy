@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/pagegif.css" />
+        <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
+        <link rel="shortcut icon" href="#">
+        <script src="js/pagegif.js" type="module"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+        <title>Design Interaction</title>
+    </head>
+    <body>
+        <div class="card card-1">
+            <div class="progress">
+                <div class="progress-done">.</div>
+            </div>
+            <br>
+			<div class="container">
+                <img id="pages" src="designs/pagegif.gif">
+                <br>
+                <br>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkbox" onchange='document.getElementById("nextbutton").style.display = this.checked ? "block": "none"'>
+                    <label for="checkbox">I understand the instruction. I now know how to interact with the design now.</label>
+                </div>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- <button class="nextbtn" onclick="secondImage()">→</button> -->
+            </div>
+            
+            <div id="nextbutton" class="btn btn-three" onclick="gotodesignint()">
+                <span>Next >></span>
+            </div>
+		</div>
+    </body>
+</html>

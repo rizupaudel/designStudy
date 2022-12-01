@@ -1,7 +1,7 @@
 const { runQuery } = require("./database");
 
 function getProgressPercent(val) {
-    return val/5*100;
+    return val/14*100;
 }
 
 async function getQuestions(a) {

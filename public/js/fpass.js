@@ -1,24 +1,24 @@
 import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
-setProgress(2);
+setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 1) {
 //     window.location = "/";
 // }
 
-async function gotoPage2() {
+async function gotofcog() {
     var res = comparePasswords()
     if (1 in res) {
         sessionStorage.setItem("page_id", 2);
-        sessionStorage.setItem("password", res[1]);
-        window.location = "fpass_survey";
+        sessionStorage.setItem("password1", res[1]);
+        window.location = "fcog";
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]
         p.style.display = "block";
     }
 }
-window.gotoPage2 = gotoPage2;
+window.gotofcog = gotofcog;
 
 function comparePasswords() {
     var x = document.getElementById("pass");

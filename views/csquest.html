@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<link rel="stylesheet" href="css/page5.css" />
+		<link rel="stylesheet" href="css/csquest.css" />
         <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
         <link rel="shortcut icon" href="#">
-        <script src="js/page5.js" type="module"></script>
+        <script src="js/csquest.js" type="module"></script>
         <meta charset="UTF-8" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0" />
@@ -14,9 +14,16 @@
         <div>
             <div class="split left">
                 <div class="leftdesign">
-                    <h2>Design Infographics</h2>
-                    <!-- <p>I love this design.</p> -->
-                    <img id="myImg" class="designimg" src="designs/Infographics.png" alt="Design of password persuasion">
+                    <!-- <h2>Design Infographics</h2> -->
+                    <img id="myImg" class="designimg" src="designs/Logos1.png" alt="Design">
+                    <br>
+                    <br>
+                    <img id="myImg" class="designimg" src="designs/Logos2.png" alt="Design">
+                    <br>
+                    <br>
+                    <img id="myImg" class="designimg" src="designs/Logos1.png" alt="Design">
+
+
                 </div>
             </div>
             
@@ -26,8 +33,9 @@
                     <div class="progress">
                         <div class="progress-done">.</div>
                     </div>
-                    <center><h2>In this section, we ask how you feel about particular design.</h2></center>
-                    <center><h3>Note: All of the fields are required.</h3></center>
+                    <h2 style="text-align:center; margin-bottom:0px;">Questionnaire</h2>
+                    <p style="text-align:center; margin-top:0px;">(Page 1 of 4)</p>
+                    <center><h3 style="font-weight:500; text-align:center;">On each row, select a circle closer to the attribute you think applies to the design on left.</h3></center>
                     
                     <fieldset>
                         <legend>User Study Survey</legend>
@@ -35,7 +43,7 @@
                         <div id = "quest" class="questionaire"></div>
                         <label id="reqfields" class="reqfields"> * missing required fields</label>
                         <hr>
-                        <div><input class="submitbtn" type="button" value="Submit" onclick=submitClick()></div>
+                        <div><input class="submitbtn" type="button" value="Submit" onclick=gotospass()></div>
                     </fieldset>
                     <!-- <div id="result"></div> -->
                 </div>

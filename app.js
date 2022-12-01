@@ -15,32 +15,60 @@ app.get('/', (req, res) => {
   res.sendFile('views/index.html', { root : __dirname})
 });
 
-app.get('/page1', (req, res) => {
-  res.sendFile('views/page1.html', { root : __dirname})
+app.get('/fpass', (req, res) => {
+  res.sendFile('views/fpass.html', { root : __dirname})
 });
 
-app.get('/fpass_survey', (req, res) => {
-  res.sendFile('views/fpass_survey.html', { root : __dirname})
+app.get('/fcog', (req, res) => {
+  res.sendFile('views/fcog.html', { root : __dirname})
 });
 
-app.get('/page2', (req, res) => {
-  res.sendFile('views/page2.html', { root : __dirname})
+app.get('/fpasssurvey', (req, res) => {
+  res.sendFile('views/fpasssurvey.html', { root : __dirname})
 });
 
-app.get('/page3', (req, res) => {
-  res.sendFile('views/page3.html', { root : __dirname})
+app.get('/fpassrecall', (req, res) => {
+  res.sendFile('views/fpassrecall.html', { root : __dirname})
 });
 
-app.get('/page4', (req, res) => {
-  res.sendFile('views/page4.html', { root : __dirname})
+app.get('/pagegif', (req, res) => {
+  res.sendFile('views/pagegif.html', { root : __dirname})
 });
 
-app.get('/page5', (req, res) => {
-  res.sendFile('views/page5.html', { root : __dirname})
+app.get('/designint', (req, res) => {
+  res.sendFile('views/designint.html', { root : __dirname})
 });
 
-app.get('/page6', (req, res) => {
-  res.sendFile('views/page6.html', { root : __dirname})
+app.get('/quest', (req, res) => {
+  res.sendFile('views/quest.html', { root : __dirname})
+});
+
+app.get('/csquest', (req, res) => {
+  res.sendFile('views/csquest.html', { root : __dirname})
+});
+
+app.get('/spass', (req, res) => {
+  res.sendFile('views/spass.html', { root : __dirname})
+});
+
+app.get('/scog', (req, res) => {
+  res.sendFile('views/scog.html', { root : __dirname})
+});
+
+app.get('/spasssurvey', (req, res) => {
+  res.sendFile('views/spasssurvey.html', { root : __dirname})
+});
+
+app.get('/spassrecall', (req, res) => {
+  res.sendFile('views/spassrecall.html', { root : __dirname})
+});
+
+app.get('/demo', (req, res) => {
+  res.sendFile('views/demo.html', { root : __dirname})
+});
+
+app.get('/thanks', (req, res) => {
+  res.sendFile('views/thanks.html', { root : __dirname})
 });
 
 app.get('/get_quests/:a', (req, res) => {

@@ -141,7 +141,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   list-style: none;
   width: 100%;
   margin: 0;
-  padding: 0 0 35px;
+  padding: 1px 0 10px;
+  margin-left: 3%;
   display: block;
   /* border-bottom: 2px solid #ffffff; */
 }
@@ -168,15 +169,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-weight: 550;
 }
 
-.likert .l-scale {
-  font-weight: 400;
+.likert .low {
+  font-weight: 200;
   /* width: 10%; */
   text-align: right;
 }
 
 
-.likert .h-scale {
-  font-weight: 400;
+.likert .high {
+  font-weight: 200;
   text-align: left;
 }
 
@@ -241,4 +242,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: #9cf;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
+}
+
+.questionaire h4 {
+  padding-left: 3%;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.checkbox {
+  padding-left: 2%;
+}
+
+.checkbox input[type=checkbox] {
+  height: 22px;
+  width: 22px;
+}
+
+.checkbox input[type=checkbox]:hover {
+  box-shadow:0px 0px 10px #1300ff;
+}
+
+.checkbox label {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  padding-left: 1%;
 }

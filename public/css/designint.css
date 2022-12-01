@@ -1,0 +1,50 @@
+@import url("indexmain.css");
+
+/* .container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  padding: 10%;
+} */
+  
+.container img {
+  width: 80%;
+  height: 80%;
+  border: 2px solid rgb(89, 89, 210);
+  padding: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: black;
+}
+  
+.container .nextbtn {
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+}
+  
+.container .nextbtn:hover {
+  background-color: black;
+}
+
+.container .prevbtn {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+}
+  
+.container .prevbtn:hover {
+  background-color: black;
+}

@@ -1,6 +1,6 @@
 import {setProgress} from "./utility.js";
 window.setProgress = setProgress;
-setProgress(5);
+setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {
 //     window.location = "/";
@@ -202,7 +202,7 @@ async function saveUserResponse() {
     return res;
 };
 
-async function submitClick() {
+async function gotofpassrecall() {
     var response = {};
     var next_flag = true;
     for (let qn in questions) {
@@ -247,7 +247,7 @@ async function submitClick() {
     if (!next_flag) {
         reqError.style.display = "block";
     } else {
-        p.style.display = "none";
+        reqError.style.display = "none";
         sessionStorage.setItem("response", JSON.stringify(response));
         // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
         // var res = await saveUserResponse(sessionStorage);
@@ -256,8 +256,8 @@ async function submitClick() {
         //     sessionStorage.setItem("page_id", 6);
         //     window.location = "page6";
         // }
-        sessionStorage.setItem("page_id", 3);
-        window.location = "page2";
+        sessionStorage.setItem("page_id", 4);
+        window.location = "fpassrecall";
     }
 }
-window.submitClick = submitClick;
+window.gotofpassrecall = gotofpassrecall;

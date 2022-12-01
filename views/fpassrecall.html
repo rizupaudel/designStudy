@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/fpassrecall.css" />
+        <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
+        <link rel="shortcut icon" href="#">
+        <script src="js/fpassrecall.js" type="module"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+        <title>First password creation</title>
+    </head>
+    <body>
+        <div class="card card-1">
+            <div class="progress">
+                <div class="progress-done">.</div>
+            </div>
+
+			<h3>Recall the password</h3>
+            <h4>NOTE: You will be asked to enter the password two more times if incorrect.</h4>
+
+            <div class="container">
+                <div class="inputContainer">
+                    <input id="pass" type="password" class="input" placeholder="">
+                    <label for="pass" class="label">Password</label>
+                </div>
+                <div class="showcheck">
+                    <input type="checkbox" onclick="showPassword()"> Show Password
+                </div>
+
+                <label id="retryPass" class="passwarnlabel"> Password did not match. Please try again.</label>
+                <br>
+            </div>
+            <hr>
+            <div class="btn btn-three" onclick="gotopagegif()">
+                <span>Next</span>
+            </div>
+		</div>
+    </body>
+</html>
