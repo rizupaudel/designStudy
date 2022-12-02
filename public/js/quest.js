@@ -66,7 +66,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 7,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -75,7 +75,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 8,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -84,7 +84,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 9,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -93,7 +93,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 10,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -102,7 +102,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 11,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -111,7 +111,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 12,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -120,7 +120,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 13,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -129,7 +129,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 14,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -138,7 +138,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 15,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -147,7 +147,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 16,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -156,7 +156,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 17,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -165,7 +165,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 18,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -174,7 +174,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 19,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -183,7 +183,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 20,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -192,7 +192,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 21,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -201,7 +201,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 22,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -210,7 +210,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 23,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -219,7 +219,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 24,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -228,7 +228,7 @@ var questions = [
                 }
             },
             {
-                "sid": 3,
+                "sid": 25,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -253,14 +253,6 @@ var questions = [
 var quest = document.getElementById("quest");
 var val = generateQuestions(questions);
 quest.innerHTML = val;
-
-// function printObject(obj) {
-//     result = "";
-//     for (k in obj) {
-//         result += "<h2>" + k + ": " + obj[k] + "</h2>";
-//     }
-//     return result;
-// }
 
 
 // ***** For image zoom open *****
@@ -300,45 +292,51 @@ async function saveUserResponse() {
 };
 
 async function gotocsquest() {
-    var ret_val = {};
+    var response = {};
     var next_flag = true;
     for (let qn in questions) {
-        for (let ln in questions[qn].likerts) {
+        var subquestions = questions[qn].subquestions;
+        for (let sqn in subquestions) {
             var checked_flag = false;
-            var lid = questions[qn].likerts[ln].lid;
-            var el = document.getElementsByName(lid);
-            for (let i = 0; i < el.length; i++) {
-                if (el[i].checked) {
-                    ret_val[lid] = el[i].value;
-                    checked_flag = true;
+            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+            if (subquestions[sqn].type === "likert") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
                 }
-            }
-            var lel = document.getElementById(lid).getElementsByClassName("l-scale")[0];
-            var hel = document.getElementById(lid).getElementsByClassName("h-scale")[0];
-            if (!checked_flag) {
-                lel.style.color = "red";
-                hel.style.color = "red";
-                next_flag = false;
-            } else {
-                lel.style.color = "black";
-                hel.style.color = "black";
+                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+                if (!checked_flag) {
+                    lel.style.color = "red";
+                    hel.style.color = "red";
+                    next_flag = false;
+                } else {
+                    lel.style.color = "black";
+                    hel.style.color = "black";
+                }
+            } else if (subquestions[sqn].type === "checkbox") {
+                var el = document.getElementsByClassName("checkbox");
+                response[qsid] = [];
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid].push(el[i].value);
+                        checked_flag = true;
+                    }
+                }
             }
         }
     }
-    var p = document.getElementById("reqfields");
-    if (next_flag) {
-        p.style.display = "none";
-        // sessionStorage.setItem("surveyresponse", JSON.stringify(ret_val));
-        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
-        // var res = await saveUserResponse(sessionStorage);
-        // if (res.success) {
-        // sessionStorage.clear();
+    var reqError = document.getElementById("reqfields");
+    if (!next_flag) {
+        reqError.style.display = "block";
+    } else {
+        reqError.style.display = "none";
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         sessionStorage.setItem("page_id", 8);
         window.location = "csquest";
-        // }
-        
-    } else {
-        p.style.display = "block";
     }
 }
 window.gotocsquest = gotocsquest;

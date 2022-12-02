@@ -22,7 +22,7 @@ async function gotopagegif() {
     }
     ntry += 1;
     sessionStorage.setItem("ntry", ntry);
-    (!nextPage) && sessionStorage.setItem(`password1_recall${ntry-1}`, cpassword);
+    (!nextPage || ntry===4) && sessionStorage.setItem(`password1_recall${ntry-1}`, cpassword);
     
     if (nextPage) {
         window.location = "pagegif";
