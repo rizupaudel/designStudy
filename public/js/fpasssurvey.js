@@ -123,72 +123,12 @@ var questions = [
     },
 ];
 
-function generateLikert(qsid, lO) {
-    var val = `<ul class="likert" id="${qsid}">`;
-    val += `<li class="low"> ${lO.low} </li>`;
-    for (let i = 1; i <= 5; i++) {
-        val += `<div class="box"> <li><input type="radio" name="${qsid}" value="${i}" /></li></div>`;
-    }
-    val += `<li class="high"> ${lO.high} </li>`;
-    val += "</ul>";
-    return val;
-}
-
-function generateCheckbox(qsid, cI) {
-    var val = '<div class="checkbox">';
-    for (let i in cI) {
-        let name = qsid + "-" + i;
-        val += `<input type="checkbox" class="checkbox" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
-    }
-    val += "</div>";
-    return val;
-}
-
-function generateSubQuestion(subQ) {
-    var val = "";
-    if (subQ.title) {
-        val += "<h4> - " + subQ.title + "</h4>";
-    }
-    
-    if (subQ.type === "likert") {
-        val += generateLikert(subQ.qsid, subQ.elements);
-    } else if (subQ.type === "checkbox") {
-        val += generateCheckbox(subQ.qsid, subQ.elements)
-    }
-    return val;
-}
-
-function generateQuestion(quesO) {
-    var val = "";
-    val += "<h3> (" + quesO.qn + ") "+ quesO.text + "</h3>"
-    for (let i in quesO.subquestions) {
-        let qsid = quesO.qid + "-" + quesO.subquestions[i].sid;
-        quesO.subquestions[i]["qsid"] = qsid;
-        val += generateSubQuestion(quesO.subquestions[i]);
-    }
-    return val;
-}
-
-function generateQuestions(qs) {
-    var quest = document.getElementById("quest");
-    var val = "";
-    for (let i in qs) {
-        var qn = parseInt(i) + 1;
-        qs[i]["qn"] = qn;
-        val += generateQuestion(qs[i]);
-    }
-    quest.innerHTML = val;
-}
-
-async function getQuestions(a) {
-    return questions;
-}
-
 // let did = 1;
 // sessionStorage.setItem("did", did)
 // var questions = await getQuestions(did);
-generateQuestions(questions);
-
+var quest = document.getElementById("quest");
+var val = generateQuestions(questions);
+quest.innerHTML = val;
 
 async function saveUserResponse() {
     const res = await window.fetch('/post_survey_response', 
@@ -217,7 +157,6 @@ async function gotofpassrecall() {
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
                         response[qsid] = el[i].value;
-                        console.log(el[i].value);
                         checked_flag = true;
                     }
                 }
@@ -248,13 +187,10 @@ async function gotofpassrecall() {
         reqError.style.display = "block";
     } else {
         reqError.style.display = "none";
-        sessionStorage.setItem("response", JSON.stringify(response));
-        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         // var res = await saveUserResponse(sessionStorage);
         // if (res.success) {
-        //     sessionStorage.clear();
         //     sessionStorage.setItem("page_id", 6);
-        //     window.location = "page6";
         // }
         sessionStorage.setItem("page_id", 4);
         window.location = "fpassrecall";

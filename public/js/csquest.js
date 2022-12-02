@@ -30,7 +30,7 @@ var questions = [
                 }
             },
             {
-                "sid": 2,
+                "sid": 3,
                 "type": "likert",
                 "title": "makes me worried",
                 "elements": {
@@ -39,7 +39,7 @@ var questions = [
                 }
             },
             {
-                "sid": 2,
+                "sid": 4,
                 "type": "likert",
                 "title": "encourages me to create a strong password",
                 "elements": {
@@ -48,7 +48,7 @@ var questions = [
                 }
             },
             {
-                "sid": 2,
+                "sid": 5,
                 "type": "likert",
                 "title": "makes me feel emotionally connected to the presented scenario",
                 "elements": {
@@ -57,7 +57,7 @@ var questions = [
                 }
             },
             {
-                "sid": 2,
+                "sid": 6,
                 "type": "likert",
                 "title": "makes me feel personally connected to the presented scenario",
                 "elements": {
@@ -185,45 +185,51 @@ async function saveUserResponse() {
 };
 
 async function gotospass() {
-    var ret_val = {};
+    var response = {};
     var next_flag = true;
     for (let qn in questions) {
-        for (let ln in questions[qn].likerts) {
+        var subquestions = questions[qn].subquestions;
+        for (let sqn in subquestions) {
             var checked_flag = false;
-            var lid = questions[qn].likerts[ln].lid;
-            var el = document.getElementsByName(lid);
-            for (let i = 0; i < el.length; i++) {
-                if (el[i].checked) {
-                    ret_val[lid] = el[i].value;
-                    checked_flag = true;
+            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+            if (subquestions[sqn].type === "likert") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
                 }
-            }
-            var lel = document.getElementById(lid).getElementsByClassName("l-scale")[0];
-            var hel = document.getElementById(lid).getElementsByClassName("h-scale")[0];
-            if (!checked_flag) {
-                lel.style.color = "red";
-                hel.style.color = "red";
-                next_flag = false;
-            } else {
-                lel.style.color = "black";
-                hel.style.color = "black";
+                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+                if (!checked_flag) {
+                    lel.style.color = "red";
+                    hel.style.color = "red";
+                    next_flag = false;
+                } else {
+                    lel.style.color = "black";
+                    hel.style.color = "black";
+                }
+            } else if (subquestions[sqn].type === "checkbox") {
+                var el = document.getElementsByClassName("checkbox");
+                response[qsid] = [];
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid].push(el[i].value);
+                        checked_flag = true;
+                    }
+                }
             }
         }
     }
-    var p = document.getElementById("reqfields");
-    if (next_flag) {
-        p.style.display = "none";
-        // sessionStorage.setItem("surveyresponse", JSON.stringify(ret_val));
-        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
-        // var res = await saveUserResponse(sessionStorage);
-        // if (res.success) {
-        // sessionStorage.clear();
+    var reqError = document.getElementById("reqfields");
+    if (!next_flag) {
+        reqError.style.display = "block";
+    } else {
+        reqError.style.display = "none";
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         sessionStorage.setItem("page_id", 9);
         window.location = "spass";
-        // }
-        
-    } else {
-        p.style.display = "block";
     }
 }
 window.gotospass = gotospass;

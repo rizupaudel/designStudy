@@ -209,15 +209,12 @@ async function gotospassrecall() {
         var subquestions = questions[qn].subquestions;
         for (let sqn in subquestions) {
             var checked_flag = false;
-            // var lid = questions[qn].likerts[ln].lid;
             var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
-
             if (subquestions[sqn].type === "likert") {
                 var el = document.getElementsByName(qsid);
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
                         response[qsid] = el[i].value;
-                        console.log(el[i].value);
                         checked_flag = true;
                     }
                 }
@@ -248,13 +245,9 @@ async function gotospassrecall() {
         reqError.style.display = "block";
     } else {
         reqError.style.display = "none";
-        sessionStorage.setItem("response", JSON.stringify(response));
-        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         // var res = await saveUserResponse(sessionStorage);
         // if (res.success) {
-        //     sessionStorage.clear();
-        //     sessionStorage.setItem("page_id", 6);
-        //     window.location = "page6";
         // }
         sessionStorage.setItem("page_id", 12);
         window.location = "spassrecall";
