@@ -7,9 +7,39 @@
   padding: 10%;
 } */
   
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.right {
+  max-width: 100%;
+  /* flex: 1; */
+  margin: auto;
+}
+
 .container img {
   width: 80%;
-  height: 80%;
+  /* box-shadow: 0px 13px 10px #B6B6B6; */
+  /* padding: 10%; */
+  border: 3px solid #ddd;
+  /* margin-top: 18%; */
+  padding: 3%;
+}
+
+.left {
+  font-weight: 400;
+  font-size: 22px;
+  /* border: 3px solid black; */
+  width: 150%;
+  height: 20%;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  border: 2px solid #ddd;
+  box-shadow: 10px 10px 10px #B6B6B6;
+  padding: 5%;
 }
 
 .checkbox input[type=checkbox] {
@@ -24,7 +54,6 @@
 .checkbox label {
   font-size: 20px;
   font-family: 'Nunito', sans-serif;
-  padding-left: 1%;
 }
 
 #nextbutton {

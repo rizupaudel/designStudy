@@ -1,4 +1,4 @@
-import {setProgress} from "./utility.js";
+import { setProgress, generateQuestions } from "./utility.js";
 window.setProgress = setProgress;
 setProgress(sessionStorage.getItem("page_id"));
 
@@ -24,12 +24,12 @@ var questions = [
     
     {
         "qid": 2,
-        "text": "The password I have created is: ",
+        "text": "The password I have created: ",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "hard to remember",
+                "title": "is hard to remember",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -73,7 +73,8 @@ var questions = [
                     'Birthdays',
                     'My Identification (ID) number or a part of it',
                     'Repeated or sequential characters',
-                    'Names of the favorite team in sports, player or a part of it'
+                    'Names of the favorite team in sports, player or a part of it',
+                    'None of the above'
                 ]
             },
         ]

@@ -10,37 +10,33 @@ async function gotodemo() {
     var ntry = parseInt(sessionStorage.getItem("ntry")) || 1;
     
     var nextPage = true;
-    var cpassword = getPassword();
+    var passBox = document.getElementById("pass");
+    var errorText = document.getElementById("retryPass");
+    var cpassword = passBox.value;
 
-    if (ntry < 3) {
-        if (!verifyPassword(cpassword)) {
-            var p = document.getElementById("retryPass");
-            p.style.display = "block";
-            clearPassword();
-            nextPage = false;
+    if (cpassword==="") {
+        errorText.innerHTML = "⚠️ Password is required!";
+        errorText.style.display = "block";
+    } else {
+        if (ntry < 3) {
+            if (!verifyPassword(cpassword)) {
+                errorText.style.display = "block";
+                passBox.value = "";
+                nextPage = false;
+            }
         }
-    }
-    ntry += 1;
-    sessionStorage.setItem("ntry", ntry);
-    (!nextPage || ntry===4) && sessionStorage.setItem(`password2_recall${ntry-1}`, cpassword);
-    
-    if (nextPage) {
-        window.location = "demo";
-        delete sessionStorage.ntry;
+        ntry += 1;
+        sessionStorage.setItem("ntry", ntry);
+        (!nextPage && ntry===3) && sessionStorage.setItem(`password2_recall${ntry-1}`, cpassword);
+        
+        if (nextPage) {
+            window.location = "demo";
+            delete sessionStorage.ntry;
+        }
     }
 }
 window.gotodemo = gotodemo;
 
-
-function clearPassword() {
-    var x = document.getElementById("pass");
-    x.value = "";
-}
-
-function getPassword() {
-    var x = document.getElementById("pass");
-    return x.value;
-}
 
 function verifyPassword(cpassword) {
     var password1 = sessionStorage.getItem("password2");

@@ -17,20 +17,25 @@
             </div>
             <br>
 			<div class="container">
-                <img id="pages" src="designs/pagegif.gif">
-                <br>
-                <br>
-                <div class="checkbox">
-                    <input type="checkbox" class="checkbox" onchange='document.getElementById("nextbutton").style.display = this.checked ? "block": "none"'>
-                    <label for="checkbox">I understand the instructions above.</label>
+                <div class="left">
+                    The <b>goal</b> of our <b>research</b> is to make users feel motivated to create a strong password.
+                       <br><br> Now, imagine that you are signing up for an online account and before you create a password, 
+                        the website presents you with the design that we will show on the next page. 
+                        <br><br>
+                        <i>Note: The design contains multiple pages that altogether convey a story. 
+                        You can click on the arrow keys to go to the next pages.</i>
                 </div>
-                <br>
-                <br>
-                <hr>
-                <br>
-                <!-- <button class="nextbtn" onclick="secondImage()">→</button> -->
+                <div class="right">
+                    <h3> This is our design</h3>
+                    <img id="pages" src="designs/pagegif.gif">
+                </div>
             </div>
-            
+            <!-- <br><br> -->
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox" onchange='document.getElementById("nextbutton").style.display = this.checked ? "block": "none"'>
+                <label for="checkbox">I understand the instructions above.</label>
+            </div>
+            <br><hr><br>
             <div id="nextbutton" class="btn" onclick="gotodesignint()">
                 <span>Next</span>
             </div>

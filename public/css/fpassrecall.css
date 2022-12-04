@@ -67,9 +67,3 @@
   transition: 0.5s;
   z-index: 0;
 }
-
-.passwarnlabel {
-  color: red;
-  font-size: 14px;
-  display: none;
-}

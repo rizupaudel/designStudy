@@ -32,7 +32,7 @@ export function generateCheckbox(qsid, cI) {
     var val = '<div class="checkbox">';
     for (let i in cI) {
         let name = qsid + "-" + i;
-        val += `<input type="checkbox" class="checkbox" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
+        val += `<label for="${name}"><input type="checkbox" class="checkbox" value="${cI[i]}"> ${cI[i]} </label><br>`;
     }
     val += "</div>";
     return val;
@@ -58,7 +58,7 @@ export function generateOption(qsid, cI) {
 export function generateSubQuestion(subQ) {
     var val = "";
     if (subQ.title) {
-        val += "<h4> - " + subQ.title + "</h4>";
+        val += "<h4>" + subQ.title + "</h4>";
     }
     
     if (subQ.type === "likert") {
@@ -75,13 +75,13 @@ export function generateSubQuestion(subQ) {
 
 export function generateQuestion(quesO) {
     var val = "";
-    val += "<h3> (" + quesO.qn + ") "+ quesO.text + "</h3>"
+    val += "<h3> " + quesO.text + "</h3>"
     for (let i in quesO.subquestions) {
         let qsid = quesO.qid + "-" + quesO.subquestions[i].sid;
         quesO.subquestions[i]["qsid"] = qsid;
         val += generateSubQuestion(quesO.subquestions[i]);
     }
-    return val;
+    return val + "<br> <hr>";
 }
 
 export function generateQuestions(qs) {

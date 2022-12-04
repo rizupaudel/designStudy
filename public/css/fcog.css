@@ -1,12 +1,39 @@
 @import url("indexmain.css");
 
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .textbox {
-    /* width: 10px; */
-    height: 20px;
+    width:8%;
+    height: 30px;
+    font-size: large;
 }
 
 .reqfields {
     color: red;
     font-size: 14px;
     display: none;
+}
+
+.container img{
+    margin-top: 2%;
+    border: 1px solid #ccc;
+    padding: 2%;
+    /* box-shadow: 10px 10px 10px #ddd; */
+    height: 400px;
+    width: 450px;
+}
+
+.container img:hover {
+    box-shadow: 0 10px 10px #bbb;
+  }
+
+.container .reqfields {
+    font-size: 15px;
+    margin-top: 1%;
 }
