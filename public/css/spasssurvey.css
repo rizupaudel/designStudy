@@ -1,131 +1,47 @@
-/* @import url("indexmain.css"); */
+@import url("indexmain.css");
+
+body {
+  height: 100%;
+}
 
 .survey {
-    margin: 3%;
-    text-align: justify;
-    position: relative;
-    background-color: #eee;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  }
-  
-  .survey:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  
-  .questionaire h3 {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  padding-top: 2%;
-  }
-  
-  .questionaire h4 {
-    padding-left: 3%;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-  }
-  
-  .likert {
-  list-style: none;
-  width: 100%;
-  margin: 0;
-  /* padding: 0 0 10px; */
-  display: block;
-  /* border-bottom: 2px solid #ffffff; */
-  }
-  
-  .likert:last-of-type {border-bottom:0;}
-  .likert:before {
-  content: '';
+  margin: 2%;
+  text-align: justify;
   position: relative;
-  top: 14px;
-  left: 20%;
-  display: block;
-  background-color:#999;
-  height: 1px;
-  width: 40%;
-  }
-  
-  .likert li {
-  display: inline-block;
-  width: 15%;
-  /* background-color: #eee; */
-  text-align: center;
-  vertical-align: top;
+  border-color: #ccc;
+  border-style: solid;
+  width: 75%;
+  margin-left: 12%;
+}
+
+.questionaire h3 {
+font-family: 'Nunito', sans-serif;
+font-weight: 550;
+padding-top: 2%;
+font-size: large;
+}
+
+.questionaire h4 {
+  padding-left: 3%;
   font-family: 'Nunito', sans-serif;
   font-weight: 550;
-  }
-  
-  .likert .low {
-  font-weight: 400;
-  /* width: 10%; */
-  text-align: right;
-  }
-  
-  
-  .likert .high {
-  font-weight: 400;
-  text-align: left;
-  }
-  
-  .likert li input[type=radio] {
-  display: block;
-  position: relative;
-  top: 0;
-  height: 22px;
-  width: 22px;
-  }
-  
-  .likert li input[type=radio]:hover {
-    box-shadow:0px 0px 10px #1300ff;
-  }
-  
-  .box {
-  width: 10%;
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  }
-  
-  .reqfields {
-  color: red;
-  font-size: 14px;
-  display: none;
+  font-size: large;
+}
+
+.checkbox {
+  padding-left: 2%;
+}
+
+.checkbox label {
+  padding-left: 1%;
+}
+
+.likert li input[type=radio]:hover {
+  box-shadow:0px 0px 5px #1300ff;
+}
+
+
+.reqfields {
   margin-top: 3%;
   padding-left: 3%;
-  }
-  
-  .submitbtn {
-  display: block;
-  margin: 0 auto;
-  background-clip: padding-box;
-  background-color: #9df;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 30px;
-  font-weight: 300;
-  justify-content: center;
-  line-height: 1;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  padding-bottom: 20px;
-  }
-  
-  .submitbtn:hover,
-  .submitbtn:focus {
-  background-color: #9cf;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  }
-  
-  .submitbtn:hover {
-  transform: translateY(-1px);
-  }
-  
-  .submitbtn:active {
-  background-color: #9cf;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
-  }
+}

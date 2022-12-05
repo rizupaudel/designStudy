@@ -5,22 +5,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  padding-top: 1%;
+  padding-top: 2%;
   width: 30%;
   min-width: 60%;
   margin: auto;
 }
 
 .inputContainer {
+  position: relative;
+  height: 45px;
   margin-bottom: 17px;
-  padding: 1%;
+  max-width: 90%;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  max-width: 90%;
+  border: 1px solid #0039a6;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
 }
 
 .input:focus + .label {
   top: -7px;
   left: 3px;
   z-index: 10;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #0039a6;
 }
@@ -33,7 +48,7 @@
   top: -7px;
   left: 3px;
   z-index: 10;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -43,12 +58,12 @@
 
 .label {
   position: absolute;
-  top: 22px;
+  top: 15px;
   left: 15px;
-  padding: 0 8px;
+  padding: 0 4px;
   color: #0066b2;
   background-color: #eee;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.5s;
   z-index: 0;
 }
