@@ -247,7 +247,7 @@ function loadDesignImages() {
     var imageContainer = document.getElementById("leftdesign");
     var val = "";
     for (let i in images) {
-        val += `<li><img src="${images[i]}" ></li>`;
+        val += `<img src="${images[i]}" >`;
     }
     // console.log(val);
     imageContainer.innerHTML = val;
