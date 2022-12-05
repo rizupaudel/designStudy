@@ -16,7 +16,6 @@
   padding: 1%;
 }
 
-
 .input:focus + .label {
   top: -7px;
   left: 3px;
@@ -57,12 +56,3 @@
 h2 {
   color:#2a5baa;
 }
-
-/* .showcheck {
-  font-size: large;
-}
-
-.showcheck input[type=checkbox]{
-  width: 20px;
-  height: 20px;
-} */
