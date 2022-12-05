@@ -77,8 +77,8 @@ app.get('/get_quests/:a', (req, res) => {
     });
 });
 
-app.get('/get_progress/:a', (req, res) => {
-  var progress = getProgressPercent(req.params["a"]);
+app.get('/get_progress/:a/:b', (req, res) => {
+  var progress = getProgressPercent(req.params["a"], req.params["b"]);
   res.send({"progress": progress});
 })
 

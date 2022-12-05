@@ -1,4 +1,5 @@
 import { setProgress, generateQuestions } from "./utility.js";
+sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 setProgress(sessionStorage.getItem("page_id"));
 
@@ -144,54 +145,34 @@ var questions = [
     }
 ]
 
+function divideQuestions() {
+    var dividedQuestions = {};
+    dividedQuestions[1] = questions.slice(0, 1);
+    dividedQuestions[2] = questions.slice(1);
+    return dividedQuestions;
+}
+
+function setIndicator(i, n) {
+    var indicator = document.getElementById("indicator");
+    val = `Page ${i} of ${n}`;
+    indicator.innerHTML = val;
+}
+
+var nPage = sessionStorage.getItem("nPage") || 1;
 var quest = document.getElementById("quest");
-var val = generateQuestions(questions);
+var val = generateQuestions(divideQuestions()[nPage]);
 quest.innerHTML = val;
-
-// ***** For image zoom open *****
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function() {
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  modalImg.alt = this.alt;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-// ***** END *****
-
-async function saveUserResponse() {
-    const res = await window.fetch('/post_survey_response', 
-    {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(sessionStorage)
-    }).then(result => result.json());
-    return res;
-};
+setIndicator(nPage, Object.keys(divideQuestions()).length);
 
 async function gotospass() {
     var response = {};
     var next_flag = true;
-    for (let qn in questions) {
-        var subquestions = questions[qn].subquestions;
+    let partQuestions = divideQuestions()[nPage];
+    for (let qn in partQuestions) {
+        var subquestions = partQuestions[qn].subquestions;
         for (let sqn in subquestions) {
             var checked_flag = false;
-            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+            var qsid = partQuestions[qn].qid + "-" + subquestions[sqn].sid;
             if (subquestions[sqn].type === "likert") {
                 var el = document.getElementsByName(qsid);
                 for (let i = 0; i < el.length; i++) {
@@ -223,13 +204,62 @@ async function gotospass() {
         }
     }
     var reqError = document.getElementById("reqfields");
+
     if (!next_flag) {
         reqError.style.display = "block";
     } else {
         reqError.style.display = "none";
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        sessionStorage.setItem("page_id", 9);
-        window.location = "spass";
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${nPage}`, JSON.stringify(response));
+        nPage = parseInt(nPage) + 1;
+        if (nPage in divideQuestions()) {
+            var val = generateQuestions(divideQuestions()[nPage]);
+            quest.innerHTML = val;
+            setIndicator(nPage, Object.keys(divideQuestions()).length);
+            sessionStorage.setItem("nPage", nPage);
+            next_flag = true;
+        } else {
+            sessionStorage.removeItem("nPage");
+            sessionStorage.setItem("page_id", 9);
+            window.location = "spass";
+        }
     }
 }
 window.gotospass = gotospass;
+
+
+async function saveUserResponse() {
+    const res = await window.fetch('/post_survey_response', 
+    {
+        method:'POST',
+        headers: {
+            'Content-Type':'application/json'
+        }, 
+        body: JSON.stringify(sessionStorage)
+    }).then(result => result.json());
+    return res;
+};
+
+
+// ***** For image zoom open *****
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function() {
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  modalImg.alt = this.alt;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+// ***** END *****

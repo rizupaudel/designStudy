@@ -34,14 +34,16 @@
                         <div class="progress-done">.</div>
                     </div>
                     <h2 style="text-align:center; margin-bottom:0px;">Questionnaire</h2>
-                    <p style="text-align:center; margin-top:0px;">(Page 1 of 4)</p>
+                    <p id="indicator" style="text-align:center; margin-top:0px;">(Page 1 of 4)</p>
                     <center><h3 style="font-weight:500; text-align:center;">On each row, select a circle closer to the attribute you think applies to the design on left.</h3></center>
                     
                     <fieldset>
                         <legend>User Study Survey</legend>
-                        <br>
                         <div id = "quest" class="questionaire"></div>
-                        <label id="reqfields" class="reqfields"> * missing required fields</label>                        <div><input class="submitbtn" type="button" value="Submit" onclick=gotospass()></div>
+                        <label id="reqfields" class="reqfields"> * missing required fields</label>
+                        <div id="nextbutton" class="btn" onclick="gotospass()">
+                            <span>Next</span>
+                        </div>
                     </fieldset>
                     <!-- <div id="result"></div> -->
                 </div>

@@ -8,7 +8,7 @@
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .left {
@@ -23,7 +23,7 @@
 }
 
 .designimg {
-  width: 90%;
+  width: 60%;
 }
 
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -120,7 +120,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .rightsurvey {
-  margin: 3%;
+  /* margin: 3%; */
+  margin-left: 4%;
+  margin-right: 4%;
   text-align: justify;
   position: relative;
   /* background-color: #eee; */
@@ -130,6 +132,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .rightsurvey:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.rightsurvey fieldset {
+  width: 80%;
+  margin-left: 9%;
+  /* margin-bottom: 2%; */
+  /* object-fit: cover; */
 }
 
 .questionaire h3 {
@@ -209,41 +218,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
 }
 
-.submitbtn {
-  display: block;
-  margin: 0 auto;
-  background-clip: padding-box;
-  background-color: #9df;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 30px;
-  font-weight: 300;
-  justify-content: center;
-  line-height: 1;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  padding-bottom: 20px;
-}
-
-.submitbtn:hover,
-.submitbtn:focus {
-  background-color: #9cf;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
-
-.submitbtn:hover {
-  transform: translateY(-1px);
-}
-
-.submitbtn:active {
-  background-color: #9cf;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
-}
-
 .questionaire h4 {
   padding-left: 3%;
   font-family: 'Nunito', sans-serif;
@@ -267,4 +241,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-size: 16px;
   font-family: 'Nunito', sans-serif;
   padding-left: 1%;
+}
+
+.btn {
+  width: 18%;
 }

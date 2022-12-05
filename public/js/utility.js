@@ -5,13 +5,13 @@ function setProgressBar(progress) {
     (progress>0) && (document.getElementsByClassName("progress-done")[0].innerHTML = progressText);
 }
 
-async function getProgress(a) {
-    const response = await window.fetch("/get_progress" + "/" + a).then(result=>result.json());
+async function getProgress(a, b) {
+    const response = await window.fetch("/get_progress" + "/" + a + "/" + b).then(result=>result.json());
     return response;
 }
 
-export async function setProgress(req) {
-    var progressObj = await getProgress(req);
+export async function setProgress(req, ext=0) {
+    var progressObj = await getProgress(req, ext);
     var progress = progressObj["progress"];
     setProgressBar(progress);
 }
