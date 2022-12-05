@@ -238,105 +238,110 @@ var questions = [
             }
         ],
         
-    }]
+    }
+];
 
-// async function getQuestions(a) {
-//     const response = await window.fetch('/get_quests' + "/" + a);
-//     var qData = await response.json();
-//     return qData.questions;
-// }
-// let did = 1;
-// sessionStorage.setItem("did", did)
-// var questions = await getQuestions(did);
-// generateQuestions(questions);
-
-var quest = document.getElementById("quest");
-var val = generateQuestions(questions);
-quest.innerHTML = val;
-
-
-// ***** For image zoom open *****
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function() {
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  modalImg.alt = this.alt;
-  captionText.innerHTML = this.alt;
+function loadDesignImages() {
+    var images = ["designs/Logos1.png", "designs/Logos2.png", "designs/Logos1.png"];
+    var imageContainer = document.getElementById("leftdesign");
+    var val = "";
+    for (let i in images) {
+        val += `<li><img src="${images[i]}" ></li>`;
+    }
+    // console.log(val);
+    imageContainer.innerHTML = val;
 }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+loadDesignImages();
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-// ***** END *****
 
-async function saveUserResponse() {
-    const res = await window.fetch('/post_survey_response', 
-    {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(sessionStorage)
-    }).then(result => result.json());
-    return res;
-};
-
-async function gotocsquest() {
-    var response = {};
-    var next_flag = true;
+function divideQuestions(nS) {
+    var dividedQuestions = {};
     for (let qn in questions) {
         var subquestions = questions[qn].subquestions;
-        for (let sqn in subquestions) {
-            var checked_flag = false;
-            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
-            if (subquestions[sqn].type === "likert") {
-                var el = document.getElementsByName(qsid);
-                for (let i = 0; i < el.length; i++) {
-                    if (el[i].checked) {
-                        response[qsid] = el[i].value;
-                        checked_flag = true;
-                    }
-                }
-                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
-                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
-                if (!checked_flag) {
-                    lel.style.color = "red";
-                    hel.style.color = "red";
-                    next_flag = false;
-                } else {
-                    lel.style.color = "black";
-                    hel.style.color = "black";
-                }
-            } else if (subquestions[sqn].type === "checkbox") {
-                var el = document.getElementsByClassName("checkbox");
-                response[qsid] = [];
-                for (let i = 0; i < el.length; i++) {
-                    if (el[i].checked) {
-                        response[qsid].push(el[i].value);
-                        checked_flag = true;
-                    }
-                }
-            }
+        for (let i = 0; i < subquestions.length; i += nS) {
+            let partQuestions = {};
+            partQuestions["qid"] = questions[qn]["qid"];
+            partQuestions["text"] = questions[qn]["text"];
+            partQuestions["subquestions"] = subquestions.slice(i, i+nS);
+            dividedQuestions[Math.floor(i/nS)+1] = [partQuestions];
         }
-    }
-    var reqError = document.getElementById("reqfields");
-    if (!next_flag) {
-        reqError.style.display = "block";
+    };
+    return dividedQuestions;
+}
+
+function setIndicator(i, n) {
+    var indicator = document.getElementById("indicator");
+    val = `Page ${i} of ${n}`;
+    indicator.innerHTML = val;
+}
+
+var nPage = sessionStorage.getItem("nPage") || 1;
+var quest = document.getElementById("quest");
+// console.log(divideQuestions(9));
+var val = generateQuestions(divideQuestions(9)[nPage]);
+quest.innerHTML = val;
+setIndicator(nPage, Object.keys(divideQuestions(9)).length);
+
+async function gotocsquest() {
+    var quest = document.getElementById("quest");
+    nPage = parseInt(nPage) + 1;
+    if (nPage in divideQuestions(9)) {
+        var val = generateQuestions(divideQuestions(9)[nPage]);
+        quest.innerHTML = val;
+        setIndicator(nPage, Object.keys(divideQuestions(9)).length);
+        sessionStorage.setItem("nPage", nPage);
     } else {
-        reqError.style.display = "none";
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
+        sessionStorage.removeItem("nPage");
         sessionStorage.setItem("page_id", 8);
         window.location = "csquest";
     }
+
+    // var response = {};
+    // var next_flag = true;
+    // for (let qn in questions) {
+    //     var subquestions = questions[qn].subquestions;
+    //     for (let sqn in subquestions) {
+    //         var checked_flag = false;
+    //         var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+    //         if (subquestions[sqn].type === "likert") {
+    //             var el = document.getElementsByName(qsid);
+    //             for (let i = 0; i < el.length; i++) {
+    //                 if (el[i].checked) {
+    //                     response[qsid] = el[i].value;
+    //                     checked_flag = true;
+    //                 }
+    //             }
+    //             var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+    //             var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+    //             if (!checked_flag) {
+    //                 lel.style.color = "red";
+    //                 hel.style.color = "red";
+    //                 next_flag = false;
+    //             } else {
+    //                 lel.style.color = "black";
+    //                 hel.style.color = "black";
+    //             }
+    //         } else if (subquestions[sqn].type === "checkbox") {
+    //             var el = document.getElementsByClassName("checkbox");
+    //             response[qsid] = [];
+    //             for (let i = 0; i < el.length; i++) {
+    //                 if (el[i].checked) {
+    //                     response[qsid].push(el[i].value);
+    //                     checked_flag = true;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // var reqError = document.getElementById("reqfields");
+    // if (!next_flag) {
+    //     reqError.style.display = "block";
+    // } else {
+    //     reqError.style.display = "none";
+    //     sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
+    //     sessionStorage.setItem("page_id", 8);
+    //     window.location = "csquest";
+    // }
 }
 window.gotocsquest = gotocsquest;

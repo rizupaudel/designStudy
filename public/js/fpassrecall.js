@@ -32,7 +32,7 @@ async function gotopagegif() {
         
         if (nextPage) {
             window.location = "pagegif";
-            delete sessionStorage.ntry;
+            sessionStorage.removeItem("ntry");
         }
     }
 }

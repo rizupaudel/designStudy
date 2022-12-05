@@ -1,65 +1,63 @@
 @import url("indexmain.css");
 
-/* .container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  padding: 10%;
-} */
-  
-.container img {
-  width: 80%;
-  height: 80%;
+body {
+  height: 100%;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 22px;
+  width: 60%;
+  margin: 0 auto;
+  /* align-self: center; */
+}
+
+.imageContainer {
+  display: flex;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 75%;
   border: 2px solid rgb(89, 89, 210);
-  padding: 3%;
-  padding-left: 10%;
-  padding-right: 10%;
   background-color: black;
+  padding: 2%;
+  /* padding: 3%; */
 }
 
-.container .nextbtn {
+.imageContainer .pButton {
+  align-self: center ;
+  margin-right: 3%;
+}
+
+.imageContainer img {
+  width: 90%;
+  height: 90%;
+  position: static;
+  object-fit: cover;
+}
+
+.imageContainer .nButton {
+  align-self: center ;
+  margin-left: 3%;
+}
+
+button {
   background-color: rgb(63, 134, 220);
-  position: absolute;
-  top: 50%;
-  left: 94%;
+  /* position: absolute; */
   height: 80px;
   width: 80px;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   border: none;
   color: white;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 50px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 50%;
 }
   
-.container .nextbtn:hover {
-  background-color: skyblue;
-}
-  
-.container .prevbtn {
-  background-color: rgb(63, 134, 220);
-  position: absolute;
-  top: 50%;
-  left: 6%;
-  height: 80px;
-  width: 80px;
-  transform: translate(-50%, -50%);
-  border: none;
-  color: white;
-  /* padding: 5px; */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 50px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.container .prevbtn:hover {
+button:hover {
   background-color: skyblue;
 }

@@ -31,7 +31,7 @@ async function gotodemo() {
         
         if (nextPage) {
             window.location = "demo";
-            delete sessionStorage.ntry;
+            sessionStorage.removeItem("ntry");
         }
     }
 }

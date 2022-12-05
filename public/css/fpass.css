@@ -48,12 +48,12 @@
 
 .label {
   position: absolute;
-  top: 20px;
+  top: 22px;
   left: 15px;
-  padding: 0 4px;
+  padding: 0 8px;
   color: #0066b2;
   background-color: #eee;
-  font-size: 16px;
+  font-size: 18px;
   transition: 0.5s;
   z-index: 0;
 }
