@@ -12,11 +12,10 @@
 }
 
 .inputContainer {
-  position: relative;
-  height: 45px;
   margin-bottom: 17px;
-  max-width: 90%;
+  padding: 1%;
 }
+
 
 .input {
   height: 100%;
@@ -66,4 +65,13 @@
   font-size: 16px;
   transition: 0.5s;
   z-index: 0;
+}
+
+
+h4 {
+  font-weight: 400;
+}
+
+h2{
+  margin-left: 33.5%;
 }
