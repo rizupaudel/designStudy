@@ -15,12 +15,12 @@ window.gotoquest = gotoquest;
 
 function secondImage(){
     var pages = document.getElementById("pages");
-    pages.src = "designs/Logos2.png";
+    pages.src = "designs/Dart2.png";
 }
 window.secondImage = secondImage;
 
 function firstImage() {
     var pages = document.getElementById("pages");
-    pages.src = "designs/Logos1.png";
+    pages.src = "designs/Dart1.png";
 }
 window.firstImage = firstImage;
