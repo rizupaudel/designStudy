@@ -189,6 +189,25 @@ display: block;
 }
 /* ----- Checkbox ends ----- */
 
+/* ----- Option starts ----- */
+.option input[type=radio] {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.option input[type=radio]:hover {
+  box-shadow:0px 0px 10px #1300ff;
+}
+
+.option label {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+/* ----- Option ends ----- */
+
 .passwarnlabel {
   color: red;
   font-size: 16px;

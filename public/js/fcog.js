@@ -11,8 +11,7 @@ async function gotofpasssurvey() {
     sessionStorage.setItem("page_id", 3);
     var textBox = document.getElementsByClassName("textbox")[0];
     var nTriangle = textBox.value;
-    
-    if (Number.isInteger(+nTriangle)) {
+    if (nTriangle && Number.isInteger(+nTriangle)) {
         window.location = "fpasssurvey";
     } else {
         var numError = document.getElementById("reqfields")
@@ -20,8 +19,3 @@ async function gotofpasssurvey() {
     }
 }
 window.gotofpasssurvey = gotofpasssurvey;
-
-// async function gotoPage22() {
-//     sessionStorage.setItem("page_id", 22);
-//     window.location = "page22";
-// }

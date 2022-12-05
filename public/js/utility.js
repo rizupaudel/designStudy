@@ -49,7 +49,8 @@ export function generateOption(qsid, cI) {
     var val = '<div class="option">';
     for (let i in cI) {
         let name = qsid + "-" + i;
-        val += `<input type="radio" class="option" name="${qsid}" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
+        val += `<label for="${name}"><input type="radio" class="option" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label><br>`;
+        // val += `<input type="radio" class="option" name="${qsid}" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
     }
     val += "</div>";
     return val;
