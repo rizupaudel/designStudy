@@ -1,5 +1,6 @@
 @import url("indexmain.css");
 
+<<<<<<< HEAD
 .split {
   height: 100%;
   width: 60%;
@@ -23,112 +24,63 @@
 
 .designimg {
   width: 80%;
+=======
+body {
+  height: 100%
+>>>>>>> 02084032e2646529d3776bb6ed8f649b5bae4598
 }
 
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+.container {
+  display: flex;
+  /* justify-content: space-between; */
 }
 
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 100%;
-  max-width: 80%;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-.right {
-  right: 0;
-  background-color: #eee;
-}
-
-.rightsurvey {
+.container .imageContainer {
+  width: 30%;
   margin: 3%;
-  text-align: justify;
-  position: relative;
-  /* background-color: #eee; */
+  margin-top: 1%;
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #ddd;
+}
+
+.container .rightsurvey {
+  width: 60%;
+  margin: auto;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.leftdesign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 4%;
+  text-align: center;
+}
+
+.leftdesign > li {
+  flex-basis: 40%;
+  position: relative;
+  display: inline-block;
+}
+
+.leftdesign li img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 2px solid black;
+}
+
 .rightsurvey:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.rightsurvey fieldset {
+  width: 90%;
+  margin-left: 4%;
+  margin-bottom: 2%;
+  /* object-fit: cover; */
 }
 
 .questionaire h3 {
@@ -149,8 +101,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding-inline-end: 20px;
   /* border-bottom: 2px solid #ffffff; */
 }
-
-/* ***** END ***** */
 
 .reqfields {
   color: red;

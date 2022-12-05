@@ -11,7 +11,7 @@ async function gotofpasssurvey() {
     var textBox = document.getElementsByClassName("textbox")[0];
     var nTriangle = textBox.value;
     
-    if (parseInt(nTriangle)) {
+    if (Number.isInteger(+nTriangle)) {
         window.location = "fpasssurvey";
     } else {
         var numError = document.getElementById("reqfields")
