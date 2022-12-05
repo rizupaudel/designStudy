@@ -1,4 +1,5 @@
 import { setProgress, generateQuestions } from "./utility.js";
+sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
 window.setProgress = setProgress;
 setProgress(sessionStorage.getItem("page_id"));
 
