@@ -8,7 +8,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0" />
-        <title>First password creation</title>
+        <title>Second password creation</title>
     </head>
     <body>
         <div class="card card-1">
@@ -16,9 +16,14 @@
                 <div class="progress-done">.</div>
             </div>
 
-            <h3>Imagine that you are creating a password for an account you care about. Please do not use your real password, rather use the strategy similar to the one that you would use to create a password for that account. You will be asked to recall this password during this study.</h3>
-
             <div class="container">
+                <h2><img src="designs/userIcon.png" width="45" 
+                    height="45" align="center"/> Sign Up Page</h2>
+			    <h3>Imagine that you are creating a password for an account you care about. 
+                    Please do not use your real password, 
+                    rather use the strategy similar to the one that you would use to create a password for that account. 
+                    You will be asked to recall this password during this study. </h3>
+            <br>
                 <div class="inputContainer">
                     <input id="pass" type="password" class="input" placeholder="">
                     <label for="pass" class="label">Password</label>
@@ -28,13 +33,14 @@
                     <input id="repass" type="password" class="input" placeholder="">
                     <label for="repass" class="label">Confirm Password</label>
                 </div>
-                <div class="showcheck">
-                    <input type="checkbox" onclick="showPasswords()"> Show Password
+                <div class="checkbox">
+                    <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPasswords()"> Show Password </label><br>
+                    <!-- <input type="checkbox" onclick="showPasswords()"> Show Password -->
                 </div>
-
+                <br>
                 <label id="passmatch" class="passwarnlabel"></label>
-                
             </div>
+            <br>
             <br>
             <div class="btn" onclick="gotoscog()">
                 <span>Next</span>

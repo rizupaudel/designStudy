@@ -21,6 +21,7 @@ async function gotodemo() {
     } else {
         if (ntry < 3) {
             if (!verifyPassword(cpassword)) {
+                errorText.innerHTML = "⚠️ Password did not match. Please try again.";
                 errorText.style.display = "block";
                 passBox.value = "";
                 nextPage = false;

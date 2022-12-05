@@ -12,11 +12,10 @@
 }
 
 .inputContainer {
-  position: relative;
-  height: 45px;
   margin-bottom: 17px;
-  max-width: 90%;
+  padding: 1%;
 }
+
 
 .input {
   height: 100%;
@@ -68,8 +67,11 @@
   z-index: 0;
 }
 
-.passwarnlabel {
-  color: red;
-  font-size: 14px;
-  display: none;
+
+h4 {
+  font-weight: 400;
 }
+/* 
+h2{
+  margin-left: 33.5%;
+} */
