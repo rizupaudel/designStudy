@@ -275,26 +275,72 @@ function setIndicator(i, n) {
     val = `Page ${i} of ${n}`;
     indicator.innerHTML = val;
 }
-
+var chunkSize = 9;
 var nPage = sessionStorage.getItem("nPage") || 1;
 var quest = document.getElementById("quest");
 // console.log(divideQuestions(9));
-var val = generateQuestions(divideQuestions(9)[nPage]);
+var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
 quest.innerHTML = val;
-setIndicator(nPage, Object.keys(divideQuestions(9)).length);
+setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length);
 
 async function gotocsquest() {
-    var quest = document.getElementById("quest");
-    nPage = parseInt(nPage) + 1;
-    if (nPage in divideQuestions(9)) {
-        var val = generateQuestions(divideQuestions(9)[nPage]);
-        quest.innerHTML = val;
-        setIndicator(nPage, Object.keys(divideQuestions(9)).length);
-        sessionStorage.setItem("nPage", nPage);
+    var response = {};
+    var next_flag = true;
+    let partQuestions = divideQuestions(chunkSize)[nPage];
+    for (let qn in partQuestions) {
+        var subquestions = partQuestions[qn].subquestions;
+        for (let sqn in subquestions) {
+            var checked_flag = false;
+            var qsid = partQuestions[qn].qid + "-" + subquestions[sqn].sid;
+            if (subquestions[sqn].type === "likert") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
+                }
+                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+                if (!checked_flag) {
+                    lel.style.color = "red";
+                    hel.style.color = "red";
+                    next_flag = false;
+                } else {
+                    lel.style.color = "black";
+                    hel.style.color = "black";
+                }
+            } else if (subquestions[sqn].type === "checkbox") {
+                var el = document.getElementsByClassName("checkbox");
+                response[qsid] = [];
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid].push(el[i].value);
+                        checked_flag = true;
+                    }
+                }
+            }
+        }
+    }
+    var reqError = document.getElementById("reqfields");
+
+    if (!next_flag) {
+        reqError.style.display = "block";
     } else {
-        sessionStorage.removeItem("nPage");
-        sessionStorage.setItem("page_id", 8);
-        window.location = "csquest";
+        reqError.style.display = "none";
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${nPage}`, JSON.stringify(response));
+        nPage = parseInt(nPage) + 1;
+        if (nPage in divideQuestions(chunkSize)) {
+            var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
+            quest.innerHTML = val;
+            setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length);
+            sessionStorage.setItem("nPage", nPage);
+            next_flag = true;
+        } else {
+            sessionStorage.removeItem("nPage");
+            sessionStorage.setItem("page_id", 8);
+            window.location = "csquest";
+        }
     }
 
     // var response = {};
