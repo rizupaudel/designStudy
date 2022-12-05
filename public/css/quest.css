@@ -1,5 +1,9 @@
 @import url("indexmain.css");
 
+body {
+  height: 100%;
+}
+
 .container {
   display: flex;
 }
@@ -45,6 +49,9 @@
   margin-left: 3.5%;
   margin-bottom: 2%;
   /* object-fit: cover; */
+}
+.rightsurvey p {
+  padding-top: 1%;
 }
 
 .questionaire h3 {
