@@ -48,35 +48,25 @@ body {
   width: 90%;
   margin-left: 3.5%;
   margin-bottom: 2%;
-  /* object-fit: cover; */
 }
+
 .rightsurvey p {
   padding-top: 1%;
 }
 
+.questionaire {
+  object-fit: cover;
+}
+
 .questionaire h3 {
   font-family: 'Nunito', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .likert {
-  list-style: none;
-  width: 100%;
-  margin: 0;
   padding: 0 0 35px;
-  display: block;
-  margin-left: 5%;
-  /* border: 1px solid black; */
-  padding-right: -10%;
-  padding-inline-start: 40px;
+  padding-inline-start: 30px;
   padding-inline-end: 20px;
-  /* border-bottom: 2px solid #ffffff; */
-}
-
-.reqfields {
-  color: red;
-  font-size: 14px;
-  display: none;
 }
 
 .btn {

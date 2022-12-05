@@ -110,23 +110,19 @@ h4 {
   font-size: 18px;
 }
 
+/* ----- Likert starts ----- */
 .box {
   width: 10%;
   vertical-align: top;
   display: inline-block;
   text-align: center;
-  /* padding: 0; */
-  /* overflow: hidden; */
-  /* border-radius: 100px; */
 }
 
 .likert {
-list-style: none;
-width: 100%;
-margin: 0;
-/* padding: 0 0 10px; */
-display: block;
-/* border-bottom: 2px solid #ffffff; */
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  display: block;
 }
 
 .likert:last-of-type {border-bottom:0;}
@@ -138,7 +134,7 @@ display: block;
   display: block;
   background-color:#999;
   height: 1px;
-  width: 40%;
+  width: 60%;
 }
 
 .likert li {
@@ -151,24 +147,24 @@ display: block;
   font-weight: 550;
 }
 
-.likert .low {
-  font-weight: 400;
-  /* width: 10%; */
-  text-align: right;
-}
-
-
-.likert .high {
-  font-weight: 400;
-  text-align: left;
-}
-
 .likert li input[type=radio] {
   display: block;
   position: relative;
   height: 22px;
   width: 22px;
 }
+
+.likert .low {
+  font-weight: 400;
+  /* width: 10%; */
+  text-align: right;
+}
+
+.likert .high {
+  font-weight: 400;
+  text-align: left;
+}
+/* ----- Likert ends ----- */
 
 /* ----- Checkbox starts ----- */
 .checkbox input[type=checkbox] {

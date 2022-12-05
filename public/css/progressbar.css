@@ -10,7 +10,7 @@
 }
 
 .progress-done {
-	background: linear-gradient(to left, #45ff45, #45dd24);
+	background: linear-gradient(to left, #2c9cd0, #2cd1ab);
 	border-radius: 20px;
 	color: rgb(0, 0, 0);
 	display: flex;

@@ -20,7 +20,7 @@ export async function setProgress(req, ext=0) {
 export function generateLikert(qsid, lO) {
     var val = `<ul class="likert" id="${qsid}">`;
     val += `<li class="low"> ${lO.low} </li>`;
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 7; i++) {
         val += `<div class="box"> <li><input type="radio" name="${qsid}" value="${i}" /></li></div>`;
     }
     val += `<li class="high"> ${lO.high} </li>`;

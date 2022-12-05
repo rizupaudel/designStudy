@@ -130,6 +130,7 @@ async function gotothanks() {
         for (let sqn in subquestions) {
             var checked_flag = false;
             var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+            
             if (subquestions[sqn].type === "likert") {
                 var el = document.getElementsByName(qsid);
                 for (let i = 0; i < el.length; i++) {
@@ -157,6 +158,16 @@ async function gotothanks() {
                         checked_flag = true;
                     }
                 }
+            } else if (subquestions[sqn].type === "option") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                    }
+                }
+            } else if (subquestions[sqn].type === "textbox") {
+                var el = document.getElementsByName(qsid);
+                response[qsid] = el[0].value;
             }
         }
     }
@@ -166,13 +177,6 @@ async function gotothanks() {
     } else {
         reqError.style.display = "none";
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        // sessionStorage.setItem("passwords", JSON.stringify({"password1": "pass1", "password2": "pass2", "did": did}));
-        // var res = await saveUserResponse(sessionStorage);
-        // if (res.success) {
-        //     sessionStorage.clear();
-        //     sessionStorage.setItem("page_id", 6);
-        //     window.location = "page6";
-        // }
         sessionStorage.setItem("page_id", 14);
         window.location = "thanks";
     }

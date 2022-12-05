@@ -40,16 +40,22 @@ body {
   object-fit: cover;
 }
 
-.rightsurvey:hover {
+/* .rightsurvey:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
+} */
 
 .rightsurvey fieldset {
   width: 90%;
   margin-left: 3.5%;
   margin-bottom: 2%;
+  border: 1px solid #2facd0;
   /* object-fit: cover; */
 }
+
+.rightsurvey fieldset:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 .rightsurvey p {
   padding-top: 1%;
 }
@@ -60,18 +66,9 @@ body {
 }
 
 .likert {
-  list-style: none;
-  width: 100%;
-  margin: 0;
-  display: block;
-  margin-left: 5%;
-  padding-right: -10%;
-}
-
-.reqfields {
-  color: red;
-  font-size: 14px;
-  display: none;
+  padding: 0 0 5px;
+  padding-inline-start: 30px;
+  padding-inline-end: 20px;
 }
 
 .btn {

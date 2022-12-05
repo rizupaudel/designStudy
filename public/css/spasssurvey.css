@@ -40,6 +40,11 @@ font-size: large;
   box-shadow:0px 0px 5px #1300ff;
 }
 
+.likert {
+  padding: 0 0 5px;
+  padding-inline-start: 30px;
+  padding-inline-end: 20px;
+}
 
 .reqfields {
   margin-top: 3%;
