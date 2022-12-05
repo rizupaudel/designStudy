@@ -1,7 +1,33 @@
 @import url("indexmain.css");
 
+<<<<<<< HEAD
+.split {
+  height: 100%;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  width: 40%;
+  background-color: #fff;
+}
+
+.leftdesign {
+  text-align: center;
+  justify-content: center;
+}
+
+.designimg {
+  width: 80%;
+=======
 body {
   height: 100%
+>>>>>>> 02084032e2646529d3776bb6ed8f649b5bae4598
 }
 
 .container {
