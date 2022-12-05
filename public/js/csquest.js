@@ -145,6 +145,19 @@ var questions = [
     }
 ]
 
+function loadDesignImages() {
+    var images = ["designs/Logos1.png", "designs/Logos2.png"];
+    var imageContainer = document.getElementById("leftdesign");
+    var val = "";
+    for (let i in images) {
+        val += `<img src="${images[i]}" >`;
+    }
+    // console.log(val);
+    imageContainer.innerHTML = val;
+}
+
+loadDesignImages();
+
 function divideQuestions() {
     var dividedQuestions = {};
     dividedQuestions[1] = questions.slice(0, 1);

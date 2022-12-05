@@ -1,133 +1,43 @@
 @import url("indexmain.css");
 
-
-.split {
+body {
   height: 100%;
-  width: 60%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  /* padding-top: 20px; */
 }
 
-.left {
-  left: 0;
-  width: 40%;
-  background-color: #fff;
+.container {
+  display: flex;
 }
 
-.leftdesign {
-  text-align: center;
+.container .imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  width: 30%;
+  margin: 3% auto;
+  margin-top: 1%;
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #ddd;
+  max-width: 100%;
+  height: auto;
 }
 
-.designimg {
-  width: 60%;
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
+.container .rightsurvey {
+  width: 65%;
   margin: auto;
-  display: block;
-  width: 100%;
-  max-width: 80%;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-.right {
-  right: 0;
   background-color: #eee;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+  transition: opacity .5s ease;
 }
 
-.rightsurvey {
-  /* margin: 3%; */
-  margin-left: 4%;
-  margin-right: 4%;
-  text-align: justify;
-  position: relative;
-  /* background-color: #eee; */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+.imageContainer img {
+  width: 90%;
+  height: auto;
+  align-self: center;
+  /* vertical-align: middle; */
+  border: 2px solid black;
+  object-fit: cover;
 }
 
 .rightsurvey:hover {
@@ -135,10 +45,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .rightsurvey fieldset {
-  width: 80%;
-  margin-left: 9%;
-  /* margin-bottom: 2%; */
+  width: 90%;
+  margin-left: 3.5%;
+  margin-bottom: 2%;
   /* object-fit: cover; */
+}
+.rightsurvey p {
+  padding-top: 1%;
 }
 
 .questionaire h3 {
@@ -150,67 +63,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   list-style: none;
   width: 100%;
   margin: 0;
-  padding: 1px 0 10px;
-  margin-left: 3%;
   display: block;
-  /* border-bottom: 2px solid #ffffff; */
+  margin-left: 5%;
+  padding-right: -10%;
 }
-
-.likert:last-of-type {border-bottom:0;}
-.likert:before {
-  content: '';
-  position: relative;
-  top: 14px;
-  left: 20%;
-  display: block;
-  background-color:#999;
-  height: 1px;
-  width: 40%;
-}
-
-.likert li {
-  display: inline-block;
-  width: 15%;
-  background-color: #eee;
-  text-align: center;
-  vertical-align: top;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 550;
-}
-
-.likert .low {
-  font-weight: 200;
-  /* width: 10%; */
-  text-align: right;
-}
-
-
-.likert .high {
-  font-weight: 200;
-  text-align: left;
-}
-
-.likert li input[type=radio] {
-  display: block;
-  position: relative;
-  top: 0;
-}
-
-.box {
-  width: 10%;
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-}
-
-
-/* RadioButton */
-.box input {
-  height: 22px;
-  width: 22px;
-}
-
-/* ***** END ***** */
 
 .reqfields {
   color: red;
@@ -218,31 +74,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
 }
 
-.questionaire h4 {
-  padding-left: 3%;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 600;
-}
-
-.checkbox {
-  padding-left: 2%;
-}
-
-.checkbox input[type=checkbox] {
-  height: 22px;
-  width: 22px;
-}
-
-.checkbox input[type=checkbox]:hover {
-  box-shadow:0px 0px 10px #1300ff;
-}
-
-.checkbox label {
-  font-size: 16px;
-  font-family: 'Nunito', sans-serif;
-  padding-left: 1%;
-}
-
 .btn {
   width: 18%;
+}
+
+h4 {
+  padding-left: 3%;
 }
