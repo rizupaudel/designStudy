@@ -16,7 +16,8 @@ async function gotoscog() {
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]
-        p.style.display = "block";
+        p.style.visibility = "visible";
+        p.style.opacity = 1;
     }
 }
 window.gotoscog = gotoscog;

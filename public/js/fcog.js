@@ -15,7 +15,8 @@ async function gotofpasssurvey() {
         window.location = "fpasssurvey";
     } else {
         var numError = document.getElementById("reqfields")
-        numError.style.display = "block";
+        numError.style.visibility = "visible";
+        numError.style.opacity = 1;
     }
 }
 window.gotofpasssurvey = gotofpasssurvey;

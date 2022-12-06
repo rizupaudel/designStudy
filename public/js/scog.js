@@ -16,7 +16,8 @@ async function gotospasssurvey() {
         window.location = "spasssurvey";
     } else {
         var numError = document.getElementById("reqfields")
-        numError.style.display = "block";
+        numError.style.visibility = "visible";
+        numError.style.opacity = 1;
     }
 }
 window.gotospasssurvey = gotospasssurvey;

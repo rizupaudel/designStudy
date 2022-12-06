@@ -219,9 +219,11 @@ async function gotospass() {
     var reqError = document.getElementById("reqfields");
 
     if (!next_flag) {
-        reqError.style.display = "block";
+        reqError.style.visibility = "visible";
+        reqError.style.opacity = 1;
     } else {
-        reqError.style.display = "none";
+        reqError.style.visibility = "hidden";
+        reqError.style.opacity = 0;
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${nPage}`, JSON.stringify(response));
         nPage = parseInt(nPage) + 1;
         if (nPage in divideQuestions()) {

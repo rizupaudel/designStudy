@@ -17,12 +17,14 @@ async function gotodemo() {
 
     if (cpassword==="") {
         errorText.innerHTML = "⚠️ Password is required!";
-        errorText.style.display = "block";
+        errorText.style.visibility = "visible";
+        errorText.style.opacity = 1;
     } else {
         if (ntry < 3) {
             if (!verifyPassword(cpassword)) {
                 errorText.innerHTML = "⚠️ Password did not match. Please try again.";
-                errorText.style.display = "block";
+                errorText.style.visibility = "visible";
+                errorText.style.opacity = 1;
                 passBox.value = "";
                 nextPage = false;
             }

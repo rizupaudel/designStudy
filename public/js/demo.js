@@ -173,9 +173,11 @@ async function gotothanks() {
     }
     var reqError = document.getElementById("reqfields");
     if (!next_flag) {
-        reqError.style.display = "block";
+        reqError.style.visibility = "visible";
+        reqError.style.opacity = 1;
     } else {
-        reqError.style.display = "none";
+        reqError.style.visibility = "hidden";
+        reqError.style.opacity = 0;
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         sessionStorage.setItem("page_id", 14);
         window.location = "thanks";
