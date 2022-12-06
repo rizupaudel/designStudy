@@ -59,7 +59,7 @@ export function generateOption(qsid, cI) {
 export function generateSubQuestion(subQ) {
     var val = "";
     if (subQ.title) {
-        val += "<h4>" + subQ.title + "</h4>";
+        val += '<p class="sq">' + subQ.title + '</p>';
     }
     
     if (subQ.type === "likert") {
@@ -76,7 +76,7 @@ export function generateSubQuestion(subQ) {
 
 export function generateQuestion(quesO) {
     var val = "";
-    val += "<h3> " + quesO.text + "</h3>"
+    val += '<p class="q">' + quesO.text + "</p>"
     for (let i in quesO.subquestions) {
         let qsid = quesO.qid + "-" + quesO.subquestions[i].sid;
         quesO.subquestions[i]["qsid"] = qsid;

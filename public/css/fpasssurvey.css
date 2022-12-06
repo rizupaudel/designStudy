@@ -14,36 +14,12 @@ body {
   margin-left: 12%;
 }
 
-.questionaire h3 {
-font-family: 'Nunito', sans-serif;
-font-weight: 550;
-padding-top: 2%;
-font-size: large;
-}
-
-.questionaire h4 {
-  padding-left: 3%;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 550;
-  font-size: large;
-}
-
 .checkbox {
   padding-left: 2%;
 }
 
 .checkbox label {
   padding-left: 1%;
-}
-
-.likert {
-  padding: 0 0 5px;
-  padding-inline-start: 30px;
-  padding-inline-end: 20px;
-}
-
-.likert li input[type=radio]:hover {
-  box-shadow:0px 0px 5px #1300ff;
 }
 
 .reqfields {

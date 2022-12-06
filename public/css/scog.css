@@ -1,5 +1,9 @@
 @import url("indexmain.css");
 
+body {
+    height: 100%;
+}
+
 .container {
     display: flex;
     justify-content: center;

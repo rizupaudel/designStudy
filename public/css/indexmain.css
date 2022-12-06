@@ -9,8 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow: scroll;
-  /* padding: 0px;
-  margin: 0px; */
+  padding: 0;
+  margin: 0;
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
   text-align: justify;
@@ -19,9 +19,9 @@ body {
 .card {
   background: #eee;
   border-radius: 10px;
-  /* display: inline-block; */
-  /* height: fit-content; */
-  /* position: relative; */
+  display: inline-block;
+  height: fit-content;
+  position: relative;
   justify-content: center;
   text-align: center;
   width: 80%;
@@ -51,7 +51,6 @@ body {
   justify-content: center;
   display: block;
   margin: 0 auto;
-  /* border: 2px solid #7cf; */
   box-shadow: 4px 4px 8px #B6B6B6;
   cursor: pointer;
 }
@@ -80,35 +79,19 @@ body {
   right: 0;
 }
 
-h1 {
-  font-weight: 500;
-  font-size: 24px;
-
-}
-
-h2 {
-  font-weight: 600;
-  color:#2a5baa;
-  width: 50%;
-  height: 80%;
-  border: 1px solid #ccc;
-  padding: 1%;
-  box-shadow: 10px 10px 10px #ddd;
-  width: 30%;
-  background-color: #ddd;
-  border: 1px solid #2a5baa;
-  margin: 0;
-  border-radius: 10px;
-  }
-
-h3 {
-  font-weight: 400;
-  font-size: 21px;
-}
-
-h4 {
+/* ----- Sub/Question starts ----- */
+.q {
   font-size: 18px;
+  font-family: 'Nunito', sans-serif;
 }
+
+.sq {
+  font-size: 16px;
+  font-weight: 550;
+  font-family: 'Nunito', sans-serif;
+  padding-left: 2%;
+}
+/* ----- Sub/Question ends ----- */
 
 /* ----- Likert starts ----- */
 .box {
@@ -123,6 +106,9 @@ h4 {
   width: 100%;
   margin: 0;
   display: block;
+  padding-inline-start: 30px;
+  padding-inline-end: 20px;
+  padding: 0 0 5px;
 }
 
 .likert:last-of-type {border-bottom:0;}
@@ -154,9 +140,12 @@ h4 {
   width: 22px;
 }
 
+.likert li input[type=radio]:hover {
+  box-shadow:0px 0px 5px #1300ff;
+}
+
 .likert .low {
   font-weight: 400;
-  /* width: 10%; */
   text-align: right;
 }
 
@@ -197,20 +186,14 @@ h4 {
 }
 
 .option label {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
 /* ----- Option ends ----- */
 
-.passwarnlabel {
-  color: red;
-  font-size: 16px;
-  display: none;
-}
-
-.reqfields {
+.passwarnlabel, .reqfields  {
   color: red;
   font-size: 16px;
   display: none;
@@ -234,4 +217,37 @@ h4 {
   height: 50px;
   width: 30%;
   max-width: 90%;
+}
+
+hr {
+  border: 1px solid #bbc;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h2 {
+  font-weight: 600;
+  color:#2a5baa;
+  width: 50%;
+  height: 80%;
+  border: 1px solid #ccc;
+  padding: 1%;
+  box-shadow: 10px 10px 10px #ddd;
+  width: 30%;
+  background-color: #ddd;
+  border: 1px solid #2a5baa;
+  margin: 0;
+  border-radius: 10px;
+  }
+
+h3 {
+  font-weight: 400;
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
 }
