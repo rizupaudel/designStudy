@@ -71,3 +71,16 @@
 h4 {
   font-weight: 400;
 }
+
+.instructions {
+  font-weight: 500;
+  font-size: 22px;
+  width: 110%;
+  height: 20%;
+  /* margin-top: 3%; */
+  margin-left: 5%;
+  margin-bottom: 3%;
+  border: 2px solid #ddd;
+  box-shadow: 10px 10px 10px #B6B6B6;
+  padding: 4%;
+}

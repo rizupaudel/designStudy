@@ -196,9 +196,7 @@ body {
 .passwarnlabel, .reqfields  {
   color: red;
   font-size: 16px;
-  opacity: 0;
-  visibility: hidden;
-  transition: visibility 0s, opacity 0.5s linear;
+  display: none;
 }
 
 .input {
@@ -235,12 +233,12 @@ h2 {
   color:#2a5baa;
   width: 50%;
   height: 80%;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 1%;
-  box-shadow: 10px 10px 10px #ddd;
+  /* box-shadow: 10px 10px 10px #ddd; */
   width: 30%;
-  background-color: #ddd;
-  border: 1px solid #2a5baa;
+  /* background-color: #ddd; */
+  /* border: 1px solid #2a5baa; */
   margin: 0;
   border-radius: 10px;
   }
