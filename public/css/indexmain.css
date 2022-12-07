@@ -196,7 +196,8 @@ body {
 .passwarnlabel, .reqfields {
   color: red;
   font-size: 16px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .reqfield {
