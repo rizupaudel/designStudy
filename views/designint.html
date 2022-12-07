@@ -19,15 +19,18 @@
             <!-- <div class="text">Imagine that you are creating a password for an online account, and before you create the password, the website presents you with the following design.</div> -->
                 
             <div class="imageContainer"> 
-                <div class="pButton"><button onclick="firstImage()">⬅</button></div>
+                <div class="pButton" onclick="firstImage()"><img src="designs/previous.png"></div>
+                <!-- <div class="pButton"><button onclick="firstImage()">⬅</button></div> -->
                 <div class="designPages"><img id="pages" src="designs/Dart1.png"></div>
-                <div class="nButton"><button onclick="secondImage()">⮕</button></div>
+                <!-- <div class="nButton"><button onclick="secondImage()">⮕</button></div> -->
+                <div class="nButton" onclick="secondImage()"><img src="designs/next.png"></div>
             </div>
             <div class="checkbox">
-                <input type="checkbox" class="checkbox" onchange='document.getElementById("nextbutton").style.display = this.checked ? "block": "none"'>
+                <input type="checkbox" class="checkbox" onchange=
+                'document.getElementById("nextbutton").style.visibility = this.checked ? "visible": "hidden";
+                document.getElementById("nextbutton").style.opacity = this.checked ? 1: 0'>
                 <label for="checkbox">I have gone through all the pages of the design.</label>
             </div>
-            <br><hr><br>
             <div id="nextbutton" class="btn" onclick="gotoquest()">
             <!-- <div class="btn" onclick="gotoquest()"> -->
                 <span>Next</span>

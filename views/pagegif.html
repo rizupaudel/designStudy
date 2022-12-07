@@ -33,10 +33,11 @@
             </div>
             <!-- <br><br> -->
             <div class="checkbox">
-                <input type="checkbox" class="checkbox" onchange='document.getElementById("nextbutton").style.display = this.checked ? "block": "none"'>
+                <input type="checkbox" class="checkbox" onchange=
+                'document.getElementById("nextbutton").style.visibility = this.checked ? "visible": "hidden";
+                document.getElementById("nextbutton").style.opacity = this.checked ? 1: 0'>
                 <label for="checkbox">I understand the instructions above.</label>
             </div>
-            <br><hr><br>
             <div id="nextbutton" class="btn" onclick="gotodesignint()">
                 <span>Next</span>
             </div>

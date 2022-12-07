@@ -4,14 +4,16 @@ body {
   height: 100%;
 }
 
+.card {
+  margin-top: 0%;
+}
+
 .survey {
-  margin: 2%;
+  margin: 0%;
   text-align: justify;
-  position: relative;
-  border-color: #ccc;
-  border-style: solid;
-  width: 75%;
-  margin-left: 12%;
+  width: 90%;
+  /* margin: auto; */
+  padding-left: 5%;
 }
 
 .checkbox {
@@ -25,4 +27,10 @@ body {
 .reqfields {
   margin-top: 3%;
   padding-left: 3%;
+}
+
+.reqfield {
+  margin-top: 1%;
+  padding-left: 3%;
+  font-weight: 400;
 }

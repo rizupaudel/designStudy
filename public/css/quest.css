@@ -1,9 +1,5 @@
 @import url("indexmain.css");
 
-body {
-  height: 100%;
-}
-
 .container {
   display: flex;
 }
@@ -56,4 +52,12 @@ body {
 
 .btn {
   width: 18%;
+}
+
+h2 {
+  width: 100%;
+}
+
+hr {
+  border: #eee;
 }

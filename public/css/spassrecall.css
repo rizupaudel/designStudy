@@ -16,6 +16,9 @@
   padding: 1%;
 }
 
+.card {
+  margin-top: 14%;
+}
 
 .input {
   height: 100%;
@@ -61,7 +64,7 @@
   left: 15px;
   padding: 0 8px;
   color: #0066b2;
-  background-color: #eee;
+  background-color: white;
   font-size: 18px;
   transition: 0.5s;
   z-index: 0;
@@ -70,4 +73,8 @@
 
 h4 {
   font-weight: 400;
+}
+
+.btn {
+  margin-top: 2%;
 }

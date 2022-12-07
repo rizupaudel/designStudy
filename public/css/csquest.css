@@ -1,11 +1,15 @@
 @import url("indexmain.css");
 
-body {
-  height: 100%;
+.card {
+  margin-top: 2%;
+  text-align: justify;
+  margin-left: 4%;
+  margin-right: 2%;
 }
 
 .container {
   display: flex;
+  text-align: justify;
 }
 
 .container .imageContainer {

@@ -11,37 +11,40 @@
         <title>Second password creation</title>
     </head>
     <body>
-        <div class="card card-1">
+        <div class="card">
             <div class="progress">
                 <div class="progress-done">.</div>
             </div>
-            <center><h2><img src="designs/userIcon.png" width="45" 
-                height="45" align="center"/> Sign Up Page</h2></center>
-                <h3>Imagine that you are creating a password for an account you care about. 
-                    Please do not use your real password,<br>
-                    rather use the strategy similar to the one that you would use to create a password for that account. 
-                    <br><i>Note: You will be asked to recall this password during this study.</i>
-                </h3>
+            <center><h3>Imagine that you are creating a password for an account you care about. 
+                Please do not use your real password,<br>
+                rather use the strategy similar to the one that you would use to create a password for that account. 
+                <br><i>Note: You will be asked to recall this password during this study.</i>
+            </h3></center>
             <div class="container">
-                <div class="inputContainer">
-                    <input id="pass" type="password" class="input" placeholder="a">
-                    <label for="pass" class="label">Password</label>
+                <div class="imageContainer">
+                    <div class="pButton" onclick="firstImage()"><img src="designs/previous.png"></div>
+                    <div class="designPages"><img id="pages" src="designs/Dart1.png"></div>
+                    <div class="nButton" onclick="secondImage()"><img src="designs/next.png"></div>
                 </div>
+                <div class="signup">
+                    <h4> Sign Up</h4>
+                    <div class="inputContainer">
+                        <input id="pass" type="password" class="input" placeholder="a">
+                        <label for="pass" class="label">Password</label>
+                    </div>
 
-                <div class="inputContainer">
-                    <input id="repass" type="password" class="input" placeholder="a">
-                    <label for="repass" class="label">Confirm Password</label>
+                    <div class="inputContainer">
+                        <input id="repass" type="password" class="input" placeholder="a">
+                        <label for="repass" class="label">Confirm Password</label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPasswords()"> Show Password </label><br>
+                    </div>
+                    <label id="passmatch" class="passwarnlabel"></label>
+                    <div class="btn" onclick="gotoscog()">
+                        <span>Next</span>
+                    </div>
                 </div>
-                <div class="checkbox">
-                    <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPasswords()"> Show Password </label><br>
-                </div>
-                <br>
-                <label id="passmatch" class="passwarnlabel"></label>
-            </div>
-            <br>
-            <br>
-            <div class="btn" onclick="gotoscog()">
-                <span>Next</span>
             </div>
 		</div>
     </body>
