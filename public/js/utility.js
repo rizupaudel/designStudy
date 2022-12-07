@@ -82,6 +82,7 @@ export function generateQuestion(quesO) {
         quesO.subquestions[i]["qsid"] = qsid;
         val += generateSubQuestion(quesO.subquestions[i]);
     }
+    val += `<p id="reqfield${quesO.qid}" class="reqfield">This field is required.</p>`
     return val + "<br> <hr>";
 }
 
@@ -93,4 +94,10 @@ export function generateQuestions(qs) {
         val += generateQuestion(qs[i]);
     }
     return val;
+}
+
+export async function getQuestions(a) {
+    const response = await window.fetch('/get_questions' + '/' + a);
+    var data = await response.json();
+    return data.questions;
 }

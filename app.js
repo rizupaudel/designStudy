@@ -71,10 +71,11 @@ app.get('/thanks', (req, res) => {
   res.sendFile('views/thanks.html', { root : __dirname})
 });
 
-app.get('/get_quests/:a', (req, res) => {
-    getQuestions(req.params["a"]).then(function (result) {
-        res.send({"questions": result});
-    });
+app.get('/get_questions/:a', (req, res) => {
+    // getQuestions(req.params["a"]).then(function (result) {
+    //     res.send({"questions": result});
+    // });
+  res.send(getQuestions(req.params["a"]));
 });
 
 app.get('/get_progress/:a/:b', (req, res) => {
@@ -82,9 +83,9 @@ app.get('/get_progress/:a/:b', (req, res) => {
   res.send({"progress": progress});
 })
 
-app.post('/post_survey_response', (req, res) => {
-  saveResponse(req.body);
-  res.send({"success": false});
+app.post('/post_response', (req, res) => {
+  let stat = saveResponse(req.body);
+  res.send({"success": stat});
 });
 
 app.listen(PORT, () => {

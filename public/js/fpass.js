@@ -22,6 +22,7 @@ async function gotofcog() {
 }
 window.gotofcog = gotofcog;
 
+
 function comparePasswords() {
     var x = document.getElementById("pass");
     var y = document.getElementById("repass");
@@ -35,6 +36,7 @@ function comparePasswords() {
         return {0: "⚠️ Passwords did not match!"}
     }
 }
+
 
 function showPasswords() {
     var x = document.getElementById("pass");

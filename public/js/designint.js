@@ -13,11 +13,13 @@ async function gotoquest() {
 }
 window.gotoquest = gotoquest;
 
+
 function secondImage(){
     var pages = document.getElementById("pages");
     pages.src = "designs/Dart2.png";
 }
 window.secondImage = secondImage;
+
 
 function firstImage() {
     var pages = document.getElementById("pages");

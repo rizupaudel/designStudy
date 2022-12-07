@@ -1,4 +1,4 @@
-import {setProgress} from "./utility.js";
+import { setProgress } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 5);
 window.setProgress = setProgress;
 setProgress(sessionStorage.getItem("page_id"));

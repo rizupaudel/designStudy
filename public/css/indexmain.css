@@ -193,12 +193,20 @@ body {
 }
 /* ----- Option ends ----- */
 
-.passwarnlabel, .reqfields  {
+.passwarnlabel, .reqfields {
   color: red;
   font-size: 16px;
   opacity: 0;
   visibility: hidden;
   transition: visibility 0s, opacity 0.5s linear;
+}
+
+.reqfield {
+  color: red;
+  font-size: 16px;
+  display: none;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .input {

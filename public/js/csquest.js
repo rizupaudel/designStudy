@@ -1,4 +1,4 @@
-import { setProgress, generateQuestions } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 setProgress(sessionStorage.getItem("page_id"));
@@ -7,143 +7,7 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-var questions = [
-    {
-        "qid": 1,
-        "text": "The way the design portrays what could happen because of the password strength:",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "makes me informed",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 2,
-                "type": "likert",
-                "title": "makes me worried",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 3,
-                "type": "likert",
-                "title": "makes me worried",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 4,
-                "type": "likert",
-                "title": "encourages me to create a strong password",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 5,
-                "type": "likert",
-                "title": "makes me feel emotionally connected to the presented scenario",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 6,
-                "type": "likert",
-                "title": "makes me feel personally connected to the presented scenario",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 2,
-        "text": "Here, what connection do you see between the dartboard and hacking a user’s password?",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "textbox",
-                "title": "",
-            },
-        ]
-    },
-    {
-        "qid": 3,
-        "text": "It is easy for me to follow the story depicted across multiple pages in the design.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 4,
-        "text": "In the presented design, the portrayal of hacker stimulates me to create a strong password.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 5,
-        "text": "In the presented design, the portrayal of victim encourages me to create a strong password.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 6,
-        "text": "Where do you want to see these kind of designs",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "checkbox",
-                "title": "",
-                "elements": [
-                    "Social Media",
-                    "Email",
-                    "Financial Websites",
-                    "Entertainment and Gaming",
-                    "E-commerce Websites",
-                    "Online Video Streaming Websites",
-                ]
-            },
-        ]
-    }
-]
+var questions = await getQuestions("csquest");
 
 function loadDesignImages() {
     var images = ["designs/Logos1.png", "designs/Logos2.png"];
@@ -213,6 +77,40 @@ async function gotospass() {
                         checked_flag = true;
                     }
                 }
+                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.display = "block";
+                    next_flag = false;
+                } else {
+                    eel.style.display = "none";
+                }
+            } else if (subquestions[sqn].type === "option") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
+                }
+                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.display = "block";
+                    next_flag = false;
+                } else {
+                    eel.style.display = "none";
+                }
+            } else if (subquestions[sqn].type === "textbox") {
+                var el = document.getElementsByName(qsid);
+                response[qsid] = el[0].value;
+                if (el[0].value) {checked_flag = true};
+
+                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.display = "block";
+                    next_flag = false;
+                } else {
+                    eel.style.display = "none";
+                }
             }
         }
     }
@@ -240,16 +138,3 @@ async function gotospass() {
     }
 }
 window.gotospass = gotospass;
-
-
-async function saveUserResponse() {
-    const res = await window.fetch('/post_survey_response', 
-    {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(sessionStorage)
-    }).then(result => result.json());
-    return res;
-};
