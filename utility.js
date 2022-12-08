@@ -6,6 +6,7 @@ var demoQ = require("./data/demo");
 var questQ = require("./data/quest");
 var csquestQ = require("./data/csquest");
 
+const uuidv4 = require('uuid/v4')
 
 var pTotal = 14;
 function getProgressPercent(val, ext=0) {
@@ -75,14 +76,17 @@ function getQuery(table, o) {
 async function saveResponse(data) {
     var fs = require('fs');
     respDir = './data/response';
-    var files = fs.readdirSync(respDir);
-    var mX = 0;
-    for (i in files) {
-        let n = parseInt(files[i].split(".")[0]);
-        if (n>mX) {mX = n}
+    if (!fs.existsSync(respDir)){
+        fs.mkdirSync(respDir);
     }
-    mX += 1;
-    fs.writeFile('./data/response/' + mX + '.json', JSON.stringify(data), error => {
+    // var files = fs.readdirSync(respDir);
+    // var mX = 0;
+    // for (i in files) {
+    //     let n = parseInt(files[i].split(".")[0]);
+    //     if (n>mX) {mX = n}
+    // }
+    // mX += 1;
+    fs.writeFile('./data/response/' + uuidv4() + '.json', JSON.stringify(data), error => {
         if (error) {
             return false;
         }
