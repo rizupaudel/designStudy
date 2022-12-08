@@ -1,23 +1,48 @@
 @import url("indexmain.css");
 
 .card {
-  margin-top: 7%;
+  margin-top: 8%;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-  /* padding-top: 1%; */
-  width: 40%;
-  min-width: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   margin: auto;
+  margin-top: 4%;
+  padding-bottom: 4%;
+}
+
+.instructions {
+  width: 30%;
+  height: auto;
+  /* margin-top: 3%; */
+  margin-left: 5%;
+  margin-bottom: 3%;
+  border: 2px solid #ddd;
+  box-shadow: 10px 10px 10px #B6B6B6;
+  padding: 5%;
+}
+
+.signup {
+  margin: auto;
+  width: 25%;
+  border: 2px solid #2a5baa;
+  padding: 2%;
+  padding-top: 6%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 2px solid #eee;
+  box-shadow: 10px 10px 10px #B6B6B6;
+  margin-bottom: 3%;
 }
 
 .inputContainer {
   margin-bottom: 17px;
   padding: 1%;
+  width: 80%;
+  margin-left: 7%;
 }
 
 .input:focus + .label {
@@ -47,7 +72,7 @@
 
 .label {
   position: absolute;
-  top: 22px;
+  top: 20px;
   left: 15px;
   padding: 0 8px;
   color: #0066b2;
@@ -57,21 +82,11 @@
   z-index: 0;
 }
 
-h2 {
-  color:#2a5baa;
-}
-
-.instructions {
-  width: 110%;
-  height: 20%;
-  /* margin-top: 3%; */
-  margin-left: 5%;
-  margin-bottom: 3%;
-  border: 2px solid #ddd;
-  box-shadow: 10px 10px 10px #B6B6B6;
-  padding: 2%;
-}
-
 .btn {
-  margin-top: 2%;
+  margin-top: 5%;
+  width: 37%;
+}
+
+.checkbox {
+  margin-bottom: 2%;
 }
