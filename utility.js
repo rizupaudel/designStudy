@@ -6,7 +6,7 @@ var demoQ = require("./data/demo");
 var questQ = require("./data/quest");
 var csquestQ = require("./data/csquest");
 
-const uuidv4 = require('uuid/v4')
+const { v4: uuidv4 } = require('uuid');
 
 var pTotal = 14;
 function getProgressPercent(val, ext=0) {
@@ -41,7 +41,7 @@ function getQuestions(a) {
 function getQuery(table, o) {
     var fields = "";
     var values = "";
-    for (field in o) {
+    for (let field in o) {
         fields += `${field}, `;
         values += `'${o[field]}', `;
     }

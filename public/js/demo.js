@@ -109,6 +109,7 @@ async function gotothanks() {
 window.gotothanks = gotothanks;
 
 async function saveUserResponse() {
+    sessionStorage.removeItem("page_id");
     const res = await window.fetch('/post_response', 
     {
         method:'POST',

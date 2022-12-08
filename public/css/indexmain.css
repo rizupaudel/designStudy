@@ -244,10 +244,9 @@ h1 {
 h2 {
   font-weight: 600;
   color:#2a5baa;
-  width: 50%;
   height: 80%;
   padding: 1%;
-  width: 30%;
+  width: 90%;
   margin: 0;
   border-radius: 10px;
   }
@@ -264,5 +263,5 @@ h4 {
 
 .context {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
 }

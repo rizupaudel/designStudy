@@ -1,6 +1,6 @@
 import { setProgress } from "./utility.js";
 window.setProgress = setProgress;
-setProgress(0);
+setProgress(0.4);
 
 sessionStorage.clear();
 
