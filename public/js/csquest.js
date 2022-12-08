@@ -10,7 +10,7 @@ setProgress(sessionStorage.getItem("page_id"));
 var questions = await getQuestions("csquest");
 
 function loadDesignImages() {
-    var images = ["designs/Logos1.png", "designs/Logos2.png"];
+    var images = ["designs/Dart1.png", "designs/Dart2.png"];
     var imageContainer = document.getElementById("leftdesign");
     var val = "";
     for (let i in images) {

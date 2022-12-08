@@ -24,7 +24,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "makes me worried",
+                "title": "encourages me to create a strong password",
                 "elements": {
                     "low": "strongly disagree",
                     "high": "strongly agree"
@@ -33,15 +33,6 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "encourages me to create a strong password",
-                "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
-                }
-            },
-            {
-                "sid": 5,
-                "type": "likert",
                 "title": "makes me feel emotionally connected to the presented scenario",
                 "elements": {
                     "low": "strongly disagree",
@@ -49,7 +40,7 @@ var questions = [
                 }
             },
             {
-                "sid": 6,
+                "sid": 5,
                 "type": "likert",
                 "title": "makes me feel personally connected to the presented scenario",
                 "elements": {

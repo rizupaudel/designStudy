@@ -23,7 +23,7 @@
 .imageContainer .pButton {
   display: flex;
   justify-content: center;
-  background-color: silver;
+  background-color: rgb(74, 111, 144);
   width: 10%;
 }
 
@@ -50,7 +50,7 @@
 .imageContainer .nButton {
   display: flex;
   justify-content: center;
-  background-color: silver;
+  background-color: rgb(74, 111, 144);
   width: 10%;
 }
 
