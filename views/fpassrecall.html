@@ -15,25 +15,25 @@
             <div class="progress">
                 <div class="progress-done">.</div>
             </div>
-            <!-- <center><h2><img src="designs/userIcon.png" width="45" 
-                height="45" align="center"/> Password Recall</h2></center> -->
-
             <center><h2>Password Recall</h2></center>
-            <p class="context">Below, enter the password that you created during this study.<br>
-            You will get a maximum of <b>three attempts</b> to correctly enter the password.</p>
-            <div class="container">
-                <div class="inputContainer">
-                    <input id="pass" type="password" class="input" placeholder="a">
-                    <label for="pass" class="label">Password</label>
+            <div class="twosides">
+                <div class="instructions">
+                    <p class="context">Enter the password that you created during this study.<br><br>
+                    You will get a maximum of <b>three attempts</b> to correctly enter the password.</p>
                 </div>
-                <label id="retryPass" class="passwarnlabel"></label>
-                <br>
-                <div class="checkbox">
-                    <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPassword()"> Show Password </label><br>
+                <div class="container">
+                    <div class="inputContainer">
+                        <input id="pass" type="password" class="input" placeholder="a">
+                        <label for="pass" class="label">Password</label>
+                    </div>
+                        <label id="retryPass" class="passwarnlabel"></label>
+                    <div class="checkbox">
+                        <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPassword()"> Show Password </label>
+                    </div>
+                    <div class="btn" onclick="gotopagegif()">
+                        <span>Next</span>
+                    </div>
                 </div>
-            </div>
-            <div class="btn" onclick="gotopagegif()">
-                <span>Next</span>
             </div>
 		</div>
     </body>

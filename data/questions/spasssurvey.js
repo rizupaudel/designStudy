@@ -51,6 +51,21 @@ var questions = [
     },
     {
         "qid": 3,
+        "text": "Please select the fifth option which tells us you are paying attention: ",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Option One",
+                    "high": "Option Seven"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 4,
         "text": "Which of the following you have used in the password you have created. Please select all that apply.",
         "subquestions": [
             {
@@ -73,7 +88,7 @@ var questions = [
         ]
     },
     {
-        "qid": 4,
+        "qid": 5,
         "text": "Please answer the following questions based on your behavior in real life: ",
         "subquestions": [
             {

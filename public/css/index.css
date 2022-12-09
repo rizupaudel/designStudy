@@ -1,5 +1,12 @@
 @import url("indexmain.css");
 
 body {
-    margin-top: 11%;
+    margin-top: 18%;
+}
+
+input[type=text] {
+    width: 20%;
+    padding: 1% 1%;
+    margin: 1% 0;
+    margin-left: 16%;
 }

@@ -10,9 +10,12 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.json());
 
-
 app.get('/', (req, res) => {
   res.sendFile('views/index.html', { root : __dirname})
+});
+
+app.get('/startstudy', (req, res) => {
+  res.sendFile('views/startstudy.html', { root : __dirname})
 });
 
 app.get('/fpass', (req, res) => {

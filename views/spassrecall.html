@@ -16,22 +16,25 @@
                 <div class="progress-done">.</div>
             </div>
             <center><h2>Password Recall</h2></center>
-            <p class="context">Below, enter the password that you created during this study.<br>
-                You will get a maximum of <b>three attempts</b> to correctly enter the password.</p>
+            <div class="twosides">
+                <div class="instructions"> 
+                    <p class="context">Enter the password that you created during this study.<br><br>
+                    You will get a maximum of <b>three attempts</b> to correctly enter the password.</p>
+                </div>
                 <div class="container">
                     <div class="inputContainer">
                         <input id="pass" type="password" class="input" placeholder="a">
                         <label for="pass" class="label">Password</label>
                     </div>
-                <label id="retryPass" class="passwarnlabel"></label>
-                <br>
-                <div class="checkbox">
-                    <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPassword()"> Show Password </label><br>
+                    <label id="retryPass" class="passwarnlabel"></label>
+                    <div class="checkbox">
+                        <label for="showpass"><input type="checkbox" class="checkbox" onclick="showPassword()"> Show Password </label>
+                    </div>
+                    <div class="btn" onclick="gotodemo()">
+                        <span>Next</span>
+                    </div>
                 </div>
-            </div>
-            <div class="btn" onclick="gotodemo()">
-                <span>Next</span>
-            </div>
-		</div>
+		    </div>
+        </div>
     </body>
 </html>

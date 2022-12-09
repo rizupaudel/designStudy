@@ -8,8 +8,8 @@ var questions = [
                 "type": "likert",
                 "title": "makes me informed",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
             {
@@ -17,8 +17,8 @@ var questions = [
                 "type": "likert",
                 "title": "makes me worried",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
             {
@@ -26,8 +26,8 @@ var questions = [
                 "type": "likert",
                 "title": "encourages me to create a strong password",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
             {
@@ -35,8 +35,8 @@ var questions = [
                 "type": "likert",
                 "title": "makes me feel emotionally connected to the presented scenario",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
             {
@@ -44,25 +44,14 @@ var questions = [
                 "type": "likert",
                 "title": "makes me feel personally connected to the presented scenario",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             }
         ]
     },
     {
         "qid": 2,
-        "text": "Here, what connection do you see between the dartboard and hacking a user’s password?",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "textbox",
-                "title": "",
-            },
-        ]
-    },
-    {
-        "qid": 3,
         "text": "It is easy for me to follow the story depicted across multiple pages in the design.",
         "subquestions": [
             {
@@ -70,14 +59,14 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
         ]
     },
     {
-        "qid": 4,
+        "qid": 3,
         "text": "In the presented design, the portrayal of hacker stimulates me to create a strong password.",
         "subquestions": [
             {
@@ -85,14 +74,14 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
         ]
     },
     {
-        "qid": 5,
+        "qid": 4,
         "text": "In the presented design, the portrayal of victim encourages me to create a strong password.",
         "subquestions": [
             {
@@ -100,15 +89,15 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "strongly disagree",
-                    "high": "strongly agree"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             },
         ]
     },
     {
-        "qid": 6,
-        "text": "Where do you want to see these kind of designs",
+        "qid": 5,
+        "text": "In which type website's account creation page would you want to see this design?",
         "subquestions": [
             {
                 "sid": 1,
@@ -120,8 +109,22 @@ var questions = [
                     "Financial Websites",
                     "Entertainment and Gaming",
                     "E-commerce Websites",
-                    "Online Video Streaming Websites",
+                    "Governmental Websites",
+                    "Educational Websites, e.g. Udemy, Coursera, etc.",
+                    "Content Websites, e.g. News, blogs, etc.",
+                    "None of the above"
                 ]
+            },
+        ]
+    },
+    {
+        "qid": 2,
+        "text": "What do you think the dartboard implies here in the design? Please explain in 2-3 sentences.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "textbox",
+                "title": "",
             },
         ]
     }
