@@ -8,16 +8,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0" />
-        <title>Design Interaction</title>
+        <title>Design GIF Tutorial</title>
     </head>
     <body>
         <div class="card card-1">
-            <div class="progress">
-                <div class="progress-done">.</div>
-            </div>
-            <br>
-            <h2>Instructions</h2>
-
+            <div class="progress"><div class="progress-done">.</div></div>
 			<div class="container">
                 <div class="left">
                     The <b>goal</b> of our <b>research</b> is to make users feel motivated to create a strong password.
@@ -32,15 +27,11 @@
                 </div>
             </div>
             <!-- <br><br> -->
-            <div class="checkbox">
-                <input type="checkbox" class="checkbox" onchange=
-                'document.getElementById("nextbutton").style.visibility = this.checked ? "visible": "hidden";
-                document.getElementById("nextbutton").style.opacity = this.checked ? 1: 0'>
+            <div id="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox">
                 <label for="checkbox">I understand the instructions above.</label>
             </div>
-            <div id="nextbutton" class="btn" onclick="gotodesignint()">
-                <span>Next</span>
-            </div>
+            <div id="nextbutton" class="btn" onclick="gotodesignint()"><span>Next</span></div>
 		</div>
     </body>
 </html>

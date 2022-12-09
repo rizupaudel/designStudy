@@ -18,7 +18,7 @@
   margin-bottom: 1%;
   width: 95%;
   /* border: 2px solid #ccc; */
-  background-color: #ddd;
+  /* background-color: #ddd; */
 }
 
 .imageContainer .pButton {
@@ -30,7 +30,7 @@
 
 .imageContainer .pButton img {
   margin: auto;
-  width: 80%;
+  width: 70%;
 }
 
 .imageContainer .pButton:hover {
@@ -39,13 +39,17 @@
   transform: scale(1.01);
 }
 
-.imageContainer img {
+.imageContainer .designPages {
   width: 100%;
-  object-fit: cover;
+  /* background-color: #fff; */
 }
 
-.designPages {
-  background-color: #fff;
+.imageContainer .designPages img {
+  width: 90%;
+  max-height:100%;
+  height: auto;
+  object-fit: contain;
+  animation: fadeIn 2s;
 }
 
 .imageContainer .nButton {
@@ -63,7 +67,7 @@
 
 .imageContainer .nButton img {
   margin: auto;
-  width: 80%;
+  width: 70%;
 }
 
 .checkbox input[type=checkbox] {
@@ -81,10 +85,9 @@
 }
 
 #nextbutton {
-  visibility: hidden;
   margin-top: 1%;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 h2 {

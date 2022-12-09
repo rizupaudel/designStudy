@@ -101,3 +101,13 @@ export async function getQuestions(a) {
     var data = await response.json();
     return data.questions;
 }
+
+export async function getDesign() {
+    const response = await window.fetch('/get_design');
+    var data = await response.json();
+    var temparr = []
+    for (let dn in data.design) {
+        temparr.push("designs/" + data.design[dn]);
+    }
+    return temparr;
+}

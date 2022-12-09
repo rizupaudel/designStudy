@@ -1,12 +1,15 @@
 const { runQuery } = require("./database");
 
-var fpasssurveyQ = require("./data/fpasssurvey");
-var spasssurveyQ = require("./data/spasssurvey");
-var demoQ = require("./data/demo");
-var questQ = require("./data/quest");
-var csquestQ = require("./data/csquest");
+var fpasssurveyQ = require("./data/questions/fpasssurvey");
+var spasssurveyQ = require("./data/questions/spasssurvey");
+var demoQ = require("./data/questions/demo");
+var questQ = require("./data/questions/quest");
+var csquestQ = require("./data/questions/csquest");
 
 const { v4: uuidv4 } = require('uuid');
+var fs = require('fs');
+const { setMaxIdleHTTPParsers } = require("http");
+
 
 var pTotal = 14;
 function getProgressPercent(val, ext=0) {
@@ -36,6 +39,10 @@ function getProgressPercent(val, ext=0) {
 function getQuestions(a) {
     q = a + "Q";
     return eval(q);
+}
+
+function getDesign() {
+    return {"design": ["Dart1.png", "Dart2.png"]};
 }
 
 function getQuery(table, o) {
@@ -74,8 +81,7 @@ function getQuery(table, o) {
 // }
 
 async function saveResponse(data) {
-    var fs = require('fs');
-    respDir = './data/response';
+    respDir = './data/responses';
     if (!fs.existsSync(respDir)){
         fs.mkdirSync(respDir);
     }
@@ -86,7 +92,7 @@ async function saveResponse(data) {
     //     if (n>mX) {mX = n}
     // }
     // mX += 1;
-    fs.writeFile('./data/response/' + uuidv4() + '.json', JSON.stringify(data), error => {
+    fs.writeFile( respDir + '/' + uuidv4() + '.json', JSON.stringify(data), error => {
         if (error) {
             return false;
         }
@@ -94,4 +100,4 @@ async function saveResponse(data) {
     return true;
 }
 
-module.exports = {getProgressPercent, getQuestions, saveResponse}
+module.exports = {getProgressPercent, getDesign, getQuestions, saveResponse}
