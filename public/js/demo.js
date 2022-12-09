@@ -54,10 +54,12 @@ async function gotothanks() {
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "option") {
                 var el = document.getElementsByName(qsid);
@@ -69,10 +71,12 @@ async function gotothanks() {
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "textbox") {
                 var el = document.getElementsByName(qsid);
@@ -81,10 +85,12 @@ async function gotothanks() {
 
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             }
         }
@@ -110,7 +116,9 @@ window.gotothanks = gotothanks;
 
 async function saveUserResponse() {
     sessionStorage.removeItem("page_id");
-    const res = await window.fetch('/post_response', 
+    let wid = sessionStorage.getItem("wid");
+    sessionStorage.removeItem("wid");
+    const res = await window.fetch('/post_response' + '/' + wid, 
     {
         method:'POST',
         headers: {

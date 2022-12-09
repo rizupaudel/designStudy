@@ -63,10 +63,12 @@ async function gotospassrecall() {
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "option") {
                 var el = document.getElementsByName(qsid);
@@ -78,10 +80,12 @@ async function gotospassrecall() {
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "textbox") {
                 var el = document.getElementsByName(qsid);
@@ -90,10 +94,12 @@ async function gotospassrecall() {
 
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             }
         }

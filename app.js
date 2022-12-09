@@ -1,8 +1,7 @@
 // server/index.js
 
 const express = require("express");
-// const db = require("./database");
-const { getProgressPercent, getDesign, getQuestions, saveResponse } = require("./utility");
+const { verifyWorker, getDesign, getQuestions, saveResponse } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
 
@@ -78,17 +77,16 @@ app.get('/get_questions/:a', (req, res) => {
   res.send(getQuestions(req.params["a"]));
 });
 
-app.get('/get_design/', (req, res) => {
-  res.send(getDesign());
+app.get('/get_design/:did', (req, res) => {
+  res.send(getDesign(req.params["did"]));
 });
 
-app.get('/get_progress/:a/:b', (req, res) => {
-  var progress = getProgressPercent(req.params["a"], req.params["b"]);
-  res.send({"progress": progress});
-})
+app.get('/verify_worker/:wid', async (req, res) => {
+  res.send(await verifyWorker(req.params["wid"]));
+});
 
-app.post('/post_response', (req, res) => {
-  let stat = saveResponse(req.body);
+app.post('/post_response/:wid', async (req, res) => {
+  let stat = await saveResponse(req.params["wid"], req.body);
   res.send({"success": stat});
 });
 

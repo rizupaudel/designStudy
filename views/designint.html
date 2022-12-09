@@ -16,10 +16,11 @@
             <center><h2>Imagine that you are creating a password for an online account, and before you create the password, the website presents you with the following design.</h2></center>
 
             <div class="imageContainer"> 
-                <div class="pButton" onclick="loadImage('prev')"><img src="designs/prev.png"></div>
+                <div class="pButton" onclick="loadImage('prev')"><img id="p" src="designs/prev.png"></div>
                 <div class="designPages"><img id="pages" src="designs/image-loader.gif"></div>
-                <div class="nButton" onclick="loadImage('next')"><img src="designs/next.png"></div>
+                <div class="nButton" onclick="loadImage('next')"><img id="n" src="designs/next.png"></div>
             </div>
+            <div id="indicator">1 of 5</div><br><br>
             <div id="checkbox" class="checkbox">
                 <input type="checkbox" class="checkbox">
                 <label for="checkbox">I have gone through all the pages of the design.</label>

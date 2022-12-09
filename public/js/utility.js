@@ -5,14 +5,10 @@ function setProgressBar(progress) {
     (progress>0) && (document.getElementsByClassName("progress-done")[0].innerHTML = progressText);
 }
 
-async function getProgress(a, b) {
-    const response = await window.fetch("/get_progress" + "/" + a + "/" + b).then(result=>result.json());
-    return response;
-}
-
-export async function setProgress(req, ext=0) {
-    var progressObj = await getProgress(req, ext);
-    var progress = progressObj["progress"];
+export async function setProgress(val, ext=0) {
+    let pTotal = 14;
+    pTotal += parseInt(ext);
+    let progress = val>=14 ? 100 : val/pTotal*100;
     setProgressBar(progress);
 }
 
@@ -102,12 +98,13 @@ export async function getQuestions(a) {
     return data.questions;
 }
 
-export async function getDesign() {
-    const response = await window.fetch('/get_design');
+export async function getDesign(did="plc") {
+    const response = await window.fetch('/get_design' + '/' + did);
     var data = await response.json();
     var temparr = []
-    for (let dn in data.design) {
-        temparr.push("designs/" + data.design[dn]);
+    for (let dn in data.images) {
+        temparr.push("designs/" + data.images[dn]);
     }
-    return temparr;
+    data.images = temparr
+    return data;
 }

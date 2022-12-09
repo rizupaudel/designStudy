@@ -8,5 +8,11 @@ input[type=text] {
     width: 20%;
     padding: 1% 1%;
     margin: 1% 0;
-    margin-left: 16%;
+}
+
+/* .reqfields {
+    margin-left: 15%;
+} */
+.btn {
+    margin-top: 2%;
 }

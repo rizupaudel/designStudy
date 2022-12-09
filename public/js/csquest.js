@@ -35,16 +35,17 @@ function setIndicator(i, n) {
     indicator.innerHTML = val;
 }
 
-var nPage = sessionStorage.getItem("nPage") || 1;
+var nPage = parseInt(sessionStorage.getItem("nPage")) || 1;
+var tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
 var quest = document.getElementById("quest");
-var val = generateQuestions(divideQuestions()[nPage]);
+var val = generateQuestions(divideQuestions()[tPage]);
 quest.innerHTML = val;
-setIndicator(nPage, Object.keys(divideQuestions()).length);
+setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
 
 async function gotospass() {
     var response = {};
     var next_flag = true;
-    let partQuestions = divideQuestions()[nPage];
+    let partQuestions = divideQuestions()[tPage];
     for (let qn in partQuestions) {
         var subquestions = partQuestions[qn].subquestions;
         for (let sqn in subquestions) {
@@ -79,10 +80,12 @@ async function gotospass() {
                 }
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "option") {
                 var el = document.getElementsByName(qsid);
@@ -94,10 +97,12 @@ async function gotospass() {
                 }
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "textbox") {
                 var el = document.getElementsByName(qsid);
@@ -106,10 +111,12 @@ async function gotospass() {
 
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             }
         }
@@ -122,16 +129,17 @@ async function gotospass() {
     } else {
         reqError.style.visibility = "hidden";
         reqError.style.opacity = 0;
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${nPage}`, JSON.stringify(response));
-        nPage = parseInt(nPage) + 1;
-        if (nPage in divideQuestions()) {
-            var val = generateQuestions(divideQuestions()[nPage]);
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}`, JSON.stringify(response));
+        tPage = parseInt(tPage) + 1;
+        if (tPage in divideQuestions()) {
+            var val = generateQuestions(divideQuestions()[tPage]);
             quest.innerHTML = val;
-            setIndicator(nPage, Object.keys(divideQuestions()).length);
-            sessionStorage.setItem("nPage", nPage);
+            setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
+            sessionStorage.setItem("tPage", tPage);
             next_flag = true;
         } else {
             sessionStorage.removeItem("nPage");
+            sessionStorage.removeItem("tPage");
             sessionStorage.setItem("page_id", 9);
             window.location = "spass";
         }

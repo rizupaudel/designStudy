@@ -8,6 +8,7 @@ setProgress(sessionStorage.getItem("page_id"));
 // }
 
 var questions = await getQuestions("quest");
+var questionsn = await getQuestions("csquest");
 
 function loadDesignImages() {
     var images = ["designs/Dart1.png", "designs/Dart2.png"];
@@ -38,6 +39,13 @@ function divideQuestions(nS) {
     return dividedQuestions;
 }
 
+function divideQuestionsn() {
+    var dividedQuestions = {};
+    dividedQuestions[1] = questionsn.slice(0, 1);
+    dividedQuestions[2] = questionsn.slice(1);
+    return dividedQuestions;
+}
+
 function setIndicator(i, n) {
     var indicator = document.getElementById("indicator");
     val = `Page ${i} of ${n}`;
@@ -49,7 +57,7 @@ var quest = document.getElementById("quest");
 // console.log(divideQuestions(9));
 var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
 quest.innerHTML = val;
-setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length);
+setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
 
 async function gotocsquest() {
     var response = {};
@@ -89,10 +97,12 @@ async function gotocsquest() {
                 }
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "option") {
                 var el = document.getElementsByName(qsid);
@@ -104,10 +114,12 @@ async function gotocsquest() {
                 }
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "textbox") {
                 var el = document.getElementsByName(qsid);
@@ -116,10 +128,12 @@ async function gotocsquest() {
 
                 var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
                 if (!checked_flag) {
-                    eel.style.display = "block";
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
                     next_flag = false;
                 } else {
-                    eel.style.display = "none";
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
                 }
             }
         }
@@ -137,11 +151,11 @@ async function gotocsquest() {
         if (nPage in divideQuestions(chunkSize)) {
             var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
             quest.innerHTML = val;
-            setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length);
+            setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
             sessionStorage.setItem("nPage", nPage);
             next_flag = true;
         } else {
-            sessionStorage.removeItem("nPage");
+            // sessionStorage.removeItem("nPage");
             sessionStorage.setItem("page_id", 8);
             window.location = "csquest";
         }

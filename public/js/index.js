@@ -1,18 +1,26 @@
-import { setProgress } from "./utility.js";
-window.setProgress = setProgress;
-setProgress(0.4);
-
 sessionStorage.clear();
+
 async function submitId() {
-    sessionStorage.setItem("page_id", 0);
+
     var textBox = document.getElementsByClassName("textbox")[0];
-    var workerId = textBox.value;
-    if (workerId && Number.isInteger(+workerId)) {
-        window.location = "startstudy";
+    var wid = textBox.value;
+    var errorMsg = "";
+
+    if (wid) {
+        var validResponse = await window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
+        if (validResponse.valid) {
+            sessionStorage.setItem("page_id", 0);
+            window.location = "startstudy";
+        } else {
+            errorMsg = validResponse.errorMsg + " Please try again.";
+        }
     } else {
-        var numError = document.getElementById("reqfields")
-        numError.style.visibility = "visible";
-        numError.style.opacity = 1;
+        errorMsg = "Worker ID is required."
     }
+    errorMsg = "* " + errorMsg;
+    var errorText = document.getElementById("reqfields");
+    errorText.innerHTML = errorMsg;
+    errorText.style.visibility = "visible";
+    errorText.style.opacity = 1;
 }
 window.submitId = submitId;

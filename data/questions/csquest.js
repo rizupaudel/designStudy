@@ -118,7 +118,7 @@ var questions = [
         ]
     },
     {
-        "qid": 2,
+        "qid": 6,
         "text": "What do you think the dartboard implies here in the design? Please explain in 2-3 sentences.",
         "subquestions": [
             {

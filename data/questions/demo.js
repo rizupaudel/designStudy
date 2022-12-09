@@ -1,18 +1,6 @@
 var questions = [
     {
         "qid": 1,
-        "text": "Please enter your participant ID that was provided by the researcher:",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "textbox",
-                "title": ""
-            }
-        ],
-    },
-    
-    {
-        "qid": 2,
         "text": "What is your gender?",
         "subquestions": [
             {
@@ -24,7 +12,7 @@ var questions = [
         ]  
     },
     {
-        "qid": 3,
+        "qid": 2,
         "text": "What is your age range?",
         "subquestions": [
             {
@@ -39,12 +27,12 @@ var questions = [
         ]
     },
     {
-        "qid": 4,
+        "qid": 3,
         "text": "What is your race?",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "option",
+                "type": "checkbox",
                 "title": "",
                 "elements": [ 'White', 'Hispanic or Latino', 'Black or African American', 'Native American or American Indian', 'Asian', 'Pacific Islander', 'Other, please specify:', 'I prefer not to answer']
             }
@@ -52,7 +40,7 @@ var questions = [
         
     },
     {
-        "qid": 5,
+        "qid": 4,
         "text": "What is your highest achieved education level?",
         "subquestions": [
             {
@@ -64,7 +52,7 @@ var questions = [
         ]
     },
     {
-        "qid": 6,
+        "qid": 5,
         "text": "What is the primary field of your education?",
         "subquestions": [
             {
@@ -76,7 +64,7 @@ var questions = [
         ]
     },
     {
-        "qid": 7,
+        "qid": 6,
         "text": "Which of the following best describes your primary occupation?",
         "subquestions": [
             {
