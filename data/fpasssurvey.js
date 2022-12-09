@@ -51,6 +51,21 @@ var questions = [
     },
     {
         "qid": 3,
+        "text": "Please select the fifth option which tells us you are paying attention: ",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Option One",
+                    "high": "Option Seven"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 4,
         "text": "Which of the following you have used in the password you have created. Please select all that apply.",
         "subquestions": [
             {
@@ -63,17 +78,18 @@ var questions = [
                     'My name or a part of it',
                     'Keyboard patterns',
                     'Names of family members or pets, or a part of it',
-                    'Birthdays',
+                    'Birthdays or a part of it',
                     'My Identification (ID) number or a part of it',
                     'Repeated or sequential characters',
                     'Names of the favorite team in sports, player or a part of it',
+                    'Common dictionary words',
                     'None of the above'
                 ]
             },
         ]
     },
     {
-        "qid": 4,
+        "qid": 5,
         "text": "Please answer the following questions based on your behavior in real life: ",
         "subquestions": [
             {
