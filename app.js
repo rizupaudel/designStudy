@@ -1,12 +1,13 @@
-// server/index.js
-
 const express = require("express");
+const path = require("path");
 const { verifyWorker, getDesign, getQuestions, saveResponse } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
 
 const app = express();
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(express.static("public"));
 app.use(express.json());
 
 app.get('/', (req, res) => {

@@ -108,3 +108,11 @@ export async function getDesign(did="plc") {
     data.images = temparr
     return data;
 }
+
+export const setVisible = (elementOrSelector, visible) => 
+  (typeof elementOrSelector === 'string'
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector
+  ).style.visibility = visible ? 'visible' : 'hidden';
+
+export const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));

@@ -37,7 +37,10 @@ async function saveResponse(wid, data) {
     return true;
 }
 
+const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
+
 async function verifyWorker(wid) {
+    await wait(1000);
     var files = fs.readdirSync(respDir)
     for (let i in files) {
         if (wid === files[i].split('.')[0]) {
