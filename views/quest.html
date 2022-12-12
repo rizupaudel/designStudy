@@ -12,18 +12,26 @@
     </head>
     <body onload="setTime()">
         <div class="container">
-            <div id="leftdesign" class="imageContainer"></div>
+            <div id="leftdesign" class="imageContainer">
+                <section class="gallery-box"><div class="images"></div></section>
+            </div>
 
             <div class="card card-1">
                 <div class="progress"><div class="progress-done">.</div></div>
                 <center><h2>On each row, select a circle closer to the attribute you think applies to the design on left.</h2></center><br><br>
                 <p id="indicator" style="text-align:center; margin-top:0px;">(Page 1 of 4)</p>
                 
-                <div id = "quest" class="questionaire"></div>
+                <div id="quest" class="questionaire"></div>
                 <label id="reqfields" class="reqfields"> * missing required fields</label>
                 <center><label id="loadingtext"> Loading next questions...</label></center><br>
                 <div id="nextbutton" class="btn" onclick="gotocsquest()"><span>Next</span></div></div>
             </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img">
+            <!-- <div id="caption"></div> -->
         </div>
     </body>
 </html>

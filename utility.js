@@ -6,10 +6,8 @@ var csquestQ = require("./data/questions/csquest");
 
 var dF = require("./data/designs");
 
-const { v4: uuidv4 } = require('uuid');
 var fs = require('fs');
 var respDir = './data/responses';
-const { setMaxIdleHTTPParsers } = require("http");
 
 function getQuestions(a) {
     q = a + "Q";
@@ -18,7 +16,9 @@ function getQuestions(a) {
 
 function getDesign(did) {
     designs = dF.designs;
-    if (did === "plc") {
+    if (did === "null" || did === "") {
+        return {"did": did, "images": ["image-loader.gif"]};
+    } else if (did === "plc") {
         var i = Math.floor(Math.random() * Object.keys(designs).length+1);
         return {"did": i, "images": designs[i].images};
     }

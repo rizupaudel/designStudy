@@ -12,7 +12,6 @@ export async function setProgress(val, ext=0) {
     setProgressBar(progress);
 }
 
-
 export function generateLikert(qsid, lO) {
     var val = `<ul class="likert" id="${qsid}">`;
     val += `<li class="low"> ${lO.low} </li>`;
@@ -109,11 +108,21 @@ export async function getDesign(did="plc") {
     return data;
 }
 
-export const setVisible = (elementOrSelector, visible) => 
-  (typeof elementOrSelector === 'string'
+export const setVisible = (elementOrSelector, visible) => {
+    (typeof elementOrSelector === 'string' 
     ? document.querySelector(elementOrSelector)
-    : elementOrSelector
-  ).style.visibility = visible ? 'visible' : 'hidden';
+    : elementOrSelector).style.visibility = visible ? 'visible' : 'hidden';
+    
+    (typeof elementOrSelector === 'string' 
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector).style.opacity = visible ? 1 : 0;
+}
+
+export const setInnerHtml = (elementOrSelector, val) => {
+    (typeof elementOrSelector === 'string' 
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector).innerHTML = val;
+}
 
 export const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
 
@@ -128,4 +137,120 @@ export function nextPage(page_id, page_name) {
     sessionStorage.setItem(`${page_id-1}_time`, Math.round(ctime-ptime)/1000);
     sessionStorage.setItem("page_id", page_id);
     window.location = page_name;
+}
+
+export function getResponse(questions) {
+    var response = {};
+    var next_flag = true;
+    for (let qn in questions) {
+        var subquestions = questions[qn].subquestions;
+        for (let sqn in subquestions) {
+            var checked_flag = false;
+            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+
+            if (subquestions[sqn].type === "likert") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
+                }
+                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
+                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
+                if (!checked_flag) {
+                    lel.style.color = "red";
+                    hel.style.color = "red";
+                    next_flag = false;
+                } else {
+                    lel.style.color = "black";
+                    hel.style.color = "black";
+                }
+            } else if (subquestions[sqn].type === "checkbox") {
+                var el = document.getElementsByClassName("checkbox");
+                response[qsid] = [];
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid].push(el[i].value);
+                        checked_flag = true;
+                    }
+                }
+                var eel = document.getElementById("reqfield"+questions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
+                    next_flag = false;
+                } else {
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
+                }
+            } else if (subquestions[sqn].type === "option") {
+                var el = document.getElementsByName(qsid);
+                for (let i = 0; i < el.length; i++) {
+                    if (el[i].checked) {
+                        response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
+                }
+                var eel = document.getElementById("reqfield"+questions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
+                    next_flag = false;
+                } else {
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
+                }
+            } else if (subquestions[sqn].type === "textbox") {
+                var el = document.getElementsByName(qsid);
+                response[qsid] = el[0].value;
+                if (el[0].value) {checked_flag = true};
+
+                var eel = document.getElementById("reqfield"+questions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
+                    next_flag = false;
+                } else {
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
+                }
+            }
+        }
+    }
+    return {"response": response, "next_flag": next_flag}
+}
+
+export function updateImage(images, flag="") {
+    var indicator = document.getElementById("indicator");
+    var count = 1;
+    var pages = document.getElementById("pages");
+    var imgsrc = pages.getAttribute("src");
+    if (imgsrc && imgsrc !== "") {
+        let i = images.indexOf(imgsrc);
+        if (flag === "next") {
+            if (i >= 0 && i+1 < images.length) {
+                pages.src = images[i+1];
+                count = i + 2;
+            } else {
+                count = i + 1;
+            }
+        } else if (flag === "prev") {
+            if (i-1 >= 0) {
+                pages.src = images[i-1];
+                count = i;
+            }
+        } else {
+            pages.src = images[0];
+        }
+    } 
+    // disable next button
+    document.getElementsByClassName("nButton")[0].style.pointerEvents = (count === images.length) ? "none": "auto";
+    document.getElementById("n").src = (count === images.length) ? "": "designs/next.png";
+
+    // disable previous button
+    document.getElementsByClassName("pButton")[0].style.pointerEvents = (count === 1) ? "none": "auto";
+    document.getElementById("p").src = (count === 1) ? "": "designs/prev.png";
+    
+    indicator.innerHTML = `${count} of ${images.length}`;
 }
