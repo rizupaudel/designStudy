@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, generateQuestions, setTime } from "./utility.js";
+import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -8,25 +8,20 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-var questions = await getQuestions("csquest");
-
 function loadDesignImages() {
-    var images = ["designs/Dart1.png", "designs/Dart2.png"];
-    var imageContainer = document.getElementById("leftdesign");
     var val = "";
     for (let i in images) {
-        val += `<img src="${images[i]}" >`;
+        val += `<img class="myImg" id="${i}" src="${images[i]}">`;
     }
-    // console.log(val);
-    imageContainer.innerHTML = val;
+    setInnerHtml(".images", val);
 }
 
-loadDesignImages();
+var questions = await getQuestions("csquest");
 
 function divideQuestions() {
     var dividedQuestions = {};
-    dividedQuestions[1] = questions.slice(0, 1);
-    dividedQuestions[2] = questions.slice(1);
+    dividedQuestions[1] = questions.slice(0, 2);
+    dividedQuestions[2] = questions.slice(2);
     return dividedQuestions;
 }
 
@@ -38,112 +33,64 @@ function setIndicator(i, n) {
 
 var nPage = parseInt(sessionStorage.getItem("nPage")) || 1;
 var tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
-var quest = document.getElementById("quest");
 var val = generateQuestions(divideQuestions()[tPage]);
-quest.innerHTML = val;
+setInnerHtml("#quest", val);
 setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
 
+var images = ["designs/image-loader.gif"];
+loadDesignImages();
+var data = await getDesign(sessionStorage.getItem("did"));
+images = data.images;
+loadDesignImages();
+
 async function gotospass() {
-    var response = {};
-    var next_flag = true;
     let partQuestions = divideQuestions()[tPage];
-    for (let qn in partQuestions) {
-        var subquestions = partQuestions[qn].subquestions;
-        for (let sqn in subquestions) {
-            var checked_flag = false;
-            var qsid = partQuestions[qn].qid + "-" + subquestions[sqn].sid;
-            if (subquestions[sqn].type === "likert") {
-                var el = document.getElementsByName(qsid);
-                for (let i = 0; i < el.length; i++) {
-                    if (el[i].checked) {
-                        response[qsid] = el[i].value;
-                        checked_flag = true;
-                    }
-                }
-                var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
-                var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
-                if (!checked_flag) {
-                    lel.style.color = "red";
-                    hel.style.color = "red";
-                    next_flag = false;
-                } else {
-                    lel.style.color = "black";
-                    hel.style.color = "black";
-                }
-            } else if (subquestions[sqn].type === "checkbox") {
-                var el = document.getElementsByClassName("checkbox");
-                response[qsid] = [];
-                for (let i = 0; i < el.length; i++) {
-                    if (el[i].checked) {
-                        response[qsid].push(el[i].value);
-                        checked_flag = true;
-                    }
-                }
-                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
-                if (!checked_flag) {
-                    eel.style.visibility = "visible";
-                    eel.style.opacity = 1;
-                    next_flag = false;
-                } else {
-                    eel.style.visibility = "hidden";
-                    eel.style.opacity = 0;
-                }
-            } else if (subquestions[sqn].type === "option") {
-                var el = document.getElementsByName(qsid);
-                for (let i = 0; i < el.length; i++) {
-                    if (el[i].checked) {
-                        response[qsid] = el[i].value;
-                        checked_flag = true;
-                    }
-                }
-                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
-                if (!checked_flag) {
-                    eel.style.visibility = "visible";
-                    eel.style.opacity = 1;
-                    next_flag = false;
-                } else {
-                    eel.style.visibility = "hidden";
-                    eel.style.opacity = 0;
-                }
-            } else if (subquestions[sqn].type === "textbox") {
-                var el = document.getElementsByName(qsid);
-                response[qsid] = el[0].value;
-                if (el[0].value) {checked_flag = true};
+    var data = getResponse(partQuestions);
+    var response = data.response;
 
-                var eel = document.getElementById("reqfield"+partQuestions[qn].qid);
-                if (!checked_flag) {
-                    eel.style.visibility = "visible";
-                    eel.style.opacity = 1;
-                    next_flag = false;
-                } else {
-                    eel.style.visibility = "hidden";
-                    eel.style.opacity = 0;
-                }
-            }
-        }
-    }
-    var reqError = document.getElementById("reqfields");
+    if (data.next_flag) {
+        setVisible("#reqfields", false);
 
-    if (!next_flag) {
-        reqError.style.visibility = "visible";
-        reqError.style.opacity = 1;
-    } else {
-        reqError.style.visibility = "hidden";
-        reqError.style.opacity = 0;
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}`, JSON.stringify(response));
         tPage = parseInt(tPage) + 1;
         if (tPage in divideQuestions()) {
             var val = generateQuestions(divideQuestions()[tPage]);
-            quest.innerHTML = val;
+            setInnerHtml("#quest", val);
             setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
             sessionStorage.setItem("tPage", tPage);
-            next_flag = true;
         } else {
             sessionStorage.removeItem("nPage");
             sessionStorage.removeItem("tPage");
-            sessionStorage.setItem("page_id", 9);
-            window.location = "spass";
+            nextPage(9, "spass");
         }
+    } else {
+        setVisible("#reqfields", true);
     }
 }
 window.gotospass = gotospass;
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modalImg = document.getElementById("img");
+
+function imageClickHandler() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+
+var imgs = document.getElementsByClassName("myImg");
+
+for (var i=0; i<imgs.length; i++) {
+    imgs[i].onclick = imageClickHandler;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}

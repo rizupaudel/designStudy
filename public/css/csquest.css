@@ -1,37 +1,39 @@
 @import url("indexmain.css");
 
-.card {
-  margin-top: 2%;
-  text-align: justify;
-  margin-left: 4%;
-  margin-right: 2%;
+body {
+  height: 100%;
 }
 
 .container {
   display: flex;
-  text-align: justify;
+  align-items: center;
+  width: 100%;
 }
 
 .container .imageContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 30%;
-  margin: 3% auto;
-  margin-top: 1%;
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #ddd;
-  max-width: 100%;
-  height: auto;
+  flex: 1;
+  margin-left: 1%;
 }
 
-.imageContainer img {
-  width: 90%;
+.gallery-box div {
+  columns: 2;
+  column-gap: 2%;
+}
+
+.gallery-box img {
+  width: 100%;
   height: auto;
-  align-self: center;
-  border: 2px solid black;
+  border-radius: 1%;
   object-fit: cover;
+  border: 3px solid black;
+}
+
+.container .card {
+  flex: 2;
+  margin-top: 1%;
+  text-align: justify;
+  margin-left: 4%;
+  margin-right: 2%;
 }
 
 .questionaire {
@@ -40,6 +42,10 @@
 
 .btn {
   width: 18%;
+}
+
+h2 {
+  width: 100%;
 }
 
 hr {
