@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, generateQuestions, setTime, nextPage, getResponse, setInnerHtml } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage, getResponse, setInnerHtml, setVisible } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 12);
 window.setProgress = setProgress;
 window.setTime = setTime;
