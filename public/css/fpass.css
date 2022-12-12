@@ -1,32 +1,36 @@
 @import url("indexmain.css");
 
 .card {
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
   margin: auto;
-  margin-top: 4%;
-  padding-bottom: 4%;
+  margin-top: 2%;
+  padding-bottom: 3%;
 }
 
 .instructions {
-  width: 30%;
+  width: 90%;
   border: 2px solid #eee;
-  box-shadow: 10px 10px 10px #B6B6B6;
-  padding: 3%;
-  margin-left: auto;
+  box-shadow: 5px 5px 5px #B6B6B6;
+  padding: 1%;
+  margin-left: 4%;
+  margin-top: 0;
+  margin-top: auto;
+  
 }
 
 .signup {
   margin: auto;
+  margin-top: 2%;
   width: 30%;
-  padding: 3%;
-  padding-top: 6%;
+  padding: 2%;
+  padding-top: 3%;
   border: 2px solid #eee;
   box-shadow: 10px 10px 10px #B6B6B6;
 }
@@ -83,3 +87,4 @@
 .checkbox {
   margin-bottom: 2%;
 }
+

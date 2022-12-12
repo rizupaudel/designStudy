@@ -52,7 +52,7 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "It is easy for me to follow the story depicted across multiple pages in the design.",
+        "text": "It is easy for me to follow the message depicted across multiple pages in the design.",
         "subquestions": [
             {
                 "sid": 1,

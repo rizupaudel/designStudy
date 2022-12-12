@@ -43,7 +43,7 @@ var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
 loadDesignImages();
 
-async function gotospass() {
+async function gotomotivation() {
     let partQuestions = divideQuestions()[tPage];
     var data = getResponse(partQuestions);
     var response = data.response;
@@ -61,13 +61,13 @@ async function gotospass() {
         } else {
             sessionStorage.removeItem("nPage");
             sessionStorage.removeItem("tPage");
-            nextPage(9, "spass");
+            nextPage(9, "motivation");
         }
     } else {
         setVisible("#reqfields", true);
     }
 }
-window.gotospass = gotospass;
+window.gotomotivation = gotomotivation;
 
 
 // Get the modal
