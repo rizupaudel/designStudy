@@ -50,6 +50,10 @@ app.get('/csquest', (req, res) => {
   res.sendFile('views/csquest.html', { root : __dirname})
 });
 
+app.get('/motivation', (req, res) => {
+  res.sendFile('views/motivation.html', { root : __dirname})
+});
+
 app.get('/spass', (req, res) => {
   res.sendFile('views/spass.html', { root : __dirname})
 });

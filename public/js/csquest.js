@@ -43,7 +43,7 @@ var val = generateQuestions(divideQuestions()[tPage]);
 quest.innerHTML = val;
 setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
 
-async function gotospass() {
+async function gotomotivation() {
     var response = {};
     var next_flag = true;
     let partQuestions = divideQuestions()[tPage];
@@ -142,8 +142,8 @@ async function gotospass() {
             sessionStorage.removeItem("nPage");
             sessionStorage.removeItem("tPage");
             sessionStorage.setItem("page_id", 9);
-            window.location = "spass";
+            window.location = "motivation";
         }
     }
 }
-window.gotospass = gotospass;
+window.gotomotivation = gotomotivation;

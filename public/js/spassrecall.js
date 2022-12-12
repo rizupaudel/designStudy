@@ -1,5 +1,5 @@
 import { setProgress, setTime, nextPage } from "./utility.js";
-sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 12);
+sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 13);
 window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));

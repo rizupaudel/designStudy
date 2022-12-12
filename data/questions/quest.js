@@ -1,7 +1,7 @@
 var questions = [
     {
         "qid": 1,
-        "text": "On each row, select a circle closer to the attribute you think applies to the design on left.",
+        "text": "",
         "subquestions": [
             {
                 "sid": 1,
@@ -53,12 +53,21 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
+                    "low": "select leftmost circle",
+                    "high": "select leftmost circle"
+                }
+            },
+            {
+                "sid": 7,
+                "type": "likert",
+                "title": "",
+                "elements": {
                     "low": "boring",
                     "high": "exciting"
                 }
             },
             {
-                "sid": 7,
+                "sid": 8,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -67,7 +76,7 @@ var questions = [
                 }
             },
             {
-                "sid": 8,
+                "sid": 9,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -76,7 +85,7 @@ var questions = [
                 }
             },
             {
-                "sid": 9,
+                "sid": 10,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -85,7 +94,7 @@ var questions = [
                 }
             },
             {
-                "sid": 10,
+                "sid": 11,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -94,7 +103,7 @@ var questions = [
                 }
             },
             {
-                "sid": 11,
+                "sid": 12,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -103,7 +112,7 @@ var questions = [
                 }
             },
             {
-                "sid": 12,
+                "sid": 13,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -112,7 +121,7 @@ var questions = [
                 }
             },
             {
-                "sid": 13,
+                "sid": 14,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -121,7 +130,16 @@ var questions = [
                 }
             },
             {
-                "sid": 14,
+                "sid": 15,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "select fourth circle",
+                    "high": "select fourth circle"
+                }
+            },
+            {
+                "sid": 16,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -130,7 +148,7 @@ var questions = [
                 }
             },
             {
-                "sid": 15,
+                "sid": 17,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -139,7 +157,7 @@ var questions = [
                 }
             },
             {
-                "sid": 16,
+                "sid": 18,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -148,7 +166,7 @@ var questions = [
                 }
             },
             {
-                "sid": 17,
+                "sid": 19,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -157,7 +175,7 @@ var questions = [
                 }
             },
             {
-                "sid": 18,
+                "sid": 20,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -166,7 +184,7 @@ var questions = [
                 }
             },
             {
-                "sid": 19,
+                "sid": 21,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -175,7 +193,7 @@ var questions = [
                 }
             },
             {
-                "sid": 20,
+                "sid": 22,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -184,7 +202,7 @@ var questions = [
                 }
             },
             {
-                "sid": 21,
+                "sid": 23,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -193,7 +211,7 @@ var questions = [
                 }
             },
             {
-                "sid": 22,
+                "sid": 24,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -202,7 +220,7 @@ var questions = [
                 }
             },
             {
-                "sid": 23,
+                "sid": 25,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -211,7 +229,7 @@ var questions = [
                 }
             },
             {
-                "sid": 24,
+                "sid": 26,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -220,7 +238,7 @@ var questions = [
                 }
             },
             {
-                "sid": 25,
+                "sid": 27,
                 "type": "likert",
                 "title": "",
                 "elements": {
