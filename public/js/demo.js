@@ -1,7 +1,7 @@
-import { getQuestions, setProgress, generateQuestions } from "./utility.js";
-
+import { getQuestions, setProgress, generateQuestions, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 13);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {
@@ -18,7 +18,7 @@ quest.innerHTML = val;
 
 async function gotothanks() {
     var response = {};
-    var next_flag = true;
+    var next = true;
     for (let qn in questions) {
         var subquestions = questions[qn].subquestions;
         for (let sqn in subquestions) {
@@ -38,7 +38,7 @@ async function gotothanks() {
                 if (!checked_flag) {
                     lel.style.color = "red";
                     hel.style.color = "red";
-                    next_flag = false;
+                    next = false;
                 } else {
                     lel.style.color = "black";
                     hel.style.color = "black";
@@ -56,7 +56,7 @@ async function gotothanks() {
                 if (!checked_flag) {
                     eel.style.visibility = "visible";
                     eel.style.opacity = 1;
-                    next_flag = false;
+                    next = false;
                 } else {
                     eel.style.visibility = "hidden";
                     eel.style.opacity = 0;
@@ -73,7 +73,7 @@ async function gotothanks() {
                 if (!checked_flag) {
                     eel.style.visibility = "visible";
                     eel.style.opacity = 1;
-                    next_flag = false;
+                    next = false;
                 } else {
                     eel.style.visibility = "hidden";
                     eel.style.opacity = 0;
@@ -87,7 +87,7 @@ async function gotothanks() {
                 if (!checked_flag) {
                     eel.style.visibility = "visible";
                     eel.style.opacity = 1;
-                    next_flag = false;
+                    next = false;
                 } else {
                     eel.style.visibility = "hidden";
                     eel.style.opacity = 0;
@@ -96,17 +96,16 @@ async function gotothanks() {
         }
     }
     var reqError = document.getElementById("reqfields");
-    if (!next_flag) {
+    if (!next) {
         reqError.style.visibility = "visible";
         reqError.style.opacity = 1;
     } else {
         reqError.style.visibility = "hidden";
         reqError.style.opacity = 0;
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        sessionStorage.setItem("page_id", 14);
         let res = await saveUserResponse();
         if (res.success) {
-            window.location = "thanks";
+            nextPage(14, "thanks");
         } else {
             alert("There is a problem. Couldn't save the survey data.");
         }
@@ -116,6 +115,7 @@ window.gotothanks = gotothanks;
 
 async function saveUserResponse() {
     sessionStorage.removeItem("page_id");
+    sessionStorage.removeItem("ptime");
     let wid = sessionStorage.getItem("wid");
     sessionStorage.removeItem("wid");
     const res = await window.fetch('/post_response' + '/' + wid, 

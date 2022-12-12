@@ -10,7 +10,7 @@
               content="width=device-width, initial-scale=1.0" />
         <title>PIXEL Lab Study: Survey</title>
     </head>
-    <body>
+    <body onload="setTime()">
         <div class="container">
             <div id="leftdesign" class="imageContainer"></div>
 
@@ -21,6 +21,7 @@
                 
                 <div id = "quest" class="questionaire"></div>
                 <label id="reqfields" class="reqfields"> * missing required fields</label>
+                <center><label id="loadingtext"> Loading next questions...</label></center><br>
                 <div id="nextbutton" class="btn" onclick="gotocsquest()"><span>Next</span></div></div>
             </div>
         </div>

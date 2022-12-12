@@ -1,6 +1,7 @@
-import {setProgress} from "./utility.js";
+import { setProgress, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 1);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 1) {
@@ -10,9 +11,8 @@ setProgress(sessionStorage.getItem("page_id"));
 async function gotofcog() {
     var res = comparePasswords()
     if (1 in res) {
-        sessionStorage.setItem("page_id", 2);
         sessionStorage.setItem("password1", res[1]);
-        window.location = "fcog";
+        nextPage(2, "fcog");
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]

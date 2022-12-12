@@ -1,6 +1,7 @@
-import {setProgress, getDesign } from "./utility.js";
+import { setProgress, getDesign, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 9);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 1) {
@@ -51,9 +52,8 @@ loadImage();
 async function gotoscog() {
     var res = comparePasswords()
     if (1 in res) {
-        sessionStorage.setItem("page_id", 10);
         sessionStorage.setItem("password2", res[1]);
-        window.location = "scog";
+        nextPage(10, "scog");
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]

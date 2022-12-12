@@ -1,6 +1,7 @@
-import { setProgress, getQuestions, generateQuestions } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {

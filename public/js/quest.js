@@ -1,6 +1,7 @@
-import { setProgress, getQuestions, generateQuestions } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {
@@ -17,7 +18,6 @@ function loadDesignImages() {
     for (let i in images) {
         val += `<img src="${images[i]}" >`;
     }
-    // console.log(val);
     imageContainer.innerHTML = val;
 }
 
@@ -54,7 +54,6 @@ function setIndicator(i, n) {
 var chunkSize = 9;
 var nPage = sessionStorage.getItem("nPage") || 1;
 var quest = document.getElementById("quest");
-// console.log(divideQuestions(9));
 var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
 quest.innerHTML = val;
 setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
@@ -155,9 +154,7 @@ async function gotocsquest() {
             sessionStorage.setItem("nPage", nPage);
             next_flag = true;
         } else {
-            // sessionStorage.removeItem("nPage");
-            sessionStorage.setItem("page_id", 8);
-            window.location = "csquest";
+            nextPage(8, "csquest");
         }
     }
 }

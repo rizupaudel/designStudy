@@ -1,6 +1,7 @@
-import {setProgress} from "./utility.js";
+import { nextPage, setProgress, setTime } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 10);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 2) {
@@ -8,12 +9,11 @@ setProgress(sessionStorage.getItem("page_id"));
 // }
 
 async function gotospasssurvey() {
-    sessionStorage.setItem("page_id", 11);
     var textBox = document.getElementsByClassName("textbox")[0];
     var nTriangle = textBox.value;
     
     if (nTriangle && Number.isInteger(+nTriangle)) {
-        window.location = "spasssurvey";
+        nextPage(11, "spasssurvey")
     } else {
         var numError = document.getElementById("reqfields")
         numError.style.visibility = "visible";

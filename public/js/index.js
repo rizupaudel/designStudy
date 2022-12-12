@@ -1,8 +1,7 @@
 import { setVisible } from "./utility.js";
 sessionStorage.clear();
 
-
-function verifyWorker(wid) {
+async function verifyWorker(wid) {
     return window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
 }
 
@@ -22,6 +21,7 @@ async function submitId() {
         errorText.style.opacity = 0;
         if (validResponse.valid) {
             sessionStorage.clear();
+            sessionStorage.setItem("wid", wid);
             sessionStorage.setItem("page_id", 0);
             window.location = "startstudy";
         } else {

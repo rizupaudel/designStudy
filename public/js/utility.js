@@ -116,3 +116,16 @@ export const setVisible = (elementOrSelector, visible) =>
   ).style.visibility = visible ? 'visible' : 'hidden';
 
 export const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
+
+
+export function setTime() {
+    sessionStorage.setItem("ptime", new Date());
+}
+
+export function nextPage(page_id, page_name) {
+    var ptime = Date.parse(sessionStorage.getItem("ptime")) || new Date();
+    var ctime = new Date();
+    sessionStorage.setItem(`${page_id-1}_time`, Math.round(ctime-ptime)/1000);
+    sessionStorage.setItem("page_id", page_id);
+    window.location = page_name;
+}

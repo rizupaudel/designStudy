@@ -1,6 +1,7 @@
-import { setProgress, getQuestions, generateQuestions } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 3);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {
@@ -8,24 +9,10 @@ setProgress(sessionStorage.getItem("page_id"));
 // }
 
 
-// let did = 1;
-// sessionStorage.setItem("did", did)
 var questions = await getQuestions("fpasssurvey");
 var quest = document.getElementById("quest");
 var val = generateQuestions(questions);
 quest.innerHTML = val;
-
-async function saveUserResponse() {
-    const res = await window.fetch('/post_survey_response', 
-    {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(sessionStorage)
-    }).then(result => result.json());
-    return res;
-};
 
 async function gotofpassrecall() {
     var response = {};
@@ -115,8 +102,7 @@ async function gotofpassrecall() {
         reqError.style.opacity = 0;
 
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        sessionStorage.setItem("page_id", 4);
-        window.location = "fpassrecall";
+        nextPage(4, "fpassrecall");
     }
 }
 window.gotofpassrecall = gotofpassrecall;

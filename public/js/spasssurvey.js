@@ -1,6 +1,7 @@
-import { setProgress, getQuestions, generateQuestions} from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 11);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 5) {
@@ -31,7 +32,6 @@ async function gotospassrecall() {
         var subquestions = questions[qn].subquestions;
         for (let sqn in subquestions) {
             var checked_flag = false;
-            // var lid = questions[qn].likerts[ln].lid;
             var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
 
             if (subquestions[sqn].type === "likert") {
@@ -116,8 +116,8 @@ async function gotospassrecall() {
         // if (res.success) {
         //     sessionStorage.setItem("page_id", 6);
         // }
-        sessionStorage.setItem("page_id", 4);
-        window.location = "spassrecall";
+
+        nextPage(4, "spassrecall");
     }
 }
 window.gotofpassrecall = gotospassrecall;

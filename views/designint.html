@@ -6,11 +6,11 @@
         <link rel="shortcut icon" href="#">
         <script src="js/designint.js" type="module"></script>
         <meta charset="UTF-8" />
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Design Interaction</title>
     </head>
-    <body>
+    <body onload="setTime()">
+        <script>0</script>
         <div class="card card-1">
             <div class="progress"><div class="progress-done">.</div></div>
             <center><h2>Imagine that you are creating a password for an online account, and before you create the password, the website presents you with the following design.</h2></center>
@@ -27,5 +27,6 @@
             </div>
             <div id="nextbutton" class="btn" onclick="gotoquest()"><span>Next</span></div>
 		</div>
+        <div id="loading"></div>
     </body>
 </html>

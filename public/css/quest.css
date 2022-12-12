@@ -52,5 +52,14 @@ h2 {
 }
 
 hr {
-  border: #eee;
+  /* border: #eee; */
+  display: none;
+}
+
+br {
+  display: none;
+}
+
+#loadingtext {
+  visibility: hidden;
 }

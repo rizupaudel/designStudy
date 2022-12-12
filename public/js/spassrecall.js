@@ -1,6 +1,7 @@
-import {setProgress} from "./utility.js";
+import { setProgress, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 12);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 1) {
@@ -10,7 +11,7 @@ setProgress(sessionStorage.getItem("page_id"));
 async function gotodemo() {
     var ntry = parseInt(sessionStorage.getItem("ntry")) || 1;
     
-    var nextPage = true;
+    var next = true;
     var passBox = document.getElementById("pass");
     var errorText = document.getElementById("retryPass");
     var cpassword = passBox.value;
@@ -26,16 +27,18 @@ async function gotodemo() {
                 errorText.style.visibility = "visible";
                 errorText.style.opacity = 1;
                 passBox.value = "";
-                nextPage = false;
+                next = false;
             }
         }
+        (ntry <= 3 && !verifyPassword(cpassword)) && sessionStorage.setItem(`password2_recall${ntry}`, cpassword);
         ntry += 1;
         sessionStorage.setItem("ntry", ntry);
-        (!nextPage && ntry===3) && sessionStorage.setItem(`password2_recall${ntry-1}`, cpassword);
-        
-        if (nextPage) {
-            window.location = "demo";
+
+        if (next) {
+            errorText.style.visibility = "hidden";
+            errorText.style.opacity = 0;
             sessionStorage.removeItem("ntry");
+            nextPage(13, "demo");
         }
     }
 }

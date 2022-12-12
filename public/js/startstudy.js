@@ -1,8 +1,9 @@
-import { setVisible, wait } from "./utility.js";
+import { setVisible, wait, setTime, nextPage } from "./utility.js";
+
+window.setTime = setTime;
 
 async function startStudy() {
-    sessionStorage.setItem("page_id", 1);
-    window.location = "fpass";
+    nextPage(1, "fpass");
 }
 window.startStudy = startStudy;
 

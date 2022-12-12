@@ -1,11 +1,18 @@
-import { setProgress, getDesign } from "./utility.js";
+import { setVisible, setProgress, getDesign, setTime, nextPage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 6);
 window.setProgress = setProgress;
+window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 4) {
 //     window.location = "/";
 // }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
 
 document.getElementById("checkbox").addEventListener('click', function(e) {
     document.getElementById("nextbutton").style.pointerEvents = e.target.checked ? "auto": "none";
@@ -60,8 +67,7 @@ function loadImage(flag="") {
 window.loadImage = loadImage;
 
 async function gotoquest() {
-    sessionStorage.setItem("page_id", 7);
-    window.location = "quest";
+    nextPage(7, "quest");
 }
 window.gotoquest = gotoquest;
 
