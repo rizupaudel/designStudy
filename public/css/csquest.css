@@ -53,3 +53,9 @@ input[type=text] {
   margin: 1% 0;
   margin-left: 2%;
 }
+
+.p {
+  font-weight: 400;
+  font-size: 22px;
+  color: lightblue;
+}

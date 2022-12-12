@@ -62,11 +62,11 @@ var questions = [
                     'My address or a part of it',
                     'My name or a part of it',
                     'Keyboard patterns',
-                    'Names of family members or pets, or a part of it',
-                    'Birthdays or a part of it',
+                    'Name of a family member or pet, or a part of it',
+                    'Birthday or a part of it',
                     'My Identification (ID) number or a part of it',
                     'Repeated or sequential characters',
-                    'Names of the favorite team in sports, player or a part of it',
+                    'Name of the favorite sports team, player or a part of it',
                     'Common dictionary words',
                     'None of the above'
                 ]

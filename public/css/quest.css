@@ -41,6 +41,8 @@
 
 h2 {
   width: 100%;
+  font-weight: 400;
+  color: darkblue;
 }
 
 .questionaire {
@@ -63,3 +65,4 @@ br {
 #loadingtext {
   visibility: hidden;
 }
+

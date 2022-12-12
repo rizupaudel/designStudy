@@ -107,11 +107,12 @@ var questions = [
                     "Social Media",
                     "Email",
                     "Financial Websites",
-                    "Entertainment and Gaming",
+                    "Gaming Websites",
                     "E-commerce Websites",
-                    "Governmental Websites",
-                    "Educational Websites, e.g. Udemy, Coursera, etc.",
-                    "Content Websites, e.g. News, blogs, etc.",
+                    "Government Websites",
+                    "Course Management Websites, e.g. Canvas, Blackboard, etc.",
+                    "Content Websites, e.g. Audio/Video Streaming, Online Newspaper, etc.",
+                    "Other, please specify:",
                     "None of the above"
                 ]
             },
