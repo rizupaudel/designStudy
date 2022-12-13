@@ -16,7 +16,7 @@ body {
 }
 
 .gallery-box div {
-  columns: 2;
+  columns: 1;
   column-gap: 2%;
 }
 

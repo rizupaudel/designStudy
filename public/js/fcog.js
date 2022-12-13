@@ -8,6 +8,12 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
+
 async function gotofpasssurvey() {
     var textBox = document.getElementsByClassName("textbox")[0];
     var nTriangle = textBox.value;

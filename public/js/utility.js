@@ -136,7 +136,7 @@ export function nextPage(page_id, page_name) {
     var ctime = new Date();
     sessionStorage.setItem(`${page_id-1}_time`, Math.round(ctime-ptime)/1000);
     sessionStorage.setItem("page_id", page_id);
-    window.location = page_name;
+    window.location.replace(page_name);
 }
 
 export function getResponse(questions) {

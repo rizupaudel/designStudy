@@ -8,6 +8,13 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
+
+
 var questions = await getQuestions("spasssurvey");
 var val = generateQuestions(questions);
 setInnerHtml("#quest", val);

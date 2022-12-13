@@ -1,4 +1,4 @@
-import { setProgress, getDesign, setTime, nextPage } from "./utility.js";
+import { setProgress, getDesign, setTime, nextPage, setVisible } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 10);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -7,6 +7,12 @@ setProgress(sessionStorage.getItem("page_id"));
 // if (sessionStorage.getItem("page_id") != 1) {
 //     window.location = "/";
 // }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
 
 var data = await getDesign(sessionStorage.getItem("did"));
 var images = data.images;
