@@ -27,7 +27,11 @@ export function generateCheckbox(qsid, cI) {
     var val = '<div class="checkbox">';
     for (let i in cI) {
         let name = qsid + "-" + i;
-        val += `<label for="${name}"><input type="checkbox" class="checkbox" value="${cI[i]}"> ${cI[i]} </label><br>`;
+        val += `<label for="${name}"><input type="checkbox" class="checkbox" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
+        if (cI[i].includes("please specify:")) {
+            val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
+        }
+        val += "<br>";
     }
     val += "</div>";
     return val;
@@ -44,8 +48,11 @@ export function generateOption(qsid, cI) {
     var val = '<div class="option">';
     for (let i in cI) {
         let name = qsid + "-" + i;
-        val += `<label for="${name}"><input type="radio" class="option" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label><br>`;
-        // val += `<input type="radio" class="option" name="${qsid}" value="${cI[i]}"> <label for="${name}"> ${cI[i]} </label><br>`;
+        val += `<label for="${name}"><input type="radio" class="option" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
+        if (cI[i].includes("please specify:")) {
+            val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
+        }
+        val += "<br>";
     }
     val += "</div>";
     return val;
@@ -109,13 +116,8 @@ export async function getDesign(did="plc") {
 }
 
 export const setVisible = (elementOrSelector, visible) => {
-    (typeof elementOrSelector === 'string' 
-    ? document.querySelector(elementOrSelector)
-    : elementOrSelector).style.visibility = visible ? 'visible' : 'hidden';
-    
-    (typeof elementOrSelector === 'string' 
-    ? document.querySelector(elementOrSelector)
-    : elementOrSelector).style.opacity = visible ? 1 : 0;
+    (typeof elementOrSelector === 'string' ? document.querySelector(elementOrSelector): elementOrSelector).style.visibility = visible ? 'visible' : 'hidden';
+    (typeof elementOrSelector === 'string' ? document.querySelector(elementOrSelector): elementOrSelector).style.opacity = visible ? 1 : 0;
 }
 
 export const setInnerHtml = (elementOrSelector, val) => {
@@ -171,8 +173,16 @@ export function getResponse(questions) {
                 response[qsid] = [];
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
-                        response[qsid].push(el[i].value);
-                        checked_flag = true;
+                        var vall = "";
+                        if (el[i].value.includes("please specify:")) {
+                            vall = document.getElementsByName(qsid + "-val")[0].value;
+                        } else {
+                            vall = el[i].value;
+                        }
+                        if (vall) {
+                            response[qsid].push(vall);
+                            checked_flag = true;
+                        }
                     }
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
@@ -188,8 +198,16 @@ export function getResponse(questions) {
                 var el = document.getElementsByName(qsid);
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
-                        response[qsid] = el[i].value;
-                        checked_flag = true;
+                        var vall = "";
+                        if (el[i].value.includes("please specify:")) {
+                            vall = document.getElementsByName(qsid + "-val")[0].value;
+                        } else {
+                            vall = el[i].value;
+                        }
+                        if (vall) {
+                            response[qsid] = vall;
+                            checked_flag = true;
+                        }
                     }
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
