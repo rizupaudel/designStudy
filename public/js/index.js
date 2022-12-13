@@ -1,5 +1,11 @@
-import { setVisible } from "./utility.js";
+import { setVisible, setInnerHtml } from "./utility.js";
 sessionStorage.clear();
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
 
 async function verifyWorker(wid) {
     return window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
@@ -7,36 +13,30 @@ async function verifyWorker(wid) {
 
 async function submitId() {
     var textBox = document.getElementsByClassName("textbox")[0];
-    var errorText = document.getElementById("reqfields");
-
     var wid = textBox.value;
     var errorMsg = "";
 
     if (wid) {
-        errorText.innerHTML = "Verifying Worker ID...";
-        errorText.style.visibility = "visible";
-        errorText.style.opacity = 1;
+        setInnerHtml("#reqfields", "Verifying Worker ID...");
+        setVisible("#reqfields", true);
         const validResponse = await verifyWorker(wid);
-        errorText.style.visibility = "hidden";
-        errorText.style.opacity = 0;
+        setVisible("#reqfields", false);
         if (validResponse.valid) {
             sessionStorage.clear();
             sessionStorage.setItem("wid", wid);
             sessionStorage.setItem("page_id", 0);
-            window.location = "startstudy";
+            window.location.replace("startstudy");
         } else {
             errorMsg = validResponse.errorMsg + " Please try again.";
             errorMsg = "* " + errorMsg;
-            errorText.innerHTML = errorMsg;
-            errorText.style.visibility = "visible";
-            errorText.style.opacity = 1;
+            setInnerHtml("#reqfields", errorMsg);
+            setVisible("#reqfields", true);
         }
     } else {
         errorMsg = "Worker ID is required."
         errorMsg = "* " + errorMsg;
-        errorText.innerHTML = errorMsg;
-        errorText.style.visibility = "visible";
-        errorText.style.opacity = 1;
+        setInnerHtml("#reqfields", errorMsg);
+        setVisible("#reqfields", true);
     }
 }
 window.submitId = submitId;

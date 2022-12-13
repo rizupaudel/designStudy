@@ -2,13 +2,4 @@
 
 body {
     margin-top: 11%;
-    visibility: hidden;
-}
-
-.card {
-    visibility: hidden
-}
-
-#loading {
-    visibility: visible;
 }

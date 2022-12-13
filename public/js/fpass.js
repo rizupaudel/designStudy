@@ -1,4 +1,4 @@
-import { setProgress, setTime, nextPage } from "./utility.js";
+import { setProgress, setTime, nextPage, setVisible } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 1);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -7,6 +7,12 @@ setProgress(sessionStorage.getItem("page_id"));
 // if (sessionStorage.getItem("page_id") != 1) {
 //     window.location = "/";
 // }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
 
 async function gotofcog() {
     var res = comparePasswords()
