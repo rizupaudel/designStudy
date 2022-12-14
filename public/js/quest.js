@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, generateQuestions, setTime, getDesign, nextPage, setVisible, getResponse, setInnerHtml } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, getDesign, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, loadDesignImages, setIndicator } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -8,13 +8,7 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-function loadDesignImages() {
-    var val = "";
-    for (let i in images) {
-        val += `<img class="myImg" id="${i}" src="${images[i]}">`;
-    }
-    setInnerHtml(".images", val);
-}
+clickEventListener();
 
 const randomize = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -53,12 +47,6 @@ function divideQuestionsn() {
     return dividedQuestions;
 }
 
-function setIndicator(i, n) {
-    var indicator = document.getElementById("indicator");
-    val = `Page ${i} of ${n}`;
-    indicator.innerHTML = val;
-}
-
 var chunkSize = 10;
 var nPage = sessionStorage.getItem("nPage") || 1;
 var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
@@ -66,10 +54,10 @@ setInnerHtml("#quest", val);
 setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
 
 var images = ["designs/image-loader.gif"];
-loadDesignImages();
+loadDesignImages(images);
 var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
-loadDesignImages();
+loadDesignImages(images);
 setVisible('body', true);
 
 async function gotocsquest() {

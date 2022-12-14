@@ -1,4 +1,4 @@
-import { setProgress, getDesign, setTime, nextPage, setVisible } from "./utility.js";
+import { setProgress, getDesign, setTime, nextPage, setVisible, updateImage } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 10);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -8,58 +8,24 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-});
-
-var data = await getDesign(sessionStorage.getItem("did"));
-var images = data.images;
 function loadImage(flag="") {
-    var indicator = document.getElementById("indicator");
-    var count = 1;
-    var pages = document.getElementById("pages");
-    var imgsrc = pages.getAttribute("src");
-    if (imgsrc && imgsrc !== "") {
-        let i = images.indexOf(imgsrc);
-        if (flag === "next") {
-            if (i >= 0 && i+1 < images.length) {
-                pages.src = images[i+1];
-                count = i + 2;
-            } else {
-                count = i + 1;
-            }
-        } else if (flag === "prev") {
-            if (i-1 >= 0) {
-                pages.src = images[i-1];
-                count = i;
-            }
-        } else {
-            pages.src = images[0];
-        }
-    } 
-    // disable next button
-    document.getElementsByClassName("nButton")[0].style.pointerEvents = (count === images.length) ? "none": "auto";
-    document.getElementById("n").src = (count === images.length) ? "": "designs/next.png";
-
-    // disable previous button
-    document.getElementsByClassName("pButton")[0].style.pointerEvents = (count === 1) ? "none": "auto";
-    document.getElementById("p").src = (count === 1) ? "": "designs/prev.png";
-
-    
-    indicator.innerHTML = `${count} of ${images.length}`;
+    updateImage(images, flag);
 }
 window.loadImage = loadImage;
 
+var data = await getDesign(sessionStorage.getItem("did"));
+var images = data.images;
 loadImage();
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
 
 async function gotoscog() {
     var res = comparePasswords()
     if (1 in res) {
         sessionStorage.setItem("password2", res[1]);
-        nextPage(10, "scog");
+        nextPage(11, "scog");
     } else {
         var p = document.getElementById("passmatch");
         p.innerHTML = res[0]

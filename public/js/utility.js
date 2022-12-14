@@ -26,8 +26,8 @@ export function generateLikert(qsid, lO) {
 export function generateCheckbox(qsid, cI) {
     var val = '<div class="checkbox">';
     for (let i in cI) {
-        let name = qsid + "-" + i;
-        val += `<label for="${name}"><input type="checkbox" class="checkbox" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
+        // let name = qsid + "-" + i;
+        val += `<label for="${qsid}"><input type="checkbox" class="checkbox" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
         if (cI[i].includes("please specify:")) {
             val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
         }
@@ -47,8 +47,8 @@ export function generateTextbox(qsid) {
 export function generateOption(qsid, cI) {
     var val = '<div class="option">';
     for (let i in cI) {
-        let name = qsid + "-" + i;
-        val += `<label for="${name}"><input type="radio" class="option" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
+        // let name = qsid + "-" + i;
+        val += `<label for="${qsid}"><input type="radio" class="option" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
         if (cI[i].includes("please specify:")) {
             val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
         }
@@ -123,6 +123,12 @@ export const setInnerHtml = (elementOrSelector, val) => {
     (typeof elementOrSelector === 'string' 
     ? document.querySelector(elementOrSelector)
     : elementOrSelector).innerHTML = val;
+}
+
+export const setColor = (elementOrSelector, val) => {
+    (typeof elementOrSelector === 'string' 
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector).style.color = val;
 }
 
 export const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
@@ -260,7 +266,7 @@ export function updateImage(images, flag="") {
         } else {
             pages.src = images[0];
         }
-    } 
+    }
     // disable next button
     document.getElementsByClassName("nButton")[0].style.pointerEvents = (count === images.length) ? "none": "auto";
     document.getElementById("n").src = (count === images.length) ? "": "designs/next.png";
@@ -270,4 +276,35 @@ export function updateImage(images, flag="") {
     document.getElementById("p").src = (count === 1) ? "": "designs/prev.png";
     
     indicator.innerHTML = `${count} of ${images.length}`;
+}
+
+export function clickEventListener() {
+    window.addEventListener('click', (event) => {
+        if (event.target.value ) {
+            var tbox = document.getElementsByName(event.target.name+"-val");
+            if (event.target.value.includes("please specify:")) {
+                tbox[0].disabled = event.target.checked ? false : true;
+                tbox[0].value = event.target.checked ? tbox[0].value : "";
+            } else {
+                if (tbox.length>0 && event.target.className==="option") {
+                    tbox[0].value = "";
+                    tbox[0].disabled = true;
+                }
+            }
+        }
+    });
+}
+
+export function loadDesignImages(images) {
+    var val = "";
+    for (let i in images) {
+        val += `<img class="myImg" id="${i}" src="${images[i]}">`;
+    }
+    setInnerHtml(".images", val);
+}
+
+export function setIndicator(i, n) {
+    var indicator = document.getElementById("indicator");
+    var val = `Page ${i} of ${n}`;
+    indicator.innerHTML = val;
 }

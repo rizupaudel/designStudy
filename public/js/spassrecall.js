@@ -44,7 +44,7 @@ async function gotodemo() {
             errorText.style.visibility = "hidden";
             errorText.style.opacity = 0;
             sessionStorage.removeItem("ntry");
-            nextPage(13, "demo");
+            nextPage(14, "demo");
         }
     }
 }

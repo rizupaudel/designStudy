@@ -1,4 +1,4 @@
-import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVisible, getResponse, setInnerHtml } from "./utility.js";
+import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 14);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -8,28 +8,14 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-});
-
-window.addEventListener('click', (event) => {
-    if (event.target.value ) {
-        var tbox = document.getElementsByName(event.target.name+"-val");
-        if (event.target.value.includes("please specify:")) {
-            tbox[0].disabled = event.target.checked ? false : true;
-        } else {
-            if (tbox.length>0)
-                tbox[0].value = "";
-                tbox[0].disabled = true;
-        }
-    }
-});
+clickEventListener();
 
 var questions = await getQuestions("demo");
 var val = generateQuestions(questions);
 setInnerHtml("#quest", val);
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
 async function gotothanks() {
     var data = getResponse(questions);
@@ -37,12 +23,13 @@ async function gotothanks() {
 
     if (data.next_flag) {
         setVisible("#reqfields", false);
-
+        
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         let res = await saveUserResponse();
+        
         if (res.success) {
             sessionStorage.setItem("giftcard", res.success);
-            nextPage(14, "thanks");
+            nextPage(15, "thanks");
         } else {
             alert("There is a problem. Couldn't save the survey data.");
         }
@@ -65,5 +52,6 @@ async function saveUserResponse() {
         },
         body: JSON.stringify(sessionStorage)
     }).then(result => result.json());
+    
     return res;
 };

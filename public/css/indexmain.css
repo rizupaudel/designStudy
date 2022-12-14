@@ -210,16 +210,16 @@ body {
 
 .passwarnlabel, .reqfields {
   color: red;
-  font-size: 16px;
+  font-size: 18px;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.2s linear;
   margin-bottom: 2%;
 }
 
 .reqfield {
-  color: red;
-  font-size: 16px;
+  color: rgb(173, 10, 10);
+  font-size: 14px;
   padding: 0;
   margin: 0 auto;
   visibility: hidden;

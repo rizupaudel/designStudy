@@ -1,4 +1,4 @@
-import { setVisible, setInnerHtml } from "./utility.js";
+import { setVisible, setInnerHtml, setColor } from "./utility.js";
 sessionStorage.clear();
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -17,10 +17,12 @@ async function submitId() {
     var errorMsg = "";
 
     if (wid) {
-        setInnerHtml("#reqfields", "Verifying Worker ID...");
+        setInnerHtml("#reqfields", "Verifying Worker ID ...");
+        setColor("#reqfields", "black");
         setVisible("#reqfields", true);
         const validResponse = await verifyWorker(wid);
         setVisible("#reqfields", false);
+        setColor("#reqfields", "red");
         if (validResponse.valid) {
             sessionStorage.clear();
             sessionStorage.setItem("wid", wid);

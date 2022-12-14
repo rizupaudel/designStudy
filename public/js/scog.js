@@ -19,7 +19,7 @@ async function gotospasssurvey() {
     var nTriangle = textBox.value;
     
     if (nTriangle && Number.isInteger(+nTriangle)) {
-        nextPage(11, "spasssurvey")
+        nextPage(12, "spasssurvey")
     } else {
         var numError = document.getElementById("reqfields")
         numError.style.visibility = "visible";

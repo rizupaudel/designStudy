@@ -8,15 +8,12 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-});
-
 var questions = await getQuestions("fpasssurvey");
 var val = generateQuestions(questions);
 setInnerHtml("#quest", val);
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
 async function gotofpassrecall() {
     var data = getResponse(questions);

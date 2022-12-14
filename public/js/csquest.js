@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml } from "./utility.js";
+import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml, clickEventListener, loadDesignImages, setIndicator } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -8,29 +8,7 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-
-window.addEventListener('click', (event) => {
-    if (event.target.value ) {
-        var tbox = document.getElementsByName(event.target.name+"-val");
-        if (event.target.value.includes("please specify:")) {
-            tbox[0].disabled = event.target.checked ? false : true;
-            tbox[0].value = event.target.checked ? tbox[0].value : "";
-        } else {
-            if (tbox.length>0)
-                tbox[0].value = "";
-                tbox[0].disabled = true;
-
-        }
-    }
-});
-
-function loadDesignImages() {
-    var val = "";
-    for (let i in images) {
-        val += `<img class="myImg" id="${i}" src="${images[i]}">`;
-    }
-    setInnerHtml(".images", val);
-}
+clickEventListener();
 
 var questions = await getQuestions("csquest");
 setVisible('.card', true);
@@ -43,12 +21,6 @@ function divideQuestions() {
     return dividedQuestions;
 }
 
-function setIndicator(i, n) {
-    var indicator = document.getElementById("indicator");
-    val = `Page ${i} of ${n}`;
-    indicator.innerHTML = val;
-}
-
 var nPage = parseInt(sessionStorage.getItem("nPage")) || 1;
 var tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
 var val = generateQuestions(divideQuestions()[tPage]);
@@ -56,10 +28,10 @@ setInnerHtml("#quest", val);
 setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
 
 var images = ["designs/image-loader.gif"];
-loadDesignImages();
+loadDesignImages(images);
 var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
-loadDesignImages();
+loadDesignImages(images);
 setVisible('body', true);
 
 async function gotomotivation() {

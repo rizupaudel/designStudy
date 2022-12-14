@@ -8,16 +8,12 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-});
-
-
 var questions = await getQuestions("spasssurvey");
 var val = generateQuestions(questions);
 setInnerHtml("#quest", val);
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
 async function gotospassrecall() {
     var data = getResponse(questions);
@@ -28,7 +24,7 @@ async function gotospassrecall() {
         setVisible("#reqfields", false);
 
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        nextPage(12, "spassrecall");
+        nextPage(13, "spassrecall");
     } else {
         setVisible("#reqfields", true);
     }
