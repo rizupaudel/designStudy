@@ -15,11 +15,11 @@
 }
 
 .instructions {
-  width: 90%;
+  width: 70%;
   border: 2px solid #eee;
   box-shadow: 5px 5px 5px #B6B6B6;
   padding: 1%;
-  margin-left: 4%;
+  margin-left: 14%;
   margin-top: 0;
   margin-top: auto;
 }
@@ -27,7 +27,7 @@
 .signup {
   margin: auto;
   margin-top: 2%;
-  width: 30%;
+  width: 25%;
   padding: 2%;
   padding-top: 3%;
   border: 2px solid #eee;

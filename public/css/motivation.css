@@ -10,11 +10,10 @@
 .left {
   font-weight: 400;
   font-size: 22px;
-  /* border: 3px solid black; */
-  width: 80%;
+  width: 60%;
   height: auto;
   margin-top: 3%;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-bottom: 3%;
   border: 2px solid #ddd;
   box-shadow: 10px 10px 10px #B6B6B6;
