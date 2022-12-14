@@ -9,14 +9,29 @@ var dF = require("./data/designs");
 var fs = require('fs');
 var respDir = './data/responses';
 
+function isIn(qids) {
+    return function (question) {
+        if (qids.includes(question.qid))
+            return true;
+        return false;
+    }
+}
+
 async function getQuestions(a) {
-    q = a + "Q";
-    await wait(1000);
+    var arr = a.split("-");
+    q = arr[0] + "Q";
+    // await wait(1000);
+    if (arr.length>1) {
+        if (arr[1] && arr[1]!=="null") {
+            var qids = dF.designs[arr[1]][arr[0]];
+            return {"questions": eval(q).questions.filter(isIn(qids))};
+        }
+    }
     return eval(q);
 }
 
 async function getDesign(did) {
-    await wait(1000);
+    // await wait(1000);
     designs = dF.designs;
     if (did === "null" || did === "") {
         return {"did": did, "images": ["image-loader.gif"]};
@@ -46,7 +61,7 @@ async function saveResponse(wid, data) {
 const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
 
 async function verifyWorker(wid) {
-    await wait(1000);
+    // await wait(1000);
     var files = fs.readdirSync(respDir)
     for (let i in files) {
         if (wid === files[i].split('.')[0]) {

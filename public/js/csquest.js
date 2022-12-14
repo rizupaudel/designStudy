@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml, clickEventListener, loadDesignImages, setIndicator } from "./utility.js";
+import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml, clickEventListener, loadDesignImages, setIndicator, wait } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -10,7 +10,7 @@ setProgress(sessionStorage.getItem("page_id"));
 
 clickEventListener();
 
-var questions = await getQuestions("csquest");
+var questions = await getQuestions("csquest" + "-" + sessionStorage.getItem("did"));
 setVisible('.card', true);
 setVisible('#loading', false);
 
@@ -46,8 +46,12 @@ async function gotomotivation() {
         tPage = parseInt(tPage) + 1;
         if (tPage in divideQuestions()) {
             var val = generateQuestions(divideQuestions()[tPage]);
+            setVisible('.questionaire', false);
+            await wait(1000);
             setInnerHtml("#quest", val);
             setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
+            
+            setVisible('.questionaire', true);
             sessionStorage.setItem("tPage", tPage);
         } else {
             sessionStorage.removeItem("nPage");

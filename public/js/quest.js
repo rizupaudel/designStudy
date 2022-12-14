@@ -1,4 +1,4 @@
-import { setProgress, getQuestions, generateQuestions, setTime, getDesign, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, loadDesignImages, setIndicator } from "./utility.js";
+import { setProgress, getQuestions, generateQuestions, setTime, getDesign, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, loadDesignImages, setIndicator, wait } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -20,7 +20,7 @@ const randomize = array => {
   }
 
 var questions = await getQuestions("quest");
-var questionsn = await getQuestions("csquest");
+var questionsn = await getQuestions("csquest" + "-" + sessionStorage.getItem("did"));
 setVisible('.card', true);
 setVisible('#loading', false);
 
@@ -67,12 +67,17 @@ async function gotocsquest() {
 
     if (data.next_flag) {
         setVisible("#reqfields", false);
+        
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${nPage}`, JSON.stringify(response));
         nPage = parseInt(nPage) + 1;
         if (nPage in divideQuestions(chunkSize)) {
+            setVisible('.questionaire', false);
+            await wait(1000);
             var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
             setInnerHtml("#quest", val);
             setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
+
+            setVisible('.questionaire', true);
             sessionStorage.setItem("nPage", nPage);
         } else {
             nextPage(8, "csquest");
