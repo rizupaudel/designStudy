@@ -1,4 +1,4 @@
-import { nextPage, setProgress, setTime } from "./utility.js";
+import { nextPage, setProgress, setTime, setVisible } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 2);
 window.setProgress = setProgress;
 window.setTime = setTime;

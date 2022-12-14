@@ -27,6 +27,10 @@ async function getDesign(did) {
     return {"did": did, "images": designs[did].images};
 }
 
+function generateGift(wid, did) {
+    return dF.designs[did].name + "-" + wid;
+}
+
 async function saveResponse(wid, data) {
     if (!fs.existsSync(respDir)){
         fs.mkdirSync(respDir);
@@ -36,7 +40,7 @@ async function saveResponse(wid, data) {
             return false;
         }
     });
-    return true;
+    return generateGift(wid, data.did);
 }
 
 const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));

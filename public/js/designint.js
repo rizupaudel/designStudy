@@ -1,4 +1,4 @@
-import { setVisible, setProgress, getDesign, setTime, nextPage, updateImage } from "./utility.js";
+import { setVisible, setProgress, getDesign, setTime, nextPage, updateImage, setInnerHtml } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 6);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -24,6 +24,10 @@ var data = did ? await getDesign(did) : await getDesign();
 
 var images = data.images;
 sessionStorage.setItem("did", data.did);
+if (images.length <= 1) {
+    setInnerHtml("h2", "");
+    setInnerHtml(".checkbox label", "I have gone through the design");
+}
 
 function loadImage(flag="") {
     updateImage(images, flag);

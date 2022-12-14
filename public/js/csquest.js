@@ -8,6 +8,22 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
+
+window.addEventListener('click', (event) => {
+    if (event.target.value ) {
+        var tbox = document.getElementsByName(event.target.name+"-val");
+        if (event.target.value.includes("please specify:")) {
+            tbox[0].disabled = event.target.checked ? false : true;
+            tbox[0].value = event.target.checked ? tbox[0].value : "";
+        } else {
+            if (tbox.length>0)
+                tbox[0].value = "";
+                tbox[0].disabled = true;
+
+        }
+    }
+});
+
 function loadDesignImages() {
     var val = "";
     for (let i in images) {

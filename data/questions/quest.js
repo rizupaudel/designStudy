@@ -134,8 +134,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "select fourth circle",
-                    "high": "select fourth circle"
+                    "low": "select rightmost circle",
+                    "high": "select rightmost circle"
                 }
             },
             {
@@ -244,6 +244,15 @@ var questions = [
                 "elements": {
                     "low": "uninformative",
                     "high": "informative"
+                }
+            },
+            {
+                "sid": 28,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "select middle circle",
+                    "high": "select middle circle"
                 }
             }
         ],

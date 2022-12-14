@@ -74,6 +74,30 @@ var questions = [
                 "elements": ['Student', 'Government', 'Educational institution', 'Business or industry', 'Non-profit organization', 'Other, please specify:', 'I prefer not to answer']
             }
         ]
+    },
+    {
+        "qid": 7,
+        "text": "Which of the following best describes your experience in computer and technology related fields?",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "option",
+                "title": "",
+                "elements": ['No experience', 'Self-taught', 'Formal training', 'Pursuing or completed a degree', 'Hold or held a work position', 'Other, please specify:', 'I prefer not to answer']
+            }
+        ]
+    },
+    {
+        "qid": 8,
+        "text": "Which of the following best describes your experience in cybersecurity?",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "option",
+                "title": "",
+                "elements": ['No experience', 'Self-taught', 'Formal training', 'Pursuing or completed a degree', 'Hold or held a work position', 'Other, please specify:', 'I prefer not to answer']
+            }
+        ]
     }
 ];
 

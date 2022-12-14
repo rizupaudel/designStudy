@@ -11,7 +11,7 @@
   justify-content: space-between;
   width: 100%;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 3%;
   /* padding-bottom: 3%; */
 }
 
@@ -135,4 +135,12 @@
 .imageContainer .nButton img {
   margin: auto;
   width: 80%;
+}
+
+h2 {
+  font-size: 150%;
+  width: 50%;
+  border: 2px solid #eee;
+  box-shadow: 5px 5px 5px #B6B6B6;
+  text-overflow: ellipsis;
 }

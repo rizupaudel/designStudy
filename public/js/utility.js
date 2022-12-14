@@ -85,7 +85,7 @@ export function generateQuestion(quesO) {
         val += generateSubQuestion(quesO.subquestions[i]);
     }
     val += `<p id="reqfield${quesO.qid}" class="reqfield">This field is required.</p>`
-    return val + "<br> <hr>";
+    return val + "<hr>";
 }
 
 export function generateQuestions(qs) {
