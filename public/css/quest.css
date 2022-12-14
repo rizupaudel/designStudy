@@ -28,6 +28,10 @@ body {
   border: 3px solid black;
 }
 
+.imageContainer h2 {
+  margin-bottom: 3%;
+}
+
 .container .card {
   flex: 2;
   margin-top: 1%;
@@ -66,4 +70,6 @@ br {
 #loadingtext {
   visibility: hidden;
 }
+
+
 

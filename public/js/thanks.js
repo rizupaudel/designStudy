@@ -17,5 +17,5 @@ sessionStorage.clear();
 // }
 
 async function generategiftcard() {
-    setInnerHtml(".giftcard", "Please submit this code to MTurk: " + sessionStorage.getItem("giftcard"));
+    setInnerHtml(".giftcard", sessionStorage.getItem("giftcard"));
 }

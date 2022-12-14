@@ -52,10 +52,7 @@ hr {
   display: none;
 }
 
-input[type=text] {
-  width: 50%;
-  height: fit-content;
+.textbox {
+  width: 85%;
   padding: 1% 1%;
-  margin: 1% 0;
-  margin-left: 2%;
 }

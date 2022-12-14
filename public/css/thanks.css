@@ -28,3 +28,19 @@ h1 {
       background-position: 200% center;
     }
 }
+
+.giftcard {
+    font-weight: 550;
+    font-size: 150%;
+}
+
+.gifttext {
+    display: inline;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+h1 {
+    font-size: 190%;
+}
+

@@ -18,9 +18,10 @@ window.addEventListener('click', (event) => {
     if (event.target.value ) {
         var tbox = document.getElementsByName(event.target.name+"-val");
         if (event.target.value.includes("please specify:")) {
-            tbox[0].disabled = false;
+            tbox[0].disabled = event.target.checked ? false : true;
         } else {
             if (tbox.length>0)
+                tbox[0].value = "";
                 tbox[0].disabled = true;
         }
     }
