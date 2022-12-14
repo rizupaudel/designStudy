@@ -28,6 +28,7 @@ async function gotothanks() {
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
         let res = await saveUserResponse();
         if (res.success) {
+            sessionStorage.setItem("giftcard", res.success);
             nextPage(14, "thanks");
         } else {
             alert("There is a problem. Couldn't save the survey data.");

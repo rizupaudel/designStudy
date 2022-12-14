@@ -82,6 +82,21 @@ var questions = [
     },
     {
         "qid": 4,
+        "text": "Please select the third option which tells us you are paying attention.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Option One",
+                    "high": "Option Seven"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 5,
         "text": "In the presented design, the portrayal of victim encourages me to create a strong password.",
         "subquestions": [
             {
@@ -96,7 +111,7 @@ var questions = [
         ]
     },
     {
-        "qid": 5,
+        "qid": 6,
         "text": "In which type website's account creation page would you want to see this design?",
         "subquestions": [
             {
@@ -119,7 +134,7 @@ var questions = [
         ]
     },
     {
-        "qid": 6,
+        "qid": 7,
         "text": "What do you think the dartboard implies here in the design? Please explain in 2-3 sentences.",
         "subquestions": [
             {

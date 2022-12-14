@@ -22,6 +22,15 @@ function loadDesignImages() {
     setInnerHtml(".images", val);
 }
 
+const randomize = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
+
 var questions = await getQuestions("quest");
 var questionsn = await getQuestions("csquest");
 
@@ -34,6 +43,7 @@ function divideQuestions(nS) {
             partQuestions["qid"] = questions[qn]["qid"];
             partQuestions["text"] = questions[qn]["text"];
             partQuestions["subquestions"] = subquestions.slice(i, i+nS);
+            randomize(partQuestions["subquestions"]); 
             dividedQuestions[Math.floor(i/nS)+1] = [partQuestions];
         }
     };
@@ -53,7 +63,7 @@ function setIndicator(i, n) {
     indicator.innerHTML = val;
 }
 
-var chunkSize = 9;
+var chunkSize = 10;
 var nPage = sessionStorage.getItem("nPage") || 1;
 var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
 setInnerHtml("#quest", val);

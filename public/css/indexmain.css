@@ -277,6 +277,15 @@ h4 {
   font-size: 22px;
 }
 
+#indicator {
+  text-align:center; 
+  margin-top:0;
+  color: black;
+  font-weight: 400;
+  margin-bottom: 4%;
+  font-size: 90%;
+}
+
 .context {
   font-weight: 500;
   font-size: 22px;
@@ -311,7 +320,7 @@ h4 {
   margin: auto;
   display: block;
   width: 100%;
-  max-width: 900px;
+  max-width: 80%;
 }
 
 /* Caption of Modal Image */

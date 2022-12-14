@@ -10,10 +10,6 @@ var designs = {
     3: {
         name: "Infographics",
         images: ["Infographics.png"]
-    },
-    4: {
-        name: "Test",
-        images: ["Logos1.png", "Logos2.png", "Dart1.png", "Dart2.png"]
     }
 }
 
