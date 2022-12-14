@@ -8,12 +8,6 @@ setProgress(sessionStorage.getItem("page_id"));
 //     window.location = "/";
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-});
-
 function loadDesignImages() {
     var val = "";
     for (let i in images) {
@@ -23,6 +17,8 @@ function loadDesignImages() {
 }
 
 var questions = await getQuestions("csquest");
+setVisible('.card', true);
+setVisible('#loading', false);
 
 function divideQuestions() {
     var dividedQuestions = {};
@@ -48,6 +44,7 @@ loadDesignImages();
 var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
 loadDesignImages();
+setVisible('body', true);
 
 async function gotomotivation() {
     let partQuestions = divideQuestions()[tPage];

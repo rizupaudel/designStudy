@@ -9,12 +9,14 @@ var dF = require("./data/designs");
 var fs = require('fs');
 var respDir = './data/responses';
 
-function getQuestions(a) {
+async function getQuestions(a) {
     q = a + "Q";
+    await wait(1000);
     return eval(q);
 }
 
-function getDesign(did) {
+async function getDesign(did) {
+    await wait(1000);
     designs = dF.designs;
     if (did === "null" || did === "") {
         return {"did": did, "images": ["image-loader.gif"]};

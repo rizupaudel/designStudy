@@ -99,8 +99,7 @@ export function generateQuestions(qs) {
 }
 
 export async function getQuestions(a) {
-    const response = await window.fetch('/get_questions' + '/' + a);
-    var data = await response.json();
+    var data = await window.fetch('/get_questions' + '/' + a).then(result => result.json());
     return data.questions;
 }
 

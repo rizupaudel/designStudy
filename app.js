@@ -78,12 +78,12 @@ app.get('/thanks', (req, res) => {
   res.sendFile('views/thanks.html', { root : __dirname})
 });
 
-app.get('/get_questions/:a', (req, res) => {
-  res.send(getQuestions(req.params["a"]));
+app.get('/get_questions/:a', async (req, res) => {
+  res.send(await getQuestions(req.params["a"]));
 });
 
-app.get('/get_design/:did', (req, res) => {
-  res.send(getDesign(req.params["did"]));
+app.get('/get_design/:did', async (req, res) => {
+  res.send(await getDesign(req.params["did"]));
 });
 
 app.get('/verify_worker/:wid', async (req, res) => {
