@@ -7,7 +7,7 @@ var csquestQ = require("./data/questions/csquest");
 var dF = require("./data/designs");
 
 var fs = require('fs');
-var respDir = './data/responses';
+var respDir = './data/responses/';
 
 function isIn(qids) {
     return function (question) {
@@ -58,6 +58,16 @@ async function saveResponse(wid, data) {
     return generateGift(wid, data.did);
 }
 
+async function getResponse() {
+    var files = fs.readdirSync(respDir);
+    var retObj = {}
+    for (let fn in files) {
+        var tempObj = JSON.parse(fs.readFileSync(respDir + files[fn]));
+        retObj[files[fn].split(".")[0]] = tempObj;
+    }
+    return retObj;
+}
+
 const wait = (delay = 0) => new Promise(resolve => setTimeout(resolve, delay));
 
 async function verifyWorker(wid) {
@@ -78,4 +88,4 @@ async function verifyWorker(wid) {
 }
 
 
-module.exports = {verifyWorker, getDesign, getQuestions, saveResponse}
+module.exports = {verifyWorker, getDesign, getQuestions, saveResponse, getResponse}

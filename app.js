@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { verifyWorker, getDesign, getQuestions, saveResponse } = require("./utility");
+const { verifyWorker, getDesign, getQuestions, saveResponse, getResponse } = require("./utility");
 
 const PORT = process.env.PORT || 8090;
 
@@ -93,6 +93,11 @@ app.get('/verify_worker/:wid', async (req, res) => {
 app.post('/post_response/:wid', async (req, res) => {
   let stat = await saveResponse(req.params["wid"], req.body);
   res.send({"success": stat});
+});
+
+app.get('/get_response', async (req, res) => {
+  let data = await getResponse();
+  res.send(data);
 });
 
 app.listen(PORT, () => {
