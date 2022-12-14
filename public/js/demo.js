@@ -14,6 +14,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     setVisible('#loading', false);
 });
 
+window.addEventListener('click', (event) => {
+    if (event.target.value ) {
+        var tbox = document.getElementsByName(event.target.name+"-val");
+        if (event.target.value.includes("please specify:")) {
+            tbox[0].disabled = false;
+        } else {
+            if (tbox.length>0)
+                tbox[0].disabled = true;
+        }
+    }
+});
+
 var questions = await getQuestions("demo");
 var val = generateQuestions(questions);
 setInnerHtml("#quest", val);

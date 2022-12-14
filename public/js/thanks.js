@@ -4,6 +4,12 @@ window.setProgress = setProgress;
 setProgress(14);
 
 generategiftcard();
+window.addEventListener('DOMContentLoaded', (event) => {
+    setVisible('body', true);
+    setVisible('.card', true);
+    setVisible('#loading', false);
+});
+
 sessionStorage.clear();
 
 // if (sessionStorage.getItem("page_id") != 6) {
