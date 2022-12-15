@@ -54,19 +54,28 @@ async function saveResponse(wid, data) {
     if (!fs.existsSync(respDir)){
         fs.mkdirSync(respDir);
     }
+    var gcode = generateGift(wid, data.did);
+    data["giftcode"] = gcode;
     fs.writeFile( respDir + '/' + wid + '.json', JSON.stringify(data), error => {
         if (error) {
             return false;
         }
     });
-    return generateGift(wid, data.did);
+    return gcode;
 }
 
 async function getResponse() {
     var files = fs.readdirSync(respDir);
-    var retObj = {}
+    var retObj = {};
     for (let fn in files) {
-        var tempObj = JSON.parse(fs.readFileSync(respDir + files[fn]));
+        var tempObj = {};
+        try {
+            var data = fs.readFileSync(respDir + files[fn])
+            tempObj = JSON.parse(data);
+        }
+        catch (err) {
+            tempObj(err)
+        }
         retObj[files[fn].split(".")[0]] = tempObj;
     }
     return retObj;
