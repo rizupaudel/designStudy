@@ -51,7 +51,7 @@ var questions = [
     },
     {
         "qid": 3,
-        "text": "Please select the fifth option which tells us you are paying attention: ",
+        "text": "Please select the second option which tells us you are paying attention: ",
         "subquestions": [
             {
                 "sid": 1,

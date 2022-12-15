@@ -82,7 +82,7 @@ var questions = [
     },
     {
         "qid": 4,
-        "text": "Please select the third option which tells us you are paying attention.",
+        "text": "Please select the sixth option which tells us you are paying attention.",
         "subquestions": [
             {
                 "sid": 1,
