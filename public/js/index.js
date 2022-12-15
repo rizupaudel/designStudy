@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 async function verifyWorker(wid) {
-    return window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
+    let validResponse = await window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
+    return validResponse;
 }
 
 async function submitId() {

@@ -100,7 +100,8 @@ app.get('/get_response', async (req, res) => {
     let data = await getResponse();
     res.send(data); 
   } catch (err) {
-    next(err);
+    console.log(data);
+    console.log(err);
   }
 });
 

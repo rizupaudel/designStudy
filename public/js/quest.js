@@ -72,7 +72,7 @@ async function gotocsquest() {
         nPage = parseInt(nPage) + 1;
         if (nPage in divideQuestions(chunkSize)) {
             setVisible('.questionaire', false);
-            await wait(500);
+            await wait(300);
             var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
             setInnerHtml("#quest", val);
             setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);

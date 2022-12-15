@@ -47,7 +47,7 @@ async function gotomotivation() {
         if (tPage in divideQuestions()) {
             var val = generateQuestions(divideQuestions()[tPage]);
             setVisible('.questionaire', false);
-            await wait(1000);
+            await wait(300);
             setInnerHtml("#quest", val);
             setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
             
