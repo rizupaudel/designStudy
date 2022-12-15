@@ -1,26 +1,26 @@
 var designs = { 
     1: {
-        name: "Logos",
+        name: "Log",
         images: ["Logos1.png", "Logos2.png"],
         csquest: [1, 2, 4, 6]
     }, 
     2: {
-        name: "Metaphor",
+        name: "Dar",
         images: ["Dart1.png", "Dart2.png"],
         csquest: [1, 2, 3, 4, 5, 6, 7]
     },
     3: {
-        name: "Personal",
+        name: "Per",
         images: ["Personal1.png", "Personal2.png", "Personal3.png"],
         csquest: [1, 2, 3, 4, 5, 6]
     },
     4: {
-        name: "Professional",
+        name: "Pro",
         images: ["Professional1.png", "Professional2.png", "Professional3.png"],
         csquest: [1, 2, 3, 4, 5, 6]
     },
     5: {
-        name: "Consequences",
+        name: "Con",
         images: ["Consequences1.png", "Consequences2.png"],
         csquest: [1, 2, 3, 4, 5, 6]
     }
