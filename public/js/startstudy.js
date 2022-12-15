@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setVisible('.card', true);
         setVisible('#loading', false);
     });
+    return true;
 });
 
 async function startStudy() {

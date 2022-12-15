@@ -197,12 +197,21 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
+                    "low": "not rewarding",
+                    "high": "rewarding"
+                }
+            },
+            {
+                "sid": 23,
+                "type": "likert",
+                "title": "",
+                "elements": {
                     "low": "poorly grouped",
                     "high": "well grouped"
                 }
             },
             {
-                "sid": 23,
+                "sid": 24,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -211,7 +220,7 @@ var questions = [
                 }
             },
             {
-                "sid": 24,
+                "sid": 25,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -220,7 +229,7 @@ var questions = [
                 }
             },
             {
-                "sid": 25,
+                "sid": 26,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -229,7 +238,7 @@ var questions = [
                 }
             },
             {
-                "sid": 26,
+                "sid": 27,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -238,7 +247,7 @@ var questions = [
                 }
             },
             {
-                "sid": 27,
+                "sid": 28,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -247,7 +256,7 @@ var questions = [
                 }
             },
             {
-                "sid": 28,
+                "sid": 29,
                 "type": "likert",
                 "title": "",
                 "elements": {

@@ -138,10 +138,14 @@ export function setTime() {
     sessionStorage.setItem("ptime", new Date());
 }
 
-export function nextPage(page_id, page_name) {
+export function setPageTime(page_id) {
     var ptime = Date.parse(sessionStorage.getItem("ptime")) || new Date();
     var ctime = new Date();
     sessionStorage.setItem(`${page_id-1}_time`, Math.round(ctime-ptime)/1000);
+}
+
+export function nextPage(page_id, page_name) {
+    setPageTime(page_id)
     sessionStorage.setItem("page_id", page_id);
     window.location.replace(page_name);
 }
@@ -293,6 +297,7 @@ export function clickEventListener() {
             }
         }
     });
+    return true;
 }
 
 export function loadDesignImages(images) {

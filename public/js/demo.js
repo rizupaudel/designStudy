@@ -1,4 +1,4 @@
-import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener } from "./utility.js";
+import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, setPageTime } from "./utility.js";
 sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 14);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -25,6 +25,7 @@ async function gotothanks() {
         setVisible("#reqfields", false);
         
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
+        setPageTime(15);
         let res = await saveUserResponse();
         
         if (res.success) {
@@ -42,7 +43,7 @@ window.gotothanks = gotothanks;
 async function saveUserResponse() {
     sessionStorage.removeItem("page_id");
     sessionStorage.removeItem("ptime");
-    let wid = sessionStorage.getItem("wid");
+    let wid = sessionStorage.getItem("wid") || "random";
     sessionStorage.removeItem("wid");
     const res = await window.fetch('/post_response' + '/' + wid, 
     {

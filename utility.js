@@ -43,7 +43,11 @@ async function getDesign(did) {
 }
 
 function generateGift(wid, did) {
-    return dF.designs[did].name + "-" + wid;
+    if (did && did !=="null") {
+        return dF.designs[did].name + "-" + wid;
+    } else {
+        return "random" + "-" + wid;
+    }
 }
 
 async function saveResponse(wid, data) {

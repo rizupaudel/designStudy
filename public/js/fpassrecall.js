@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     setVisible('body', true);
     setVisible('.card', true);
     setVisible('#loading', false);
+    return true;
 });
 
 async function gotopagegif() {

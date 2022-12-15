@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     setVisible('body', true);
     setVisible('.card', true);
     setVisible('#loading', false);
+    return true;
 });
 
 document.getElementById("checkbox").addEventListener('click', function(e) {
