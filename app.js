@@ -96,8 +96,12 @@ app.post('/post_response/:wid', async (req, res) => {
 });
 
 app.get('/get_response', async (req, res) => {
-  let data = await getResponse();
-  res.send(data);
+  try {
+    let data = await getResponse();
+    res.send(data); 
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.listen(PORT, () => {
