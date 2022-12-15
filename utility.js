@@ -74,7 +74,7 @@ async function getResponse() {
             tempObj = JSON.parse(data);
         }
         catch (err) {
-            tempObj(err)
+            tempObj["error"] = err;
         }
         retObj[files[fn].split(".")[0]] = tempObj;
     }
