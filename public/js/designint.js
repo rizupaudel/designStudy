@@ -1,12 +1,12 @@
 import { setVisible, setProgress, getDesign, setTime, nextPage, updateImage, setInnerHtml } from "./utility.js";
-sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 6);
+// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 6);
 window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-// if (sessionStorage.getItem("page_id") != 4) {
-//     window.location = "/";
-// }
+if (sessionStorage.getItem("page_id") != 6) {
+    window.location = "/";
+}
 
 window.addEventListener('DOMContentLoaded', (event) => {
     setVisible('body', true);

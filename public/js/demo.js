@@ -1,12 +1,12 @@
 import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, setPageTime } from "./utility.js";
-sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 14);
+// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 14);
 window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-// if (sessionStorage.getItem("page_id") != 5) {
-//     window.location = "/";
-// }
+if (sessionStorage.getItem("page_id") != 14) {
+    window.location = "/";
+}
 
 clickEventListener();
 
