@@ -14,43 +14,8 @@ var questions = [
             }
         ],
     },
-    
     {
         "qid": 2,
-        "text": "The password I have created: ",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "is hard to remember",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 2,
-                "type": "likert",
-                "title": "can be easily guessed by a hacker ",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 3,
-                "type": "likert",
-                "title": "can be easily guessed by my close friends or family members",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ],
-        
-    },
-    {
-        "qid": 3,
         "text": "Please answer the following questions based on your behavior in real life: ",
         "subquestions": [
             {

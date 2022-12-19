@@ -219,6 +219,21 @@ var questions = [
     },
     {
         "qid": 9,
+        "text": "If this design is implemented in real life and shown to me before I create a password for an online account I care about, I will be motivated to create a stronger password than the one I would have created if the design were not presented to me during the sign up.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+        ]
+    },
+    {
+        "qid": 10,
         "text": "Which parts of the presented design motivates you most to create a strong password?",
         "subquestions": [
             {
@@ -229,7 +244,7 @@ var questions = [
         ]
     },
     {
-        "qid": 10,
+        "qid": 11,
         "text": "What do you think the dartboard implies here in the design? Please explain in 2-3 sentences.",
         "subquestions": [
             {
