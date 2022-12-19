@@ -44,6 +44,13 @@ export function generateTextbox(qsid) {
     return val;
 }
 
+export function generateTextarea(qsid) {
+    var val = '<div class="textareaC">';
+    val += `<textarea class="textarea" name="${qsid}" rows="10" cols="70"></textarea><br>`;
+    val += "</div>";
+    return val;
+}
+
 export function generateOption(qsid, cI) {
     var val = '<div class="option">';
     for (let i in cI) {
@@ -72,6 +79,8 @@ export function generateSubQuestion(subQ) {
         val += generateOption(subQ.qsid, subQ.elements);
     } else if (subQ.type === "textbox") {
         val += generateTextbox(subQ.qsid);
+    } else if (subQ.type === "textarea") {
+        val += generateTextarea(subQ.qsid);
     }
     return val;
 }
@@ -229,6 +238,20 @@ export function getResponse(questions) {
                     eel.style.opacity = 0;
                 }
             } else if (subquestions[sqn].type === "textbox") {
+                var el = document.getElementsByName(qsid);
+                response[qsid] = el[0].value;
+                if (el[0].value) {checked_flag = true};
+
+                var eel = document.getElementById("reqfield"+questions[qn].qid);
+                if (!checked_flag) {
+                    eel.style.visibility = "visible";
+                    eel.style.opacity = 1;
+                    next_flag = false;
+                } else {
+                    eel.style.visibility = "hidden";
+                    eel.style.opacity = 0;
+                }
+            } else if (subquestions[sqn].type === "textarea") {
                 var el = document.getElementsByName(qsid);
                 response[qsid] = el[0].value;
                 if (el[0].value) {checked_flag = true};

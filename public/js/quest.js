@@ -1,12 +1,12 @@
 import { setProgress, getQuestions, generateQuestions, setTime, getDesign, nextPage, setVisible, getResponse, setInnerHtml, clickEventListener, loadDesignImages, setIndicator, wait } from "./utility.js";
-sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
+// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 7);
 window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-// if (sessionStorage.getItem("page_id") != 5) {
-//     window.location = "/";
-// }
+if (sessionStorage.getItem("page_id") != 7) {
+    window.location = "/";
+}
 
 clickEventListener();
 
@@ -17,7 +17,7 @@ const randomize = array => {
       array[i] = array[j];
       array[j] = temp;
     }
-  }
+}
 
 var questions = await getQuestions("quest");
 var questionsn = await getQuestions("csquest" + "-" + sessionStorage.getItem("did"));
@@ -40,18 +40,11 @@ function divideQuestions(nS) {
     return dividedQuestions;
 }
 
-function divideQuestionsn() {
-    var dividedQuestions = {};
-    dividedQuestions[1] = questionsn.slice(0, 1);
-    dividedQuestions[2] = questionsn.slice(1);
-    return dividedQuestions;
-}
-
 var chunkSize = 10;
 var nPage = sessionStorage.getItem("nPage") || 1;
 var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
 setInnerHtml("#quest", val);
-setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
+setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(questionsn).length);
 
 var images = ["designs/image-loader.gif"];
 loadDesignImages(images);
@@ -75,7 +68,7 @@ async function gotocsquest() {
             await wait(300);
             var val = generateQuestions(divideQuestions(chunkSize)[nPage]);
             setInnerHtml("#quest", val);
-            setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(divideQuestionsn()).length);
+            setIndicator(nPage, Object.keys(divideQuestions(chunkSize)).length + Object.keys(questionsn).length);
 
             setVisible('.questionaire', true);
             sessionStorage.setItem("nPage", nPage);

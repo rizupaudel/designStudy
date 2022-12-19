@@ -1,12 +1,12 @@
 import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml, clickEventListener, loadDesignImages, setIndicator, wait } from "./utility.js";
-sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
+// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
 window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-// if (sessionStorage.getItem("page_id") != 5) {
-//     window.location = "/";
-// }
+if (sessionStorage.getItem("page_id") != 8) {
+    window.location = "/";
+}
 
 clickEventListener();
 
@@ -14,18 +14,11 @@ var questions = await getQuestions("csquest" + "-" + sessionStorage.getItem("did
 setVisible('.card', true);
 setVisible('#loading', false);
 
-function divideQuestions() {
-    var dividedQuestions = {};
-    dividedQuestions[1] = questions.slice(0, 2);
-    dividedQuestions[2] = questions.slice(2);
-    return dividedQuestions;
-}
-
 var nPage = parseInt(sessionStorage.getItem("nPage")) || 1;
 var tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
-var val = generateQuestions(divideQuestions()[tPage]);
+var val = generateQuestions(questions[tPage]);
 setInnerHtml("#quest", val);
-setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
+setIndicator(nPage + tPage, Object.keys(questions).length + nPage);
 
 var images = ["designs/image-loader.gif"];
 loadDesignImages(images);
@@ -35,7 +28,7 @@ loadDesignImages(images);
 setVisible('body', true);
 
 async function gotomotivation() {
-    let partQuestions = divideQuestions()[tPage];
+    let partQuestions = questions[tPage];
     var data = getResponse(partQuestions);
     var response = data.response;
 
@@ -44,12 +37,12 @@ async function gotomotivation() {
 
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}`, JSON.stringify(response));
         tPage = parseInt(tPage) + 1;
-        if (tPage in divideQuestions()) {
-            var val = generateQuestions(divideQuestions()[tPage]);
+        if (tPage in questions) {
+            var val = generateQuestions(questions[tPage]);
             setVisible('.questionaire', false);
             await wait(300);
             setInnerHtml("#quest", val);
-            setIndicator(nPage + tPage, Object.keys(divideQuestions()).length + nPage);
+            setIndicator(nPage + tPage, Object.keys(questions).length + nPage);
             
             setVisible('.questionaire', true);
             sessionStorage.setItem("tPage", tPage);

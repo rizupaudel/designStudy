@@ -9,22 +9,50 @@ var dF = require("./data/designs");
 var fs = require('fs');
 var respDir = './data/responses/';
 
-function isIn(qids) {
-    return function (question) {
-        if (qids.includes(question.qid))
-            return true;
-        return false;
+// function isIn(qids) {
+//     return function (question) {
+//         if (qids.includes(question.qid))
+//             return true;
+//         return false;
+//     }
+// }
+const randomize = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+}
+
+function getQuestion(questions, qid) {
+    for (let i=0; i<questions.length; i++) {
+        if (questions[i]["qid"] === qid) {
+            if (qid === 1) {
+                randomize(questions[i].subquestions);
+            }
+            return questions[i];
+        }
     }
 }
 
 async function getQuestions(a) {
     var arr = a.split("-");
     q = arr[0] + "Q";
-    // await wait(1000);
     if (arr.length>1) {
         if (arr[1] && arr[1]!=="null") {
+            var questions = eval(q).questions;
+            var ret_questions = {};
             var qids = dF.designs[arr[1]][arr[0]];
-            return {"questions": eval(q).questions.filter(isIn(qids))};
+
+            for (let i=0; i<qids.length; i++) {
+                var temp = [];
+                for (let j=0; j<qids[i].length; j++) {
+                    temp.push(getQuestion(questions, qids[i][j]));
+                }
+                ret_questions[i+1] = temp;
+            }
+            return {"questions": ret_questions};
         }
     }
     return eval(q);
