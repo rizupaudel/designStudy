@@ -1,12 +1,12 @@
 var questions = [
     {
         "qid": 1,
-        "text": "The way the design portrays what could happen because of the password strength:",
+        "text": "The way the design portrays what could happen because of the password strength is:",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "makes me informed",
+                "title": "Creative",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -15,7 +15,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "makes me worried",
+                "title": "Engaging",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -24,7 +24,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "encourages me to create a strong password",
+                "title": "Novel",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -33,7 +33,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "makes me feel emotionally connected to the presented scenario",
+                "title": "Attractive",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -42,7 +42,34 @@ var questions = [
             {
                 "sid": 5,
                 "type": "likert",
-                "title": "makes me feel personally connected to the presented scenario",
+                "title": "Easy to understand",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 6,
+                "type": "likert",
+                "title": "Informative",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 7,
+                "type": "likert",
+                "title": "Well Organized",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 8,
+                "type": "likert",
+                "title": "To the Point",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -52,36 +79,6 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "It is easy for me to follow the message depicted across multiple pages in the design.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 3,
-        "text": "In the presented design, the portrayal of hacker stimulates me to create a strong password.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 4,
         "text": "Please select the sixth option which tells us you are paying attention.",
         "subquestions": [
             {
@@ -96,8 +93,65 @@ var questions = [
         ]
     },
     {
+        "qid": 3,
+        "text": "The way the design portrays what could happen because of the password strength:",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "Makes me worried",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 2,
+                "type": "likert",
+                "title": "Encourages me to create a strong password",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 3,
+                "type": "likert",
+                "title": "Makes me feel emotionally connected to the presented scenario",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+            {
+                "sid": 4,
+                "type": "likert",
+                "title": "Makes me feel personally connected to the presented scenario",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 4,
+        "text": "It is easy for me to follow the message depicted across multiple pages in the design.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+        ]
+    },
+    {
         "qid": 5,
-        "text": "In the presented design, the portrayal of victim encourages me to create a strong password.",
+        "text": "In the presented design, the portrayal of hacker stimulates me to create a strong password.",
         "subquestions": [
             {
                 "sid": 1,
@@ -112,6 +166,36 @@ var questions = [
     },
     {
         "qid": 6,
+        "text": "Please select the first option which tells us you are paying attention.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Option One",
+                    "high": "Option Seven"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 7,
+        "text": "In the presented design, the portrayal of victim encourages me to create a strong password.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+        ]
+    },
+    {
+        "qid": 8,
         "text": "In which type website's account creation page would you want to see this design?",
         "subquestions": [
             {
@@ -134,12 +218,23 @@ var questions = [
         ]
     },
     {
-        "qid": 7,
+        "qid": 9,
+        "text": "Which parts of the presented design motivates you most to create a strong password?",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "textarea",
+                "title": "",
+            },
+        ]
+    },
+    {
+        "qid": 10,
         "text": "What do you think the dartboard implies here in the design? Please explain in 2-3 sentences.",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "title": "",
             },
         ]

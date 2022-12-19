@@ -44,93 +44,12 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "inferior",
-                    "high": "valuable"
-                }
-            },
-            {
-                "sid": 6,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "select leftmost circle",
-                    "high": "select leftmost circle"
-                }
-            },
-            {
-                "sid": 7,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "boring",
-                    "high": "exciting"
-                }
-            },
-            {
-                "sid": 8,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "not interesting",
-                    "high": "interesting"
-                }
-            },
-            {
-                "sid": 9,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "demotivating ",
-                    "high": "motivating"
-                }
-            },
-            {
-                "sid": 10,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "dull",
-                    "high": "creative"
-                }
-            },
-            {
-                "sid": 11,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "conventional ",
-                    "high": "inventive"
-                }
-            },
-            {
-                "sid": 12,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "usual",
-                    "high": "leading edge"
-                }
-            },
-            {
-                "sid": 13,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "conservative",
-                    "high": "innovative"
-                }
-            },
-            {
-                "sid": 14,
-                "type": "likert",
-                "title": "",
-                "elements": {
                     "low": "ugly",
                     "high": "beautiful"
                 }
             },
             {
-                "sid": 15,
+                "sid": 6,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -139,7 +58,7 @@ var questions = [
                 }
             },
             {
-                "sid": 16,
+                "sid": 7,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -148,7 +67,7 @@ var questions = [
                 }
             },
             {
-                "sid": 17,
+                "sid": 8,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -157,7 +76,7 @@ var questions = [
                 }
             },
             {
-                "sid": 18,
+                "sid": 9,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -166,7 +85,7 @@ var questions = [
                 }
             },
             {
-                "sid": 19,
+                "sid": 10,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -175,7 +94,7 @@ var questions = [
                 }
             },
             {
-                "sid": 20,
+                "sid": 11,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -184,7 +103,7 @@ var questions = [
                 }
             },
             {
-                "sid": 21,
+                "sid": 12,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -193,7 +112,7 @@ var questions = [
                 }
             },
             {
-                "sid": 22,
+                "sid": 13,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -202,7 +121,7 @@ var questions = [
                 }
             },
             {
-                "sid": 23,
+                "sid": 14,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -211,7 +130,7 @@ var questions = [
                 }
             },
             {
-                "sid": 24,
+                "sid": 15,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -220,7 +139,7 @@ var questions = [
                 }
             },
             {
-                "sid": 25,
+                "sid": 16,
                 "type": "likert",
                 "title": "",
                 "elements": {
@@ -229,39 +148,12 @@ var questions = [
                 }
             },
             {
-                "sid": 26,
+                "sid": 17,
                 "type": "likert",
                 "title": "",
                 "elements": {
                     "low": "disorganized",
                     "high": "organized"
-                }
-            },
-            {
-                "sid": 27,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "engaging",
-                    "high": "not engaging"
-                }
-            },
-            {
-                "sid": 28,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "uninformative",
-                    "high": "informative"
-                }
-            },
-            {
-                "sid": 29,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "select middle circle",
-                    "high": "select middle circle"
                 }
             }
         ],

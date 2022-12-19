@@ -51,30 +51,6 @@ var questions = [
     },
     {
         "qid": 3,
-        "text": "Which of the following you have used in the password you have created. Please select all that apply.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "checkbox",
-                "title": "",
-                "elements": [ 
-                    'My phone number or a part of it',
-                    'My address or a part of it',
-                    'My name or a part of it',
-                    'Keyboard patterns',
-                    'Name of a family member or pet, or a part of it',
-                    'Birthday or a part of it',
-                    'My Identification (ID) number or a part of it',
-                    'Repeated or sequential characters',
-                    'Name of the favorite sports team, player or a part of it',
-                    'Common dictionary words',
-                    'None of the above'
-                ]
-            },
-        ]
-    },
-    {
-        "qid": 4,
         "text": "Please answer the following questions based on your behavior in real life: ",
         "subquestions": [
             {
