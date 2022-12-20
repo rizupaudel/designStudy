@@ -30,7 +30,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "I use different passwords for different accounts that I have. ",
+                "title": "I use different passwords for different online accounts that I have. ",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
