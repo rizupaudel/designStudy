@@ -17,8 +17,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "difficult to learn",
-                    "high": "easy to learn"
+                    "low": "easy to learn",
+                    "high": "difficult to learn"
                 }
             },
             {
@@ -62,8 +62,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "lacking style",
-                    "high": "stylish"
+                    "low": "stylish",
+                    "high": "lacking style",
                 }
             },
             {
@@ -89,8 +89,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "useless",
-                    "high": "useful"
+                    "low": "useful",
+                    "high": "useless"
                 }
             },
             {
@@ -107,8 +107,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "not beneficial",
-                    "high": "beneficial"
+                    "low": "beneficial",
+                    "high": "not beneficial"
                 }
             },
             {
@@ -116,8 +116,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "not rewarding",
-                    "high": "rewarding"
+                    "low": "rewarding",
+                    "high": "not rewarding"
                 }
             },
             {
@@ -143,8 +143,8 @@ var questions = [
                 "type": "likert",
                 "title": "",
                 "elements": {
-                    "low": "disordered",
-                    "high": "ordered"
+                    "low": "ordered",
+                    "high": "disordered"
                 }
             },
             {
