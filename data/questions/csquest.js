@@ -108,7 +108,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Makes me feel capable of creating a strong password ",
+                "title": "Makes me feel capable of creating a strong password",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -275,6 +275,21 @@ var questions = [
                 "sid": 1,
                 "type": "textarea",
                 "title": "",
+            },
+        ]
+    },
+    {
+        "qid": 13,
+        "text": "It is easy for me to follow the message in the design.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
             },
         ]
     }

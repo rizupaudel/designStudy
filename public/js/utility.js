@@ -62,7 +62,7 @@ export function generateOption(qsid, cI, custom=false) {
         val += "<br>";
     }
     if (custom) {
-        val += `<p class="custom"></p><textarea class="textarea" name="${qsid}-val" rows="1" cols="70"></textarea>`;
+        val += `<p class="custom"></p><textarea class="textarea" name="${qsid}-val" rows="3" cols="80"></textarea>`;
     }
     val += "</div>";
     return val;
@@ -230,7 +230,7 @@ export function getResponse(questions) {
                         } else {
                             vall = el[i].value;
                         }
-                        if (vall) {
+                        if (vall.replace("variation - ", "").replace("different - ", "")) {
                             response[qsid] = vall;
                             checked_flag = true;
                         }

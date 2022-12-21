@@ -1,7 +1,7 @@
 var questions = [
     {
         "qid": 1,
-        "text": "The password I have created is: ",
+        "text": "The password I have created is:",
         "subquestions": [
             {
                 "sid": 1,
@@ -16,7 +16,7 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "I felt motivated to create a strong password after going through this design",
+        "text": "I felt motivated to create a strong password after going through this design.",
         "subquestions": [
             {
                 "sid": 1,
@@ -31,12 +31,12 @@ var questions = [
     },
     {
         "qid": 3,
-        "text": "The password I have created is: ",
+        "text": "The password I have created is:",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "hard to remember",
+                "title": "Hard to remember",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -45,7 +45,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "can be easily guessed by a hacker ",
+                "title": "Can be easily guessed by a hacker",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -54,7 +54,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "can be easily guessed by my close friends or family members",
+                "title": "Can be easily guessed by my close friends or family members",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -63,7 +63,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "stronger than the passwords I usually use",
+                "title": "Stronger than the passwords I usually use",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -74,7 +74,7 @@ var questions = [
     },
     {
         "qid": 4,
-        "text": "Please select the second option which tells us you are paying attention:",
+        "text": "Please select the second option which tells us you are paying attention.",
         "subquestions": [
             {
                 "sid": 1,
@@ -134,7 +134,7 @@ var questions = [
     },
     {
         "qid": 8,
-        "text": "What was your strategy in creating the password? (Select one)",
+        "text": "What was your strategy in creating the password?",
         "subquestions": [
             {
                 "sid": 1,

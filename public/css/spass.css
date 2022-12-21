@@ -110,13 +110,16 @@
   transform: scale(1.01);
 }
 
-.imageContainer img {
-  width: 100%;
-  object-fit: cover;
+.imageContainer .designPages {
+  background-color: #fff;
 }
 
-.designPages {
-  background-color: #fff;
+.imageContainer .designPages img {
+  width: 100%;
+  max-height:100%;
+  height: auto;
+  object-fit: contain;
+  animation: fadeIn 2s;
 }
 
 .imageContainer .nButton {

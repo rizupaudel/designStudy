@@ -15,6 +15,13 @@ window.loadImage = loadImage;
 
 var data = await getDesign(sessionStorage.getItem("did"));
 var images = data.images;
+if (images.length <= 1) {
+    if (images[0].includes("OnlineChat")) {
+        document.querySelector(".designPages").style.overflow = "scroll";
+        document.querySelector(".designPages").style.height = "69vh";
+        document.querySelector(".designPages img").style.maxHeight = "none";
+    }
+}
 loadImage();
 setVisible('body', true);
 setVisible('.card', true);

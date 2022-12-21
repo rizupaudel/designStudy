@@ -1,7 +1,7 @@
 var questions = [
     {
         "qid": 1,
-        "text": "The password I have created is: ",
+        "text": "The password I have created is:",
         "subquestions": [
             {
                 "sid": 1,
@@ -16,7 +16,7 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "Please answer the following questions based on your behavior in real life: ",
+        "text": "Please answer the following questions based on your behavior in real life:",
         "subquestions": [
             {
                 "sid": 1,
@@ -30,7 +30,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "I use different passwords for different online accounts that I have. ",
+                "title": "I use different passwords for different online accounts that I have.",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -39,7 +39,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "When I create a new online account, I try to use a password that goes beyond the site’s minimum requirements. ",
+                "title": "When I create a new online account, I try to use a password that goes beyond the site’s minimum requirements.",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -48,7 +48,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "I do not include special characters in my password if it’s not required. ",
+                "title": "I do not include special characters in my password if it’s not required.",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
