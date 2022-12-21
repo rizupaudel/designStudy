@@ -84,7 +84,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "sixth option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -141,7 +141,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "ease to follow",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -156,7 +156,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "portrayal of hacker stimulates",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -171,7 +171,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "first option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -186,7 +186,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "portrayal of victim encourages",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -201,7 +201,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "checkbox",
-                "title": "",
+                "title": "website's account creation",
                 "elements": [
                     "Social Media",
                     "Email",
@@ -224,7 +224,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "real life motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -239,7 +239,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "textarea",
-                "title": "",
+                "title": "motivation parts",
             },
         ]
     },
@@ -250,7 +250,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "textarea",
-                "title": "",
+                "title": "metaphor meaning",
             },
         ]
     }

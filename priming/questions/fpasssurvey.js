@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "first password strength",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"

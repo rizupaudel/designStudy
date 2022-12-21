@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "second password strength",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"
@@ -21,7 +21,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "motivated after seeing design",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -79,7 +79,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "second option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"

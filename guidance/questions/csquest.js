@@ -84,7 +84,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "sixth option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -108,7 +108,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Makes me feel capable of creating a strong password ",
+                "title": "Makes me feel capable of creating a strong password",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -132,7 +132,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "personally connected",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -147,7 +147,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "easy to follow multiple pages",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -162,7 +162,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "first option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -210,7 +210,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "example helped",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -248,7 +248,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "real life motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -275,6 +275,21 @@ var questions = [
                 "sid": 1,
                 "type": "textarea",
                 "title": "",
+            },
+        ]
+    },
+    {
+        "qid": 13,
+        "text": "It is easy for me to follow the message in the design.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "ease to follow",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
             },
         ]
     }

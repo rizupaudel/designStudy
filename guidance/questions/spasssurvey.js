@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "second password strength",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"
@@ -21,7 +21,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "motivated after seeing design",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -79,7 +79,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "second option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -94,7 +94,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "helped to create strong",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -109,7 +109,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "easy to think personal memory",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -124,7 +124,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "difficult to add number",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -139,7 +139,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "open to adopt based on security expert",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
