@@ -34,3 +34,11 @@ body {
   padding-left: 3%;
   font-weight: 400;
 }
+
+.custom {
+  display: none;
+}
+
+.option textarea {
+  display: none;
+}

@@ -51,6 +51,9 @@ loadDesignImages(images);
 var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
 loadDesignImages(images);
+if (images.length > 3) {
+    document.getElementsByClassName("images")[0].style.columns = 2;
+}
 setVisible('body', true);
 
 async function gotocsquest() {

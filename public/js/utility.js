@@ -51,7 +51,7 @@ export function generateTextarea(qsid) {
     return val;
 }
 
-export function generateOption(qsid, cI) {
+export function generateOption(qsid, cI, custom=false) {
     var val = '<div class="option">';
     for (let i in cI) {
         // let name = qsid + "-" + i;
@@ -60,6 +60,9 @@ export function generateOption(qsid, cI) {
             val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
         }
         val += "<br>";
+    }
+    if (custom) {
+        val += `<p class="custom"></p><textarea class="textarea" name="${qsid}-val" rows="1" cols="70"></textarea>`;
     }
     val += "</div>";
     return val;
@@ -76,7 +79,7 @@ export function generateSubQuestion(subQ) {
     } else if (subQ.type === "checkbox") {
         val += generateCheckbox(subQ.qsid, subQ.elements);
     } else if (subQ.type === "option") {
-        val += generateOption(subQ.qsid, subQ.elements);
+        val += generateOption(subQ.qsid, subQ.elements, subQ.custom);
     } else if (subQ.type === "textbox") {
         val += generateTextbox(subQ.qsid);
     } else if (subQ.type === "textarea") {
@@ -126,6 +129,10 @@ export async function getDesign(did="plc") {
 export const setVisible = (elementOrSelector, visible) => {
     (typeof elementOrSelector === 'string' ? document.querySelector(elementOrSelector): elementOrSelector).style.visibility = visible ? 'visible' : 'hidden';
     (typeof elementOrSelector === 'string' ? document.querySelector(elementOrSelector): elementOrSelector).style.opacity = visible ? 1 : 0;
+}
+
+export const setDisplay = (elementOrSelector, visible) => {
+    (typeof elementOrSelector === 'string' ? document.querySelector(elementOrSelector): elementOrSelector).style.display = visible ? 'block' : 'none';
 }
 
 export const setInnerHtml = (elementOrSelector, val) => {
@@ -217,8 +224,9 @@ export function getResponse(questions) {
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
                         var vall = "";
-                        if (el[i].value.includes("please specify:")) {
-                            vall = document.getElementsByName(qsid + "-val")[0].value;
+                        if (el[i].value.includes("please specify:") || el[i].value.includes("totally different strategy") || el[i].value.includes("variation of the strategy")) {
+                            vall += el[i].value.includes("different") ? "different - " : "variation - ";
+                            vall += document.getElementsByName(qsid + "-val")[0].value;
                         } else {
                             vall = el[i].value;
                         }

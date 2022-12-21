@@ -8,13 +8,6 @@ if (sessionStorage.getItem("page_id") != 6) {
     window.location = "/";
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-    return true;
-});
-
 document.getElementById("checkbox").addEventListener('click', function(e) {
     document.getElementById("nextbutton").style.pointerEvents = e.target.checked ? "auto": "none";
     document.getElementById("nextbutton").style.opacity = e.target.checked ? 1: 0.4;
@@ -28,7 +21,16 @@ sessionStorage.setItem("did", data.did);
 if (images.length <= 1) {
     setInnerHtml("h2", "");
     setInnerHtml(".checkbox label", "I have gone through the design");
+    if (images[0].includes("OnlineChat")) {
+        document.querySelector(".designPages").style.overflow = "scroll";
+        document.querySelector(".designPages").style.height = "69vh";
+        document.querySelector(".designPages img").style.maxHeight = "none";
+    }
 }
+
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
 function loadImage(flag="") {
     updateImage(images, flag);
