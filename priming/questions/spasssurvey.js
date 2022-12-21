@@ -74,7 +74,7 @@ var questions = [
     },
     {
         "qid": 4,
-        "text": "Please select the second option which tells us you are paying attention:",
+        "text": "Please select the second option which tells us you are paying attention: ",
         "subquestions": [
             {
                 "sid": 1,
@@ -83,66 +83,6 @@ var questions = [
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 5,
-        "text": "The design helped me to create a strong password.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 6,
-        "text": "It was easy to think of a personal memory that is not shared with anyone or posted online.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 7,
-        "text": "It was difficult to find a place to add number and special character that will be memorable.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 8,
-        "text": "I am open to adopt a new password creation strategy to create a strong and memorable password based on the advice from a security expert.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
                 }
             }
         ]
