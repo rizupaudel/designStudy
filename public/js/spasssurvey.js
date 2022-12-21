@@ -4,9 +4,10 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-// if (sessionStorage.getItem("page_id") != 12) {
-//     window.location = "/";
-// }
+if (sessionStorage.getItem("page_id") != 12) {
+    window.location = "/";
+}
+
 var q2 = "Please tell us how your strategy varies from that in the presented design.";
 var q3 = "Please tell us why you haven't used the password creation strategy presented in the design.";
 
