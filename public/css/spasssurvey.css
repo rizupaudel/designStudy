@@ -42,3 +42,7 @@ body {
 .option textarea {
   display: none;
 }
+
+.option label {
+  font-size: 17px;
+}

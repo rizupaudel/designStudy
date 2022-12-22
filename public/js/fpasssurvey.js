@@ -23,7 +23,7 @@ async function gotofpassrecall() {
         setVisible("#reqfields", false);
         
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        nextPage(4, "fpassrecall");
+        nextPage(5, "pagegif");
     } else {
         setVisible("#reqfields", true);
     }

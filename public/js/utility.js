@@ -224,13 +224,13 @@ export function getResponse(questions) {
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
                         var vall = "";
-                        if (el[i].value.includes("please specify:") || el[i].value.includes("totally different strategy") || el[i].value.includes("variation of the strategy")) {
-                            vall += el[i].value.includes("different") ? "different - " : "variation - ";
+                        if (el[i].value.includes("please specify:")) {
+                            // vall += el[i].value.includes("different") ? "different - " : "variation - ";
                             vall += document.getElementsByName(qsid + "-val")[0].value;
                         } else {
                             vall = el[i].value;
                         }
-                        if (vall.replace("variation - ", "").replace("different - ", "")) {
+                        if (vall) {
                             response[qsid] = vall;
                             checked_flag = true;
                         }

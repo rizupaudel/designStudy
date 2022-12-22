@@ -14,6 +14,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 async function startStudy() {
-    nextPage(1, "fpass");
+    nextPage(3, "fpasssurvey");
 }
 window.startStudy = startStudy;

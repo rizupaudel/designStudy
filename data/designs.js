@@ -2,7 +2,7 @@ var designs = {
     1: {
         name: "Inf",
         images: ["Infographics.png"],
-        csquest: [[1], [2, 3, 4], [6, 7, 8, 9], [10, 11]]
+        csquest: [[1], [2, 3, 4, 13], [6, 7, 8, 9], [10, 11]]
     },
     2: {
         name: "Con",

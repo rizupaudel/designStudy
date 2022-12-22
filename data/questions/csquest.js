@@ -258,7 +258,7 @@ var questions = [
     },
     {
         "qid": 11,
-        "text": "How do you evaluate the presentation of this design in conveying a password creation strategy to users?",
+        "text": "How do you evaluate the presentation of this design?",
         "subquestions": [
             {
                 "sid": 1,

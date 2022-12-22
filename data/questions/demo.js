@@ -98,6 +98,21 @@ var questions = [
                 "elements": ['No experience', 'Self-taught', 'Formal training', 'Pursuing or completed a degree', 'Hold or held a work position', 'Other, please specify:', 'I prefer not to answer']
             }
         ]
+    },
+    {
+        "qid": 9,
+        "text": "I am open to adopt a new password creation strategy to create a strong and memorable password based on the advice from a security expert.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "",
+                "elements": {
+                    "low": " Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            }
+        ]
     }
 ];
 
