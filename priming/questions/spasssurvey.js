@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "second password strength",
+                "title": "strength of password",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"
@@ -16,12 +16,12 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "I felt motivated to create a strong password after going through this design",
+        "text": "I felt motivated to create a strong password after going through this design.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "motivated after seeing design",
+                "title": "motivated after going through design",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -36,7 +36,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "hard to remember",
+                "title": "Hard to remember",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -45,7 +45,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "can be easily guessed by a hacker ",
+                "title": "Can be easily guessed by a hacker ",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -54,7 +54,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "can be easily guessed by my close friends or family members",
+                "title": "Can be easily guessed by my close friends or family members",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -63,7 +63,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "stronger than the passwords I usually use",
+                "title": "Stronger than the passwords I usually use",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"

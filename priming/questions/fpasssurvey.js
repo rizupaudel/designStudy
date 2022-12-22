@@ -1,21 +1,6 @@
 var questions = [
     {
         "qid": 1,
-        "text": "The password I have created is: ",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "first password strength",
-                "elements": {
-                    "low": "Weak",
-                    "high": "Strong"
-                }
-            }
-        ],
-    },
-    {
-        "qid": 2,
         "text": "Please answer the following questions based on your behavior in real life: ",
         "subquestions": [
             {

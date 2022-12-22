@@ -141,7 +141,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "ease to follow",
+                "title": "easy to follow",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -201,7 +201,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "checkbox",
-                "title": "website's account creation",
+                "title": "website's account creation page",
                 "elements": [
                     "Social Media",
                     "Email",
@@ -239,7 +239,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "textarea",
-                "title": "motivation parts",
+                "title": "motivating parts of design",
             },
         ]
     },
