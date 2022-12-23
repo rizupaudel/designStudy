@@ -92,6 +92,7 @@ async function getDesign(did) {
         var i = Math.floor(Math.random() * Object.keys(designs).length + 1);
         return {"did": Object.keys(designs)[i-1], "images": designs[Object.keys(designs)[i-1]].images};
     }
+    console.log(did);
     return {"did": did, "images": designs[did].images};
 }
 
