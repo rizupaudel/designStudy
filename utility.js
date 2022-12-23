@@ -88,7 +88,7 @@ async function getDesign(did) {
         return {"did": did, "images": ["image-loader.gif"]};
     } else if (did === "plc") {
         var filteredDesigns = filterDesign(designs)
-        designs = Object.keys(filteredDesigns).length >= 1 ? filteredDesigns : designs;
+        designs = Object.keys(filteredDesigns).length >= 1 ? filteredDesigns : {'1': designs['1']};
         var i = Math.floor(Math.random() * Object.keys(designs).length + 1);
         console.log(Object.keys(designs)[i-1]);
         return {"did": Object.keys(designs)[i-1], "images": designs[Object.keys(designs)[i-1]].images};
