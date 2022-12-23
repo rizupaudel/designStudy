@@ -67,7 +67,7 @@ function filterDesign(designs) {
         try {
             var did = JSON.parse(fileContents).did;
         } catch (error) {
-            console.log("error while reading file: " + respDir + files[i]);
+            // console.log("error while reading file: " + respDir + files[i]);
             continue;
         }
         didCount[did] = didCount[did] ? didCount[did]+1 : 1;
@@ -90,9 +90,9 @@ async function getDesign(did) {
         var filteredDesigns = filterDesign(designs)
         designs = Object.keys(filteredDesigns).length >= 1 ? filteredDesigns : designs;
         var i = Math.floor(Math.random() * Object.keys(designs).length + 1);
+        console.log(Object.keys(designs)[i-1]);
         return {"did": Object.keys(designs)[i-1], "images": designs[Object.keys(designs)[i-1]].images};
     }
-    console.log(did);
     return {"did": did, "images": designs[did].images};
 }
 
