@@ -269,12 +269,17 @@ var questions = [
     },
     {
         "qid": 12,
+        "custom": true,
         "text": "In this multi-page design, the page on the left made me reflect on how I am doing in following the presented password creation strategy.",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "likert",
                 "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
             },
         ]
     },

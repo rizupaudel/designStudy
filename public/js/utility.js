@@ -313,6 +313,35 @@ export function updateImage(images, flag="") {
     indicator.innerHTML = `${count} of ${images.length}`;
 }
 
+export function updateImage1(images, flag="") {
+    var indicator = document.getElementById("indicator");
+    var count = 1;
+    var pages = document.getElementById("pages");
+    var imgsrc = pages.getAttribute("src");
+    if (imgsrc && imgsrc !== "") {
+        let i = images.indexOf(imgsrc);
+        if (flag === "next") {
+            if (i+1 >= images.length) {
+                i = -1;
+            }
+            if (i >= -1 && i+1 < images.length) {
+                pages.src = images[i+1];
+                count = i + 2;
+            } else {
+                count = i + 1;
+            }
+        } else if (flag === "prev") {
+            if (i-1 >= 0) {
+                pages.src = images[i-1];
+                count = i;
+            }
+        } else {
+            pages.src = images[0];
+        }
+    }
+    indicator.innerHTML = `${count} of ${images.length}`;
+}
+
 export function clickEventListener() {
     window.addEventListener('click', (event) => {
         if (event.target.value ) {

@@ -1,4 +1,4 @@
-import { setProgress, getDesign, setTime, nextPage, setVisible, updateImage } from "./utility.js";
+import { setProgress, getDesign, setTime, nextPage, setVisible, updateImage, updateImage1 } from "./utility.js";
 // sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 10);
 window.setProgress = setProgress;
 window.setTime = setTime;
@@ -13,6 +13,11 @@ function loadImage(flag="") {
 }
 window.loadImage = loadImage;
 
+function loadImage1(flag="") {
+    updateImage1(images, flag);
+}
+window.loadImage1 = loadImage1;
+
 var data = await getDesign(sessionStorage.getItem("did"));
 var images = data.images;
 if (images.length <= 1) {
@@ -22,7 +27,21 @@ if (images.length <= 1) {
         document.querySelector(".designPages img").style.maxHeight = "none";
     }
 }
-loadImage();
+if (images[0].includes("Reflection")) {
+    // disable next button
+    document.getElementsByClassName("nButton")[0].style.pointerEvents = "none";
+    document.getElementById("n").src = "";
+
+    // disable previous button
+    document.getElementsByClassName("pButton")[0].style.pointerEvents = "none";
+    document.getElementById("p").src = "";
+
+    document.querySelector("#pages").setAttribute("onclick", `loadImage1("next")`);
+    loadImage1();
+} else {
+    loadImage();
+}
+
 setVisible('body', true);
 setVisible('.card', true);
 setVisible('#loading', false);

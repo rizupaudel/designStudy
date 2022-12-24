@@ -24,6 +24,11 @@ var images = ["designs/image-loader.gif"];
 loadDesignImages(images);
 var data = await getDesign(sessionStorage.getItem("did"));
 images = data.images;
+if (questions[tPage][0].custom === true) {
+    images = [images[2]];
+    document.getElementsByClassName("images")[0].style.columns = 1;
+}
+
 loadDesignImages(images);
 if (images.length > 3) {
     document.getElementsByClassName("images")[0].style.columns = 2;
@@ -49,6 +54,12 @@ async function gotomotivation() {
             
             setVisible('.questionaire', true);
             sessionStorage.setItem("tPage", tPage);
+            if (questions[tPage][0].custom === true) {
+                images = [images[2]];
+                document.getElementsByClassName("images")[0].style.columns = 1;
+                loadDesignImages(images);
+
+            }
         } else {
             sessionStorage.removeItem("nPage");
             sessionStorage.removeItem("tPage");
