@@ -13,17 +13,12 @@ var designs = {
         name: "Onl",
         images: ["OnlineChat.png"],
         csquest: [[1], [2, 3, 4, 13], [6, 7, 8, 9], [10, 11]]
+    },
+    4: {
+        name: "Ref",
+        images: ["Reflection1.png", "Reflection2.png", "Reflection3.png", "Reflection4.png", "Reflection5.png", "Reflection6.png", "Reflection7.png"],
+        csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10]]
     }
-    // 4: {
-    //     name: "Pro",
-    //     images: ["Professional1.png", "Professional2.png", "Professional3.png"],
-    //     csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10]]
-    // },
-    // 5: {
-    //     name: "Con",
-    //     images: ["Consequences1.png", "Consequences2.png"],
-    //     csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10]]
-    // }
 }
 
 exports.designs = designs;
