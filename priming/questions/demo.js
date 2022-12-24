@@ -2,6 +2,7 @@ var questions = [
     {
         "qid": 1,
         "text": "What is your gender?",
+        "keyword": "gender",
         "subquestions": [
             {
                 "sid": 1,
@@ -14,6 +15,7 @@ var questions = [
     {
         "qid": 2,
         "text": "What is your age range?",
+        "keyword": "age",
         "subquestions": [
             {
                 "sid": 1,
@@ -29,6 +31,7 @@ var questions = [
     {
         "qid": 3,
         "text": "What is your race?",
+        "keyword": "race",
         "subquestions": [
             {
                 "sid": 1,
@@ -42,6 +45,7 @@ var questions = [
     {
         "qid": 4,
         "text": "What is your highest achieved education level?",
+        "keyword": "highest education",
         "subquestions": [
             {
                 "sid": 1,
@@ -54,6 +58,7 @@ var questions = [
     {
         "qid": 5,
         "text": "What is the primary field of your education?",
+        "keyword": "education field",
         "subquestions": [
             {
                 "sid": 1,
@@ -66,6 +71,7 @@ var questions = [
     {
         "qid": 6,
         "text": "Which of the following best describes your primary occupation?",
+        "keyword": "occupation",
         "subquestions": [
             {
                 "sid": 1,
@@ -78,6 +84,7 @@ var questions = [
     {
         "qid": 7,
         "text": "Which of the following best describes your experience in computer and technology related fields?",
+        "keyword": "tech experience",
         "subquestions": [
             {
                 "sid": 1,
@@ -90,6 +97,7 @@ var questions = [
     {
         "qid": 8,
         "text": "Which of the following best describes your experience in cybersecurity?",
+        "keyword": "cyber experience",
         "subquestions": [
             {
                 "sid": 1,

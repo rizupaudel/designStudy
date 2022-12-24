@@ -38,6 +38,15 @@ attention = {
    }
 }
 
+def is_attentive(sres):
+    for pid, sqv in attention.items():
+        ures = sres[pid]
+        for sq, v in sqv.items():
+            if (str(ures[sq]) != str(v)):
+                return False
+    return True
+
+
 def get_response(fname):
     try:
         with open(fname, 'r') as f:
@@ -62,9 +71,14 @@ def get_response(fname):
                 pass_resp[k] = v
             elif 'did' in k:
                 did = v
-        return (pass_resp, time_resp, surv_resp, did)
+        
+        if is_attentive(surv_resp):
+            return (pass_resp, time_resp, surv_resp, did)
+        else:
+            raise Exception("not attentive participants")
     except Exception as e:
-        print(f'{fname}: {e}')
+        # print(f'{fname}: {e}')
+        pass
 
 
 def get_questions():
