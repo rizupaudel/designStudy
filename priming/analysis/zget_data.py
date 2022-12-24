@@ -62,10 +62,9 @@ def get_response(fname):
                 pass_resp[k] = v
             elif 'did' in k:
                 did = v
-
         return (pass_resp, time_resp, surv_resp, did)
-    except:
-        pass
+    except Exception as e:
+        print(f'{fname}: {e}')
 
 
 def get_questions():
@@ -101,20 +100,23 @@ def get_responses(did=False):
     dids = []
     for fname in os.listdir(fpath):
         if fname.endswith('.json'):
-            pss, tim, sur, didr = get_response(os.path.join(fpath, fname))
-            sur.pop('5', None)
-            sur.pop('9', None)
-            sur.pop('13', None)
-            if (did):
-                if (str(did) == str(didr)):
-                    password_response.append(pss)
-                    time_response.append(tim)
-                    survey_response.append(sur)
-            else:
-                password_response.append(pss)
-                time_response.append(tim)
-                survey_response.append(sur)
-                dids.append(didr)
+            responses = get_response(os.path.join(fpath, fname))
+            if responses:
+                pss, tim, sur, didr = responses
+                if not pss.get('password1'):
+                    sur.pop('5', None)
+                    sur.pop('9', None)
+                    sur.pop('13', None)
+                    if (did):
+                        if (str(did) == str(didr)):
+                            password_response.append(pss)
+                            time_response.append(tim)
+                            survey_response.append(sur)
+                    else:
+                        password_response.append(pss)
+                        time_response.append(tim)
+                        survey_response.append(sur)
+                        dids.append(didr)
     if did:
         return (password_response, time_response, survey_response)
     else:
