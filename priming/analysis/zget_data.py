@@ -92,7 +92,7 @@ def get_questions():
     return questions
 
 
-def get_qdetails(pid, qsid):
+def get_qdetails(pid, qsid, key="text"):
     questions = get_questions()
     pid = str(pid)
     qid, sid = qsid.split('-')
@@ -100,7 +100,7 @@ def get_qdetails(pid, qsid):
     ret_text = ""
     for question in questions.get(pid):
         if question.get('qid') == int(qid):
-            ret_text += question.get('text')
+            ret_text += question.get(key)
             for subquestion in question.get('subquestions'):
                 if subquestion.get('sid') == int(sid):
                     ret_text += '\n' + str(subquestion)
