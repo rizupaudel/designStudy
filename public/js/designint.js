@@ -22,6 +22,7 @@ if (images.length <= 1) {
     setInnerHtml("h2", "");
     setInnerHtml(".checkbox label", "I have gone through the design");
     if (images[0].includes("OnlineChat")) {
+        setInnerHtml(".title", "Please scroll through the image.");
         document.querySelector(".designPages").style.overflow = "scroll";
         document.querySelector(".designPages").style.height = "69vh";
         document.querySelector(".designPages img").style.maxHeight = "none";
