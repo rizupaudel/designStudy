@@ -8,7 +8,7 @@ var designs = {
     2: {
         name: "Dar",
         images: ["Dart1.png", "Dart2.png"],
-        maxcount: 100,
+        maxcount: 0,
         csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10, 11]]
     },
     3: {
@@ -20,7 +20,7 @@ var designs = {
     4: {
         name: "Pro",
         images: ["Professional1.png", "Professional2.png", "Professional3.png"],
-        maxcount: 0,
+        maxcount: 100,
         csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10]]
     },
     5: {
