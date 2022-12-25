@@ -2,19 +2,19 @@ var designs = {
     1: {
         name: "Log",
         images: ["Logos1.png", "Logos2.png"],
-        maxcount: 100,
+        maxcount: 0,
         csquest: [[1], [2, 3, 4], [6, 8], [9, 10]]
     },
     2: {
         name: "Dar",
         images: ["Dart1.png", "Dart2.png"],
-        maxcount: 0,
+        maxcount: 100,
         csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10, 11]]
     },
     3: {
         name: "Per",
         images: ["Personal1.png", "Personal2.png", "Personal3.png"],
-        maxcount: 100,
+        maxcount: 0,
         csquest: [[1], [2, 3, 4], [5, 6, 7, 8], [9, 10]]
     },
     4: {
