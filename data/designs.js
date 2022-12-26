@@ -21,7 +21,7 @@ var designs = {
     4: {
         name: "Ref",
         images: ["Reflection1.png", "Reflection2.png", "Reflection3.png", "Reflection4.png", "Reflection5.png", "Reflection6.png", "Reflection7.png"],
-        maxcount: 5,
+        maxcount: 26,
         csquest: [[1], [2, 3, 4, 5], [6, 7, 8, 9], [10, 11], [12]]
     }
 }
