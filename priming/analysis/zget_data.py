@@ -32,6 +32,14 @@ quest_map = {
     'Clarity': ["well grouped", "structured", "ordered", "organized"]
 }
 
+did_map = {
+    1: "logos",
+    2: "metaphor",
+    3: "personal",
+    4: "professional",
+    5: "consequences",
+}
+
 attention = {
    '7': {
       '1-6' : 7
@@ -155,3 +163,7 @@ def get_responses(did=False):
     else:
         print(f"Total: {count[0]+count[1]}; \nAttentive: {count[1]}; Non Attentive: {count[0]}")
         return (password_response, time_response, survey_response, dids)
+
+
+def get_design(did):
+    return did_map.get(int(did))

@@ -32,6 +32,13 @@ quest_map = {
     'Clarity': ["well grouped", "structured", "ordered", "organized"]
 }
 
+did_map = {
+    1: "infographics",
+    2: "conversation",
+    3: "onlinechat",
+    4: "reflection",
+}
+
 attention = {
    '7': {
       '1-6' : 7
@@ -144,12 +151,18 @@ def get_responses(did=False):
                             survey_response.append(sur)
                             dids.append(didr)
                         elif (str(did) == str(didr)):
+                            count[2] += 1
                             password_response.append(pss)
                             time_response.append(tim)
                             survey_response.append(sur)
 
     if did:
+        print(f"Total: {count[2]}")
         return (password_response, time_response, survey_response)
     else:
         print(f"Total: {count[0]+count[1]}; \nAttentive: {count[1]}; Non Attentive: {count[0]}")
         return (password_response, time_response, survey_response, dids)
+
+
+def get_design(did):
+    return did_map.get(int(did))
