@@ -140,26 +140,11 @@ var questions = [
                 "sid": 1,
                 "type": "option",
                 "title": "",
-                "custom": true,
-                "elements": ["I used the same strategy presented in the design", "I used a variation of the strategy presented in the design", "I used a totally different strategy"]
+                // "custom": true,
+                "elements": ["I used the same strategy presented in the design.", "I used a variation of the strategy presented in the design.", "I used a totally different strategy."]
             }
         ]
-    },
-    {
-        "qid": 9,
-        "text": "I am open to adopt a new password creation strategy to create a strong and memorable password based on the advice from a security expert.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
-    },
+    }
 ];
 
 exports.questions = questions;

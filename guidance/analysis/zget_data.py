@@ -25,13 +25,6 @@ page_map = {
     '15': 'thanks',
 }
 
-quest_map = {
-    'Perspicuity': ["understandable", "easy to learn", "easy", "clear"],
-    'Aesthetics': ["beautiful", "stylish", "appealing", "pleasant"],
-    'Usefulness': ["useful", "helpful", "beneficial", "rewarding"],
-    'Clarity': ["well grouped", "structured", "ordered", "organized"]
-}
-
 attention = {
    '7': {
       '1-6' : 7

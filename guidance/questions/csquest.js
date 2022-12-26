@@ -84,7 +84,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "sixth option",
+                "title": "",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -132,7 +132,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "personally connected",
+                "title": "",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -147,7 +147,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "easy to follow multiple pages",
+                "title": "",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -162,7 +162,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "first option",
+                "title": "",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -210,7 +210,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "example helped",
+                "title": "",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -248,7 +248,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "real life motivation",
+                "title": "",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -258,7 +258,7 @@ var questions = [
     },
     {
         "qid": 11,
-        "text": "How do you evaluate the presentation of this design in conveying a password creation strategy to users?",
+        "text": "How do you evaluate the presentation of this design?",
         "subquestions": [
             {
                 "sid": 1,
@@ -269,12 +269,17 @@ var questions = [
     },
     {
         "qid": 12,
+        "custom": true,
         "text": "In this multi-page design, the page on the left made me reflect on how I am doing in following the presented password creation strategy.",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "likert",
                 "title": "",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
             },
         ]
     },
@@ -285,7 +290,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "ease to follow",
+                "title": "",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
