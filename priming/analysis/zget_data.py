@@ -63,13 +63,12 @@ def get_response(fname):
         pass_resp = defaultdict(str)
         time_resp = defaultdict(str)
         did = ''
-
+        if response.get('password1'):
+            return False
         for k, v in response.items():
             if 'response' in k:
-                temp = k.split("_")
-                pid = temp[0].strip('p')
-                v = json.loads(v)
-                surv_resp[pid].update(v)
+                pid = k.split("_")[0].strip('p')
+                surv_resp[pid].update(json.loads(v))
             elif 'time' in k:
                 temp = k.split("_")
                 pid = temp[0]
@@ -86,10 +85,11 @@ def get_response(fname):
         if is_attentive(surv_resp):
             return (pass_resp, time_resp, surv_resp, did)
         else:
-            raise Exception("not attentive participants")
+            return "not attentive"
     except Exception as e:
         # print(f'{fname}: {e}')
         pass
+    return False
 
 
 def get_questions():
@@ -123,26 +123,35 @@ def get_responses(did=False):
     time_response = []
     survey_response = []
     dids = []
+    count = defaultdict(int)
     for fname in os.listdir(fpath):
         if fname.endswith('.json'):
             responses = get_response(os.path.join(fpath, fname))
             if responses:
-                pss, tim, sur, didr = responses
-                if not pss.get('password1'):
-                    sur.pop('5', None)
-                    sur.pop('9', None)
-                    sur.pop('13', None)
-                    if (did):
-                        if (str(did) == str(didr)):
+                if responses == "not attentive":
+                    count[0] += 1
+                else:
+                    count[1] += 1
+                    pss, tim, sur, didr = responses
+                    if not pss.get('password1'):
+                        sur.pop('5', None)
+                        sur.pop('9', None)
+                        sur.pop('13', None)
+                        
+                        if (not did):
                             password_response.append(pss)
                             time_response.append(tim)
                             survey_response.append(sur)
-                    else:
-                        password_response.append(pss)
-                        time_response.append(tim)
-                        survey_response.append(sur)
-                        dids.append(didr)
+                            dids.append(didr)
+                        elif (str(did) == str(didr)):
+                            count[2] += 1
+                            password_response.append(pss)
+                            time_response.append(tim)
+                            survey_response.append(sur)
+
     if did:
+        print(f"Total: {count[2]}")
         return (password_response, time_response, survey_response)
     else:
+        print(f"Total: {count[0]+count[1]}; \nAttentive: {count[1]}; Non Attentive: {count[0]}")
         return (password_response, time_response, survey_response, dids)
