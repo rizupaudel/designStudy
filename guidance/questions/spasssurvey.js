@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Strength of password",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"
@@ -21,7 +21,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -79,7 +79,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Second option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -94,7 +94,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Helpful",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -109,7 +109,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Easy to think personal memory",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -124,7 +124,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Difficult for number and character",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -139,7 +139,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "option",
-                "title": "",
+                "title": "Strategy in creating password",
                 // "custom": true,
                 "elements": ["I used the same strategy presented in the design.", "I used a variation of the strategy presented in the design.", "I used a totally different strategy."]
             }

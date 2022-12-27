@@ -110,7 +110,7 @@ var questions = [
     {
         "qid": 9,
         "text": "I am open to adopt a new password creation strategy to create a strong and memorable password based on the advice from a security expert.",
-        "keyword": "adoption security expert",
+        "keyword": "adopt based on security expert advice",
         "subquestions": [
             {
                 "sid": 1,

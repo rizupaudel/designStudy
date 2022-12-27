@@ -84,7 +84,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "sixth option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -132,7 +132,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Personally connection",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -147,7 +147,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Ease to follow",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -162,7 +162,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "first option",
                 "elements": {
                     "low": "Option One",
                     "high": "Option Seven"
@@ -210,7 +210,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Example helped",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -225,7 +225,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "checkbox",
-                "title": "",
+                "title": "Account creation page type",
                 "elements": [
                     "Social Media",
                     "Email",
@@ -248,7 +248,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Real life motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -263,7 +263,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "textarea",
-                "title": "",
+                "title": "Presentation of design",
             },
         ]
     },
@@ -275,7 +275,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Reflection",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -290,7 +290,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Ease to follow",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
