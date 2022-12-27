@@ -4,7 +4,6 @@ var designs = {
         images: ["Infographics.png"],
         maxcount: 150,
         csquest: [[1], [2, 3, 4, 13], [6, 7, 8, 9], [10, 11]]
-
     },
     2: {
         name: "Con",
