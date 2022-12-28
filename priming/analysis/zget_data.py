@@ -33,11 +33,11 @@ quest_map = {
 }
 
 did_map = {
-    1: "logos",
-    2: "metaphor",
-    3: "personal",
-    4: "professional",
-    5: "consequences",
+    1: "Logos",
+    2: "Metaphor",
+    3: "Personal",
+    4: "Professional",
+    5: "Consequences",
 }
 
 attention = {
