@@ -7,6 +7,7 @@ var questions = [
                 "sid": 1,
                 "type": "likert",
                 "title": "strength of password",
+                "keyword": "Password Strength",
                 "elements": {
                     "low": "Weak",
                     "high": "Strong"
@@ -22,6 +23,7 @@ var questions = [
                 "sid": 1,
                 "type": "likert",
                 "title": "motivated after going through design",
+                "keyword": "Motivation After Design",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -37,6 +39,7 @@ var questions = [
                 "sid": 1,
                 "type": "likert",
                 "title": "Hard to remember",
+                "keyword": "Hard to Remember",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -46,6 +49,7 @@ var questions = [
                 "sid": 2,
                 "type": "likert",
                 "title": "Can be easily guessed by a hacker ",
+                "keyword": "Guessed by Hacker",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -55,6 +59,7 @@ var questions = [
                 "sid": 3,
                 "type": "likert",
                 "title": "Can be easily guessed by my close friends or family members",
+                "keyword": "Guessed by FnF",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
@@ -64,6 +69,7 @@ var questions = [
                 "sid": 4,
                 "type": "likert",
                 "title": "Stronger than the passwords I usually use",
+                "keyword": "Stronger than Usual",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
