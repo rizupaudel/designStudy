@@ -1,0 +1,132 @@
+,gender,age,race,highest education,education field,occupation,tech experience,cyber experience,design
+0,Man,25-29 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Metaphor
+1,Man,35-39 years old,Hispanic or Latino,High School Graduate,"Medicine, Nursing, and Health Sciences",Business or industry,Self-taught,No experience,Personal
+2,Man,18-24 years old,White,Four-year College Degree,"Mathematics, and Natural Sciences (Physics, Chemistry, Biology)",Unemployed,No experience,No experience,Consequences
+3,Woman,30-34 years old,White,Four-year College Degree,Other areas of Engineering,Non-profit organization,Pursuing or completed a degree,Formal training,Consequences
+4,Man,35-39 years old,Native American or American Indian,Four-year College Degree,Business,Business or industry,Pursuing or completed a degree,Formal training,Logos
+5,Man,30-34 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Personal
+6,Man,30-34 years old,Asian,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Professional
+7,Non-Binary,25-29 years old,Asian,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,I prefer not to answer,Personal
+8,Woman,45-49 years old,White,High School Graduate,N/A,Business or industry,Self-taught,Training from Work,Professional
+9,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Metaphor
+10,Man,Above 65 years old,White,Two-year College Degree,"Journalism, Media and Communication",retired,Self-taught,Self-taught,Logos
+11,Man,35-39 years old,White,Graduate degree (MS/Doctorate),"Journalism, Media and Communication",Educational institution,Hold or held a work position,Hold or held a work position,Consequences
+12,Man,35-39 years old,White,Two-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Personal
+13,Woman,30-34 years old,White,High School Graduate,"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Metaphor
+14,Woman,25-29 years old,"White,Hispanic or Latino",Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Hold or held a work position,Professional
+15,Woman,30-34 years old,White,Four-year College Degree,"Economics, Humanities and Social Sciences",Business or industry,Formal training,Formal training,Professional
+16,Woman,35-39 years old,White,High School Graduate,no college,hotel management,No experience,No experience,Metaphor
+17,Man,60-64 years old,White,Graduate degree (MS/Doctorate),Business,Business or industry,Formal training,Formal training,Personal
+18,Woman,25-29 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Personal
+19,Man,30-34 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Metaphor
+20,Man,30-34 years old,White,Four-year College Degree,Business,Business or industry,No experience,No experience,Personal
+21,Man,30-34 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Educational institution,Self-taught,Self-taught,Professional
+22,Woman,25-29 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Self-taught,Logos
+23,Man,25-29 years old,White,High School Graduate,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,No experience,No experience,Personal
+24,Woman,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Formal training,Pursuing or completed a degree,Consequences
+25,Man,25-29 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Government,Self-taught,No experience,Professional
+26,Man,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Educational institution,Pursuing or completed a degree,Pursuing or completed a degree,Metaphor
+27,Man,50-54 years old,Asian,Graduate degree (MS/Doctorate),"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Logos
+28,Man,45-49 years old,White,High School Graduate,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Professional
+29,Man,30-34 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Metaphor
+30,Man,30-34 years old,White,High School Graduate,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Self-taught,Logos
+31,Man,40-44 years old,Black or African American,Two-year College Degree,"Law, and Public Administration",business owner,Self-taught,No experience,Metaphor
+32,Man,40-44 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Hold or held a work position,Logos
+33,Man,45-49 years old,White,Graduate degree (MS/Doctorate),Business,Government,Self-taught,Self-taught,Logos
+34,Man,40-44 years old,Asian,High School Graduate,sales,Business or industry,Self-taught,No experience,Consequences
+35,Man,30-34 years old,White,Four-year College Degree,"Journalism, Media and Communication",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Metaphor
+36,Man,45-49 years old,White,Four-year College Degree,Business,Business or industry,No experience,No experience,Metaphor
+37,Man,35-39 years old,mixed,Four-year College Degree,Business,Business or industry,Self-taught,Self-taught,Consequences
+38,Man,40-44 years old,White,Less than High School,I prefer not to answer,I prefer not to answer,Self-taught,Self-taught,Logos
+39,Man,40-44 years old,White,High School Graduate,I prefer not to answer,I prefer not to answer,Self-taught,Self-taught,Professional
+40,Man,30-34 years old,White,High School Graduate,"Architecture, Design, and Arts",Business or industry,Self-taught,No experience,Personal
+41,Woman,30-34 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Non-profit organization,Formal training,Formal training,Consequences
+42,Woman,40-44 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Consequences
+43,Woman,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Self-taught,Formal training,Consequences
+44,Man,25-29 years old,White,Two-year College Degree,"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Professional
+45,Man,30-34 years old,White,High School Graduate,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Self-taught,Logos
+46,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Non-profit organization,Pursuing or completed a degree,Formal training,Metaphor
+47,Woman,25-29 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Consequences
+48,Man,55-59 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",IT,Telecommunication,Customer excutive,Professional
+49,Man,55-59 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,No experience,Logos
+50,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Personal
+51,Man,40-44 years old,Hispanic or Latino,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Pursuing or completed a degree,Professional
+52,Man,35-39 years old,Hispanic or Latino,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Self-taught,Logos
+53,Woman,35-39 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Personal
+54,Woman,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Formal training,Self-taught,Professional
+55,Woman,30-34 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Professional
+56,Woman,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Self-taught,Formal training,Consequences
+57,Man,35-39 years old,Hispanic or Latino,High School Graduate,Aviation,Business or industry,Self-taught,No experience,Metaphor
+58,Man,35-39 years old,White,Two-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Self-taught,Logos
+59,Man,45-49 years old,White,Two-year College Degree,"Architecture, Design, and Arts",Business or industry,Self-taught,Self-taught,Professional
+60,Woman,25-29 years old,White,High School Graduate,Business,Business or industry,No experience,No experience,Consequences
+61,Man,30-34 years old,White,Two-year College Degree,"Medicine, Nursing, and Health Sciences",Non-profit organization,Self-taught,Formal training,Metaphor
+62,Man,30-34 years old,White,High School Graduate,I prefer not to answer,I prefer not to answer,Self-taught,No experience,Professional
+63,Man,30-34 years old,White,Four-year College Degree,Business,Business or industry,No experience,No experience,Metaphor
+64,Woman,45-49 years old,White,Four-year College Degree,Education,Business or industry,Hold or held a work position,Pursuing or completed a degree,Professional
+65,Man,30-34 years old,White,Two-year College Degree,Business,Business or industry,Self-taught,Self-taught,Professional
+66,Man,30-34 years old,Asian,Graduate degree (MS/Doctorate),"Medicine, Nursing, and Health Sciences",Business or industry,No experience,No experience,Logos
+67,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Personal
+68,Man,25-29 years old,Black or African American,Four-year College Degree,I prefer not to answer,I prefer not to answer,I prefer not to answer,I prefer not to answer,Professional
+69,Woman,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Consequences
+70,Man,35-39 years old,White,Four-year College Degree,"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Personal
+71,Man,45-49 years old,Black or African American,Graduate degree (MS/Doctorate),Other areas of Engineering,Business or industry,Formal training,Self-taught,Personal
+72,Man,50-54 years old,White,Four-year College Degree,Education,Non-profit organization,Hold or held a work position,Hold or held a work position,Consequences
+73,Man,45-49 years old,"White,Hispanic or Latino",Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Hold or held a work position,Logos
+74,Woman,45-49 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Hold or held a work position,Formal training,Metaphor
+75,Man,40-44 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Metaphor
+76,Woman,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Metaphor
+77,Woman,40-44 years old,Black or African American,High School Graduate,"Architecture, Design, and Arts",gig worker,Self-taught,No experience,Consequences
+78,Woman,30-34 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Logos
+79,Man,40-44 years old,Asian,Four-year College Degree,"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Logos
+80,Woman,40-44 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Non-profit organization,Hold or held a work position,Self-taught,Personal
+81,Man,Above 65 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Logos
+82,Woman,40-44 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Formal training,Metaphor
+83,Man,30-34 years old,White,Four-year College Degree,Other areas of Engineering,Non-profit organization,Pursuing or completed a degree,Formal training,Professional
+84,Woman,45-49 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Self-taught,Self-taught,Consequences
+85,Man,35-39 years old,Asian,Four-year College Degree,"Law, and Public Administration",Business or industry,Pursuing or completed a degree,No experience,Consequences
+86,Woman,35-39 years old,"Black or African American,Asian",Four-year College Degree,"Economics, Humanities and Social Sciences",Non-profit organization,Self-taught,No experience,Logos
+87,Woman,35-39 years old,I prefer not to answer,I prefer not to answer,I prefer not to answer,I prefer not to answer,Self-taught,Self-taught,Professional
+88,Man,30-34 years old,"White,Hispanic or Latino",Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Hold or held a work position,Logos
+89,Woman,50-54 years old,White,High School Graduate,N/A,Business or industry,No experience,No experience,Consequences
+90,Man,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Pursuing or completed a degree,Self-taught,Personal
+91,Man,40-44 years old,Black or African American,High School Graduate,n/a,Business or industry,Self-taught,No experience,Consequences
+92,Woman,25-29 years old,Hispanic or Latino,High School Graduate,Education,Nanny,No experience,No experience,Personal
+93,Woman,40-44 years old,White,High School Graduate,I prefer not to answer,I prefer not to answer,No experience,No experience,Logos
+94,Woman,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Professional
+95,Man,25-29 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Hold or held a work position,Personal
+96,Man,30-34 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,No experience,Consequences
+97,Woman,55-59 years old,White,Graduate degree (MS/Doctorate),Education,Educational institution,No experience,No experience,Consequences
+98,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Personal
+99,Man,60-64 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Hold or held a work position,Consequences
+100,Woman,25-29 years old,White,Graduate degree (MS/Doctorate),Business,Business or industry,Formal training,Pursuing or completed a degree,Personal
+101,Woman,45-49 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Metaphor
+102,Woman,45-49 years old,White,Two-year College Degree,"Law, and Public Administration",Business or industry,Self-taught,Self-taught,Professional
+103,Man,30-34 years old,White,Graduate degree (MS/Doctorate),"Law, and Public Administration",Government,Self-taught,Self-taught,Personal
+104,Woman,40-44 years old,White,Four-year College Degree,Business,Business or industry,Self-taught,Self-taught,Metaphor
+105,Man,35-39 years old,Asian,Four-year College Degree,"Economics, Humanities and Social Sciences",currently unemployed but was mainly in the education sector,Hold or held a work position,Hold or held a work position,Consequences
+106,Man,55-59 years old,White,Graduate degree (MS/Doctorate),"Architecture, Design, and Arts",Business or industry,Formal training,No experience,Metaphor
+107,Man,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Non-profit organization,Pursuing or completed a degree,Hold or held a work position,Personal
+108,Man,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Pursuing or completed a degree,Formal training,Consequences
+109,Man,35-39 years old,Asian,Four-year College Degree,Business,Business or industry,No experience,No experience,Logos
+110,Man,30-34 years old,Hispanic or Latino,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,No experience,Personal
+111,Man,25-29 years old,"White,Hispanic or Latino",Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Hold or held a work position,Logos
+112,Woman,35-39 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Hold or held a work position,Formal training,Metaphor
+113,Woman,18-24 years old,White,Four-year College Degree,"Law, and Public Administration",Business or industry,Formal training,Self-taught,Professional
+114,Man,50-54 years old,White,Graduate degree (MS/Doctorate),"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Personal
+115,Man,30-34 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Non-profit organization,Hold or held a work position,Hold or held a work position,Metaphor
+116,Woman,25-29 years old,White,Four-year College Degree,Business,Business or industry,Self-taught,Self-taught,Professional
+117,Man,35-39 years old,Asian,Four-year College Degree,"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Metaphor
+118,Man,45-49 years old,White,Four-year College Degree,"Mathematics, and Natural Sciences (Physics, Chemistry, Biology)",Business or industry,Self-taught,No experience,Consequences
+119,Woman,25-29 years old,White,Four-year College Degree,Business,Business or industry,Pursuing or completed a degree,Formal training,Personal
+120,Man,35-39 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Non-profit organization,Pursuing or completed a degree,Hold or held a work position,Metaphor
+121,Man,25-29 years old,White,Two-year College Degree,"Mathematics, and Natural Sciences (Physics, Chemistry, Biology)",Business or industry,Self-taught,Self-taught,Metaphor
+122,Man,45-49 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Hold or held a work position,Formal training,Logos
+123,Man,50-54 years old,Hispanic or Latino,Graduate degree (MS/Doctorate),"Economics, Humanities and Social Sciences",Business or industry,Self-taught,Self-taught,Professional
+124,Man,35-39 years old,White,Two-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,No experience,Logos
+125,Man,35-39 years old,White,Four-year College Degree,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Personal
+126,Man,35-39 years old,Asian,High School Graduate,"Computer Science/Engineering, and Information Technology (IT)",Business or industry,Formal training,Formal training,Logos
+127,Woman,50-54 years old,Asian,Four-year College Degree,Business,Business or industry,No experience,No experience,Consequences
+128,Woman,55-59 years old,White,High School Graduate,I prefer not to answer,I prefer not to answer,No experience,No experience,Professional
+129,Man,25-29 years old,I prefer not to answer,Four-year College Degree,I prefer not to answer,I prefer not to answer,Self-taught,No experience,Logos
+130,Man,40-44 years old,White,Four-year College Degree,"Medicine, Nursing, and Health Sciences",Business or industry,Pursuing or completed a degree,Pursuing or completed a degree,Logos
