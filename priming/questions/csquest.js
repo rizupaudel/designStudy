@@ -216,7 +216,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "checkbox",
-                "title": "website's account creation page",
+                "title": "",
                 "keyword": "Account creation page",
                 "elements": [
                     "Social Media",
