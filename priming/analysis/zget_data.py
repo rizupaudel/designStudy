@@ -1,5 +1,4 @@
-import os
-import json
+import os, json, hashlib
 from collections import defaultdict
 
 
@@ -51,6 +50,14 @@ attention = {
    '12': {
       '4-1': 2
    }
+}
+
+pass_stmap = {
+    'Very Weak': -3,
+    'Weak': -1.5,
+    'Medium': 0,
+    'Strong': 1.5,
+    'Very Strong': 3,
 }
 
 def is_attentive(sres):
@@ -167,3 +174,7 @@ def get_responses(did=False):
 
 def get_design(did):
     return did_map.get(int(did))
+
+
+def get_hash(password, salt=""):
+    return hashlib.md5(password.encode("utf-8")).hexdigest()
