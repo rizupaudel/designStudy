@@ -106,3 +106,7 @@ dist
 .DS_Store
 
 *.ipynb
+
+__pycache__/
+
+*.json
