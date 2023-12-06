@@ -1,24 +1,24 @@
 var questions = [
     {
         "qid": 1,
-        "text": "The way the design presents a password creation strategy is:",
+        "text": "In my opinion, the presentation of the design is:",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Creative",
+                "title": "Aesthetics",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "ugly",
+                    "high": "beautiful "
                 }
             },
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Engaging",
+                "title": "Aesthetics",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "lacking style",
+                    "high": "stylish"
                 }
             },
             {
@@ -26,8 +26,8 @@ var questions = [
                 "type": "likert",
                 "title": "Novel",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "unappealing",
+                    "high": "appealing"
                 }
             },
             {
@@ -35,167 +35,118 @@ var questions = [
                 "type": "likert",
                 "title": "Attractive",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 5,
-                "type": "likert",
-                "title": "Easy to understand",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 6,
-                "type": "likert",
-                "title": "Informative",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 7,
-                "type": "likert",
-                "title": "Well Organized",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 8,
-                "type": "likert",
-                "title": "To the Point",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "unpleasant",
+                    "high": "pleasant"
                 }
             }
         ]
     },
     {
         "qid": 2,
-        "text": "Please select the sixth option which tells us you are paying attention.",
+        "text": "The design captures my attention.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "attention",
                 "elements": {
-                    "low": "Option One",
-                    "high": "Option Seven"
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
                 }
             }
         ]
     },
     {
         "qid": 3,
-        "text": "The presented design:",
+        "text": "The presentation of the design is engaging.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Encourages me to create a strong password",
+                "title": "engaging",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
                 }
             },
-            {
-                "sid": 2,
-                "type": "likert",
-                "title": "Makes me feel capable of creating a strong password",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 3,
-                "type": "likert",
-                "title": "Makes me feel confident that I can create a strong password",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
         ]
     },
     {
         "qid": 4,
-        "text": "The way the design communicates a password creation strategy to me makes me feel personally connected.",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in capturing your attention, and keeping you engaged with design?",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "likert",
+                "type": "textarea",
                 "title": "",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
             },
         ]
     },
     {
         "qid": 5,
-        "text": "It is easy for me to follow the message depicted across multiple pages in the design.",
+        "text": "To encourage and teach me about strong password, the design is:",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Usefulness",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-        ]
-    },
-    {
-        "qid": 6,
-        "text": "Please select the first option which tells us you are paying attention.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "",
-                "elements": {
-                    "low": "Option One",
-                    "high": "Option Seven"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 7,
-        "text": "In this design, the portrayal of a security expert:",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "title": "Stimulates me to create a strong password",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "useless",
+                    "high": "useful"
                 }
             },
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Makes me put trust on the presented password creation strategy",
+                "title": "Usefulness",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "not helpful",
+                    "high": "helpful"
                 }
             },
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "Encourages me to use the presented password creation strategy in real life",
+                "title": "Usefulness",
+                "elements": {
+                    "low": "not beneficial ",
+                    "high": "beneficial "
+                }
+            },
+            {
+                "sid": 4,
+                "type": "likert",
+                "title": "Usefulness",
+                "elements": {
+                    "low": "not rewarding",
+                    "high": "rewarding"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 6,
+        "text": "The design raises my awareness about what can happen if my password is weak.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "awareness",
+                "elements": {
+                    "low": "Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            },
+        ]
+    },
+    {
+        "qid": 7,
+        "text": "The design motivates me to create a strong password.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "title": "motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -205,12 +156,23 @@ var questions = [
     },
     {
         "qid": 8,
-        "text": "In this design, the illustration of an example helped me to better understand the password creation strategy.",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in raising your awareness and motivation to create strong password?",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "textarea",
+                "title": "",
+            },
+        ]
+    },
+    {
+        "qid": 9,
+        "text": "It is easy to understand the message shown in the design.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "understandability",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -219,36 +181,13 @@ var questions = [
         ]
     },
     {
-        "qid": 9,
-        "text": "In which type website's account creation page would you want to see this design?",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "checkbox",
-                "title": "",
-                "elements": [
-                    "Social Media",
-                    "Email",
-                    "Financial Websites",
-                    "Gaming Websites",
-                    "E-commerce Websites",
-                    "Government Websites",
-                    "Course Management Websites, e.g. Canvas, Blackboard, etc.",
-                    "Content Websites, e.g. Audio/Video Streaming, Online Newspaper, etc.",
-                    "Other, please specify:",
-                    "None of the above"
-                ]
-            },
-        ]
-    },
-    {
         "qid": 10,
-        "text": "If this design is implemented in real life and shown to me before I create a password for an online account I care about, I will be motivated to create a stronger password than the one I would have created if the design were not presented to me during the sign up.",
+        "text": "The design improves my skills on creating a strong and memorable password.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "skills",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -258,7 +197,7 @@ var questions = [
     },
     {
         "qid": 11,
-        "text": "How do you evaluate the presentation of this design?",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in raising your awareness and motivation to create strong password?",
         "subquestions": [
             {
                 "sid": 1,
@@ -269,35 +208,68 @@ var questions = [
     },
     {
         "qid": 12,
-        "custom": true,
-        "text": "In this multi-page design, the page on the left made me reflect on how I am doing in following the presented password creation strategy.",
+        "text": "In my opinion, the idea behind the design is:",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "",
+                "title": "Novelty",
                 "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
+                    "low": "dull",
+                    "high": "creative "
                 }
             },
+            {
+                "sid": 2,
+                "type": "likert",
+                "title": "Novelty",
+                "elements": {
+                    "low": "conventional",
+                    "high": "inventive"
+                }
+            },
+            {
+                "sid": 3,
+                "type": "likert",
+                "title": "Novelty",
+                "elements": {
+                    "low": "usual",
+                    "high": "leading edge"
+                }
+            },
+            {
+                "sid": 4,
+                "type": "likert",
+                "title": "Novelty",
+                "elements": {
+                    "low": "conservative",
+                    "high": "innovative"
+                }
+            }
         ]
     },
     {
         "qid": 13,
-        "text": "It is easy for me to follow the message in the design.",
+        "text": "Please rank these designs based on your liking.",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "likert",
+                "type": "textbox",
                 "title": "",
-                "elements": {
-                    "low": "Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
             },
         ]
-    }
+    },
+    {
+        "qid": 14,
+        "text": "Please explain your ranking, like which features in a design you liked more than the other ones.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "textarea",
+                "title": "",
+            },
+        ]
+    },
 ]
 
 exports.questions = questions;
