@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/designint.css" />
+        <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
+        <link rel="shortcut icon" href="#">
+        <script src="js/designC.js" type="module"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Design Interaction</title>
+    </head>
+    <body onload="setTime()">
+        <script>0</script>
+        <div class="card card-1">
+            <div class="progress"><div class="progress-done">.</div></div>
+            <center><h2 class="title">The design below contains multiple pages that altogether convey a message.<br>
+            Please click on the <b>arrow keys</b> to navigate between the pages.</h2></center>
+            <div class="imageContainer"> 
+                <div class="pButton" onclick="loadImage('prev')"><img id="p" src="designs/prev.png"></div>
+                <div class="designPages"><img id="pages" src="designs/image-loader.gif"></div>
+                <div class="nButton" onclick="loadImage('next')"><img id="n" src="designs/next.png"></div>
+            </div>
+            <div id="indicator">1 of 5</div>
+            <div id="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox">
+                <label for="checkbox">I have gone through all the pages of the design above.</label>
+            </div>
+            <div id="nextbutton" class="btn" onclick="gotoquest()"><span>Next</span></div>
+		</div>
+        <div id="loading"></div>
+    </body>
+</html>

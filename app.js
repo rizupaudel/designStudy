@@ -18,28 +18,24 @@ app.get('/startstudy', (req, res) => {
   res.sendFile('views/startstudy.html', { root : __dirname})
 });
 
-app.get('/fpass', (req, res) => {
-  res.sendFile('views/fpass.html', { root : __dirname})
-});
-
-app.get('/fcog', (req, res) => {
-  res.sendFile('views/fcog.html', { root : __dirname})
-});
-
 app.get('/fpasssurvey', (req, res) => {
   res.sendFile('views/fpasssurvey.html', { root : __dirname})
-});
-
-app.get('/fpassrecall', (req, res) => {
-  res.sendFile('views/fpassrecall.html', { root : __dirname})
 });
 
 app.get('/pagegif', (req, res) => {
   res.sendFile('views/pagegif.html', { root : __dirname})
 });
 
-app.get('/designint', (req, res) => {
-  res.sendFile('views/designint.html', { root : __dirname})
+app.get('/designA', (req, res) => {
+  res.sendFile('views/designA.html', { root : __dirname})
+});
+
+app.get('/designB', (req, res) => {
+  res.sendFile('views/designB.html', { root : __dirname})
+});
+
+app.get('/designC', (req, res) => {
+  res.sendFile('views/designC.html', { root : __dirname})
 });
 
 app.get('/quest', (req, res) => {

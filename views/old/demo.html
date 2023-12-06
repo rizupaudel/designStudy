@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<link rel="stylesheet" href="css/fpasssurvey.css" />
+		<link rel="stylesheet" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/progressbar.css" />
-        <link rel="shortcut icon" href="#">
-        <script src="js/fpasssurvey.js" type="module"></script>
+        <link rel="shortcut icon" href="#"/>
+        <script src="js/demo.js" type="module"></script>
+        <script type="text/javascript">window.history.forward(); function noBack() { window.history.forward();}</script>
         <meta charset="UTF-8" />
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0" />
@@ -19,8 +20,7 @@
             <div class="survey">
                 <div id = "quest" class="questionaire"></div>
                 <label id="reqfields" class="reqfields"> * missing required fields</label>
-                <br>
-                <div class="btn" onclick="gotopagegif()"><span>Next</span></div>
+                <div class="btn" onclick="gotothanks()"><span>Submit</span></div>
             </div>
         </div>
         <div id="loading"></div>

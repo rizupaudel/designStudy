@@ -28,7 +28,7 @@ async function submitId() {
         if (validResponse.valid) {
             sessionStorage.clear();
             sessionStorage.setItem("wid", wid);
-            sessionStorage.setItem("page_id", 1);
+            sessionStorage.setItem("page_id", 0);
             window.location.replace("startstudy");
         } else {
             errorMsg = validResponse.errorMsg + " Please try again.";

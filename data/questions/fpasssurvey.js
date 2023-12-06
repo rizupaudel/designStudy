@@ -1,46 +1,28 @@
 var questions = [
     {
-        "qid": 1,
-        "text": "Please answer the following questions based on your behavior in real life:",
+       "qid": 1,
+        "text": "What do you do on computers? Please select all that apply.",
         "subquestions": [
             {
                 "sid": 1,
-                "type": "likert",
-                "title": "I do not change my passwords, unless I have to.",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 2,
-                "type": "likert",
-                "title": "I use different passwords for different online accounts that I have.",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 3,
-                "type": "likert",
-                "title": "When I create a new online account, I try to use a password that goes beyond the site’s minimum requirements.",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            },
-            {
-                "sid": 4,
-                "type": "likert",
-                "title": "I do not include special characters in my password if it’s not required.",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
+                "type": "checkbox",
+                "title": "",
+                "elements": [ 'Schoolwork', 'Assignments and homework', 'Games', 'Use Internet', 'Entertainment (for example, YouTube) ', 'Email', 'Texting', 'Social media', 'Are there other things that you do on computers? If yes, write them down:']
             }
-        ],
+        ]
         
+    },
+    {
+        "qid": 2,
+        "text": "About how much time do you spend on computers each day?",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "option",
+                "title": "",
+                "elements": ['Less than 1 hour per day', '1 to 2 hours per day', '3 to 5 hours per day', 'More than 5 hours per day']
+            }
+        ]
     }
 ];
 

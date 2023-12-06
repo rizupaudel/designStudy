@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 3) {
+if (sessionStorage.getItem("page_id") != 5) {
     window.location = "/";
 }
 
@@ -20,7 +20,7 @@ document.getElementById("checkbox").addEventListener('click', function(e) {
     document.getElementById("nextbutton").style.opacity = e.target.checked ? 1: 0.4;
 });
 
-async function gotodesignA() {
-    nextPage(4, "designA");
+async function gotodesignint() {
+    nextPage(6, "designint");
 }
-window.gotodesignA = gotodesignA;
+window.gotodesignint = gotodesignint;

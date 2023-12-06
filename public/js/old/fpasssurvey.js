@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 2) {
+if (sessionStorage.getItem("page_id") != 3) {
     window.location = "/";
 }
 
@@ -15,7 +15,7 @@ setVisible('body', true);
 setVisible('.card', true);
 setVisible('#loading', false);
 
-async function gotopagegif() {
+async function gotofpassrecall() {
     var data = getResponse(questions);
     var response = data.response;
 
@@ -23,9 +23,9 @@ async function gotopagegif() {
         setVisible("#reqfields", false);
         
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        nextPage(3, "pagegif");
+        nextPage(5, "pagegif");
     } else {
         setVisible("#reqfields", true);
     }
 }
-window.gotopagegif = gotopagegif;
+window.gotofpassrecall = gotofpassrecall;
