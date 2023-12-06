@@ -1,62 +1,104 @@
-@import url("indexmain.css");
+@import url("main.css");
 
 body {
   height: 100%;
 }
 
+.mainContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 90vh;
+}
+
 .container {
   display: flex;
-  align-items: center;
+  flex-grow: 6;
+  flex-direction: row;
+  /* border: solid 1px green; */
+  /* background-color: red; */
   width: 100%;
 }
-
-.container .imageContainer {
-  flex: 1;
-  margin-left: 1%;
+.action {
+  flex-grow: 4;
+  /* border: solid 1px green; */
 }
 
-.gallery-box div {
-  columns: 1;
-  column-gap: 2%;
+.container .designAContainer {
+  flex-grow: 1;
+  border: solid 3px black;
 }
 
-.gallery-box img {
+.container .designBContainer {
+  flex-grow: 1;
+  border: solid 3px green;
+}
+
+.container .designCContainer {
+  flex-grow: 1;
+  /* background-color: red; */
+  border: solid 3px blue;
+}
+
+
+.imageContainer {
+  display: flex;
+  margin: auto;
+  margin-bottom: 1%;
+  width: 95%;
+  /* border: 2px solid #ccc; */
+  /* background-color: #ddd; */
+}
+
+.pButtonA, .pButtonB, .pButtonC  {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(74, 111, 144);
+  width: 10%;
+}
+
+.pButtonA img, .pButtonB img, .pButtonC img  {
+  margin: auto;
+  width: 70%;
+}
+
+.pButtonA:hover, .pButtonB:hover, .pButtonC:hover {
+  opacity: 0.5;
+  transition: visibility 0s, opacity 0.5s linear;
+  transform: scale(1.01);
+}
+
+.imageContainer .designPages {
   width: 100%;
+  /* background-color: #fff; */
+}
+
+.imageContainer .designPages img {
+  width: 90%;
+  max-height:100%;
   height: auto;
-  border-radius: 1%;
-  object-fit: cover;
-  border: 3px solid black;
-}
-.imageContainer h2 {
-  margin-bottom: 3%;
+  object-fit: contain;
+  animation: fadeIn 2s;
 }
 
-.container .card {
-  flex: 2;
-  margin-top: 1%;
-  text-align: justify;
-  margin-left: 4%;
-  margin-right: 2%;
+.nButtonA, .nButtonB, .nButtonC {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(74, 111, 144);
+  width: 10%;
 }
 
-.questionaire {
-  margin-left: 1%;
+.nButtonA:hover, .nButtonB:hover, .nButtonC:hover {
+  opacity: 0.5;
+  transition: visibility 0s, opacity 0.5s linear;
+  transform: scale(1.01);
 }
 
-.btn {
-  width: 18%;
+.nButtonA img,  .nButtonB img, .nButtonC img {
+  margin: auto;
+  width: 70%;
 }
 
-h2 {
-  width: 100%;
-}
-
-hr {
+.indicator {
   display: none;
-}
-
-.textbox {
-  width: 85%;
-  height: 600%;
-  padding: 1% 1%;
 }

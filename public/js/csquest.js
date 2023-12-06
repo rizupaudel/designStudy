@@ -1,98 +1,75 @@
-import { setProgress, getQuestions, getDesign, generateQuestions, setTime, getResponse, setVisible, nextPage, setInnerHtml, clickEventListener, loadDesignImages, setIndicator, wait } from "./utility.js";
-// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 8);
-window.setProgress = setProgress;
-window.setTime = setTime;
-setProgress(sessionStorage.getItem("page_id"));
+import {getQuestions, getDesign, generateQuestions, updateImage, setInnerHtml, getResponse, nextPage} from "./utility.js";
 
-if (sessionStorage.getItem("page_id") != 8) {
-    window.location = "/";
+var dataA = await getDesign(1);
+var imagesA = dataA.images;
+
+var dataB = await getDesign(2);
+var imagesB = dataB.images;
+
+var dataC = await getDesign(3);
+var imagesC = dataC.images;
+
+loadImage();
+
+function loadImage(flag="") {
+    updateImage(imagesA, flag, "A");
+    updateImage(imagesB, flag, "B");
+    updateImage(imagesC, flag, "C");
 }
 
-clickEventListener();
+var questions = await getQuestions("csquest" + "-1");
+var N = Object.keys(questions).length;
 
-var questions = await getQuestions("csquest" + "-" + sessionStorage.getItem("did"));
-setVisible('.card', true);
-setVisible('#loading', false);
+window.loadImage = loadImage;
 
-var nPage = parseInt(sessionStorage.getItem("nPage")) || 1;
 var tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
-var val = generateQuestions(questions[tPage]);
-setInnerHtml("#quest", val);
-setIndicator(nPage + tPage, Object.keys(questions).length + nPage);
+var qABC = questions[tPage];
 
-var images = ["designs/image-loader.gif"];
-loadDesignImages(images);
-var data = await getDesign(sessionStorage.getItem("did"));
-images = data.images;
-if (questions[tPage][0].custom === true) {
-    images = [images[2]];
-    document.getElementsByClassName("images")[0].style.columns = 1;
-}
+var valA = generateQuestions(qABC, "-A");
+var valB = generateQuestions(qABC, "-B");
+var valC = generateQuestions(qABC, "-C");
 
-loadDesignImages(images);
-if (images.length > 3) {
-    document.getElementsByClassName("images")[0].style.columns = 2;
-}
-setVisible('body', true);
+setInnerHtml("#questA", valA);
+setInnerHtml("#questB", valB);
+setInnerHtml("#questC", valC);
 
-async function gotospasssurvey() {
-    let partQuestions = questions[tPage];
-    var data = getResponse(partQuestions);
-    var response = data.response;
+function gotospasssurvey() {
+    tPage = parseInt(sessionStorage.getItem("tPage")) || 1;
+    qABC = questions[tPage];
+    
+    var dataA = getResponse(qABC, "-A");
+    var dataB = getResponse(qABC, "-B");
+    var dataC = getResponse(qABC, "-C");
 
-    if (data.next_flag) {
-        setVisible("#reqfields", false);
+    console.log(dataA);
+    console.log(dataB);
+    console.log(dataC);
 
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}`, JSON.stringify(response));
-        tPage = parseInt(tPage) + 1;
-        if (tPage in questions) {
-            var val = generateQuestions(questions[tPage]);
-            setVisible('.questionaire', false);
-            await wait(300);
-            setInnerHtml("#quest", val);
-            setIndicator(nPage + tPage, Object.keys(questions).length + nPage);
-            
-            setVisible('.questionaire', true);
-            sessionStorage.setItem("tPage", tPage);
-            if (questions[tPage][0].custom === true) {
-                images = [images[2]];
-                document.getElementsByClassName("images")[0].style.columns = 1;
-                loadDesignImages(images);
+    if (dataA.next_flag && dataB.next_flag && dataC.next_flag) {
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_A`, JSON.stringify(dataA.response));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_B`, JSON.stringify(dataB.response));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_C`, JSON.stringify(dataC.response));
+        sessionStorage.setItem("tPage", tPage+1);
 
-            }
-        } else {
-            sessionStorage.removeItem("nPage");
-            sessionStorage.removeItem("tPage");
-            nextPage(9, "spasssurvey");
-        }
-    } else {
-        setVisible("#reqfields", true);
+        qABC = questions[tPage+1];
+
+        var valA = generateQuestions(qABC, "-A");
+        var valB = generateQuestions(qABC, "-B");
+        var valC = generateQuestions(qABC, "-C");
+
+        setInnerHtml("#questA", valA);
+        setInnerHtml("#questB", valB);
+        setInnerHtml("#questC", valC);
+
     }
+    console.log(N);
+    console.log(tPage)
+    console.log(tPage>=N)
+
+    if (tPage>=N) {
+        sessionStorage.removeItem("tPage");
+        nextPage(9, "spasssurvey");
+    } 
 }
+
 window.gotospasssurvey = gotospasssurvey;
-
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var modalImg = document.getElementById("img");
-
-function imageClickHandler() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-}
-
-var imgs = document.getElementsByClassName("myImg");
-
-for (var i=0; i<imgs.length; i++) {
-    imgs[i].onclick = imageClickHandler;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}

@@ -88,24 +88,24 @@ export function generateSubQuestion(subQ) {
     return val;
 }
 
-export function generateQuestion(quesO) {
+export function generateQuestion(quesO, flag="") {
     var val = "";
     val += '<p class="q">' + quesO.text + "</p>"
     for (let i in quesO.subquestions) {
-        let qsid = quesO.qid + "-" + quesO.subquestions[i].sid;
+        let qsid = quesO.qid + "-" + quesO.subquestions[i].sid + flag;
         quesO.subquestions[i]["qsid"] = qsid;
-        val += generateSubQuestion(quesO.subquestions[i]);
+        val += generateSubQuestion(quesO.subquestions[i], flag);
     }
     val += `<p id="reqfield${quesO.qid}" class="reqfield">This field is required.</p>`
     return val + "<hr>";
 }
 
-export function generateQuestions(qs) {
+export function generateQuestions(qs, flag="") {
     var val = "";
     for (let i in qs) {
         var qn = parseInt(i) + 1;
         qs[i]["qn"] = qn;
-        val += generateQuestion(qs[i]);
+        val += generateQuestion(qs[i], flag);
     }
     return val;
 }
@@ -166,14 +166,14 @@ export function nextPage(page_id, page_name) {
     window.location.replace(page_name);
 }
 
-export function getResponse(questions) {
+export function getResponse(questions, flag="") {
     var response = {};
     var next_flag = true;
     for (let qn in questions) {
         var subquestions = questions[qn].subquestions;
         for (let sqn in subquestions) {
             var checked_flag = false;
-            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid;
+            var qsid = questions[qn].qid + "-" + subquestions[sqn].sid + flag;
 
             if (subquestions[sqn].type === "likert") {
                 var el = document.getElementsByName(qsid);
@@ -279,21 +279,20 @@ export function getResponse(questions) {
     return {"response": response, "next_flag": next_flag}
 }
 
-export function updateImage(images, flag="") {
-    var indicator = document.getElementById("indicator");
+export function updateImage(images, flag="", dN="") {
     var count = 1;
-    var pages = document.getElementById("pages");
+    var pages = document.getElementById("pages" + dN);
     var imgsrc = pages.getAttribute("src");
     if (imgsrc && imgsrc !== "") {
         let i = images.indexOf(imgsrc);
-        if (flag === "next") {
+        if (flag === "next"+dN) {
             if (i >= 0 && i+1 < images.length) {
                 pages.src = images[i+1];
                 count = i + 2;
             } else {
                 count = i + 1;
             }
-        } else if (flag === "prev") {
+        } else if (flag === "prev"+dN) {
             if (i-1 >= 0) {
                 pages.src = images[i-1];
                 count = i;
@@ -303,13 +302,14 @@ export function updateImage(images, flag="") {
         }
     }
     // disable next button
-    document.getElementsByClassName("nButton")[0].style.pointerEvents = (count === images.length) ? "none": "auto";
-    document.getElementById("n").src = (count === images.length) ? "": "designs/next.png";
+    document.getElementsByClassName("nButton"+dN)[0].style.pointerEvents = (count === images.length) ? "none": "auto";
+    document.getElementById("n"+dN).src = (count === images.length) ? "": "designs/next.png";
 
     // disable previous button
-    document.getElementsByClassName("pButton")[0].style.pointerEvents = (count === 1) ? "none": "auto";
-    document.getElementById("p").src = (count === 1) ? "": "designs/prev.png";
+    document.getElementsByClassName("pButton"+dN)[0].style.pointerEvents = (count === 1) ? "none": "auto";
+    document.getElementById("p"+dN).src = (count === 1) ? "": "designs/prev.png";
     
+    var indicator = document.getElementById("indicator");
     indicator.innerHTML = `${count} of ${images.length}`;
 }
 

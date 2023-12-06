@@ -10,9 +10,8 @@
               content="width=device-width, initial-scale=1.0" />
         <title>PIXEL Lab Study: Survey</title>
     </head>
-    <body onload="setTime()">
-        <script>0</script>
-        <div class="container">
+    <body>
+        <!-- <div class="container">
             <div id="leftdesign" class="imageContainer">
                 <center><h2>Click on the images to make it fullscreen.</h2></center>
                 <section class="gallery-box"><div class="images"></div></section>
@@ -31,6 +30,48 @@
             <span class="close">&times;</span>
             <img class="modal-content" id="img">
         </div>
-        <div id="loading"></div>
+        <div id="loading"></div> -->
+        <div class="mainContainer">
+            <div class="progress"><div class="progress-done">.</div></div>
+            <div class="container">
+                <div class="designAContainer">
+                    <div class="imageContainer"> 
+                        <div class="pButtonA" onclick="loadImage('prevA')"><img id="pA" src="designs/prev.png"></div>
+                        <div class="designPages"><img id="pagesA" src="designs/image-loader.gif"></div>
+                        <div class="nButtonA" onclick="loadImage('nextA')"><img id="nA" src="designs/next.png"></div>
+                    </div>
+                    <!-- <div class="indicator" id="indicator"></div> -->
+                    <div class="questionAContainer">
+                        <div id="questA" class="questionaire"></div>
+                    </div>
+                </div>
+                <div class="designBContainer">
+                    <div class="imageContainer"> 
+                        <div class="pButtonB" onclick="loadImage('prevB')"><img id="pB" src="designs/prev.png"></div>
+                        <div class="designPages"><img id="pagesB" src="designs/image-loader.gif"></div>
+                        <div class="nButtonB" onclick="loadImage('nextB')"><img id="nB" src="designs/next.png"></div>
+                    </div>
+                    <!-- <div class="indicator" id="indicator"></div> -->
+                    <div class="questionBContainer">
+                        <div id="questB" class="questionaire"></div>
+                        <!-- <label id="reqfields" class="reqfields"> * missing required fields</label> -->
+                    </div>
+                </div>
+                <div class="designCContainer">
+                    <div class="imageContainer"> 
+                        <div class="pButtonC" onclick="loadImage('prevC')"><img id="pC" src="designs/prev.png"></div>
+                        <div class="designPages"><img id="pagesC" src="designs/image-loader.gif"></div>
+                        <div class="nButtonC" onclick="loadImage('nextC')"><img id="nC" src="designs/next.png"></div>
+                    </div>
+                    <div class="questionCContainer">
+                        <div id="questC" class="questionaire"></div>
+                    </div>
+                </div>
+                <div class="indicator" id="indicator"></div>
+            </div>
+            <div class="action">
+                <div id="nextbutton" class="btn" onclick="gotospasssurvey()"><span>Next</span></div></div>
+            </div>
+        </div>
     </body>
 </html>

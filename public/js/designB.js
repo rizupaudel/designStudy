@@ -13,7 +13,8 @@ document.getElementById("checkbox").addEventListener('click', function(e) {
     document.getElementById("nextbutton").style.opacity = e.target.checked ? 1: 0.4;
 });
 
-var did = sessionStorage.getItem("did");
+// var did = sessionStorage.getItem("did");
+let did = 2;
 var data = did ? await getDesign(did) : await getDesign();
 
 var images = data.images;
