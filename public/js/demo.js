@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 14) {
+if (sessionStorage.getItem("page_id") != 10) {
     window.location = "/";
 }
 
@@ -25,12 +25,12 @@ async function gotothanks() {
         setVisible("#reqfields", false);
         
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        setPageTime(15);
+        setPageTime(11);
         let res = await saveUserResponse();
         
         if (res.success) {
             sessionStorage.setItem("giftcard", res.success);
-            nextPage(15, "thanks");
+            nextPage(11, "thanks");
         } else {
             alert("There is a problem. Couldn't save the survey data.");
         }

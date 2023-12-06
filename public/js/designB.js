@@ -58,7 +58,7 @@ function loadImage1(flag="") {
 }
 window.loadImage1 = loadImage1;
 
-function gotodesignC() {
-    nextPage(6, "designC");
+function gotodesignCInfo() {
+    nextPage(6, "designCInfo");
 }
-window.gotodesignC = gotodesignC;
+window.gotodesignCInfo = gotodesignCInfo;

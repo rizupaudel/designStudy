@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 4) {
+if (sessionStorage.getItem("page_id") != 3) {
     window.location = "/";
 }
 
@@ -58,7 +58,7 @@ function loadImage1(flag="") {
 }
 window.loadImage1 = loadImage1;
 
-function gotodesignB() {
-    nextPage(5, "designB");
+function gotodesignBInfo() {
+    nextPage(4, "designBInfo");
 }
-window.gotodesignB = gotodesignB;
+window.gotodesignBInfo = gotodesignBInfo;

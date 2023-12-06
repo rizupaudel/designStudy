@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 1) {
+if (sessionStorage.getItem("page_id") != 4) {
     window.location = "/";
 }
 
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     return true;
 });
 
-async function gotodesignAInfo() {
-    nextPage(2, "designAInfo");
+async function gotodesignB() {
+    nextPage(5, "designB");
 }
-window.gotodesignAInfo = gotodesignAInfo;
+window.gotodesignB = gotodesignB;

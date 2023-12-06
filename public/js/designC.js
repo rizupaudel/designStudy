@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 6) {
+if (sessionStorage.getItem("page_id") != 7) {
     window.location = "/";
 }
 
@@ -58,7 +58,7 @@ function loadImage1(flag="") {
 }
 window.loadImage1 = loadImage1;
 
-function gotoquest() {
-    nextPage(7, "quest");
+function gotocsquest() {
+    nextPage(8, "csquest");
 }
-window.gotoquest = gotoquest;
+window.gotocsquest = gotocsquest;

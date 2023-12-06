@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 12) {
+if (sessionStorage.getItem("page_id") != 9) {
     window.location = "/";
 }
 
@@ -36,7 +36,7 @@ setVisible('body', true);
 setVisible('.card', true);
 setVisible('#loading', false);
 
-async function gotospassrecall() {
+async function gotodemo() {
     var data = getResponse(questions);
     var response = data.response;
     var next_flag = data.next_flag;
@@ -45,9 +45,9 @@ async function gotospassrecall() {
         setVisible("#reqfields", false);
 
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
-        nextPage(13, "spassrecall");
+        nextPage(10, "demo");
     } else {
         setVisible("#reqfields", true);
     }
 }
-window.gotofpassrecall = gotospassrecall;
+window.gotodemo = gotodemo;

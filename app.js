@@ -26,12 +26,25 @@ app.get('/pagegif', (req, res) => {
   res.sendFile('views/pagegif.html', { root : __dirname})
 });
 
+app.get('/designAInfo', (req, res) => {
+  res.sendFile('views/designAInfo.html', { root : __dirname})
+});
+
 app.get('/designA', (req, res) => {
   res.sendFile('views/designA.html', { root : __dirname})
 });
 
+
+app.get('/designBInfo', (req, res) => {
+  res.sendFile('views/designBInfo.html', { root : __dirname})
+});
+
 app.get('/designB', (req, res) => {
   res.sendFile('views/designB.html', { root : __dirname})
+});
+
+app.get('/designCInfo', (req, res) => {
+  res.sendFile('views/designCInfo.html', { root : __dirname})
 });
 
 app.get('/designC', (req, res) => {

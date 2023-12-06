@@ -28,8 +28,8 @@ export function generateCheckbox(qsid, cI) {
     for (let i in cI) {
         // let name = qsid + "-" + i;
         val += `<label for="${qsid}"><input type="checkbox" class="checkbox" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
-        if (cI[i].includes("please specify:")) {
-            val += `<input type="text" class="optionval" name="${qsid}-val" disabled>`;
+        if (cI[i].includes("please specify:") || cI[i].includes("If yes,")) {
+            val += `<input type="text" class="optionval" name="${qsid}-val">`;
         }
         val += "<br>";
     }

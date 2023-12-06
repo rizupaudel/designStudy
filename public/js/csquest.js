@@ -35,7 +35,7 @@ if (images.length > 3) {
 }
 setVisible('body', true);
 
-async function gotomotivation() {
+async function gotospasssurvey() {
     let partQuestions = questions[tPage];
     var data = getResponse(partQuestions);
     var response = data.response;
@@ -63,13 +63,13 @@ async function gotomotivation() {
         } else {
             sessionStorage.removeItem("nPage");
             sessionStorage.removeItem("tPage");
-            nextPage(9, "motivation");
+            nextPage(9, "spasssurvey");
         }
     } else {
         setVisible("#reqfields", true);
     }
 }
-window.gotomotivation = gotomotivation;
+window.gotospasssurvey = gotospasssurvey;
 
 
 // Get the modal

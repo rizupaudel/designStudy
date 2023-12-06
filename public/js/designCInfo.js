@@ -4,7 +4,7 @@ window.setProgress = setProgress;
 window.setTime = setTime;
 setProgress(sessionStorage.getItem("page_id"));
 
-if (sessionStorage.getItem("page_id") != 1) {
+if (sessionStorage.getItem("page_id") != 6) {
     window.location = "/";
 }
 
@@ -15,7 +15,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     return true;
 });
 
-async function gotodesignAInfo() {
-    nextPage(2, "designAInfo");
+// document.getElementById("checkbox").addEventListener('click', function(e) {
+//     document.getElementById("nextbutton").style.pointerEvents = e.target.checked ? "auto": "none";
+//     document.getElementById("nextbutton").style.opacity = e.target.checked ? 1: 0.4;
+// });
+
+async function gotodesignC() {
+    nextPage(7, "designC");
 }
-window.gotodesignAInfo = gotodesignAInfo;
+window.gotodesignC = gotodesignC;

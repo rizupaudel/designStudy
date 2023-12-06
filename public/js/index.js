@@ -1,46 +1,27 @@
-import { setVisible, setInnerHtml, setColor } from "./utility.js";
-sessionStorage.clear();
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage, getResponse, setVisible, setInnerHtml } from "./utility.js";
+// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 3);
+window.setProgress = setProgress;
+window.setTime = setTime;
+setProgress(sessionStorage.getItem("page_id"));
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    setVisible('body', true);
-    setVisible('.card', true);
-    setVisible('#loading', false);
-    return true;
-});
+var questions = await getQuestions("fpasssurvey");
+var val = generateQuestions(questions);
+setInnerHtml("#quest", val);
+setVisible('body', true);
+setVisible('.card', true);
+setVisible('#loading', false);
 
-async function verifyWorker(wid) {
-    let validResponse = await window.fetch('/verify_worker' + '/' + wid).then(result => result.json());
-    return validResponse;
-}
+async function gotopagegif() {
+    var data = getResponse(questions);
+    var response = data.response;
 
-async function submitId() {
-    var textBox = document.getElementsByClassName("textbox")[0];
-    var wid = textBox.value;
-    var errorMsg = "";
-
-    if (wid) {
-        setInnerHtml("#reqfields", "Verifying Participant ID ...");
-        setColor("#reqfields", "black");
-        setVisible("#reqfields", true);
-        const validResponse = await verifyWorker(wid);
+    if (data.next_flag) {
         setVisible("#reqfields", false);
-        setColor("#reqfields", "red");
-        if (validResponse.valid) {
-            sessionStorage.clear();
-            sessionStorage.setItem("wid", wid);
-            sessionStorage.setItem("page_id", 1);
-            window.location.replace("startstudy");
-        } else {
-            errorMsg = validResponse.errorMsg + " Please try again.";
-            errorMsg = "* " + errorMsg;
-            setInnerHtml("#reqfields", errorMsg);
-            setVisible("#reqfields", true);
-        }
+        
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response`, JSON.stringify(response));
+        nextPage(1, "pagegif");
     } else {
-        errorMsg = "Participant ID is required."
-        errorMsg = "* " + errorMsg;
-        setInnerHtml("#reqfields", errorMsg);
         setVisible("#reqfields", true);
     }
 }
-window.submitId = submitId;
+window.gotopagegif = gotopagegif;
