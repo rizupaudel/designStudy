@@ -7,7 +7,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "textbox",
                 "title": "Password",
                 "keyword": "Password"
             }
@@ -32,7 +32,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "likert",
+                "type": "option",
                 "title": "Memorability",
                 "keyword": "Memorability",
                 "elements": ['Definitely not', 'Probably not', 'Maybe', 'Probably', 'Definitely']
@@ -47,7 +47,6 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Easy to think personal memory",
                 "keyword": "Easy to think memory",
                 "elements": {
                     "low": " Strongly Disagree",
@@ -63,8 +62,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Difficulty choosing words",
-                "keyword": "Choosing words",
+                "keyword": "Difficulty Choosing words",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"

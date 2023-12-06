@@ -6,7 +6,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Aesthetics",
+                "keyword": "Aesthetics",
                 "elements": {
                     "low": "ugly",
                     "high": "beautiful "
@@ -15,7 +15,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Aesthetics",
+                "keyword": "Aesthetics",
                 "elements": {
                     "low": "lacking style",
                     "high": "stylish"
@@ -24,7 +24,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "Novel",
+                "keyword": "Aesthetics",
                 "elements": {
                     "low": "unappealing",
                     "high": "appealing"
@@ -33,7 +33,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "Attractive",
+                "keyword": "Aesthetics",
                 "elements": {
                     "low": "unpleasant",
                     "high": "pleasant"
@@ -48,7 +48,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "attention",
+                "keyword": "Attention",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -63,7 +63,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "engaging",
+                "keyword": "Engaging",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -77,7 +77,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "textbox",
                 "title": "",
             },
         ]
@@ -89,7 +89,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Usefulness",
+                "keyword": "Usefulness",
                 "elements": {
                     "low": "useless",
                     "high": "useful"
@@ -98,7 +98,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Usefulness",
+                "keyword": "Usefulness",
                 "elements": {
                     "low": "not helpful",
                     "high": "helpful"
@@ -107,7 +107,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "Usefulness",
+                "keyword": "Usefulness",
                 "elements": {
                     "low": "not beneficial ",
                     "high": "beneficial "
@@ -116,7 +116,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "Usefulness",
+                "keyword": "Usefulness",
                 "elements": {
                     "low": "not rewarding",
                     "high": "rewarding"
@@ -131,7 +131,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "awareness",
+                "keyword": "Awareness",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -146,7 +146,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "motivation",
+                "keyword": "Motivation",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -160,7 +160,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "textbox",
                 "title": "",
             },
         ]
@@ -172,7 +172,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "understandability",
+                "keyword": "Understandability",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -187,7 +187,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "skills",
+                "keyword": "Skills",
                 "elements": {
                     "low": "Strongly Disagree",
                     "high": "Strongly Agree"
@@ -201,7 +201,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "textbox",
                 "title": "",
             },
         ]
@@ -213,7 +213,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Novelty",
+                "keyword": "Novelty",
                 "elements": {
                     "low": "dull",
                     "high": "creative "
@@ -222,7 +222,7 @@ var questions = [
             {
                 "sid": 2,
                 "type": "likert",
-                "title": "Novelty",
+                "keyword": "Novelty",
                 "elements": {
                     "low": "conventional",
                     "high": "inventive"
@@ -231,7 +231,7 @@ var questions = [
             {
                 "sid": 3,
                 "type": "likert",
-                "title": "Novelty",
+                "keyword": "Novelty",
                 "elements": {
                     "low": "usual",
                     "high": "leading edge"
@@ -240,7 +240,7 @@ var questions = [
             {
                 "sid": 4,
                 "type": "likert",
-                "title": "Novelty",
+                "keyword": "Novelty",
                 "elements": {
                     "low": "conservative",
                     "high": "innovative"
@@ -265,7 +265,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textarea",
+                "type": "textbox",
                 "title": "",
             },
         ]
