@@ -208,49 +208,7 @@ var questions = [
     },
     {
         "qid": 12,
-        "text": "In my opinion, the idea behind the design is:",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "keyword": "Novelty",
-                "elements": {
-                    "low": "dull",
-                    "high": "creative "
-                }
-            },
-            {
-                "sid": 2,
-                "type": "likert",
-                "keyword": "Novelty",
-                "elements": {
-                    "low": "conventional",
-                    "high": "inventive"
-                }
-            },
-            {
-                "sid": 3,
-                "type": "likert",
-                "keyword": "Novelty",
-                "elements": {
-                    "low": "usual",
-                    "high": "leading edge"
-                }
-            },
-            {
-                "sid": 4,
-                "type": "likert",
-                "keyword": "Novelty",
-                "elements": {
-                    "low": "conservative",
-                    "high": "innovative"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 13,
-        "text": "Please rank these designs based on your liking.",
+        "text": "Please rank these designs based on your liking. Rank 1 for the one you like the most and 3 for the one you like the least.",
         "subquestions": [
             {
                 "sid": 1,
@@ -260,7 +218,7 @@ var questions = [
         ]
     },
     {
-        "qid": 14,
+        "qid": 13,
         "text": "Please explain your ranking, like which features in a design you liked more than the other ones.",
         "subquestions": [
             {

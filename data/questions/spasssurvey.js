@@ -36,36 +36,6 @@ var questions = [
             }
         ],
         
-    },
-    {
-        "qid": 4,
-        "text": "It was easy to think of a personal memory that I have not shared with anyone.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "keyword": "Easy to think memory",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
-    },
-    {
-        "qid": 5,
-        "text": "It was difficult to choose the words.",
-        "subquestions": [
-            {
-                "sid": 1,
-                "type": "likert",
-                "keyword": "Difficulty Choosing words",
-                "elements": {
-                    "low": " Strongly Disagree",
-                    "high": "Strongly Agree"
-                }
-            }
-        ]
     }
 ];
 

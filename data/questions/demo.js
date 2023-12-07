@@ -21,7 +21,7 @@ var questions = [
                 "sid": 1,
                 "type": "option",
                 "title": "",
-                "elements": ['8 years old', '9 years old', '10 years old', '11 years old', '12 years old', 'Prefer not to answer']
+                "elements": ['8 years old', '9 years old', '10 years old', '11 years old', '12 years old']
             }
         ]
     },
@@ -137,7 +137,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "keyword": "Password usage"
             }
         ],
