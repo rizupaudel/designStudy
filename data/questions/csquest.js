@@ -197,7 +197,7 @@ var questions = [
     },
     {
         "qid": 11,
-        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in raising your awareness and motivation to create strong password?",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in understanding how to create a strong password?",
         "subquestions": [
             {
                 "sid": 1,
