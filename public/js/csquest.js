@@ -1,4 +1,6 @@
-import {getQuestions, getDesign, generateQuestions, updateImage, setInnerHtml, getResponse, nextPage} from "./utility.js";
+import {getQuestions, getDesign, generateQuestions, setProgress, updateImage, setInnerHtml, getResponse, nextPage} from "./utility.js";
+
+setProgress(sessionStorage.getItem("page_id") | 8);
 
 var dataA = await getDesign(1);
 var imagesA = dataA.images;
@@ -41,10 +43,6 @@ function gotospasssurvey() {
     var dataB = getResponse(qABC, "-B");
     var dataC = getResponse(qABC, "-C");
 
-    console.log(dataA);
-    console.log(dataB);
-    console.log(dataC);
-
     if (dataA.next_flag && dataB.next_flag && dataC.next_flag) {
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_A`, JSON.stringify(dataA.response));
         sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_B`, JSON.stringify(dataB.response));
@@ -61,14 +59,11 @@ function gotospasssurvey() {
         setInnerHtml("#questB", valB);
         setInnerHtml("#questC", valC);
 
-    }
-    console.log(N);
-    console.log(tPage)
-    console.log(tPage>=N)
 
-    if (tPage>=N) {
-        sessionStorage.removeItem("tPage");
-        nextPage(9, "spasssurvey");
+        if (tPage>=N) {
+            sessionStorage.removeItem("tPage");
+            nextPage(9, "spasssurvey");
+        }
     } 
 }
 

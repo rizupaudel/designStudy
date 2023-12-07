@@ -77,7 +77,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "title": "",
             },
         ]
@@ -160,7 +160,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "title": "",
             },
         ]
@@ -201,7 +201,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "title": "",
             },
         ]
@@ -265,7 +265,7 @@ var questions = [
         "subquestions": [
             {
                 "sid": 1,
-                "type": "textbox",
+                "type": "textarea",
                 "title": "",
             },
         ]

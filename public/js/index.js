@@ -1,8 +1,13 @@
-import { setProgress, getQuestions, generateQuestions, setTime, nextPage, getResponse, setVisible, setInnerHtml } from "./utility.js";
-// sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 3);
+import { setProgress, getQuestions, generateQuestions, setTime, nextPage, getResponse, setVisible, setInnerHtml, clickEventListener } from "./utility.js";
+sessionStorage.clear();
+
 window.setProgress = setProgress;
 window.setTime = setTime;
-setProgress(sessionStorage.getItem("page_id"));
+sessionStorage.setItem("page_id", 0);
+setProgress(0);
+
+clickEventListener();
+
 
 var questions = await getQuestions("fpasssurvey");
 var val = generateQuestions(questions);

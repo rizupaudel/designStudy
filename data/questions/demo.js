@@ -54,45 +54,33 @@ var questions = [
     },
     {
         "qid": 5,
-         "text": "How do you get your passwords?",
-         "subquestions": [
-             {
-                 "sid": 1,
-                 "type": "checkbox",
-                 "title": "",
-                 "elements": ['I am given a password by school', 'I make my own passwords by myself', 'My parents/guardian make password for me', 'My parents/guardian make password for me', 'Are there any other ways you make a password? If yes, write them down:']
-             }
-         ]
-     },
-     {
-         "qid": 6,
-          "text": "How do you remember your passwords? Please select all that apply.",
-          "subquestions": [
-              {
-                  "sid": 1,
-                  "type": "checkbox",
-                  "title": "",
-                  "elements": ['I memorize the passwords', 'I let the computers save the password and fill it in for me', 'I write my passwords down on paper', 'A family member remembers my passwords for me', 'A friend remembers my passwords for me', 'I save my passwords in a file on a computer', 'I save my passwords in special software for passwords only', 'Are there any other ways that you remember your passwords? If yes, write them down:']
-              }
-          ]
-      },
-      {
-          "qid": 7,
-          "text": "It is easy to make my password.",
-          "subquestions": [
-              {
-                  "sid": 1,
-                  "type": "likert",
-                  "keyword": "Ease to make password",
-                  "elements": {
-                      "low": " Strongly Disagree",
-                      "high": "Strongly Agree"
-                  }
-              }
-          ]
-      },
-      {
-        "qid": 8,
+            "text": "How do you get your passwords?",
+            "subquestions": [
+                {
+                    "sid": 1,
+                    "type": "checkbox",
+                    "title": "",
+                    "elements": ['I am given a password by school', 'I make my own passwords by myself', 'My parents/guardian make password for me', 'My parents/guardian make password for me', 'Are there any other ways you make a password? If yes, write them down:']
+                }
+            ]
+    },
+    {
+        "qid": 6,
+        "text": "It is easy to make my password.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "likert",
+                "keyword": "Ease to make password",
+                "elements": {
+                    "low": " Strongly Disagree",
+                    "high": "Strongly Agree"
+                }
+            }
+        ]
+    },
+    {
+        "qid": 7,
         "text": "How old were you when you first created your password on your own?",
         "keyword": "age",
         "subquestions": [
@@ -105,7 +93,7 @@ var questions = [
         ]
     },
     {
-        "qid": 9,
+        "qid": 8,
         "text": "The most recent password I created by myself, is _________.",
         "subquestions": [
             {
@@ -113,6 +101,18 @@ var questions = [
                 "type": "option",
                 "keyword": "Recent password strength",
                 "elements": ['Very Strong', 'Strong', 'Medium', 'Weak', 'Very Weak']
+            }
+        ]
+    },
+    {
+        "qid": 9,
+        "text": "How do you remember your passwords? Please select all that apply.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "checkbox",
+                "title": "",
+                "elements": ['I memorize the passwords', 'I let the computers save the password and fill it in for me', 'I write my passwords down on paper', 'A family member remembers my passwords for me', 'A friend remembers my passwords for me', 'I save my passwords in a file on a computer', 'I save my passwords in special software for passwords only', 'Are there any other ways that you remember your passwords? If yes, write them down:']
             }
         ]
     },

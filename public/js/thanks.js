@@ -1,13 +1,13 @@
 import { setInnerHtml, setProgress, setVisible } from "./utility.js";
 // sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 15);
 window.setProgress = setProgress;
-setProgress(14);
+setProgress(11);
 
-if (sessionStorage.getItem("page_id") != 15) {
+if (sessionStorage.getItem("page_id") != 11) {
     window.location = "/";
 }
 
-generategiftcard();
+// generategiftcard();
 window.addEventListener('DOMContentLoaded', (event) => {
     setVisible('body', true);
     setVisible('.card', true);
@@ -21,6 +21,6 @@ sessionStorage.clear();
 //     window.location = "/";
 // }
 
-async function generategiftcard() {
-    setInnerHtml(".giftcard", sessionStorage.getItem("giftcard"));
-}
+// async function generategiftcard() {
+//     setInnerHtml(".giftcard", sessionStorage.getItem("giftcard"));
+// }

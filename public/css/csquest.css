@@ -26,18 +26,18 @@ body {
 
 .container .designAContainer {
   flex-grow: 1;
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 .container .designBContainer {
   flex-grow: 1;
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 .container .designCContainer {
   flex-grow: 1;
   /* background-color: red; */
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 
@@ -45,8 +45,8 @@ body {
   display: flex;
   margin: auto;
   margin-bottom: 1%;
-  width: 95%;
-  /* border: 2px solid #ccc; */
+  /* width: 95%; */
+  border: 2px solid #ccc;
   /* background-color: #ddd; */
 }
 
@@ -57,9 +57,15 @@ body {
   width: 10%;
 }
 
-.pButtonA img, .pButtonB img, .pButtonC img  {
+.pButtonB img, .pButtonC img  {
   margin: auto;
   width: 70%;
+}
+
+.pButtonA img {
+  margin: auto;
+  width: 70%;
+  opacity: 0;
 }
 
 .pButtonA:hover, .pButtonB:hover, .pButtonC:hover {
@@ -94,11 +100,37 @@ body {
   transform: scale(1.01);
 }
 
-.nButtonA img,  .nButtonB img, .nButtonC img {
+.nButtonB img, .nButtonC img {
   margin: auto;
   width: 70%;
 }
 
+.nButtonA img {
+  margin: auto;
+  width: 70%;
+  opacity: 0;
+}
+
 .indicator {
   display: none;
+}
+
+.q-A {
+  margin-top: 10%;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.q-B {
+  margin-top: 10%;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  opacity: 0;
+}
+
+.q-C {
+  margin-top: 10%;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  opacity: 0;
 }

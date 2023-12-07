@@ -6,9 +6,9 @@ function setProgressBar(progress) {
 }
 
 export async function setProgress(val, ext=0) {
-    let pTotal = 14;
+    let pTotal = 10;
     pTotal += parseInt(ext);
-    let progress = val>=14 ? 100 : val/pTotal*100;
+    let progress = val>=10 ? 100 : val/pTotal*100;
     setProgressBar(progress);
 }
 
@@ -29,7 +29,7 @@ export function generateCheckbox(qsid, cI) {
         // let name = qsid + "-" + i;
         val += `<label for="${qsid}"><input type="checkbox" class="checkbox" name="${qsid}" value="${cI[i]}"> ${cI[i]} </label>`;
         if (cI[i].includes("please specify:") || cI[i].includes("If yes,")) {
-            val += `<input type="text" class="optionval" name="${qsid}-val">`;
+            val += `<input type="text" class="optionval"  name="${qsid}-val" disabled>`;
         }
         val += "<br>";
     }
@@ -44,7 +44,10 @@ export function generateTextbox(qsid) {
     return val;
 }
 
-export function generateTextarea(qsid) {
+export function generateTextarea(qsid, flag) {
+    if (flag === "-B" || flag === "-C") {
+        return `<div class="textareaC"></div>`;
+    }
     var val = '<div class="textareaC">';
     val += `<textarea class="textarea" name="${qsid}" rows="10" cols="70"></textarea><br>`;
     val += "</div>";
@@ -68,12 +71,14 @@ export function generateOption(qsid, cI, custom=false) {
     return val;
 }
 
-export function generateSubQuestion(subQ) {
+export function generateSubQuestion(subQ, flag, space) {
     var val = "";
     if (subQ.title) {
         val += '<p class="sq">' + subQ.title + '</p>';
     }
-    
+    if (space) {
+        val += "<br>";
+    }
     if (subQ.type === "likert") {
         val += generateLikert(subQ.qsid, subQ.elements);
     } else if (subQ.type === "checkbox") {
@@ -83,29 +88,37 @@ export function generateSubQuestion(subQ) {
     } else if (subQ.type === "textbox") {
         val += generateTextbox(subQ.qsid);
     } else if (subQ.type === "textarea") {
-        val += generateTextarea(subQ.qsid);
+        val += generateTextarea(subQ.qsid, flag);
     }
     return val;
 }
 
-export function generateQuestion(quesO, flag="") {
-    var val = "";
-    val += '<p class="q">' + quesO.text + "</p>"
+export function generateQuestion(quesO, flag="", last) {
+    var val = `<div class="demoq${quesO.qid}">`;
+    val += `<p class="${'q'+flag}">` + quesO.text + "</p>";
+    var space = false;
     for (let i in quesO.subquestions) {
         let qsid = quesO.qid + "-" + quesO.subquestions[i].sid + flag;
         quesO.subquestions[i]["qsid"] = qsid;
-        val += generateSubQuestion(quesO.subquestions[i], flag);
+        if (quesO.subquestions.length > 1) {
+            space=true;
+        }
+        val += generateSubQuestion(quesO.subquestions[i], flag, space);
     }
     val += `<p id="reqfield${quesO.qid}" class="reqfield">This field is required.</p>`
-    return val + "<hr>";
+    return last ? val: val + "<hr></div>";
 }
 
 export function generateQuestions(qs, flag="") {
     var val = "";
+    let last = false;
     for (let i in qs) {
+        if (i>=qs.length-1) {
+            last = true;
+        }
         var qn = parseInt(i) + 1;
         qs[i]["qn"] = qn;
-        val += generateQuestion(qs[i], flag);
+        val += generateQuestion(qs[i], flag, last);
     }
     return val;
 }
@@ -166,7 +179,7 @@ export function nextPage(page_id, page_name) {
     window.location.replace(page_name);
 }
 
-export function getResponse(questions, flag="") {
+export function getResponse(questions, flag="", page="") {
     var response = {};
     var next_flag = true;
     for (let qn in questions) {
@@ -180,6 +193,10 @@ export function getResponse(questions, flag="") {
                 for (let i = 0; i < el.length; i++) {
                     if (el[i].checked) {
                         response[qsid] = el[i].value;
+                        checked_flag = true;
+                    }
+                    if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
+                        response[qsid] = "NA";
                         checked_flag = true;
                     }
                 }
@@ -235,6 +252,11 @@ export function getResponse(questions, flag="") {
                             checked_flag = true;
                         }
                     }
+                    if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
+                        response[qsid] = "NA";
+                        checked_flag = true;
+
+                    }
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);
                 if (!checked_flag) {
@@ -261,18 +283,20 @@ export function getResponse(questions, flag="") {
                 }
             } else if (subquestions[sqn].type === "textarea") {
                 var el = document.getElementsByName(qsid);
-                response[qsid] = el[0].value;
-                if (el[0].value) {checked_flag = true};
+                if (el[0] !== undefined) {
+                    response[qsid] = el[0].value;
+                    if (el[0].value) {checked_flag = true};
 
-                var eel = document.getElementById("reqfield"+questions[qn].qid);
-                if (!checked_flag) {
-                    eel.style.visibility = "visible";
-                    eel.style.opacity = 1;
-                    next_flag = false;
-                } else {
-                    eel.style.visibility = "hidden";
-                    eel.style.opacity = 0;
-                }
+                    var eel = document.getElementById("reqfield"+questions[qn].qid);
+                    if (!checked_flag) {
+                        eel.style.visibility = "visible";
+                        eel.style.opacity = 1;
+                        next_flag = false;
+                    } else {
+                        eel.style.visibility = "hidden";
+                        eel.style.opacity = 0;
+                    }
+            }
             }
         }
     }
@@ -303,11 +327,11 @@ export function updateImage(images, flag="", dN="") {
     }
     // disable next button
     document.getElementsByClassName("nButton"+dN)[0].style.pointerEvents = (count === images.length) ? "none": "auto";
-    document.getElementById("n"+dN).src = (count === images.length) ? "": "designs/next.png";
+    document.getElementById("n"+dN).src = (count === images.length) ? "designs/next.png": "designs/next.png";
 
     // disable previous button
     document.getElementsByClassName("pButton"+dN)[0].style.pointerEvents = (count === 1) ? "none": "auto";
-    document.getElementById("p"+dN).src = (count === 1) ? "": "designs/prev.png";
+    document.getElementById("p"+dN).src = (count === 1) ? "designs/prev.png": "designs/prev.png";
     
     var indicator = document.getElementById("indicator");
     indicator.innerHTML = `${count} of ${images.length}`;
@@ -346,7 +370,7 @@ export function clickEventListener() {
     window.addEventListener('click', (event) => {
         if (event.target.value ) {
             var tbox = document.getElementsByName(event.target.name+"-val");
-            if (event.target.value.includes("please specify:")) {
+            if (event.target.value.includes("If yes,")) {
                 tbox[0].disabled = event.target.checked ? false : true;
                 tbox[0].value = event.target.checked ? tbox[0].value : "";
             } else {

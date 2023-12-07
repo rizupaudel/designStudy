@@ -52,3 +52,7 @@ body {
 h2 {
   width: 50%;
 }
+
+.demoq6, .demoq7, .demoq8, .demoq10 {
+  display: none;
+}

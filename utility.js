@@ -108,14 +108,14 @@ async function saveResponse(wid, data) {
     if (!fs.existsSync(respDir)){
         fs.mkdirSync(respDir);
     }
-    var gcode = generateGift(wid, data.did);
-    data["giftcode"] = gcode;
+    // var gcode = generateGift(wid, data.did);
+    // data["giftcode"] = gcode;
     fs.writeFile( respDir + '/' + wid + '.json', JSON.stringify(data), error => {
         if (error) {
             return false;
         }
     });
-    return gcode;
+    return true;
 }
 
 async function getResponse() {

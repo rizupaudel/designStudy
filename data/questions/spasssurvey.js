@@ -8,7 +8,6 @@ var questions = [
             {
                 "sid": 1,
                 "type": "textbox",
-                "title": "Password",
                 "keyword": "Password"
             }
         ],
@@ -20,7 +19,6 @@ var questions = [
             {
                 "sid": 1,
                 "type": "option",
-                "title": "Strength of password",
                 "keyword": "Password Strength",
                 "elements": ['Very Strong', 'Strong', 'Medium', 'Weak', 'Very Weak']
             }
@@ -33,7 +31,6 @@ var questions = [
             {
                 "sid": 1,
                 "type": "option",
-                "title": "Memorability",
                 "keyword": "Memorability",
                 "elements": ['Definitely not', 'Probably not', 'Maybe', 'Probably', 'Definitely']
             }
