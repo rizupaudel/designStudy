@@ -26,18 +26,18 @@ body {
 
 .container .designAContainer {
   flex-grow: 1;
-  border: solid 3px black;
+  border: solid 1px black;
 }
 
 .container .designBContainer {
   flex-grow: 1;
-  border: solid 3px green;
+  border: solid 1px black;
 }
 
 .container .designCContainer {
   flex-grow: 1;
   /* background-color: red; */
-  border: solid 3px blue;
+  border: solid 1px black;
 }
 
 

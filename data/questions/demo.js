@@ -118,12 +118,12 @@ var questions = [
     },
     {
         "qid": 10,
-        "text": "It is easy to make my password.",
+        "text": "It is easy to remember my password.",
         "subquestions": [
             {
                 "sid": 1,
                 "type": "likert",
-                "keyword": "Ease to make password",
+                "keyword": "Ease to remember password",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"
