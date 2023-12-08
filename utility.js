@@ -93,7 +93,7 @@ async function getDesign(did) {
         // console.log(Object.keys(designs)[i-1]);
         return {"did": Object.keys(designs)[i-1], "images": designs[Object.keys(designs)[i-1]].images};
     }
-    return {"did": did, "images": designs[did].images};
+    return {"did": did, "name": designs[did].name, "images": designs[did].images};
 }
 
 function generateGift(wid, did) {

@@ -195,16 +195,19 @@ export function getResponse(questions, flag="", page="") {
                         response[qsid] = el[i].value;
                         checked_flag = true;
                     }
-                    
-                    var el5 = document.getElementsByName("5-1");
-                    var el9 = document.getElementsByName("9-1");
 
-                    if (!el9[0].checked && el[i].name === "10-1") {
-                        checked_flag = true;
+                    if (page==="demo") {
+                        var el5 = document.getElementsByName("5-1");
+                        var el9 = document.getElementsByName("9-1");
+
+                        if (!el9[0].checked && el[i].name === "10-1") {
+                            checked_flag = true;
+                        }
+                        if (el[i].name === "6-1" && !el5[1].checked) {
+                            checked_flag = true;
+                        }
                     }
-                    if (el[i].name === "6-1" && !el5[1].checked) {
-                        checked_flag = true;
-                    }
+                    
                 }
                 var lel = document.getElementById(qsid).getElementsByClassName("low")[0];
                 var hel = document.getElementById(qsid).getElementsByClassName("high")[0];
@@ -259,10 +262,11 @@ export function getResponse(questions, flag="", page="") {
                         }
                     }
 
-                    var el5 = document.getElementsByName("5-1");
-                    if (["7-1", "8-1"].includes(el[i].name) && !el5[1].checked) {
-                        checked_flag = true;
-
+                    if (page === "demo") {
+                        var el5 = document.getElementsByName("5-1");
+                        if (["7-1", "8-1"].includes(el[i].name) && !el5[1].checked) {
+                            checked_flag = true;
+                        }
                     }
                 }
                 var eel = document.getElementById("reqfield"+questions[qn].qid);

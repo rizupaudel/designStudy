@@ -6,14 +6,16 @@ setProgress(sessionStorage.getItem("page_id") | 8);
 //     window.location = "/";
 // }
 
-var dataA = await getDesign(1);
-var imagesA = dataA.images;
+var dataAD = await getDesign(1);
+var imagesA = dataAD.images;
 
-var dataB = await getDesign(2);
-var imagesB = dataB.images;
 
-var dataC = await getDesign(3);
-var imagesC = dataC.images;
+var dataBD = await getDesign(2);
+var imagesB = dataBD.images;
+console.log(dataBD);
+
+var dataCD = await getDesign(3);
+var imagesC = dataCD.images;
 
 loadImage();
 
@@ -48,9 +50,9 @@ function gotospasssurvey() {
     var dataC = getResponse(qABC, "-C");
 
     if (dataA.next_flag && dataB.next_flag && dataC.next_flag) {
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_A`, JSON.stringify(dataA.response));
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_B`, JSON.stringify(dataB.response));
-        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_C`, JSON.stringify(dataC.response));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_A_${dataAD.name}`, JSON.stringify(dataA.response));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_B_${dataBD.name}`, JSON.stringify(dataB.response));
+        sessionStorage.setItem(`p${sessionStorage.getItem("page_id")}_response_${tPage}_C_${dataCD.name}`, JSON.stringify(dataC.response));
         sessionStorage.setItem("tPage", tPage+1);
 
         qABC = questions[tPage+1];
