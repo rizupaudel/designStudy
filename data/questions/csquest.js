@@ -43,7 +43,7 @@ var questions = [
     },
     {
         "qid": 2,
-        "text": "The design captures my attention.",
+        "text": "The design <b>captures my attention</b>.",
         "subquestions": [
             {
                 "sid": 1,
@@ -58,7 +58,7 @@ var questions = [
     },
     {
         "qid": 3,
-        "text": "The presentation of the design is engaging.",
+        "text": "The presentation of the design is <b>engaging</b>.",
         "subquestions": [
             {
                 "sid": 1,
@@ -73,7 +73,7 @@ var questions = [
     },
     {
         "qid": 4,
-        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in capturing your attention, and keeping you engaged with design?",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in <b>capturing your attention, and keeping you engaged with design</b>?",
         "subquestions": [
             {
                 "sid": 1,
@@ -126,7 +126,7 @@ var questions = [
     },
     {
         "qid": 6,
-        "text": "The design raises my awareness about what can happen if my password is weak.",
+        "text": "The design <b>raises my awareness</b> about what can happen if my password is weak.",
         "subquestions": [
             {
                 "sid": 1,
@@ -141,7 +141,7 @@ var questions = [
     },
     {
         "qid": 7,
-        "text": "The design motivates me to create a strong password.",
+        "text": "The design <b>motivates</b> me to create a strong password.",
         "subquestions": [
             {
                 "sid": 1,
@@ -156,7 +156,7 @@ var questions = [
     },
     {
         "qid": 8,
-        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in raising your awareness and motivation to create strong password?",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in <b>raising your awareness and motivation to create strong password</b>?",
         "subquestions": [
             {
                 "sid": 1,
@@ -167,7 +167,7 @@ var questions = [
     },
     {
         "qid": 9,
-        "text": "It is easy to understand the message shown in the design.",
+        "text": "It is <b>easy to understand</b> the message shown in the design.",
         "subquestions": [
             {
                 "sid": 1,
@@ -182,7 +182,7 @@ var questions = [
     },
     {
         "qid": 10,
-        "text": "The design improves my skills on creating a strong and memorable password.",
+        "text": "The design <b>improves my skills</b> on creating a strong and memorable password.",
         "subquestions": [
             {
                 "sid": 1,
@@ -197,7 +197,7 @@ var questions = [
     },
     {
         "qid": 11,
-        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in understanding how to create a strong password?",
+        "text": "Can you explain your above ratings, like why you think one of these designs is better than other ones in <b>understanding how to create a strong password</b>?",
         "subquestions": [
             {
                 "sid": 1,
@@ -208,7 +208,7 @@ var questions = [
     },
     {
         "qid": 12,
-        "text": "Please rank these designs based on your liking. Rank 1 for the one you like the most and 3 for the one you like the least.",
+        "text": "Please rank these designs based on your <b>liking</b>. Rank 1 for the one you like the most and 3 for the one you like the least.",
         "subquestions": [
             {
                 "sid": 1,
