@@ -2,6 +2,10 @@ import {getQuestions, getDesign, generateQuestions, setProgress, updateImage, se
 
 setProgress(sessionStorage.getItem("page_id") | 8);
 
+// if (sessionStorage.getItem("page_id") != 8) {
+//     window.location = "/";
+// }
+
 var dataA = await getDesign(1);
 var imagesA = dataA.images;
 

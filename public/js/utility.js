@@ -195,8 +195,14 @@ export function getResponse(questions, flag="", page="") {
                         response[qsid] = el[i].value;
                         checked_flag = true;
                     }
-                    if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
-                        // response[qsid] = "NA";
+                    
+                    var el5 = document.getElementsByName("5-1");
+                    var el9 = document.getElementsByName("9-1");
+
+                    if (!el9[0].checked && el[i].name === "10-1") {
+                        checked_flag = true;
+                    }
+                    if (el[i].name === "6-1" && !el5[1].checked) {
                         checked_flag = true;
                     }
                 }
@@ -252,8 +258,9 @@ export function getResponse(questions, flag="", page="") {
                             checked_flag = true;
                         }
                     }
-                    if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
-                        // response[qsid] = "NA";
+
+                    var el5 = document.getElementsByName("5-1");
+                    if (["7-1", "8-1"].includes(el[i].name) && !el5[1].checked) {
                         checked_flag = true;
 
                     }
@@ -327,11 +334,11 @@ export function updateImage(images, flag="", dN="") {
     }
     // disable next button
     document.getElementsByClassName("nButton"+dN)[0].style.pointerEvents = (count === images.length) ? "none": "auto";
-    document.getElementById("n"+dN).src = (count === images.length) ? "designs/next.png": "designs/next.png";
+    document.getElementById("n"+dN).style.opacity = (count === images.length) ? 0: 1;
 
     // disable previous button
     document.getElementsByClassName("pButton"+dN)[0].style.pointerEvents = (count === 1) ? "none": "auto";
-    document.getElementById("p"+dN).src = (count === 1) ? "designs/prev.png": "designs/prev.png";
+    document.getElementById("p"+dN).style.opacity = (count === 1) ? 0: 1;
     
     var indicator = document.getElementById("indicator");
     indicator.innerHTML = `${count} of ${images.length}`;

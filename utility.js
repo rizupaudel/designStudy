@@ -90,7 +90,7 @@ async function getDesign(did) {
         var filteredDesigns = filterDesign(designs)
         designs = Object.keys(filteredDesigns).length >= 1 ? filteredDesigns : {'4': designs['4']};
         var i = Math.floor(Math.random() * Object.keys(designs).length + 1);
-        console.log(Object.keys(designs)[i-1]);
+        // console.log(Object.keys(designs)[i-1]);
         return {"did": Object.keys(designs)[i-1], "images": designs[Object.keys(designs)[i-1]].images};
     }
     return {"did": did, "images": designs[did].images};
