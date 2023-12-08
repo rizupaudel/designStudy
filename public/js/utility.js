@@ -196,7 +196,7 @@ export function getResponse(questions, flag="", page="") {
                         checked_flag = true;
                     }
                     if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
-                        response[qsid] = "NA";
+                        // response[qsid] = "NA";
                         checked_flag = true;
                     }
                 }
@@ -253,7 +253,7 @@ export function getResponse(questions, flag="", page="") {
                         }
                     }
                     if (["6-1", "7-1", "8-1", "10-1"].includes(el[i].name)) {
-                        response[qsid] = "NA";
+                        // response[qsid] = "NA";
                         checked_flag = true;
 
                     }
