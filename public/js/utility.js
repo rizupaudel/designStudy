@@ -49,7 +49,7 @@ export function generateTextarea(qsid, flag) {
         return `<div class="textareaC"></div>`;
     }
     var val = '<div class="textareaC">';
-    val += `<textarea class="textarea" name="${qsid}" rows="10" cols="70"></textarea><br>`;
+    val += `<textarea class="textarea" name="${qsid}" rows="6" cols="60"></textarea><br>`;
     val += "</div>";
     return val;
 }
