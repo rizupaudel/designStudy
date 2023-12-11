@@ -60,7 +60,7 @@ var questions = [
                     "sid": 1,
                     "type": "checkbox",
                     "title": "",
-                    "elements": ['I am given a password by school', 'I make my own passwords by myself', 'My parents/guardian make password for me', 'My parents/guardian make password for me', 'Are there any other ways you make a password? If yes, write them down:']
+                    "elements": ['I am given a password by school', 'I make my own passwords by myself', 'My parents/guardian make password for me', 'I make my passwords with help from my parents/guardian.', 'Are there any other ways you make a password? If yes, write them down:']
                 }
             ]
     },
