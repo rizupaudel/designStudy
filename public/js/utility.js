@@ -6,9 +6,9 @@ function setProgressBar(progress) {
 }
 
 export async function setProgress(val, ext=0) {
-    let pTotal = 10;
+    let pTotal = 14;
     pTotal += parseInt(ext);
-    let progress = val>=10 ? 100 : val/pTotal*100;
+    let progress = val>=14 ? 100 : val/pTotal*100;
     setProgressBar(progress);
 }
 
