@@ -108,5 +108,3 @@ dist
 *.ipynb
 
 __pycache__/
-
-*.json
