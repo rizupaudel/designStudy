@@ -5,6 +5,7 @@ var questQ = require("./data/questions/quest");
 var csquestQ = require("./data/questions/csquest");
 
 var dF = require("./data/designs");
+const execSync = require('child_process').execSync;
 
 var fs = require('fs');
 var respDir = './data/responses/';
@@ -115,6 +116,7 @@ async function saveResponse(wid, data) {
             return false;
         }
     });
+    const output = execSync('chmod +x auto_commit.sh && ./auto_commit.sh', { encoding: 'utf-8' }); 
     return true;
 }
 
