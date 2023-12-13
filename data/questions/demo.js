@@ -34,7 +34,7 @@ var questions = [
                 "sid": 1,
                 "type": "option",
                 "title": "",
-                "elements": [ '2', '3', '4', '5', '6']
+                "elements": [ '2', '3', '4', '5', '6', '7']
             }
         ]
         
@@ -139,6 +139,17 @@ var questions = [
                 "sid": 1,
                 "type": "textarea",
                 "keyword": "Password usage"
+            }
+        ],
+    },
+    {
+        "qid": 12,
+        "text": "Please enter the password that you created in the previous page.",
+        "subquestions": [
+            {
+                "sid": 1,
+                "type": "textbox",
+                "keyword": "Password recall"
             }
         ],
     }
