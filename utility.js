@@ -116,7 +116,7 @@ async function saveResponse(wid, data) {
             return false;
         }
     });
-    const output = execSync('chmod +x auto_commit.sh && ./auto_commit.sh', { encoding: 'utf-8' }); 
+    // const output = execSync('chmod +x auto_commit.sh && ./auto_commit.sh', { encoding: 'utf-8' }); 
     return true;
 }
 
