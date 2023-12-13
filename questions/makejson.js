@@ -1,7 +1,6 @@
-var fpasssurvey = require("./fpasssurvey");
+var index = require("./index");
 var spasssurvey = require("./spasssurvey");
 var demo = require("./demo");
-var quest = require("./quest");
 var csquest = require("./csquest");
 
 var fs = require('fs');

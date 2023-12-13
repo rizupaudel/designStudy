@@ -35,32 +35,40 @@ def get_response(fname):
         time_resp = defaultdict(str)
         for k, v in response.items():
             if 'response' in k:
+                val = {}
+                for kt, vt in json.loads(v).items():
+                    kk = kt.strip('-A').strip('-B').strip('-C')
+                    val[kk] = vt
                 pname = k.split("_")               
                 pid = pname[0].strip('p')
-                if 'p8' in k:
+                if 'p8_' in k:
                     dorder = pname[3]
                     dname = pname[4]
-                    if surv_resp.get('8'):
-                        v = surv_resp.get('8').update(v)
-                surv_resp[pid].update(json.loads(v))
-            elif 'time' in k:
+                    p8_response = surv_resp.get('8')
+                    if p8_response:
+                        if dname in p8_response.keys():
+                            p8_response.get(dname).update(val)
+                            surv_resp['8'].update(p8_response)
+                        else:
+                            surv_resp[pid].update({dname: val})
+                    else:
+                        surv_resp[pid].update({dname: val})
+                else:
+                    surv_resp[pid].update(val)
+            elif '_time' in k:
                 temp = k.split("_")
                 pid = temp[0]
-                if (str(pid) == '2'):
-                    pid = '0'
-                if (str(pid) == '4'):
-                    pid = '3'
                 time_resp[pid] = float(v)
-
+        return surv_resp, time_resp
     except Exception as e:
-        # print(f'{fname}: {e}')
+        print(f'{fname}: {e}')
         pass
     return False
 
 
 def get_questions():
     questions = {}
-    for page_id in [3, 7, 8, 12, 14]:
+    for page_id in [0, 8, 9, 10]:
         page_name = page_map.get(str(page_id))
         question_file = f'{page_name}.json'
 
@@ -94,33 +102,10 @@ def get_responses(did=False):
         if fname.endswith('.json'):
             responses = get_response(os.path.join(fpath, fname))
             if responses:
-                if responses == "not attentive":
-                    count[0] += 1
-                else:
-                    count[1] += 1
-                    pss, tim, sur, didr = responses
-                    if not pss.get('password1'):
-                        sur.pop('5', None)
-                        sur.pop('9', None)
-                        sur.pop('13', None)
-                        
-                        if (not did):
-                            password_response.append(pss)
-                            time_response.append(tim)
-                            survey_response.append(sur)
-                            dids.append(didr)
-                        elif (str(did) == str(didr)):
-                            count[2] += 1
-                            password_response.append(pss)
-                            time_response.append(tim)
-                            survey_response.append(sur)
-
-    if did:
-        print(f"Total: {count[2]}")
-        return (password_response, time_response, survey_response)
-    else:
-        print(f"Total: {count[0]+count[1]}; \nAttentive: {count[1]}; Non Attentive: {count[0]}")
-        return (password_response, time_response, survey_response, dids)
+                sur, tim = responses
+                time_response.append(tim)
+                survey_response.append(sur)
+    return (survey_response, time_response)
 
 
 def get_design(did):
