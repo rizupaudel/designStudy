@@ -117,7 +117,7 @@ var questions = [
                 "sid": 1,
                 "type": "likert",
                 "title": "Easy to think personal memory",
-                "keyword": "Easy to think personal memory",
+                "keyword": "Easy to think memory",
                 "elements": {
                     "low": " Strongly Disagree",
                     "high": "Strongly Agree"

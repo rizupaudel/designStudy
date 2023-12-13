@@ -144,7 +144,7 @@ var questions = [
             {
                 "sid": 1,
                 "type": "likert",
-                "title": "Personally connection",
+                "title": "Personal connection",
                 "keyword": "Personal Connection",
                 "elements": {
                     "low": "Strongly Disagree",
