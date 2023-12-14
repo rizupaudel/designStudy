@@ -91,6 +91,22 @@ def get_qdetails(pid, qsid, key="text"):
                     ret_text += '\n' + str(subquestion)
     return ret_text
 
+def get_qinfo(pid, qid):
+    questions = get_questions()
+    pid = str(pid)
+    qid = str(qid)
+    if not questions.get(pid): return "Questions on given page not found."
+    ret_text = ""
+    for question in questions.get(pid):
+        text = question.get('text')
+        if question.get('qid') == int(qid):
+            subquestion = question.get('subquestions')[0]
+            if subquestion.get('type') == 'likert':
+                text = subquestion.get('keyword')
+            ret_text += text
+
+    return ret_text
+
 
 def get_responses(did=False):
     password_response = []
