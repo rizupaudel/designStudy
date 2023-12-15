@@ -2,7 +2,9 @@ import { getQuestions, setProgress, generateQuestions, setTime, nextPage, setVis
 // sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 14);
 window.setProgress = setProgress;
 window.setTime = setTime;
-setProgress(sessionStorage.getItem("page_id"));
+setProgress(13);
+
+// setProgress(sessionStorage.getItem("page_id"));
 
 // if (sessionStorage.getItem("page_id") != 10) {
 //     window.location = "/";
