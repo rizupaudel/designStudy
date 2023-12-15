@@ -33,6 +33,7 @@ def get_response(fname):
         response = json.loads(data)
         surv_resp = defaultdict(dict)
         time_resp = defaultdict(str)
+        design_order = ['-1', '-1', '-1']
         for k, v in response.items():
             if 'response' in k:
                 val = {}
@@ -44,6 +45,9 @@ def get_response(fname):
                 if 'p8_' in k:
                     dorder = pname[3]
                     dname = pname[4]
+                    if dorder == 'A': design_order[0] = dname
+                    if dorder == 'B': design_order[1] = dname
+                    if dorder == 'C': design_order[2] = dname
                     p8_response = surv_resp.get('8')
                     # tmap = {pname[3]: pname[4]}
                     if p8_response:
@@ -60,6 +64,7 @@ def get_response(fname):
                 temp = k.split("_")
                 pid = temp[0]
                 time_resp[pid] = float(v)
+        surv_resp.get('8')['design_order'] = design_order
         return surv_resp, time_resp
     except Exception as e:
         print(f'{fname}: {e}')
