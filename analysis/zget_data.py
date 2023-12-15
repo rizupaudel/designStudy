@@ -45,6 +45,7 @@ def get_response(fname):
                     dorder = pname[3]
                     dname = pname[4]
                     p8_response = surv_resp.get('8')
+                    # tmap = {pname[3]: pname[4]}
                     if p8_response:
                         if dname in p8_response.keys():
                             p8_response.get(dname).update(val)
