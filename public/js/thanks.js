@@ -1,11 +1,11 @@
 import { setInnerHtml, setProgress, setVisible } from "./utility.js";
 // sessionStorage.setItem("page_id", sessionStorage.getItem("page_id") || 15);
 window.setProgress = setProgress;
-setProgress(11);
+setProgress(14);
 
-if (sessionStorage.getItem("page_id") != 11) {
-    window.location = "/";
-}
+// if (sessionStorage.getItem("page_id") != 11) {
+//     window.location = "/";
+// }
 
 // generategiftcard();
 window.addEventListener('DOMContentLoaded', (event) => {
