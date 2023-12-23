@@ -1,4 +1,5 @@
 import os, json, hashlib
+from datetime import datetime
 from collections import defaultdict
 
 
@@ -115,23 +116,33 @@ def get_qinfo(pid, qid):
 
 
 def get_responses(did=False):
-    password_response = []
+    # password_response = []
     time_response = []
     survey_response = []
-    dids = []
-    count = defaultdict(int)
-    for fname in os.listdir(fpath):
+    fnames = []
+    # dids = []
+    # count = defaultdict(int)
+    response_files = sorted([f for f in os.listdir(fpath) if f.endswith('json')], key=extract_datetime)
+    for fname in response_files:
         if fname.endswith('.json'):
             responses = get_response(os.path.join(fpath, fname))
             if responses:
                 sur, tim = responses
                 time_response.append(tim)
                 survey_response.append(sur)
-    return (survey_response, time_response)
+                fnames.append(fname.split('.')[0])
+    return (fnames, survey_response, time_response)
 
 
-def get_design(did):
-    return did_map.get(int(did))
+def extract_datetime(filename):
+    # Extract date and time components
+    date_str = filename[0:8]
+    time_str = filename[9:15]
+    
+    # Convert to datetime object
+    datetime_obj = datetime.strptime(f'{date_str}T{time_str}', '%Y%m%dT%H%M%S')
+    
+    return datetime_obj
 
 
 def get_hash(password, salt=""):
